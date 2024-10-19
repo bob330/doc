@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RAID-Z on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/RAID-Z/</link><description>Recent content in RAID-Z on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/RAID-Z/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 22. The Z File System (ZFS)</title><link>http://172.16.201.134:1313/en/books/handbook/zfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/zfs/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>ZFS is an advanced file system designed to solve major problems found in previous storage subsystem software.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Originally developed at Sun™, ongoing open source ZFS development has moved to the &lt;a href="http://open-zfs.org">OpenZFS Project&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>ZFS has three major design goals:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Data integrity: All data includes a &lt;a href="../zfs/#zfs-term-checksum">checksum&lt;/a> of the data. ZFS calculates checksums and writes them along with the data. When reading that data later, ZFS recalculates the checksums. If the checksums do not match, meaning detecting one or more data errors, ZFS will attempt to automatically correct errors when ditto-, mirror-, or parity-blocks are available.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pooled storage: adding physical storage devices to a pool, and allocating storage space from that shared pool. Space is available to all file systems and volumes, and increases by adding new storage devices to the pool.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Performance: caching mechanisms provide increased performance.
+&lt;a href="../zfs/#zfs-term-arc">ARC&lt;/a> is an advanced memory-based read cache. ZFS
+provides a second level disk-based read cache with
+&lt;a href="../zfs/#zfs-term-l2arc">L2ARC&lt;/a>, and a disk-based synchronous write cache
+named &lt;a href="../zfs/#zfs-term-zil">ZIL&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

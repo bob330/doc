@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acknowledgments on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/acknowledgments/</link><description>Recent content in Acknowledgments on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/acknowledgments/index.xml" rel="self" type="application/rss+xml"/><item><title>前書き</title><link>http://172.16.201.134:1313/ja/books/handbook/preface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/preface/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface-audience">想定している読者&lt;a class="anchor" href="#preface-audience">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>最初の部分は FreeBSD を使い始めた人向けで、FreeBSD のインストールの過程を手引きし、UNIX® の基礎となっている概念や慣習を丁寧に紹介します。
+この部分に取り組むために必要なのは、探究心と、紹介された新たな概念を理解する能力だけです。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>その次の、ハンドブックのはるかに大きな部分では、FreeBSD システム管理者が興味を抱くあらゆる種類の話題が分かりやすく言及されています。
+一部の章は、その章の前に読んでおくべきことが推奨されており、各章の始めの概要で述べられています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>さらなる情報源の一覧は、&lt;a href="../bibliography/#bibliography">参考図書&lt;/a> をご覧ください。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface-changes-from3">第 3 版からの変更&lt;a class="anchor" href="#preface-changes-from3">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>オンライン版のハンドブックは、FreeBSD ドキュメンテーションプロジェクトの献身的なメンバーによる 10 年以上に渡る作業の頂点に立つものです。
+2004 年に出版された 2 巻組の第 3 版からの主な変更は、次のようなものです。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Windows® アプリケーションを FreeBSD 上で実行するための WINE に関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>強力なパフォーマンス解析ツール DTrace に関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ファイルシステム対応の章が追加されました。 Sun™ の ZFS のような FreeBSD ネイティブではないファイルシステムへの対応について説明しています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>セキュリティ監査の章が追加されました。 FreeBSD における新しい監査のケイパビリティおよびその使用方法について説明しています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>仮想化の章が追加されました。os; を仮想化ソフトへインストールする方法などを取り上げています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>新しいインストールユーティリティの bsdinstall を用いた FreeBSD のインストール方法を説明する &lt;a href="../bsdinstall/#bsdinstall">FreeBSD のインストール&lt;/a> という章が追加されました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface-changes-from2">第 2 版 (2004) からの変更&lt;a class="anchor" href="#preface-changes-from2">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>第 3 版は、FreeBSD ドキュメンテーションプロジェクトの献身的なメンバーによる 2 年以上に渡る作業の頂点に立つものです。
+サイズが大きくなったため、印刷版は、2 巻での出版となりました。
+この新たな版における主な変更は、次のようなものです。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="../config/#config-tuning">設定とチューニング&lt;/a> に、ACPI 電源管理、&lt;code>cron&lt;/code> システムユーティリティ、 およびカーネルチューニングオプションに関するより多くの情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../security/#security">セキュリティ&lt;/a> に、 Virtual Private Network (VPN)、 ファイルシステムアクセスコントロールリスト (ACL)、 およびセキュリティ勧告に関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mandatory Access Control (MAC) の章がこの版で追加されました。 MAC がどのようなもので、 このメカニズムがどのように FreeBSD システムを安全にするかについて説明しています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../disks/#disks">ストレージ&lt;/a> に、 USB ストレージデバイス、ファイルシステムスナップショット、 ファイルシステムクォータ、 ファイルおよびネットワークベースのファイルシステム、 暗号化されたディスクパーティションに関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../ppp-and-slip/#ppp-and-slip">PPP と SLIP&lt;/a> に、 トラブルシューティングの節が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../mail/#mail">電子メール&lt;/a>, に、 他のメール転送エージェント、SMTP 認証、UUCP, fetchmail, procmail や他の高度な話題についての情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ネットワークサービスの章が、この版で新しく追加されました。 この章では、Apache HTTP サーバ、 fptd および Samba を用いて Microsoft® Windows® クライアント用にサーバを設定する方法などを取り上げています。 再構成によりいくつかの節が、&lt;a href="../advanced-networking/#advanced-networking">高度なネットワーク&lt;/a> から移動してきました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../advanced-networking/#advanced-networking">高度なネットワーク&lt;/a> に、 FreeBSD での Bluetooth® デバイスの使用、 ワイヤレスネットワークの設定、 Asynchronous Transfer Mode (ATM) ネットワークに関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本書で使われている専門用語の定義をまとめた用語集が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本書を通じて表および図の表現において数多くの改良がおこなわれました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

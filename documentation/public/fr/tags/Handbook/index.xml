@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Handbook on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/fr/tags/Handbook/</link><description>Recent content in Handbook on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>fr</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/fr/tags/Handbook/index.xml" rel="self" type="application/rss+xml"/><item><title>Manuel FreeBSD</title><link>http://172.16.201.134:1313/fr/books/handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/fr/books/handbook/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Résumé&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Bienvenue à FreeBSD! Ce manuel décrit l’installation et l’utilisation quotidienne de &lt;em>FreeBSD 13.1-RELEASE&lt;/em>, et &lt;em>FreeBSD 12.3-RELEASE&lt;/em>.
+Ce document est le résultat du travail toujours en cours de nombreuses personnes.
+Certaines sections peuvent ne pas être à jour.
+Les personnes qui sont intéressées pour aider à mettre à jour et à compléter ce document devraient envoyer un courrier électronique à la &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">liste de diffusion du groupe de documentation de FreeBSD&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

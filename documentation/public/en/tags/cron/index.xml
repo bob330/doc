@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cron on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/cron/</link><description>Recent content in Cron on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/cron/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 14. Configuration, Services, Logging and Power Management</title><link>http://172.16.201.134:1313/en/books/handbook/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/config/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="config-synopsis">14.1. Synopsis&lt;a class="anchor" href="#config-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>One of the important aspects of FreeBSD is proper system configuration.
+This chapter explains much of the FreeBSD configuration process, including some of the parameters which can be set to tune a FreeBSD system.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Before reading this chapter, you should:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Understand UNIX® and FreeBSD basics (&lt;a href="../basics/#basics">FreeBSD Basics&lt;/a>).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>How to use the various configuration files in &lt;span class="filename">/etc&lt;/span>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The basics of &lt;span class="filename">rc.conf&lt;/span> configuration and &lt;span class="filename">/usr/local/etc/rc.d&lt;/span> startup scripts.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to tune FreeBSD using &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;amp;sektion=8&amp;amp;format=html">sysctl(8)&lt;/a> variables.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure the power management in FreeBSD.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

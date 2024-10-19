@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mirroring on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Mirroring/</link><description>Recent content in Mirroring on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Mirroring/index.xml" rel="self" type="application/rss+xml"/><item><title>Crear réplicas de FreeBSD</title><link>http://172.16.201.134:1313/es/articles/hubs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/hubs/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Un artículo en progreso sobre cómo crear una replica de FreeBSD, destinado a los administradores de hub.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>No aceptamos nuevas réplicas en este momento.&lt;/p>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="mirror-contact">1. Información de contacto&lt;a class="anchor" href="#mirror-contact">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Se puede contactar con los Coordinadores del Sistema de Réplicas en el email &lt;a href="mailto:mirror-admin@FreeBSD.org">mirror-admin@FreeBSD.org&lt;/a>. También existe &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-hubs">Lista de correo de las réplicas de FreeBSD&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="mirror-requirements">2. Requisitos para las réplicas de FreeBSD&lt;a class="anchor" href="#mirror-requirements">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="mirror-diskspace">2.1. Espacio en disco&lt;a class="anchor" href="#mirror-diskspace">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>El espacio en disco es uno de los requisitos más importantes. Dependiendo del conjunto de releases, arquitecturas y cómo de completas quieres que sean tus réplicas, se podría consumir una enorme cantidad de espacio en disco. Ten en cuenta también que para las réplicas &lt;em>oficiales&lt;/em> se podría requerir que fueran completos. Las páginas web se tienen que duplicar en la réplica de forma completa. También ten en cuenta que los números utilizados aquí reflejan el estado actual (en 12.0-RELEASE/11.3-RELEASE). Desarrollos posteriores y releases sólo pueden incrementar las cantidades requeridas. Asegúrate también de tener algo (un 10-20%) de espacio extra para estar seguro. Aquí hay algunos números aproximados:&lt;/p>
+&lt;/div></description></item></channel></rss>

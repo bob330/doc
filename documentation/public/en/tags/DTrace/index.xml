@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DTrace on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/DTrace/</link><description>Recent content in DTrace on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/DTrace/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 27. DTrace</title><link>http://172.16.201.134:1313/en/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="dtrace-synopsis">27.1. Synopsis&lt;a class="anchor" href="#dtrace-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>DTrace, also known as Dynamic Tracing, was developed by Sun™ as a tool for locating performance bottlenecks in production and pre-production systems.
+In addition to diagnosing performance problems, DTrace can be used to help investigate and debug unexpected behavior in both the FreeBSD kernel and in userland programs.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DTrace is a remarkable profiling tool, with an impressive array of features for diagnosing system issues.
+It may also be used to run pre-written scripts to take advantage of its capabilities.
+Users can author their own utilities using the DTrace D Language, allowing them to customize their profiling based on specific needs.&lt;/p>
+&lt;/div></description></item></channel></rss>

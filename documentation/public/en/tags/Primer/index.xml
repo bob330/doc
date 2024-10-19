@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Primer on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Primer/</link><description>Recent content in Primer on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Primer/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 6. Asciidoctor Primer</title><link>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Most FDP documentation is written with AsciiDoc.
+This chapter explains what that means, how to read and understand the documentation source, and the techniques used.
+To get a complete reference of the Asciidoctor capabilities please consult the &lt;a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation&lt;/a>.
+Some of the examples used in this chapter have been taken from the &lt;a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference">AsciiDoc Syntax Quick Reference&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="asciidoctor-primer-overview">6.1. Overview&lt;a class="anchor" href="#asciidoctor-primer-overview">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>In the original days of computers, electronic text was simple.
+There were a few character sets like ASCII or EBCDIC, but that was about it.
+Text was text, and what you saw really was what you got.
+No frills, no formatting, no intelligence.&lt;/p>
+&lt;/div></description></item></channel></rss>

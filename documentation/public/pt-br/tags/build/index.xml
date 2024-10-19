@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Build on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/build/</link><description>Recent content in Build on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/build/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 5. Processo de Compilação da Documentação do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/doc-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/doc-build/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Este capítulo cobre a organização do processo de compilação da documentação e como o &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=make&amp;amp;sektion=1&amp;amp;format=html">make(1)&lt;/a> é usado para controlá-lo.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="doc-build-rendering">5.1. Renderizando AsciiDoc&lt;a class="anchor" href="#doc-build-rendering">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Diferentes tipos de formato podem ser gerados a partir de um único arquivo AsciiDoc.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-none grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Formatos&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Tipo de Arquivo&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Descrição&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>html&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">HTML&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Um capítulo de &lt;code>artigo&lt;/code> ou &lt;code>livro&lt;/code>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>pdf&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">PDF&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Portable Document Format.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>epub&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">EPUB&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Electronic Publication.
+ePub file format.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect2">
+&lt;h3 id="doc-build-rendering-html">5.1.1. Renderizando em html&lt;a class="anchor" href="#doc-build-rendering-html">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>Para renderizar a documentação e o site em &lt;code>html&lt;/code>, use um dos seguintes exemplos.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OTG on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/OTG/</link><description>Recent content in OTG on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/OTG/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 28. USB Device Mode / USB OTG</title><link>http://172.16.201.134:1313/en/books/handbook/usb-device-mode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/usb-device-mode/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="usb-device-mode-synopsis">28.1. Synopsis&lt;a class="anchor" href="#usb-device-mode-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter covers the use of USB Device Mode and USB On The Go (USB OTG) in FreeBSD.
+This includes virtual serial consoles, virtual network interfaces, and virtual USB drives.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>When running on hardware that supports USB device mode or USB OTG, like that built into many embedded boards, the FreeBSD USB stack can run in &lt;em>device mode&lt;/em>.
+Device mode makes it possible for the computer to present itself as different kinds of USB device classes, including serial ports, network adapters, and mass storage, or a combination thereof.
+A USB host like a laptop or desktop computer is able to access them just like physical USB devices.
+Device mode is sometimes called the &amp;#34;USB gadget mode&amp;#34;.&lt;/p>
+&lt;/div></description></item></channel></rss>

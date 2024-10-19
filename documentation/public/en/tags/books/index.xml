@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Books on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/books/</link><description>Recent content in Books on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/books/index.xml" rel="self" type="application/rss+xml"/><item><title>Appendix B. Bibliography</title><link>http://172.16.201.134:1313/en/books/handbook/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/bibliography/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>While manual pages provide a definitive reference for individual pieces of the FreeBSD operating system, they seldom illustrate how to put the pieces together to make the whole operating system run smoothly.
+For this, there is no substitute for a good book or users&amp;#39; manual on UNIX® system administration.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bibliography-freebsd">B.1. FreeBSD Bibliography&lt;a class="anchor" href="#bibliography-freebsd">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Absolute FreeBSD: The Complete Guide To FreeBSD&lt;/strong>, Third Edition, published by &lt;a href="https://nostarch.com/absfreebsd3">No Starch Press&lt;/a>, 2018. ISBN: 978-1593278922&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Storage Essentials&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/freebsd-mastery-storage-essentials/">Tilted Windmill Press&lt;/a>, 2014. ISBN: 978-1642350098&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Specialty Filesystems&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmspf/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350111&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmzfs/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350005&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Advanced ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmaz/">Tilted Windmill Press&lt;/a>, 2016. ISBN: 978-0692688687&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Jails&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmjail/">Tilted Windmill Press&lt;/a>, 2019. ISBN: 978-1642350241&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Device Drivers: A Guide for the Intrepid&lt;/strong>, published by &lt;a href="https://nostarch.com/bsddrivers.htm">No Starch Press&lt;/a>, 2012. ISBN: 978-1593272043&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>The Design And Implementation Of The Freebsd Operating System&lt;/strong>, Second Edition, published by &lt;a href="https://www.pearson.com/store/p/design-and-implementation-of-the-freebsd-operating-system-the/P200000000463/9780321968975">Pearson Education, Inc.&lt;/a>, 2014. ISBN: 978-0321968975&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>UNIX and Linux System Administration Handbook&lt;/strong>, Fifth Edition, published by &lt;a href="https://www.pearson.com/en-us/subject-catalog/p/unix-and-linux-system-administration-handbook/P200000000513/9780137460359">Pearson Education, Inc.&lt;/a>, 2017. ISBN: 978-0134277554&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Designing BSD Rootkits&lt;/strong>, published by &lt;a href="https://nostarch.com/rootkits.htm">No Starch Press&lt;/a>, 2007. ISBN: 978-1593271428&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Jails using VNETs&lt;/strong>, published in &lt;a href="https://rderik.gumroad.com/l/uwOLZ">gumroad&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

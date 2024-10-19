@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mentee on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/mentee/</link><description>Recent content in Mentee on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/mentee/index.xml" rel="self" type="application/rss+xml"/><item><title>Port Mentor Guidelines</title><link>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="port-mentor.guidelines">1. Guideline for Mentor/Mentee Relationships&lt;a class="anchor" href="#port-mentor.guidelines">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This section is intended to help demystify the mentoring process, as well as a way to openly promote a constructive discussion to adapt and grow the guidelines.
+In our lives we have too many rules; we are not a government organization that inflicts regulation, but rather a collective of like minded individuals working toward a common goal, maintaining the quality assurance of the product we call the Ports Tree.&lt;/p>
+&lt;/div></description></item></channel></rss>

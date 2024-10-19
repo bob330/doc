@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPsec on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/IPsec/</link><description>Recent content in IPsec on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/IPsec/index.xml" rel="self" type="application/rss+xml"/><item><title>Verificación independiente de la funcionalidad de IPsec en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/ipsec-must/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Has intalado IPsec y parece estar funcionando. ¿Cómo lo sabes? Describo un método para verificar de forma experimental que IPsec está funcionando.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="problem">1. El Problema&lt;a class="anchor" href="#problem">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Primero, asumamos que has &lt;a href="#ipsec-install">Instalando IPsec&lt;/a>. ¿Cómo sabes que está funcionando? (&lt;a href="#caveat">Advertencia&lt;/a>) Claro, tu conexión no funcionará si está mal configurado y funcionará cuando finalmente lo hagas bien. &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=netstat&amp;amp;sektion=1&amp;amp;format=html">netstat(1)&lt;/a> lo mostrará. ¿Pero puedes confirmarlo de forma independiente?&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="solution">2. La Solución&lt;a class="anchor" href="#solution">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Primero, alguna información teórica relevante sobre criptografía:&lt;/p>
+&lt;/div></description></item></channel></rss>

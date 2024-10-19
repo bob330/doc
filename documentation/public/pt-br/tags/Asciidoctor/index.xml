@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AsciiDoctor on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/Asciidoctor/</link><description>Recent content in AsciiDoctor on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/Asciidoctor/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>A maioria das documentações do FDP é escrita em AsciiDoc. Este capítulo explica o que isso significa, como ler e entender o código da documentação e as técnicas usadas. Para obter uma referência completa dos recursos do Asciidoctor, consulte a &lt;a href="https://docs.asciidoctor.org/home/">documentação do Asciidoctor&lt;/a>. Alguns exemplos usados neste capítulo foram retirados da &lt;a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference">Referência rápida de sintaxe AsciiDoc&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="asciidoctor-primer-overview">6.1. Visão geral&lt;a class="anchor" href="#asciidoctor-primer-overview">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Nos primórdios da era computacional, o texto eletrônico era simples. Havia poucos conjuntos de caracteres como ASCII ou EBCDIC, e apenas isso. Texto era texto, e o que você lia era realmente o texto que você tinha. Sem frescuras, sem formatação, sem inteligência.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 14. Marcas Registradas</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/trademarks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/trademarks/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Para todos os documentos do Projeto de Documentação do FreeBSD, é necessário citar as marcas registradas e os outros tipos são habituais, e isso é um requisito para todo escritor e colaborador.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="trademark-symbols">14.1. Símbolos de Marca Registrada&lt;a class="anchor" href="#trademark-symbols">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Acrescente um símbolo de marca registrada (™, ® ou outros símbolos) na primeira ocorrência do nome da marca e sempre ao usar logotipos. Use a &lt;a href="https://docs.freebsd.org/pt-br/books/fdp-primer//writing-style/#writing-style-special-characters">sequência ASCII equivalente&lt;/a>, que será renderizada como o caractere Unicode real. Além disso, escreva o nome da marca registrada seguindo as diretrizes da marca registrada.&lt;/p>
+&lt;/div></description></item><item><title>Capítulo 15. Veja Também</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/see-also/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/see-also/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Este documento não é deliberadamente uma discussão exaustiva de AsciiDoc e o Projeto de Documentação do FreeBSD. Para mais informações sobre estes, você é encorajado a consultar os seguintes sites.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-fdp">15.1. O projeto de documentação do FreeBSD&lt;a class="anchor" href="#see-also-fdp">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.FreeBSD.org/docproj/">As Páginas Web do Projeto de Documentação do FreeBSD&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.freebsd.org/pt-br/books/handbook/book/">O Handbook do FreeBSD&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-hugo">15.2. Hugo&lt;a class="anchor" href="#see-also-hugo">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://gohugo.io/">Hugo&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://gohugo.io/documentation/">Documentação Hugo&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-asciidoc">15.3. AsciiDoctor&lt;a class="anchor" href="#see-also-asciidoc">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://asciidoctor.org/">AsciiDoctor&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.asciidoctor.org/">Portal de Documentação do AsciiDoctor&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-html">15.4. HTML&lt;a class="anchor" href="#see-also-html">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="http://www.w3.org/">O Consórcio World Wide Web&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://dev.w3.org/html5/spec-LC/">A especificação HTML 5&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.w3.org/Style/CSS/specs.en.html">A especificação CSS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sass-lang.com/">Sass&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Apêndice A. Exemplos</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/examples/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Estes exemplos não são extensos - eles não contêm todos os elementos que podem ser desejáveis de usar, particularmente em relação ao início dos documentos (Front Matter). Para mais exemplos de marcação AsciiDoctor, examine o código fonte em AsciiDoctor deste e de outros documentos disponíveis no repositório Git &lt;strong>doc&lt;/strong> ou no link &lt;a href="https://cgit.freebsd.org/doc/">https://cgit.freebsd.org/doc/&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="examples-asciidoctor-book">A.1. AsciiDoctor &lt;strong>book&lt;/strong>&lt;a class="anchor" href="#examples-asciidoctor-book">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="exampleblock">
+&lt;div class="title">Exemplo 1. AsciiDoctor &lt;strong>book&lt;/strong>&lt;/div>
+&lt;div class="content">
+&lt;div class="literalblock programlisting">
+&lt;div class="content">
+&lt;pre>---
+title: Um Livro de Exemplo
+authors:
+ - author: The FreeBSD Documentation Project
+copyright: 1995-2021 The FreeBSD Documentation Project
+releaseinfo: &amp;#34;&amp;#34;
+trademarks: [&amp;#34;general&amp;#34;]
+---
+
+= Um Livro de Exemplo
+:doctype: book
+:toc: macro
+:toclevels: 2
+:icons: font
+:xrefstyle: basic
+:relfileprefix: ../
+:outfilesuffix:
+:sectnums:
+:sectnumlevels: 6
+:partnums:
+:chapter-signifier: Chapter
+:part-signifier: Part
+:source-highlighter: rouge
+:experimental:
+:skip-front-matter:
+:book: true
+:pdf: false
+
+:chapters-path: content/en/books/bookname/
+
+
+
+[abstract]
+Abstract
+
+Abstract section
+
+&amp;#39;&amp;#39;&amp;#39;
+
+toc::[]
+
+:sectnums!:
+
+include::{chapters-path}preface/_index.adoc[leveloffset=+1]
+
+:sectnums:
+
+include::{chapters-path}parti.adoc[lines=7..18]
+
+include::{chapters-path}chapter-name/_index.adoc[leveloffset=+1]&lt;/pre>
+&lt;/div></description></item></channel></rss>

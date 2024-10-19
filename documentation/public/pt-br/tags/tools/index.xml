@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/tools/</link><description>Recent content in Tools on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 2. Ferramentas</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/tools/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Várias ferramentas são utilizadas para gerenciar a documentação do FreeBSD e renderizá-la para diferentes formatos. Algumas dessas ferramentas são necessárias e devem ser instaladas antes de trabalhar com os exemplos nos capítulos a seguir. Algumas são opcionais, adicionando recursos ou tornando a tarefa de criar documentação mais simples.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="tools-required">2.1. Ferramentas Obrigatórias&lt;a class="anchor" href="#tools-required">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Instale o &lt;em>meta-port&lt;/em> &lt;code>docproj&lt;/code> como mostrado no &lt;a href="../overview/#overview">capítulo de introdução&lt;/a> da coleção de Ports. Estes pacotes são necessários para trabalhar com a documentação do FreeBSD. Informações adicionais específicas de alguns componentes serão informadas abaixo.&lt;/p>
+&lt;/div></description></item></channel></rss>

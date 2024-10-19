@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Intel on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ru/tags/Intel/</link><description>Recent content in Intel on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ru</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ru/tags/Intel/index.xml" rel="self" type="application/rss+xml"/><item><title>Глава 6. Wayland</title><link>http://172.16.201.134:1313/ru/books/handbook/wayland/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ru/books/handbook/wayland/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="wayland-synopsis">6.1. Общие сведения о Wayland&lt;a class="anchor" href="#wayland-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Wayland представляет собой новый сервер дисплеев, однако он отличается от Xorg в нескольких важных аспектах.
+Во-первых, Wayland является всего лишь протоколом, который выступает в качестве промежуточного слоя между клиентами и использует для этого альтернативный механизм, исключающий зависимость от X-сервера.
+Xorg включает как протокол X11, используемый для управления удалёнными дисплеями, так и X-сервер, который будет принимать соединения и отображать окна.
+В случае Wayland композитный менеджер или оконный менеджер вместо традиционного X-сервера предоставляет сервер дисплея.&lt;/p>
+&lt;/div></description></item></channel></rss>

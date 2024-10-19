@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Localization on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Localization/</link><description>Recent content in Localization on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Localization/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 4. Localization and Internationalization - L10N and I18N</title><link>http://172.16.201.134:1313/en/books/developers-handbook/l10n/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/l10n/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="l10n-programming">4.1. Programming I18N Compliant Applications&lt;a class="anchor" href="#l10n-programming">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>To make your application more useful for speakers of other languages, we hope that you will program I18N compliant.
+The GNU gcc compiler and GUI libraries like QT and GTK support I18N through special handling of strings.
+Making a program I18N compliant is very easy.
+It allows contributors to port your application to other languages quickly.
+Refer to the library specific I18N documentation for more details.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 25. Localization - i18n/L10n Usage and Setup</title><link>http://172.16.201.134:1313/en/books/handbook/l10n/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/l10n/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="l10n-synopsis">25.1. Synopsis&lt;a class="anchor" href="#l10n-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD is a distributed project with users and contributors located all over the world.
+As such, FreeBSD supports localization into many languages, allowing users to view, input, or process data in non-English languages.
+One can choose from most of the major languages, including, but not limited to: Chinese, German, Japanese, Korean, French, Russian, and Vietnamese.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The term internationalization has been shortened to i18n, which represents the number of letters between the first and the last letters of &lt;code>internationalization&lt;/code>.
+L10n uses the same naming scheme, but from &lt;code>localization&lt;/code>.
+The i18n/L10n methods, protocols, and applications allow users to use languages of their choice.&lt;/p>
+&lt;/div></description></item></channel></rss>

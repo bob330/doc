@@ -1,0 +1,156 @@
+<!doctype html><html class=theme-light lang=es><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Verificación independiente de la funcionalidad de IPsec en FreeBSD"><meta name=keywords content="IPsec,verification,FreeBSD"><meta name=copyright content="1995-2024 The FreeBSD Foundation"><link rel=canonical href=http://172.16.201.134:1313/es/articles/ipsec-must/><title>Verificación independiente de la funcionalidad de IPsec en FreeBSD | Portal de documentación de FreeBSD</title>
+<meta name=theme-color content="#790000"><meta name=color-scheme content="system light dark high-contrast"><link rel="shortcut icon" href=http://172.16.201.134:1313/favicon.ico><link rel=stylesheet href=http://172.16.201.134:1313/styles/main.min.css><link rel=stylesheet href=http://172.16.201.134:1313/css/font-awesome-min.css><script defer src=/js/theme-chooser.min.js></script><script defer src=/js/copy-clipboard.min.js></script><script defer src=/js/search.min.js></script><meta name=twitter:card content="summary"><meta name=twitter:domain content="docs.FreeBSD.org"><meta name=twitter:site content="@freebsd"><meta name=twitter:url content="https://twitter.com/freebsd"><meta property="og:title" content="Verificación independiente de la funcionalidad de IPsec en FreeBSD"><meta property="og:description" content="Verificación independiente de la funcionalidad de IPsec en FreeBSD"><meta property="og:type" content="website"><meta property="og:image" content="http://172.16.201.134:1313/favicon.ico"><meta property="og:image:alt" content="FreeBSD Logo"><meta property="og:locale" content="es"><meta property="og:url" content="http://172.16.201.134:1313/es/articles/ipsec-must/"><meta property="og:site_name" content="Portal de documentación de FreeBSD"><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","url":"http:\/\/172.16.201.134:1313\/es\/articles\/ipsec-must\/","name":"Portal de documentación de FreeBSD","headline":"Portal de documentación de FreeBSD","description":"FreeBSD Documentation Portal"}</script></head><body><header><div class=header-container><div class=logo-menu-bars-container><a href=https://www.FreeBSD.org class=logo><img src=http://172.16.201.134:1313/images/FreeBSD-monochromatic.svg width=160 height=50 alt="FreeBSD logo">
+</a><label class=menu-bars for=menu-bars><i class="fa fa-bars" aria-hidden=true></i></label></div><input id=menu-bars type=checkbox><nav><ul class=menu><li class=menu-item><input id=about type=checkbox>
+<a href=# aria-label="Navigate to About section"><label class=menu-item-description for=about>About
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/about/ target=_blank>About</a></li><li><a href=https://www.freebsd.org/about/ target=_blank>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/about-us/about-the-foundation/ target=_blank>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct/ target=_blank>Code of Conduct</a></li></ul></li><li class=menu-item><input id=download type=checkbox>
+<a href=# aria-label="Navigate to get FreeBSD section"><label class=menu-item-description for=download>Get FreeBSD
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/where/ target=_blank>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/releases/ target=_blank>Release Information</a></li><li><a href=https://www.freebsd.org/releng/ target=_blank>Release Engineering</a></li><li><a href=https://www.freebsd.org/security/ target=_blank>Security Advisories</a></li></ul></li><li class=menu-item><input id=documentation type=checkbox>
+<a href=# aria-label="Navigate to get Documentation section"><label class=menu-item-description for=documentation>Documentation
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=/es>Documentation portal</a></li><li><a href=http://172.16.201.134:1313/es/books/handbook>FreeBSD Handbook</a></li><li><a href=http://172.16.201.134:1313/es/books/porters-handbook>Porter's Handbook</a></li><li><a href=https://docs.FreeBSD.org/en/books/fdp-primer>Documentation Project Handbook</a></li><li><a href=https://man.FreeBSD.org target=_blank>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank>Presentations and papers</a></li><li><a href=https://wiki.FreeBSD.org target=_blank>Wiki</a></li><li><a href=http://172.16.201.134:1313/es/books>Books</a></li><li><a href=http://172.16.201.134:1313/es/articles>Articles</a></li></ul></li><li class=menu-item><input id=community type=checkbox>
+<a href=# aria-label="Navigate to get Community section"><label class=menu-item-description for=community>Community
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/community/>Community</a></li><li><a href=http://172.16.201.134:1313/es/articles/contributing>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank>Forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank>Bug Tracker</a></li><li><a href=https://www.freebsd.org/support/ target=_blank>Support</a></li></ul></li></ul></nav><div class=search-donate-container><form class=search method=get id=search-header-form action=https://docs.freebsd.org/search name=search-header-form><input type=hidden name=DB value=es>
+<input id=words name=P type=text size=20 maxlength=255>
+<button>
+<i class="fa fa-search" aria-hidden=true></i></button></form><div class=donate><a href=https://freebsdfoundation.org/donate/ target=_blank><span class=heart>♥</span>
+Donate</a></div></div></div></header><main class=main-wrapper-article><div class=article><h1 class=title>Verificación independiente de la funcionalidad de IPsec en FreeBSD</h1><div class="admonitionblock note"><p><i class="fa fa-exclamation-circle" aria-hidden=true></i>
+This translation may be out of date. To help with the translations please access the <a href=https://translate-dev.freebsd.org/ target=_blank>FreeBSD translations instance</a>.</p></div><div class=legalnotice><a id=trademarks></a><details><summary>Marcas registradas</summary><p>FreeBSD es una marca registrada de la Fundación FreeBSD</p><p>Motif, OSF/1, y UNIX son marcas registradas y IT DialTone y The Open Group son marcas comerciales de The Open Group en los Estados Unidos de América y otros países.</p><p>Muchos de los nombres usados por los fabricantes y vendedores para diferenciar sus productos son designados como marcas comerciales. Allí donde estos nombres aparezcan en este documento y el Proyecto FreeBSD fuera consciente de la alegación de marca comercial, los nombres tienen a continuación el símbolo “™” o “®”.</p></details></div><div class=toc-mobile><h3>Tabla de contenidos</h3><nav id=TableOfContents><ul><li><a href=#problem>1. El Problema</a></li><li><a href=#solution>2. La Solución</a></li><li><a href=#experiment>3. El Experimento</a></li><li><a href=#caveat>4. Advertencia</a></li><li><a href=#IPsec>5. IPsec---Definición</a></li><li><a href=#ipsec-install>6. Instalando IPsec</a></li><li><a href=#kernel>7. src/sys/i386/conf/KERNELNAME</a></li><li><a href=#code>8. Maurer’s Universal Statistical Test (tamaño de bloque=8 bits)</a></li></ul></nav></div><div id=preamble><div class=sectionbody><div class="paragraph abstract-title"><p>Resumen</p></div><div class=paragraph><p>Has intalado IPsec y parece estar funcionando. ¿Cómo lo sabes? Describo un método para verificar de forma experimental que IPsec está funcionando.</p></div><hr></div></div><div class=sect1><h2 id=problem>1. El Problema<a class=anchor href=#problem></a></h2><div class=sectionbody><div class=paragraph><p>Primero, asumamos que has <a href=#ipsec-install>Instalando IPsec</a>. ¿Cómo sabes que está funcionando? (<a href=#caveat>Advertencia</a>) Claro, tu conexión no funcionará si está mal configurado y funcionará cuando finalmente lo hagas bien. <a href="https://man.freebsd.org/cgi/man.cgi?query=netstat&amp;sektion=1&amp;format=html">netstat(1)</a> lo mostrará. ¿Pero puedes confirmarlo de forma independiente?</p></div></div></div><div class=sect1><h2 id=solution>2. La Solución<a class=anchor href=#solution></a></h2><div class=sectionbody><div class=paragraph><p>Primero, alguna información teórica relevante sobre criptografía:</p></div><div class="olist arabic"><ol class=arabic><li><p>Los datos cifrados se distribuyen uniformemente, es decir, tienen una entropía máxima por símbolo;</p></li><li><p>Los datos sin procesar y sin comprimir suelen ser redundantes, es decir, tienen una entropía submáxima.</p></li></ol></div><div class=paragraph><p>Imagina que pudieras medir la entropía de los datos que van hacia -y desde- tu interfaz de red. Entonces podrías ver la diferencia entre los datos no cifrados y los cifrados. Esto sería verdad incluso si algunos de los datos en "modo cifrado" no lo estuvieran---ya que el encabezado IP más externo debe estarlo para que el paquete sea enrutable.</p></div><div class=sect2><h3 id=MUST>2.1. MUST<a class=anchor href=#MUST></a></h3><div class=paragraph><p>Ueli Maurer’s "Universal Statistical Test for Random Bit Generators"(<a href=https://web.archive.org/web/20011115002319/http://www.geocities.com/SiliconValley/Code/4704/universal.pdf>MUST</a>) calcula rápidamente la entropía de una muestra. Utiliza un algoritmo de tipo compresión. <a href=#code>Maurer’s Universal Statistical Test (tamaño de bloque=8 bits)</a> para una variante que mide trozos sucesivos (~ un cuarto de megabyte) de un fichero.</p></div></div><div class=sect2><h3 id=tcpdump>2.2. Tcpdump<a class=anchor href=#tcpdump></a></h3><div class=paragraph><p>También necesitamos una forma de capturar datos de red en crudo. Un programa llamado <a href="https://man.freebsd.org/cgi/man.cgi?query=tcpdump&amp;sektion=1&amp;format=html">tcpdump(1)</a> te permite hacer esto si tienes configurado el interfaz <em>Berkeley Packet Filger</em> en tu <a href=#kernel>src/sys/i386/conf/KERNELNAME</a>.</p></div><div class=paragraph><p>El comando:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell> tcpdump <span class=nt>-c</span> 4000 <span class=nt>-s</span> 10000 <span class=nt>-w</span> dumpfile.bin</code></pre></div></div><div class=paragraph><p>capturará 4000 paquetes en crudo y los guardará en <em>dumpfile.bin</em>. Se capturarán hasta 10,000 bytes por cada paquete en este ejemplo.</p></div></div></div></div><div class=sect1><h2 id=experiment>3. El Experimento<a class=anchor href=#experiment></a></h2><div class=sectionbody><div class=paragraph><p>Aquí está el experimento:</p></div><div class="exampleblock procedure"><div class=content><div class="olist arabic"><ol class=arabic><li><p>Abre una ventana a un host IPsec y otra ventana a un host inseguro.</p></li><li><p>Ahora arranca <a href=#tcpdump>Tcpdump</a>.</p></li><li><p>En la ventana "segura", arranca el comando UNIX® <a href="https://man.freebsd.org/cgi/man.cgi?query=yes&amp;sektion=1&amp;format=html">yes(1)</a>, que mostrará continuamente el carácter <code>y</code>. Después de un rato, páralo. Cambia a la ventana insegura y ejecútalo de nuevo. Después de un rato, páralo.</p></li><li><p>Ahora ejecuta <a href=#code>Maurer’s Universal Statistical Test (tamaño de bloque=8 bits)</a> en los paquetes capturados. Deberías ver algo como lo que se muestra a continuación. El punto importante en que fijarse es que la conexión segura tiene un 93% (6.7) de los valores esperados (7.18) y que la conexión "normal" tiene un 29% (2.1) de los valores esperados.</p><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell>% tcpdump <span class=nt>-c</span> 4000 <span class=nt>-s</span> 10000 <span class=nt>-w</span> ipsecdemo.bin
+% uliscan ipsecdemo.bin
+Uliscan 21 Dec 98
+<span class=nv>L</span><span class=o>=</span>8 256 258560
+Measuring file ipsecdemo.bin
+Init <span class=k>done
+</span>Expected value <span class=k>for </span><span class=nv>L</span><span class=o>=</span>8 is 7.1836656
+6.9396 <span class=nt>--------------------------------------------------------</span>
+6.6177 <span class=nt>-----------------------------------------------------</span>
+6.4100 <span class=nt>---------------------------------------------------</span>
+2.1101 <span class=nt>-----------------</span>
+2.0838 <span class=nt>-----------------</span>
+2.0983 <span class=nt>-----------------</span></code></pre></div></div></li></ol></div></div></div></div></div><div class=sect1><h2 id=caveat>4. Advertencia<a class=anchor href=#caveat></a></h2><div class=sectionbody><div class=paragraph><p>Este experimento muestra que IPsec <em>parece</em> estar distribuyendo los datos de la carga útil <em>uniformemente</em>, como debe hacerlo el cifrado. Sin embargo, el experimento aquí descrito <em>no puede</em> detectar muchas de las posibles fallos del sistema (para los cuales no tengo evidencias). Esto incluye la generación o intercambio de claves deficientes, datos o claves visibles para otros, uso de algoritmos débiles, subversión del kernel, etc. Estudia el código; conoce el código.</p></div></div></div><div class=sect1><h2 id=IPsec>5. IPsec---Definición<a class=anchor href=#IPsec></a></h2><div class=sectionbody><div class=paragraph><p>Extensiones de seguridad del Protocolo de Internet para IPv4; requerido para IPv6. Un protocolo para negociar el cifrado y la autenticación a nivel de IP (host a host). SSL solo protege un socket de aplicación. SSH protege solo el login. PGP protege un archivo o mensaje específico. IPsec encripta todo entre dos hosts.</p></div></div></div><div class=sect1><h2 id=ipsec-install>6. Instalando IPsec<a class=anchor href=#ipsec-install></a></h2><div class=sectionbody><div class=paragraph><p>La mayoría de las versiones modernas de FreeBSD tienen soporte para IPsec en su código fuente. Así que tendrás que incluir la opción <code>IPSEC</code> en la configuración del kernel y después de recompilar y reinstalar, configurar conexiones IPsec utilizando el comando <a href="https://man.freebsd.org/cgi/man.cgi?query=setkey&amp;sektion=8&amp;format=html">setkey(8)</a>.</p></div><div class=paragraph><p>En el <a href=https://docs.freebsd.org/es/books/handbook/#ipsec>FreeBSD Handbook</a> se proporciona una guía completa sobre cómo ejecutar IPsec en FreeBSD.</p></div></div></div><div class=sect1><h2 id=kernel>7. src/sys/i386/conf/KERNELNAME<a class=anchor href=#kernel></a></h2><div class=sectionbody><div class=paragraph><p>Esto necesita estar en el fichero de configuración del kernel para poder capturar datos de red con <a href="https://man.freebsd.org/cgi/man.cgi?query=tcpdump&amp;sektion=1&amp;format=html">tcpdump(1)</a>. Asegúrate de ejecutar <a href="https://man.freebsd.org/cgi/man.cgi?query=config&amp;sektion=8&amp;format=html">config(8)</a> después de añadir esto y recompilar y reinstalar.</p></div><div class="literalblock programlisting"><div class=content><pre>device	bpf</pre></div></div></div></div><div class=sect1><h2 id=code>8. Maurer’s Universal Statistical Test (tamaño de bloque=8 bits)<a class=anchor href=#code></a></h2><div class=sectionbody><div class=paragraph><p>Puedes encontrar el mismo código en <a href=https://web.archive.org/web/20031204230654/http://www.geocities.com:80/SiliconValley/Code/4704/uliscanc.txt>este enlace</a>.</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+  ULISCAN.c   ---blocksize of 8
+
+  1 Oct 98
+  1 Dec 98
+  21 Dec 98       uliscan.c derived from ueli8.c
+
+  En esta versión se han quitado // comentarios por el cc de Sun
+
+  This implements Ueli M Maurer&#39;s &#34;Universal Statistical Test for Random
+  Bit Generators&#34; using L=8
+
+  Accepts a filename on the command line; writes its results, with other
+  info, to stdout.
+
+  Handles input file exhaustion gracefully.
+
+  Ref: J. Cryptology v 5 no 2, 1992 pp 89-105
+  also on the web somewhere, which is where I found it.
+
+  -David Honig
+  honig@sprynet.com
+
+  Usage:
+  ULISCAN filename
+  outputs to stdout
+*/
+
+#define L 8
+#define V (1&lt;&lt;L)
+#define Q (10*V)
+#define K (100   *Q)
+#define MAXSAMP (Q + K)
+
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(argc, argv)
+int argc;
+char **argv;
+{
+  FILE *fptr;
+  int i,j;
+  int b, c;
+  int table[V];
+  double sum = 0.0;
+  int iproduct = 1;
+  int run;
+
+  extern double   log(/* double x */);
+
+  printf(&#34;Uliscan 21 Dec 98 \nL=%d %d %d \n&#34;, L, V, MAXSAMP);
+
+  if (argc &lt; 2) {
+    printf(&#34;Usage: Uliscan filename\n&#34;);
+    exit(-1);
+  } else {
+    printf(&#34;Measuring file %s\n&#34;, argv[1]);
+  }
+
+  fptr = fopen(argv[1],&#34;rb&#34;);
+
+  if (fptr == NULL) {
+    printf(&#34;Can&#39;t find %s\n&#34;, argv[1]);
+    exit(-1);
+  }
+
+  for (i = 0; i &lt; V; i++) {
+    table[i] = 0;
+  }
+
+  for (i = 0; i &lt; Q; i++) {
+    b = fgetc(fptr);
+    table[b] = i;
+  }
+
+  printf(&#34;Init done\n&#34;);
+
+  printf(&#34;Expected value for L=8 is 7.1836656\n&#34;);
+
+  run = 1;
+
+  while (run) {
+    sum = 0.0;
+    iproduct = 1;
+
+    if (run)
+      for (i = Q; run &amp;&amp; i &lt; Q + K; i++) {
+        j = i;
+        b = fgetc(fptr);
+
+        if (b &lt; 0)
+          run = 0;
+
+        if (run) {
+          if (table[b] &gt; j)
+            j += K;
+
+          sum += log((double)(j-table[b]));
+
+          table[b] = i;
+        }
+      }
+
+    if (!run)
+      printf(&#34;Premature end of file; read %d blocks.\n&#34;, i - Q);
+
+    sum = (sum/((double)(i - Q))) /  log(2.0);
+    printf(&#34;%4.4f &#34;, sum);
+
+    for (i = 0; i &lt; (int)(sum*8.0 + 0.50); i++)
+      printf(&#34;-&#34;);
+
+    printf(&#34;\n&#34;);
+
+    /* refill initial table */
+    if (0) {
+      for (i = 0; i &lt; Q; i++) {
+        b = fgetc(fptr);
+        if (b &lt; 0) {
+          run = 0;
+        } else {
+          table[b] = i;
+        }
+      }
+    }
+  }
+}</pre></div></div></div></div><hr><div class=last-modified><p><strong>Last modified on</strong>: 8 de agosto de 2022 by <a href="https://cgit.freebsd.org/doc/commit/?id=d6c52283a7" target=_blank>Fernando Apesteguía</a></p></div></div><aside class=toc><div class=toc-content><h3>Tabla de contenidos</h3><nav id=TableOfContents><ul><li><a href=#problem>1. El Problema</a></li><li><a href=#solution>2. La Solución</a></li><li><a href=#experiment>3. El Experimento</a></li><li><a href=#caveat>4. Advertencia</a></li><li><a href=#IPsec>5. IPsec---Definición</a></li><li><a href=#ipsec-install>6. Instalando IPsec</a></li><li><a href=#kernel>7. src/sys/i386/conf/KERNELNAME</a></li><li><a href=#code>8. Maurer’s Universal Statistical Test (tamaño de bloque=8 bits)</a></li></ul></nav><hr><div class=resources><h3>Recursos</h3><ul class=contents><li><i class="fa fa-file-pdf-o" aria-hidden=true title="Descargar PDF"></i><a href=https://download.freebsd.org/doc/es/articles/ipsec-must/ipsec-must_es.pdf>Descargar PDF</a></li><li><i class="fa fa-pencil-square-o" aria-hidden=true title="Editar esta página"></i><a href=https://github.com/freebsd/freebsd-doc/blob/main/documentation/content/es/_index target=_blank>Editar esta página</a></li></ul></div></div></aside></main><footer><div class=footer-container><section class=logo-column><img src=http://172.16.201.134:1313/images/FreeBSD-colors.svg width=160 height=50 alt="FreeBSD logo"><div class=options-container><div class=language-container><a id=languages href=http://172.16.201.134:1313/es/languages><img src=http://172.16.201.134:1313/images/language.png class=language-image alt="Elegir idioma">
+<span>Spanish</span></a></div><div class=theme-container><select id=theme-chooser><option value=theme-system>System</option><option value=theme-light>Claro</option><option value=theme-dark>Oscuro</option><option value=theme-high-contrast>Alto contraste</option></select></div></div></section><section class=about-column><h3 class=column-title>About</h3><ul class=column-elements-container><li><a href=https://www.freebsd.org/about/ target=_blank class=column-element>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/ target=_blank class=column-element>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/where/ target=_blank class=column-element>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct target=_blank class=column-element>Code of Conduct</a></li><li><a href=https://www.freebsd.org/security/ target=_blank class=column-element>Security Advisories</a></li></ul></section><section class=documentation-column><h3 class=column-title>Documentation</h3><ul class=column-elements-container><li><a href=/es class=column-element>Documentation portal</a></li><li><a href=https://man.FreeBSD.org target=_blank class=column-element>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank class=column-element>Presentations and papers</a></li><li><a href=https://docs-archive.freebsd.org/doc/ target=_blank class=column-element>Previous versions</a></li><li><a href=https://docs-archive.freebsd.org/44doc/ target=_blank class=column-element>4.4BSD Documents</a></li><li><a href=https://wiki.freebsd.org/ target=_blank class=column-element>Wiki</a></li></ul></section><section class=community-column><h3 class=column-title>Community</h3><ul class=column-elements-container><li><a href=http://172.16.201.134:1313/es/articles/contributing class=column-element>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank class=column-element>Community forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank class=column-element>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank class=column-element>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank class=column-element>Bug Tracker</a></li></ul></section><section class=legal-column><h3 class=column-title>Legal</h3><ul class=column-elements-container><li><a href=https://freebsdfoundation.org/donate/ target=_blank class=column-element>Donations</a></li><li><a href=https://www.freebsd.org/copyright/freebsd-license/ target=_blank class=column-element>Licensing</a></li><li><a href=https://www.freebsd.org/privacy/ target=_blank class=column-element>Privacy Policy</a></li><li><a href=https://www.freebsd.org/copyright/ target=_blank class=column-element>Legal notices</a></li></ul></section><section class=copyright-column><p>&copy; 1994-2024 The FreeBSD Project. All rights reserved</p><span>Made with <span class=heart>♥</span> by the FreeBSD Community</span></section></div></footer></body></html>

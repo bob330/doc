@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devices on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/devices/</link><description>Recent content in Devices on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/devices/index.xml" rel="self" type="application/rss+xml"/><item><title>第3章 FreeBSD の基礎知識</title><link>http://172.16.201.134:1313/ja/books/handbook/basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/basics/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="basics-synopsis">3.1. この章では&lt;a class="anchor" href="#basics-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>この章では FreeBSD オペレーティングシステムの基本的なコマンドと機能について記述しています。
+ここに書かれてあることのほとんどは、どんな UNIX® -like なオペレーティングシステムにもあてはまります。
+FreeBSD の初心者であれば、この章を読んでおいた方がきっといいはずです。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章を読んで分かることは、次のようなことです。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>仮想コンソールの使い方と設定方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>FreeBSD システム上でユーザやグループを作成し管理する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>UNIX® のファイルの許可属性の仕組みと FreeBSD のファイルフラグについて&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>FreeBSD のファイルシステムの構成&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>FreeBSD のディスク構成&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ファイルシステムをマウント、アンマウントする方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>プロセス、デーモンとシグナルとはなにか&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>シェルとはなにか。 また、デフォルトのログイン環境を変える方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>テキストエディタの基本的な使い方&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>デバイスおよびデバイスノードとはなにか&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>さらに詳しい情報を得るためのマニュアルページの読み方&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="consoles">3.2. 仮想コンソールと端末&lt;a class="anchor" href="#consoles">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>起動時に自動的にグラフィカルな環境が起動するように FreeBSD を設定していなければ、システムが起動すると、以下のようなコマンドラインのログインプロンプトが表示されます。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="rouge highlight">&lt;code data-lang="shell">FreeBSD/amd64 &lt;span class="o">(&lt;/span>pc3.example.org&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>ttyv0&lt;span class="o">)&lt;/span>
+
+login:&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>最初の行はシステムの情報です。
+&lt;code>amd64&lt;/code> は、このシステム上で 64 ビット版の FreeBSD が動作していることを示しています。
+ホスト名は &lt;code>pc3.example.org&lt;/code>、&lt;code>ttyv0&lt;/code> は &amp;#34;システムコンソール&amp;#34; であることを示しています。
+次の行はログインプロンプトです。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD はマルチユーザシステムなので、ユーザを区別する何がしかの手段が必要です。
+システム上のプログラムを実行できるようになるには、すべてのユーザに対してシステムにログインすることが義務付けられています。
+すべてのユーザは、一意な &amp;#34;ユーザ名&amp;#34; と &amp;#34;パスワード&amp;#34; を持っています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>システムコンソールにログインするには、システムのインストール時に &lt;a href="../bsdinstall/#bsdinstall-addusers">ユーザの追加&lt;/a> で追加したユーザ名を入力して、&lt;kbd>Enter&lt;/kbd> を押してください。
+次にそのユーザのパスワードを入力して、&lt;kbd>Enter&lt;/kbd> を押してください。
+セキュリティの観点から、パスワードは &lt;em>表示されません&lt;/em>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>パスワードを正確に入力したら、日々のメッセージ (MOTD) が表示され、
+コマンドプロンプトが表示されます。
+ユーザ作成時に選択したシェルに依存しますが、このプロンプトは &lt;code>#&lt;/code>, &lt;code>$&lt;/code> または &lt;code>%&lt;/code> といった記号です。
+プロンプトはユーザが FreeBSD のシステムコンソールへログインし、利用可能なコマンドを実行する準備ができていることを示しています。&lt;/p>
+&lt;/div></description></item></channel></rss>

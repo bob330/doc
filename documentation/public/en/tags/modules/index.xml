@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modules on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/modules/</link><description>Recent content in Modules on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/modules/index.xml" rel="self" type="application/rss+xml"/><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article describes the underlying principles and mechanisms of the Pluggable Authentication Modules (PAM) library, and explains how to configure PAM, how to integrate PAM into applications, and how to write PAM modules.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pam-intro">1. Introduction&lt;a class="anchor" href="#pam-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The Pluggable Authentication Modules (PAM) library is a generalized API for authentication-related services which allows a system administrator to add new authentication methods simply by installing new PAM modules, and to modify authentication policies by editing configuration files.&lt;/p>
+&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>http://172.16.201.134:1313/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/geom-class/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This text documents some starting points in developing GEOM classes, and kernel modules in general.
+It is assumed that the reader is familiar with C userland programming.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introduction&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="intro-docs">1.1. Documentation&lt;a class="anchor" href="#intro-docs">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>Documentation on kernel programming is scarce - it is one of few areas where there is nearly nothing in the way of friendly tutorials, and the phrase &amp;#34;use the source!&amp;#34; really holds true.
+However, there are some bits and pieces (some of them seriously outdated) floating around that should be studied before beginning to code:&lt;/p>
+&lt;/div></description></item></channel></rss>

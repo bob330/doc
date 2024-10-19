@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Formulate on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/formulate/</link><description>Recent content in Formulate on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/formulate/index.xml" rel="self" type="application/rss+xml"/><item><title>Escribiendo Informes de Problemas de FreeBSD</title><link>http://172.16.201.134:1313/es/articles/problem-reports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/problem-reports/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artículo describe cómo realizar y enviar informes de problemas para el Proyecto FreeBSD de la mejor forma posible.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pr-intro">1. Introducción&lt;a class="anchor" href="#pr-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Una de las experiencias más frustrantes que uno puede tener como usuario de software es enviar un informe de problemas solo para que se cierre sumariamente con una explicación breve e inútil como &amp;#34;no es un error&amp;#34; o &amp;#34;PR erróneo&amp;#34;. De manera similar, una de las experiencias más frustrantes que puede experimentar un desarrollador de aplicaciones consiste en verse inundado por una cantidad ingente de informes de problemas que en realidad vienen a ser solicitudes de soporte o ayuda, o que contienen poca o ninguna información sobre cual es el problema y cómo reproducirlo.&lt;/p>
+&lt;/div></description></item></channel></rss>

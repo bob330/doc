@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Solid State on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Solid-State/</link><description>Recent content in Solid State on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Solid-State/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD y los Dispositivos de Estado Sólido (SSD)</title><link>http://172.16.201.134:1313/es/articles/solid-state/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/solid-state/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artículo trata sobre el uso de discos de estado sólido en FreeBSD para crear sistemas embebidos.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Los sistemas embebidos tienen la ventaja de una mayor estabilidad por la falta de partes móviles (discos duros). Sin embargo, se debe tener en cuenta que generalmente el espacio disponible para el sistema y la durabilidad del medio de almacenamiento son menores.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Los temas específicos que se abordarán incluyen los tipos y atributos de los dispositivos de estado sólido adecuados para su uso como disco en FreeBSD, las opciones del kernel que son interesantes para dicho entorno, los mecanismos de &lt;span class="filename">rc.initdiskless&lt;/span> que automatizan el inicio de dichos sistemas, la necesidad de sistemas de archivos de solo lectura y hacer sistemas de archivos desde cero. El artículo concluirá con algunas estrategias generales para entornos pequeños y de solo lectura de FreeBSD.&lt;/p>
+&lt;/div></description></item></channel></rss>

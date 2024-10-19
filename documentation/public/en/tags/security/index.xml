@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/security/</link><description>Recent content in Security on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 12. Security</title><link>http://172.16.201.134:1313/en/books/porters-handbook/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/security/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="security-intro">12.1. Why Security is So Important&lt;a class="anchor" href="#security-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Bugs are occasionally introduced to the software.
+Arguably, the most dangerous of them are those opening security vulnerabilities.
+From the technical viewpoint, such vulnerabilities are to be closed by exterminating the bugs that caused them.
+However, the policies for handling mere bugs and security vulnerabilities are very different.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A typical small bug affects only those users who have enabled some combination of options triggering the bug.
+The developer will eventually release a patch followed by a new version of the software,
+free of the bug, but the majority of users will not take the trouble of upgrading immediately because the bug has never vexed them.
+A critical bug that may cause data loss represents a graver issue.
+Nevertheless, prudent users know that a lot of possible accidents, besides software bugs, are likely to lead to data loss, and so they make backups of important data; in addition, a critical bug will be discovered really soon.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 16. Security</title><link>http://172.16.201.134:1313/en/books/handbook/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/security/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="security-synopsis">16.1. Synopsis&lt;a class="anchor" href="#security-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Hundreds of standard practices have been authored about how to secure systems and networks, and as a user of FreeBSD, understanding how to protect against attacks and intruders is a must.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>In this chapter, several fundamentals and techniques will be discussed.
+The FreeBSD system comes with multiple layers of security, and many more third party utilities may be added to enhance security.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This chapter covers:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Basic FreeBSD system security concepts.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The various crypt mechanisms available in FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure TCP Wrappers for use with &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=inetd&amp;amp;sektion=8&amp;amp;format=html">inetd(8)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to set up Kerberos on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure and use OpenSSH on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use OpenSSL on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use file system ACLs.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use pkg to audit third party software packages installed from the Ports Collection.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to utilize FreeBSD security advisories.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What Process Accounting is and how to enable it on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to control user resources using login classes or the resource limits database.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What is Capsicum and a basic example.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Chapter 18. Mandatory Access Control</title><link>http://172.16.201.134:1313/en/books/handbook/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/mac/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="mac-synopsis">18.1. Synopsis&lt;a class="anchor" href="#mac-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD supports security extensions based on the POSIX®.1e draft.
+These security mechanisms include file system Access Control Lists (&lt;a href="../security/#fs-acl">“Access Control Lists”&lt;/a>) and Mandatory Access Control (MAC).
+MAC allows access control modules to be loaded in order to implement security policies.
+Some modules provide protections for a narrow subset of the system, hardening a particular service.
+Others provide comprehensive labeled security across all subjects and objects.
+The mandatory part of the definition indicates that enforcement of controls is performed by administrators and the operating system.
+This is in contrast to the default security mechanism of Discretionary Access Control (DAC) where enforcement is left to the discretion of users.&lt;/p>
+&lt;/div></description></item><item><title>Appendix B. Bibliography</title><link>http://172.16.201.134:1313/en/books/handbook/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/bibliography/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>While manual pages provide a definitive reference for individual pieces of the FreeBSD operating system, they seldom illustrate how to put the pieces together to make the whole operating system run smoothly.
+For this, there is no substitute for a good book or users&amp;#39; manual on UNIX® system administration.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bibliography-freebsd">B.1. FreeBSD Bibliography&lt;a class="anchor" href="#bibliography-freebsd">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Absolute FreeBSD: The Complete Guide To FreeBSD&lt;/strong>, Third Edition, published by &lt;a href="https://nostarch.com/absfreebsd3">No Starch Press&lt;/a>, 2018. ISBN: 978-1593278922&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Storage Essentials&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/freebsd-mastery-storage-essentials/">Tilted Windmill Press&lt;/a>, 2014. ISBN: 978-1642350098&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Specialty Filesystems&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmspf/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350111&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmzfs/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350005&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Advanced ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmaz/">Tilted Windmill Press&lt;/a>, 2016. ISBN: 978-0692688687&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Jails&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmjail/">Tilted Windmill Press&lt;/a>, 2019. ISBN: 978-1642350241&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Device Drivers: A Guide for the Intrepid&lt;/strong>, published by &lt;a href="https://nostarch.com/bsddrivers.htm">No Starch Press&lt;/a>, 2012. ISBN: 978-1593272043&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>The Design And Implementation Of The Freebsd Operating System&lt;/strong>, Second Edition, published by &lt;a href="https://www.pearson.com/store/p/design-and-implementation-of-the-freebsd-operating-system-the/P200000000463/9780321968975">Pearson Education, Inc.&lt;/a>, 2014. ISBN: 978-0321968975&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>UNIX and Linux System Administration Handbook&lt;/strong>, Fifth Edition, published by &lt;a href="https://www.pearson.com/en-us/subject-catalog/p/unix-and-linux-system-administration-handbook/P200000000513/9780137460359">Pearson Education, Inc.&lt;/a>, 2017. ISBN: 978-0134277554&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Designing BSD Rootkits&lt;/strong>, published by &lt;a href="https://nostarch.com/rootkits.htm">No Starch Press&lt;/a>, 2007. ISBN: 978-1593271428&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Jails using VNETs&lt;/strong>, published in &lt;a href="https://rderik.gumroad.com/l/uwOLZ">gumroad&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clang on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/clang/</link><description>Recent content in Clang on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/clang/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Programming Tools</title><link>http://172.16.201.134:1313/en/books/developers-handbook/tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/tools/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="tools-synopsis">2.1. Synopsis&lt;a class="anchor" href="#tools-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter is an introduction to using some of the programming tools supplied with FreeBSD,
+although much of it will be applicable to many other versions of UNIX®.
+It does &lt;em>not&lt;/em> attempt to describe coding in any detail.
+Most of the chapter assumes little or no previous programming knowledge,
+although it is hoped that most programmers will find something of value in it.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="tools-intro">2.2. Introduction&lt;a class="anchor" href="#tools-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD offers an excellent development environment.
+Compilers for C and C++ and an assembler come with the basic system, not to mention classic UNIX® tools such as &lt;code>sed&lt;/code> and &lt;code>awk&lt;/code>.
+If that is not enough, there are many more compilers and interpreters in the Ports collection.
+The following section, &lt;a href="../tools/#tools-programming">Introduction to Programming&lt;/a>, lists some of the available options.
+FreeBSD is very compatible with standards such as POSIX® and ANSI C, as well with its own BSD heritage, so it is possible to write applications that will compile and run with little or no modification on a wide range of platforms.&lt;/p>
+&lt;/div></description></item></channel></rss>

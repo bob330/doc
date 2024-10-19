@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slow Porting on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/slow-porting/</link><description>Recent content in Slow Porting on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/slow-porting/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 4. Slow Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Okay, so it was not that simple, and the port required some modifications to get it to work.
+In this section, we will explain, step by step, how to modify it to get it to work with the ports paradigm.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="slow-work">4.1. How Things Work&lt;a class="anchor" href="#slow-work">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>First, this is the sequence of events which occurs when the user first types &lt;code>make&lt;/code> in the port’s directory.
+Having &lt;span class="filename">bsd.port.mk&lt;/span> in another window while reading this really helps to understand it.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nanobsd on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/nanobsd/</link><description>Recent content in Nanobsd on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/nanobsd/index.xml" rel="self" type="application/rss+xml"/><item><title>Introducción a NanoBSD</title><link>http://172.16.201.134:1313/es/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento proporciona información sobre las herramientas NanoBSD, las cuales pueden ser usadas para crear imágenes de FreeBSD para aplicaciones embebidas, adecuadas para su uso en una memoria USB, tarjeta de memoria, u otro medio de almacenamiento.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introducción a NanoBSD&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>NanoBSD es una herramienta desarrollada por Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; y mantenida ahora por Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;. La herramienta crea una imagen para aplicaciones embebidas, adecuada para su uso en una memoria USB, tarjeta de memoria, u otro medio de almacenamiento.&lt;/p>
+&lt;/div></description></item></channel></rss>

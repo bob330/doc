@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ipv4 on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/ipv4/</link><description>Recent content in Ipv4 on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/ipv4/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 7. Network</title><link>http://172.16.201.134:1313/en/books/handbook/network/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/network/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="network-synopsis">7.1. Synopsis&lt;a class="anchor" href="#network-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter delves into the topic of network configuration and performance, showcasing the robust networking capabilities of the FreeBSD operating system.
+Whether working with wired or wireless networks, this chapter provides a comprehensive guide to configuring and optimizing network connectivity in FreeBSD.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Before diving into the details, it is beneficial for readers to have a basic understanding of networking concepts such as protocols, network interfaces, and addressing.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This chapter covers:&lt;/p>
+&lt;/div></description></item></channel></rss>

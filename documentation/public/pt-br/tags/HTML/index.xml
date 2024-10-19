@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HTML on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/HTML/</link><description>Recent content in HTML on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/HTML/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 14. Marcas Registradas</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/trademarks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/trademarks/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Para todos os documentos do Projeto de Documentação do FreeBSD, é necessário citar as marcas registradas e os outros tipos são habituais, e isso é um requisito para todo escritor e colaborador.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="trademark-symbols">14.1. Símbolos de Marca Registrada&lt;a class="anchor" href="#trademark-symbols">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Acrescente um símbolo de marca registrada (™, ® ou outros símbolos) na primeira ocorrência do nome da marca e sempre ao usar logotipos. Use a &lt;a href="https://docs.freebsd.org/pt-br/books/fdp-primer//writing-style/#writing-style-special-characters">sequência ASCII equivalente&lt;/a>, que será renderizada como o caractere Unicode real. Além disso, escreva o nome da marca registrada seguindo as diretrizes da marca registrada.&lt;/p>
+&lt;/div></description></item><item><title>Capítulo 15. Veja Também</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/see-also/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/see-also/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Este documento não é deliberadamente uma discussão exaustiva de AsciiDoc e o Projeto de Documentação do FreeBSD. Para mais informações sobre estes, você é encorajado a consultar os seguintes sites.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-fdp">15.1. O projeto de documentação do FreeBSD&lt;a class="anchor" href="#see-also-fdp">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.FreeBSD.org/docproj/">As Páginas Web do Projeto de Documentação do FreeBSD&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.freebsd.org/pt-br/books/handbook/book/">O Handbook do FreeBSD&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-hugo">15.2. Hugo&lt;a class="anchor" href="#see-also-hugo">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://gohugo.io/">Hugo&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://gohugo.io/documentation/">Documentação Hugo&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-asciidoc">15.3. AsciiDoctor&lt;a class="anchor" href="#see-also-asciidoc">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://asciidoctor.org/">AsciiDoctor&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.asciidoctor.org/">Portal de Documentação do AsciiDoctor&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="see-also-html">15.4. HTML&lt;a class="anchor" href="#see-also-html">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="http://www.w3.org/">O Consórcio World Wide Web&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://dev.w3.org/html5/spec-LC/">A especificação HTML 5&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.w3.org/Style/CSS/specs.en.html">A especificação CSS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sass-lang.com/">Sass&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

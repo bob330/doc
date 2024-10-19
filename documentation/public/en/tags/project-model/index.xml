@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Project Model on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/project-model/</link><description>Recent content in Project Model on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/project-model/index.xml" rel="self" type="application/rss+xml"/><item><title>A project model for the FreeBSD Project</title><link>http://172.16.201.134:1313/en/books/dev-model/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/dev-model/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;div id="foreword" class="paragraph abstract-title">
+&lt;p>Foreword&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Up until now, the FreeBSD project has released a number of described techniques to do different parts of work.
+However, a project model summarising how the project is structured is needed because of the increasing amount of project members.
+&lt;sup class="footnote">[&lt;a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1&lt;/a>]&lt;/sup>
+This paper will provide such a project model and is donated to the FreeBSD Documentation project where it can evolve together with the project so that it can at any point in time reflect the way the project works.
+It is based on [&lt;a href="../dev-model/#thesis">Saers&lt;/a>].&lt;/p>
+&lt;/div></description></item></channel></rss>

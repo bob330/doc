@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Благодарности on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ru/tags/%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D0%B8/</link><description>Recent content in Благодарности on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ru</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ru/tags/%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D0%B8/index.xml" rel="self" type="application/rss+xml"/><item><title>Предисловие</title><link>http://172.16.201.134:1313/ru/books/handbook/preface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ru/books/handbook/preface/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface-audience">Целевая аудитория&lt;a class="anchor" href="#preface-audience">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Начинающим пользователям FreeBSD будет полезна первая часть этой книги, которая проводит читателя через процесс установки FreeBSD и ненавязчиво объясняет концепции и соглашения, на которых базируется UNIX®.
+Работа с этой частью требует несколько большего, чем желания исследовать и способности принятия новых концепций по мере их описания.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Если вы преодолеете все сложности, то вас будет ждать вторая, много большая часть Руководства, которая является всеобъемлющим справочником обо всех темах, которые могут интересовать администраторов FreeBSD.
+Некоторые из глав этой части могут рекомендовать вам предварительное изучение других материалов, о чём упоминается в кратком обзоре в начале каждой главы.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gpl on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/gpl/</link><description>Recent content in Gpl on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/gpl/index.xml" rel="self" type="application/rss+xml"/><item><title>Por qué debería utilizar una licencia de estilo BSD para su proyecto de Código Abierto</title><link>http://172.16.201.134:1313/es/articles/bsdl-gpl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/bsdl-gpl/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introducción&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento justifica el uso de una licencia de estilo BSD para software y datos; específicamente recomienda utilizar una licencia de estilo BSD en lugar de la GPL. También se puede leer como una introducción y resumen de la licencia de código abierto BSD versus GPL.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="history">2. Breve historia del Código Abierto&lt;a class="anchor" href="#history">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Mucho antes de que el término &amp;#34;Open Source&amp;#34; fuera utilizado, el software era desarrollado por diferentes asociaciones de programadores y compartido libremente. A comienzos de los años 50, organizaciones como &lt;a href="http://www.share.org">SHARE&lt;/a> y &lt;a href="http://www.decus.org">DECUS&lt;/a> desarrollaron mucho del software que las compañías de hardware incluían en sus ofertas de equipos. En aquella época las compañías informáticas estaban en el negocio del hardware; cualquier cosa que redujera el coste del software e hiciera los programas más disponibles hacía que las compañías de hardware fueran más competitivas.&lt;/p>
+&lt;/div></description></item></channel></rss>

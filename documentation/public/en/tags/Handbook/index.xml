@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Handbook on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Handbook/</link><description>Recent content in Handbook on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Handbook/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 34. Advanced Networking</title><link>http://172.16.201.134:1313/en/books/handbook/advanced-networking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/advanced-networking/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="advanced-networking-synopsis">34.1. Synopsis&lt;a class="anchor" href="#advanced-networking-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter covers a number of advanced networking topics.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The basics of gateways and routes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to set up USB tethering.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to set up IEEE® 802.11 and Bluetooth® devices.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to make FreeBSD act as a bridge.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to set up network PXE booting.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to enable and utilize the features of the Common Address Redundancy Protocol (CARP) in FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure multiple VLANs on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Configure bluetooth headset.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Appendix B. Bibliography</title><link>http://172.16.201.134:1313/en/books/handbook/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/bibliography/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>While manual pages provide a definitive reference for individual pieces of the FreeBSD operating system, they seldom illustrate how to put the pieces together to make the whole operating system run smoothly.
+For this, there is no substitute for a good book or users&amp;#39; manual on UNIX® system administration.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bibliography-freebsd">B.1. FreeBSD Bibliography&lt;a class="anchor" href="#bibliography-freebsd">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Absolute FreeBSD: The Complete Guide To FreeBSD&lt;/strong>, Third Edition, published by &lt;a href="https://nostarch.com/absfreebsd3">No Starch Press&lt;/a>, 2018. ISBN: 978-1593278922&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Storage Essentials&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/freebsd-mastery-storage-essentials/">Tilted Windmill Press&lt;/a>, 2014. ISBN: 978-1642350098&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Specialty Filesystems&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmspf/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350111&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmzfs/">Tilted Windmill Press&lt;/a>, 2015. ISBN: 978-1642350005&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Advanced ZFS&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmaz/">Tilted Windmill Press&lt;/a>, 2016. ISBN: 978-0692688687&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Mastery: Jails&lt;/strong>, published by &lt;a href="https://www.tiltedwindmillpress.com/product/fmjail/">Tilted Windmill Press&lt;/a>, 2019. ISBN: 978-1642350241&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Device Drivers: A Guide for the Intrepid&lt;/strong>, published by &lt;a href="https://nostarch.com/bsddrivers.htm">No Starch Press&lt;/a>, 2012. ISBN: 978-1593272043&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>The Design And Implementation Of The Freebsd Operating System&lt;/strong>, Second Edition, published by &lt;a href="https://www.pearson.com/store/p/design-and-implementation-of-the-freebsd-operating-system-the/P200000000463/9780321968975">Pearson Education, Inc.&lt;/a>, 2014. ISBN: 978-0321968975&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>UNIX and Linux System Administration Handbook&lt;/strong>, Fifth Edition, published by &lt;a href="https://www.pearson.com/en-us/subject-catalog/p/unix-and-linux-system-administration-handbook/P200000000513/9780137460359">Pearson Education, Inc.&lt;/a>, 2017. ISBN: 978-0134277554&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Designing BSD Rootkits&lt;/strong>, published by &lt;a href="https://nostarch.com/rootkits.htm">No Starch Press&lt;/a>, 2007. ISBN: 978-1593271428&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FreeBSD Jails using VNETs&lt;/strong>, published in &lt;a href="https://rderik.gumroad.com/l/uwOLZ">gumroad&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>FreeBSD Handbook</title><link>http://172.16.201.134:1313/en/books/handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Welcome to FreeBSD! This handbook covers the installation and day to day use of &lt;em>FreeBSD 14.1-RELEASE&lt;/em> and &lt;em>13.4-RELEASE&lt;/em>.
+This book is the result of ongoing work by many individuals.
+Some sections might be outdated.
+Those interested in helping to update and expand this document should send email to the &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">FreeBSD documentation project mailing list&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The latest version of this book is available from the &lt;a href="https://www.FreeBSD.org/">FreeBSD web site&lt;/a>.
+Previous versions can be obtained from &lt;a href="https://docs.FreeBSD.org/doc/">https://docs.FreeBSD.org/doc/&lt;/a>.
+The book can be downloaded in a variety of formats and compression options from the &lt;a href="https://download.freebsd.org/doc/">FreeBSD download server&lt;/a> or one of the numerous &lt;a href="./mirrors#mirrors">mirror sites&lt;/a>.
+Searches can be performed on the handbook and other documents on the &lt;a href="https://www.FreeBSD.org/search/">search page&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>FreeBSD Handbook</title><link>http://172.16.201.134:1313/en/books/handbook/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/book/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Welcome to FreeBSD! This handbook covers the installation and day to day use of &lt;em>FreeBSD 14.1-RELEASE&lt;/em> and &lt;em>13.4-RELEASE&lt;/em>.
+This book is the result of ongoing work by many individuals.
+Some sections might be outdated.
+Those interested in helping to update and expand this document should send email to the &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">FreeBSD documentation project mailing list&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The latest version of this book is available from the &lt;a href="https://www.FreeBSD.org/">FreeBSD web site&lt;/a>.
+Previous versions can be obtained from &lt;a href="https://docs.FreeBSD.org/doc/">https://docs.FreeBSD.org/doc/&lt;/a>.
+The book can be downloaded in a variety of formats and compression options from the &lt;a href="https://download.freebsd.org/doc/">FreeBSD download server&lt;/a> or one of the numerous &lt;a href="./mirrors#mirrors">mirror sites&lt;/a>.
+Searches can be performed on the handbook and other documents on the &lt;a href="https://www.FreeBSD.org/search/">search page&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

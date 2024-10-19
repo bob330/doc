@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LDAP on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/LDAP/</link><description>Recent content in LDAP on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/LDAP/index.xml" rel="self" type="application/rss+xml"/><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento pretende ser um guia para a configuração de um servidor LDAP (principalmente um servidor OpenLDAP) para autenticação no FreeBSD. Isso é útil para situações em que muitos servidores precisam das mesmas contas de usuário, por exemplo, como substituto do NIS.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface">1. Prefácio&lt;a class="anchor" href="#preface">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
+&lt;/div></description></item></channel></rss>

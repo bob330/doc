@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Support on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Support/</link><description>Recent content in Support on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Support/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD Support for Leap Seconds</title><link>http://172.16.201.134:1313/en/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/leap-seconds/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="leapseconds-definition">1. Introduction&lt;a class="anchor" href="#leapseconds-definition">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>A &lt;em>leap second&lt;/em> is an one second adjustment made at specific times of year to UTC to synchronize atomic time scales with variations in the rotation of the Earth.
+This article describes how FreeBSD interacts with leap seconds.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>As of this writing, the next leap second will occur at 2015-Jun-30 23:59:60 UTC.
+This leap second will occur during a business day for North and South America and the Asia/Pacific region.&lt;/p>
+&lt;/div></description></item></channel></rss>

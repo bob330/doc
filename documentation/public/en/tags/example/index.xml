@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Example on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/example/</link><description>Recent content in Example on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/example/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. PCI Devices</title><link>http://172.16.201.134:1313/en/books/arch-handbook/pci/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/pci/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This chapter will talk about the FreeBSD mechanisms for writing a device driver for a device on a PCI bus.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pci-probe">11.1. Probe and Attach&lt;a class="anchor" href="#pci-probe">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Information here about how the PCI bus code iterates through the unattached devices and see if a newly loaded kld will attach to any of them.&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_sample_driver_source_mypci_c">11.1.1. Sample Driver Source (&lt;span class="filename">mypci.c&lt;/span>)&lt;a class="anchor" href="#_sample_driver_source_mypci_c">&lt;/a>&lt;/h3>
+&lt;div class="literalblock programlisting">
+&lt;div class="content">
+&lt;pre>/*
+ * Simple KLD to play with the PCI functions.
+ *
+ * Murray Stokely
+ */
+
+#include &amp;lt;sys/param.h&amp;gt;		/* defines used in kernel.h */
+#include &amp;lt;sys/module.h&amp;gt;
+#include &amp;lt;sys/systm.h&amp;gt;
+#include &amp;lt;sys/errno.h&amp;gt;
+#include &amp;lt;sys/kernel.h&amp;gt;		/* types used in module initialization */
+#include &amp;lt;sys/conf.h&amp;gt;		/* cdevsw struct */
+#include &amp;lt;sys/uio.h&amp;gt;		/* uio struct */
+#include &amp;lt;sys/malloc.h&amp;gt;
+#include &amp;lt;sys/bus.h&amp;gt;		/* structs, prototypes for pci bus stuff and DEVMETHOD macros! */
+
+#include &amp;lt;machine/bus.h&amp;gt;
+#include &amp;lt;sys/rman.h&amp;gt;
+#include &amp;lt;machine/resource.h&amp;gt;
+
+#include &amp;lt;dev/pci/pcivar.h&amp;gt;	/* For pci_get macros! */
+#include &amp;lt;dev/pci/pcireg.h&amp;gt;
+
+/* The softc holds our per-instance data. */
+struct mypci_softc {
+	device_t	my_dev;
+	struct cdev	*my_cdev;
+};
+
+/* Function prototypes */
+static d_open_t		mypci_open;
+static d_close_t	mypci_close;
+static d_read_t		mypci_read;
+static d_write_t	mypci_write;
+
+/* Character device entry points */
+
+static struct cdevsw mypci_cdevsw = {
+	.d_version =	D_VERSION,
+	.d_open =	mypci_open,
+	.d_close =	mypci_close,
+	.d_read =	mypci_read,
+	.d_write =	mypci_write,
+	.d_name =	&amp;#34;mypci&amp;#34;,
+};
+
+/*
+ * In the cdevsw routines, we find our softc by using the si_drv1 member
+ * of struct cdev. We set this variable to point to our softc in our
+ * attach routine when we create the /dev entry.
+ */
+
+int
+mypci_open(struct cdev *dev, int oflags, int devtype, struct thread *td)
+{
+	struct mypci_softc *sc;
+
+	/* Look up our softc. */
+	sc = dev-&amp;gt;si_drv1;
+	device_printf(sc-&amp;gt;my_dev, &amp;#34;Opened successfully.\n&amp;#34;);
+	return (0);
+}
+
+int
+mypci_close(struct cdev *dev, int fflag, int devtype, struct thread *td)
+{
+	struct mypci_softc *sc;
+
+	/* Look up our softc. */
+	sc = dev-&amp;gt;si_drv1;
+	device_printf(sc-&amp;gt;my_dev, &amp;#34;Closed.\n&amp;#34;);
+	return (0);
+}
+
+int
+mypci_read(struct cdev *dev, struct uio *uio, int ioflag)
+{
+	struct mypci_softc *sc;
+
+	/* Look up our softc. */
+	sc = dev-&amp;gt;si_drv1;
+	device_printf(sc-&amp;gt;my_dev, &amp;#34;Asked to read %zd bytes.\n&amp;#34;, uio-&amp;gt;uio_resid);
+	return (0);
+}
+
+int
+mypci_write(struct cdev *dev, struct uio *uio, int ioflag)
+{
+	struct mypci_softc *sc;
+
+	/* Look up our softc. */
+	sc = dev-&amp;gt;si_drv1;
+	device_printf(sc-&amp;gt;my_dev, &amp;#34;Asked to write %zd bytes.\n&amp;#34;, uio-&amp;gt;uio_resid);
+	return (0);
+}
+
+/* PCI Support Functions */
+
+/*
+ * Compare the device ID of this device against the IDs that this driver
+ * supports. If there is a match, set the description and return success.
+ */
+static int
+mypci_probe(device_t dev)
+{
+
+	device_printf(dev, &amp;#34;MyPCI Probe\nVendor ID : 0x%x\nDevice ID : 0x%x\n&amp;#34;,
+	 pci_get_vendor(dev), pci_get_device(dev));
+
+	if (pci_get_vendor(dev) == 0x11c1) {
+		printf(&amp;#34;We&amp;#39;ve got the Winmodem, probe successful!\n&amp;#34;);
+		device_set_desc(dev, &amp;#34;WinModem&amp;#34;);
+		return (BUS_PROBE_DEFAULT);
+	}
+	return (ENXIO);
+}
+
+/* Attach function is only called if the probe is successful. */
+
+static int
+mypci_attach(device_t dev)
+{
+	struct mypci_softc *sc;
+
+	printf(&amp;#34;MyPCI Attach for : deviceID : 0x%x\n&amp;#34;, pci_get_devid(dev));
+
+	/* Look up our softc and initialize its fields. */
+	sc = device_get_softc(dev);
+	sc-&amp;gt;my_dev = dev;
+
+	/*
+	 * Create a /dev entry for this device. The kernel will assign us
+	 * a major number automatically. We use the unit number of this
+	 * device as the minor number and name the character device
+	 * &amp;#34;mypci&amp;lt;unit&amp;gt;&amp;#34;.
+	 */
+	sc-&amp;gt;my_cdev = make_dev(&amp;amp;mypci_cdevsw, device_get_unit(dev),
+	 UID_ROOT, GID_WHEEL, 0600, &amp;#34;mypci%u&amp;#34;, device_get_unit(dev));
+	sc-&amp;gt;my_cdev-&amp;gt;si_drv1 = sc;
+	printf(&amp;#34;Mypci device loaded.\n&amp;#34;);
+	return (0);
+}
+
+/* Detach device. */
+
+static int
+mypci_detach(device_t dev)
+{
+	struct mypci_softc *sc;
+
+	/* Teardown the state in our softc created in our attach routine. */
+	sc = device_get_softc(dev);
+	destroy_dev(sc-&amp;gt;my_cdev);
+	printf(&amp;#34;Mypci detach!\n&amp;#34;);
+	return (0);
+}
+
+/* Called during system shutdown after sync. */
+
+static int
+mypci_shutdown(device_t dev)
+{
+
+	printf(&amp;#34;Mypci shutdown!\n&amp;#34;);
+	return (0);
+}
+
+/*
+ * Device suspend routine.
+ */
+static int
+mypci_suspend(device_t dev)
+{
+
+	printf(&amp;#34;Mypci suspend!\n&amp;#34;);
+	return (0);
+}
+
+/*
+ * Device resume routine.
+ */
+static int
+mypci_resume(device_t dev)
+{
+
+	printf(&amp;#34;Mypci resume!\n&amp;#34;);
+	return (0);
+}
+
+static device_method_t mypci_methods[] = {
+	/* Device interface */
+	DEVMETHOD(device_probe,		mypci_probe),
+	DEVMETHOD(device_attach,	mypci_attach),
+	DEVMETHOD(device_detach,	mypci_detach),
+	DEVMETHOD(device_shutdown,	mypci_shutdown),
+	DEVMETHOD(device_suspend,	mypci_suspend),
+	DEVMETHOD(device_resume,	mypci_resume),
+
+	DEVMETHOD_END
+};
+
+static devclass_t mypci_devclass;
+
+DEFINE_CLASS_0(mypci, mypci_driver, mypci_methods, sizeof(struct mypci_softc));
+DRIVER_MODULE(mypci, pci, mypci_driver, mypci_devclass, 0, 0);&lt;/pre>
+&lt;/div></description></item></channel></rss>

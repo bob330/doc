@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Community on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Community/</link><description>Recent content in Community on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Community/index.xml" rel="self" type="application/rss+xml"/><item><title>Committer's Guide</title><link>http://172.16.201.134:1313/en/articles/committers-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/committers-guide/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document provides information for the FreeBSD committer community.
+All new committers should read this document before they start, and existing committers are strongly encouraged to review it from time to time.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Almost all FreeBSD developers have commit rights to one or more repositories.
+However, a few developers do not, and some of the information here applies to them as well.
+(For instance, some people only have rights to work with the Problem Report database.)
+Please see &lt;a href="../committers-guide/#non-committers">Issues Specific to Developers Who Are Not Committers&lt;/a> for more information.&lt;/p>
+&lt;/div></description></item></channel></rss>

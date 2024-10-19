@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docbook on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/docbook/</link><description>Recent content in Docbook on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/docbook/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 7. Rosetta Stone</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/rosetta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/rosetta/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="docbook-vs-asciidoc">7.1. Comparação entre Docbook e AsciiDoc&lt;a class="anchor" href="#docbook-vs-asciidoc">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Esta rosetta stone tenta mostrar as diferenças entre Docbook e AsciiDoc.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;caption class="title">Tabela 1. Comparação entre Docbook e AsciiDoc&lt;/caption>
+&lt;colgroup>
+&lt;col style="width: 11.1111%;"/>
+&lt;col style="width: 44.4444%;"/>
+&lt;col style="width: 44.4445%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Recurso da Linguagem&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Docbook&lt;/th>
+&lt;th class="tableblock halign-left valign-top">AsciiDoc&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Negrito&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;lt;strong&amp;gt;bold&amp;lt;/strong&amp;gt;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">*bold*&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Itálico&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;lt;emphasis&amp;gt;Italic&amp;lt;/emphasis&amp;gt;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">_Italic_&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Monoespaço&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;lt;literal&amp;gt;Monospace&amp;lt;/literal&amp;gt;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">`Monospace`&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Parágrafo&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;lt;para&amp;gt;This is a paragraph&amp;lt;/para&amp;gt;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">This is a paragraph&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Teclado&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;lt;keycap&amp;gt;F11&amp;lt;/keycap&amp;gt;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">kbd:[F11]&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>Links&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="rouge highlight">&lt;code data-lang="xml">&lt;span class="nt">&amp;lt;link&lt;/span> &lt;span class="na">xlink:href=&lt;/span>&lt;span class="s">&amp;#34;https://www.freebsd.org/where/&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>Download FreeBSD&lt;span class="nt">&amp;lt;/link&amp;gt;&lt;/span>&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

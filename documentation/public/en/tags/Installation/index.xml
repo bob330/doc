@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Installation on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Installation/</link><description>Recent content in Installation on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Remote Installation of the FreeBSD Operating System Without a Remote Console</title><link>http://172.16.201.134:1313/en/articles/remote-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/remote-install/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article documents the remote installation of the FreeBSD operating system when the console of the remote system is unavailable.
+The main idea behind this article is the result of a collaboration with &lt;code>Martin Matuska &amp;lt;&lt;a href="mailto:mm@FreeBSD.org">mm@FreeBSD.org&lt;/a>&amp;gt;&lt;/code> with valuable input provided by &lt;code>Paweł Jakub Dawidek &amp;lt;&lt;a href="mailto:pjd@FreeBSD.org">pjd@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="background">1. Background&lt;a class="anchor" href="#background">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>There are many server hosting providers in the world, but very few of them are officially supporting FreeBSD.
+They usually provide support for a Linux® distribution to be installed on the servers they offer.&lt;/p>
+&lt;/div></description></item></channel></rss>

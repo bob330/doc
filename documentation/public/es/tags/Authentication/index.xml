@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authentication on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Authentication/</link><description>Recent content in Authentication on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>Autenticación LDAP</title><link>http://172.16.201.134:1313/es/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento pretende ser una guía para la configuración de un servidor LDAP (principalmente un servidor OpenLDAP) para la autenticación en FreeBSD. Esto es útil para situaciones en las que muchos servidores necesitan las mismas cuentas de usuario, por ejemplo, como reemplazo de NIS.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface">1. Prólogo&lt;a class="anchor" href="#preface">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento está destinado a proporcionar al lector una comprensión suficiente de LDAP para configurar un servidor LDAP. Este documento intentará proporcionar una explicación de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> y &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para usarlos con los servicios de la máquina del cliente para su uso con el servidor LDAP.&lt;/p>
+&lt;/div></description></item><item><title>Módulos de Autenticación Cargables</title><link>http://172.16.201.134:1313/es/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artículo describe los principios y mecanismos subyacentes de la librería Pluggable Authentication Modules (PAM), y explica cómo configurar PAM, cómo integrar PAM en aplicaciones y cómo escribir módulos PAM.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pam-intro">1. Introducción&lt;a class="anchor" href="#pam-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>La librería Pluggable Authentication Modules (PAM) es una API para servicios relacionados con la autenticación que permite al administrador del sistema añadir nuevos métodos de autenticación simplemente instalando nuevos módulos PAM y modificando las políticas de autenticación editando el archivo de configuración.&lt;/p>
+&lt;/div></description></item></channel></rss>

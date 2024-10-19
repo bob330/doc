@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pciconf on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/pciconf/</link><description>Recent content in Pciconf on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/pciconf/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 10. Configuring the FreeBSD Kernel</title><link>http://172.16.201.134:1313/en/books/handbook/kernelconfig/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/kernelconfig/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="kernelconfig-synopsis">10.1. Synopsis&lt;a class="anchor" href="#kernelconfig-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The kernel is the core of the FreeBSD operating system.
+It is responsible for managing memory, enforcing security controls, networking, disk access, and much more.
+While much of FreeBSD is dynamically configurable, some users may wish to configure and compile a custom kernel.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>When to build a custom kernel.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to take a hardware inventory.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to customize a kernel configuration file.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use the kernel configuration file to create and build a new kernel.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to install the new kernel.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to troubleshoot if things go wrong.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

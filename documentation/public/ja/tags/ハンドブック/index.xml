@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ハンドブック on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/%E3%83%8F%E3%83%B3%E3%83%89%E3%83%96%E3%83%83%E3%82%AF/</link><description>Recent content in ハンドブック on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/%E3%83%8F%E3%83%B3%E3%83%89%E3%83%96%E3%83%83%E3%82%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD ハンドブック</title><link>http://172.16.201.134:1313/ja/books/handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>概要&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD へようこそ! このハンドブックは &lt;em>FreeBSD 13.1-RELEASE&lt;/em> および &lt;em>FreeBSD 12.4-RELEASE&lt;/em> のインストールと日常での使い方について記述したものです。
+本ハンドブックはさまざまな人々による編集の成果で、現在も改編作業中です。
+いま存在するセクションの中には情報が古くなってしまっているものがあります。
+もし、この文書を新しくしたり、 新しい情報の追加に協力したいとお考えなら、 &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">FreeBSD documentation project メーリングリスト&lt;/a> まで電子メールを (英語で) 送ってください。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>このハンドブックの最新バージョンは &lt;a href="https://www.FreeBSD.org/ja/">FreeBSD ウェブサイト&lt;/a> から入手できます。
+以前のバージョンは &lt;a href="https://docs.FreeBSD.org/doc/">https://docs.FreeBSD.org/doc/&lt;/a> から入手できます。
+この文書の他の文書形式や圧縮形式は &lt;a href="https://download.freebsd.org/doc/">FreeBSD ダウンロードサーバ&lt;/a> や &lt;a href="./mirrors#mirrors-http">ミラーサイト&lt;/a> からダウンロードできます。
+ハンドブックやその他の文書は、&lt;a href="https://www.FreeBSD.org/ja/search/">検索ページ&lt;/a> で検索できます。&lt;/p>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;/div></description></item><item><title>FreeBSD ハンドブック</title><link>http://172.16.201.134:1313/ja/books/handbook/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/book/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>概要&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD へようこそ! このハンドブックは &lt;em>FreeBSD 13.1-RELEASE&lt;/em> および &lt;em>FreeBSD 12.4-RELEASE&lt;/em> のインストールと日常での使い方について記述したものです。
+本ハンドブックはさまざまな人々による編集の成果で、現在も改編作業中です。
+いま存在するセクションの中には情報が古くなってしまっているものがあります。
+もし、この文書を新しくしたり、 新しい情報の追加に協力したいとお考えなら、 &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">FreeBSD documentation project メーリングリスト&lt;/a> まで電子メールを (英語で) 送ってください。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>このハンドブックの最新バージョンは &lt;a href="https://www.FreeBSD.org/ja/">FreeBSD ウェブサイト&lt;/a> から入手できます。
+以前のバージョンは &lt;a href="https://docs.FreeBSD.org/doc/">https://docs.FreeBSD.org/doc/&lt;/a> から入手できます。
+この文書の他の文書形式や圧縮形式は &lt;a href="https://download.freebsd.org/doc/">FreeBSD ダウンロードサーバ&lt;/a> や &lt;a href="./mirrors#mirrors-http">ミラーサイト&lt;/a> からダウンロードできます。
+ハンドブックやその他の文書は、&lt;a href="https://www.FreeBSD.org/ja/search/">検索ページ&lt;/a> で検索できます。&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="book-preface">前書き&lt;a class="anchor" href="#book-preface">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="preface-audience">想定している読者&lt;a class="anchor" href="#preface-audience">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>最初の部分は FreeBSD を使い始めた人向けで、FreeBSD のインストールの過程を手引きし、UNIX® の基礎となっている概念や慣習を丁寧に紹介します。
+この部分に取り組むために必要なのは、探究心と、紹介された新たな概念を理解する能力だけです。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>その次の、ハンドブックのはるかに大きな部分では、FreeBSD システム管理者が興味を抱くあらゆる種類の話題が分かりやすく言及されています。
+一部の章は、その章の前に読んでおくべきことが推奨されており、各章の始めの概要で述べられています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>さらなる情報源の一覧は、&lt;a href="./#bibliography">参考図書&lt;/a> をご覧ください。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="preface-changes-from3">第 3 版からの変更&lt;a class="anchor" href="#preface-changes-from3">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>オンライン版のハンドブックは、FreeBSD ドキュメンテーションプロジェクトの献身的なメンバーによる 10 年以上に渡る作業の頂点に立つものです。
+2004 年に出版された 2 巻組の第 3 版からの主な変更は、次のようなものです。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Windows® アプリケーションを FreeBSD 上で実行するための WINE に関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>強力なパフォーマンス解析ツール DTrace に関する情報が追加されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ファイルシステム対応の章が追加されました。 Sun™ の ZFS のような FreeBSD ネイティブではないファイルシステムへの対応について説明しています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>セキュリティ監査の章が追加されました。 FreeBSD における新しい監査のケイパビリティおよびその使用方法について説明しています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>仮想化の章が追加されました。os; を仮想化ソフトへインストールする方法などを取り上げています。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>新しいインストールユーティリティの bsdinstall を用いた FreeBSD のインストール方法を説明する &lt;a href="./#bsdinstall">FreeBSD のインストール&lt;/a> という章が追加されました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

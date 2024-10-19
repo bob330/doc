@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Installation on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Installation/</link><description>Recent content in Installation on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Instalación remota del sistema operativo FreeBSD sin una consola remota</title><link>http://172.16.201.134:1313/es/articles/remote-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/remote-install/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artículo documenta la instalación remota del sistema operativo FreeBSD cuando la consola del sistema remoto no está disponible. La idea principal de este artículo es el resultado de una colaboración con &lt;code>Martin Matuska &amp;lt;&lt;a href="mailto:mm@FreeBSD.org">mm@FreeBSD.org&lt;/a>&amp;gt;&lt;/code> con información valiosa proporcionada por &lt;code>Paweł Jakub Dawidek &amp;lt;&lt;a href="mailto:pjd@FreeBSD.org">pjd@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="background">1. Antecedentes&lt;a class="anchor" href="#background">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Hay muchos proveedores de alojamiento en el mundo, pero pocos de ellos proporcionan soporte oficial de FreeBSD. Normalmente proporcionan una distribución Linux® para ser instalada en los servidores que ofrecen.&lt;/p>
+&lt;/div></description></item></channel></rss>

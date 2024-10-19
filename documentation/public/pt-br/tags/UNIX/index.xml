@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UNIX on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/UNIX/</link><description>Recent content in UNIX on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/UNIX/index.xml" rel="self" type="application/rss+xml"/><item><title>Para iniciantes tanto no FreeBSD quanto no UNIX®</title><link>http://172.16.201.134:1313/pt-br/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Parabéns por instalar o FreeBSD! Esta introdução é destinada a usuários iniciantes tanto no FreeBSD quanto no UNIX® - então ela começa com o básico.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="in-and-out">1. Logando e Deslogando&lt;a class="anchor" href="#in-and-out">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Faça login (quando você ver &lt;code>login:&lt;/code>) com o usuário que você criou durante a instalação ou como &lt;code>root&lt;/code>. (Sua instalação do FreeBSD já terá uma conta para o usuário &lt;code>root&lt;/code>, o qual pode ir a qualquer lugar e fazer qualquer coisa, incluindo excluir arquivos essenciais, então tenha cuidado!) Os símbolos % e # abaixo representam o prompt (o seu pode ser diferente), sendo que o % indica um usuário comum e o # indica o usuário &lt;code>root&lt;/code>.&lt;/p>
+&lt;/div></description></item></channel></rss>

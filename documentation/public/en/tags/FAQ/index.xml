@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FAQ on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/FAQ/</link><description>Recent content in FAQ on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/FAQ/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 8. Translations</title><link>http://172.16.201.134:1313/en/books/fdp-primer/translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/translations/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This is the FAQ for people translating the FreeBSD documentation (FAQ, Handbook, tutorials, manual pages, and others) to different languages.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>It is &lt;em>very&lt;/em> heavily based on the translation FAQ from the FreeBSD German Documentation Project, originally written by Frank Gründer
+&lt;a href="mailto:elwood@mc5sys.in-berlin.de">elwood@mc5sys.in-berlin.de&lt;/a> and translated back to English by Bernd Warken
+&lt;a href="mailto:bwarken@mayn.de">bwarken@mayn.de&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_what_do_i18n_and_l10n_mean">8.1. What do i18n and l10n mean?&lt;a class="anchor" href="#_what_do_i18n_and_l10n_mean">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>i18n means internationalization and l10n means localization.
+They are just a convenient shorthand.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>i18n can be read as &amp;#34;i&amp;#34; followed by 18 letters, followed by &amp;#34;n&amp;#34;.
+Similarly, l10n is &amp;#34;l&amp;#34; followed by 10 letters, followed by &amp;#34;n&amp;#34;.&lt;/p>
+&lt;/div></description></item><item><title>Frequently Asked Questions About The FreeBSD Mailing Lists</title><link>http://172.16.201.134:1313/en/articles/mailing-list-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/mailing-list-faq/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This is the FAQ for the FreeBSD mailing lists.
+If you are interested in helping with this project, send email to the &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">FreeBSD documentation project mailing list&lt;/a>.
+The latest version of this document is always available from the &lt;a href=".">FreeBSD World Wide Web server&lt;/a>.
+It may also be downloaded as one large &lt;a href=".">HTML&lt;/a> file with HTTP or as plain text, PostScript, PDF, etc. from the &lt;a href="https://download.freebsd.org/doc/">FreeBSD FTP server&lt;/a>.
+You may also want to &lt;a href="https://www.FreeBSD.org/search/">Search the FAQ&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Frequently Asked Questions for FreeBSD</title><link>http://172.16.201.134:1313/en/books/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/faq/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This is the Frequently Asked Questions (FAQ) for FreeBSD.
+Every effort has been made to make this FAQ as informative as possible.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction">1. Introduction&lt;a class="anchor" href="#introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Welcome to the world of FreeBSD!
+In this section, we provide a comprehensive overview of what FreeBSD is, its origins, goals, use cases, and the community behind it.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Discover the reasons behind its name, learn how to contribute to this project, and explore the rich ecosystem of FreeBSD within the context of open-source operating systems.&lt;/p>
+&lt;/div></description></item></channel></rss>

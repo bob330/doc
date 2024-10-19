@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Translation on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/translation/</link><description>Recent content in Translation on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/translation/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 8. Traduções</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/translations/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Este é o FAQ para pessoas que estão traduzindo a documentação do FreeBSD (FAQ, Handbook, tutoriais, páginas de manual e outros) para diferentes idiomas.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Ele é &lt;em>fortemente&lt;/em> baseado na tradução do FAQ do Projeto de Documentação Alemão do FreeBSD, originalmente escrito por Frank Gründer &lt;a href="mailto:elwood@mc5sys.in-berlin.de">elwood@mc5sys.in-berlin.de&lt;/a> e traduzido de volta para o Inglês por Bernd Warken &lt;a href="mailto:bwarken@mayn.de">bwarken@mayn.de&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_o_que_significa_i18n_e_l10n">8.1. O que significa i18n e l10n?&lt;a class="anchor" href="#_o_que_significa_i18n_e_l10n">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>i18n significa internacionalização e l10n significa localização. São apenas uma abreviação.&lt;/p>
+&lt;/div></description></item></channel></rss>

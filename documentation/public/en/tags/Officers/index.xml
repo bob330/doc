@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Officers on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Officers/</link><description>Recent content in Officers on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Officers/index.xml" rel="self" type="application/rss+xml"/><item><title>Appendix D. OpenPGP Keys</title><link>http://172.16.201.134:1313/en/books/handbook/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/pgpkeys/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>The OpenPGP keys of the &lt;code>FreeBSD.org&lt;/code> officers are shown here.
+These keys can be used to verify a signature or send encrypted email to one of the officers.
+A full list of FreeBSD OpenPGP keys is available in the &lt;a href="https://docs.freebsd.org/en/articles/pgpkeys/">PGP Keys&lt;/a> article.
+The complete keyring can be downloaded at &lt;a href="https://docs.FreeBSD.org/pgpkeys/pgpkeys.txt">pgpkeyring.txt&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pgpkeys-officers">D.1. Officers&lt;a class="anchor" href="#pgpkeys-officers">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_security_officer_team_security_officerfreebsd_org">D.1.1. Security Officer Team &lt;code>&amp;lt;&lt;a href="mailto:security-officer@FreeBSD.org">security-officer@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>&lt;a class="anchor" href="#_security_officer_team_security_officerfreebsd_org">&lt;/a>&lt;/h3>
+&lt;div class="literalblock literal-block-margin">
+&lt;div class="content">
+&lt;pre>pub rsa4096/D9AD2A18057474CB 2022-12-11 [C] [expires: 2026-01-24]
+ Key fingerprint = 0BE3 3275 D74C 953C 79F8 1107 D9AD 2A18 0574 74CB
+uid FreeBSD Security Officer &amp;lt;security-officer@freebsd.org&amp;gt;
+sub rsa4096/6E58DE901F001AEF 2022-12-11 [S] [expires: 2025-01-15]
+sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
+&lt;/div></description></item><item><title>OpenPGP Keys</title><link>http://172.16.201.134:1313/en/articles/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pgpkeys/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;div class="paragraph">
+&lt;p>These OpenPGP keys can be used to verify a signature or send encrypted email to &lt;code>FreeBSD.org&lt;/code> officers or developers.
+The complete keyring can be downloaded at &lt;a href="https://docs.FreeBSD.org/pgpkeys/pgpkeys.txt">pgpkeyring.txt&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pgpkeys-officers">1. Officers&lt;a class="anchor" href="#pgpkeys-officers">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_security_officer_team_security_officerfreebsd_org">1.1. Security Officer Team &lt;code>&amp;lt;&lt;a href="mailto:security-officer@FreeBSD.org">security-officer@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>&lt;a class="anchor" href="#_security_officer_team_security_officerfreebsd_org">&lt;/a>&lt;/h3>
+&lt;div class="literalblock literal-block-margin">
+&lt;div class="content">
+&lt;pre>pub rsa4096/D9AD2A18057474CB 2022-12-11 [C] [expires: 2026-01-24]
+ Key fingerprint = 0BE3 3275 D74C 953C 79F8 1107 D9AD 2A18 0574 74CB
+uid FreeBSD Security Officer &amp;lt;security-officer@freebsd.org&amp;gt;
+sub rsa4096/6E58DE901F001AEF 2022-12-11 [S] [expires: 2025-01-15]
+sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
+&lt;/div></description></item></channel></rss>

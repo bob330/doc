@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/Guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>A maioria das documentações do FDP é escrita em AsciiDoc. Este capítulo explica o que isso significa, como ler e entender o código da documentação e as técnicas usadas. Para obter uma referência completa dos recursos do Asciidoctor, consulte a &lt;a href="https://docs.asciidoctor.org/home/">documentação do Asciidoctor&lt;/a>. Alguns exemplos usados neste capítulo foram retirados da &lt;a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference">Referência rápida de sintaxe AsciiDoc&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="asciidoctor-primer-overview">6.1. Visão geral&lt;a class="anchor" href="#asciidoctor-primer-overview">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Nos primórdios da era computacional, o texto eletrônico era simples. Havia poucos conjuntos de caracteres como ASCII ou EBCDIC, e apenas isso. Texto era texto, e o que você lia era realmente o texto que você tinha. Sem frescuras, sem formatação, sem inteligência.&lt;/p>
+&lt;/div></description></item><item><title>Capítulo 11. Páginas de Manual</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="manual-pages-introduction">11.1. Introdução&lt;a class="anchor" href="#manual-pages-introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;em>Páginas de manual&lt;/em>, geralmente abreviadas como &lt;em>man pages&lt;/em>, foram concebidas como lembretes prontamente disponíveis para sintaxe de comandos, detalhes de drivers de dispositivos ou formatos de arquivos de configuração. Elas se tornaram uma referência rápida extremamente valiosa de linha de comando para usuários, administradores de sistema e programadores.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Embora tenham sido planejados como material de referência em vez de tutoriais, as seções EXEMPLOS das páginas de manual geralmente fornecem casos de uso detalhados.&lt;/p>
+&lt;/div></description></item><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento pretende ser um guia para a configuração de um servidor LDAP (principalmente um servidor OpenLDAP) para autenticação no FreeBSD. Isso é útil para situações em que muitos servidores precisam das mesmas contas de usuário, por exemplo, como substituto do NIS.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface">1. Prefácio&lt;a class="anchor" href="#preface">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
+&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Um artigo sobre como configurar o CUPS no FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="printing-cups">1. Uma introdução ao Common Unix Printing System (CUPS)&lt;a class="anchor" href="#printing-cups">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>O CUPS, o Common UNIX Printing System, fornece uma camada de impressão portátil para sistemas operacionais baseados em UNIX®. Ele foi desenvolvido pela Easy Software Products para promover uma solução padrão de impressão para todos os fornecedores e usuários de UNIX®.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>O CUPS utiliza o Protocolo de Impressão pela Internet (IPP) como base para gerenciar trabalhos e filas de impressão. Os protocolos Line Printer Daemon (LPD), Server Message Block (SMB) e AppSocket (também conhecido como JetDirect) também são suportados, porém com funcionalidade reduzida. O CUPS adiciona opções de visualização de impressoras em rede e impressão baseada em PostScript Printer Description (PPD) para suportar as necessidades de impressão do mundo real no ambiente UNIX®. Como resultado, o CUPS é ideal para compartilhar e acessar impressoras em ambientes mistos de FreeBSD, Linux®, Mac OS® X ou Windows®.&lt;/p>
+&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento contém uma descrição dos vários arquivos de fontes que podem ser usados com o FreeBSD e o driver syscons, X11, Ghostscript e Groff. Exemplos de receitas são fornecidos para alternar o display syscons para o modo 80x60 e para usar fontes type 1 com os programas de aplicativos mencionados acima.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Existem muitas fontes disponíveis e alguém pode perguntar como usá-las com o FreeBSD. A resposta pode ser encontrada pesquisando cuidadosamente a documentação do componente que deseja utilizar. Isso pode ser muito demorado, portanto, este tutorial é uma tentativa de fornecer um atalho para outras pessoas interessadas.&lt;/p>
+&lt;/div></description></item><item><title>Guia de Início Rápido do FreeBSD para Usuários do Linux®</title><link>http://172.16.201.134:1313/pt-br/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento tem como objetivo familiarizar rapidamente os usuários intermediários a avançados do Linux® com os conceitos básicos do FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento destaca algumas das diferenças técnicas entre o FreeBSD e o Linux® para que os usuários intermediários a avançados do Linux® possam se familiarizar rapidamente com os conceitos básicos do FreeBSD.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento pressupõe que o FreeBSD já está instalado. Consulte o capítulo &lt;a href="https://docs.freebsd.org/pt-br/books/handbook/book/#bsdinstall">Instalando o FreeBSD&lt;/a> no Handbook para obter ajuda com o processo de instalação.&lt;/p>
+&lt;/div></description></item><item><title>Introdução ao NanoBSD</title><link>http://172.16.201.134:1313/pt-br/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento fornece informações sobre as ferramentas NanoBSD, que podem ser usadas para criar imagens de sistema FreeBSD para aplicações embarcadas, adequadas para uso em uma chave USB, cartão de memória ou outro meio de armazenamento em massa.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução ao NanoBSD&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>O NanoBSD é uma ferramenta desenvolvida por Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; e agora mantida por Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;. Ela cria uma imagem do sistema FreeBSD para aplicações embarcadas, adequada para uso em uma chave USB, cartão de memória ou outro meio de armazenamento em massa.&lt;/p>
+&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Os iniciantes podem achar difícil relacionar os fatos da documentação formal sobre o framework &lt;span class="filename">rc.d&lt;/span> do BSD com as tarefas práticas de escrever scripts &lt;span class="filename">rc.d&lt;/span>. Neste artigo, consideramos alguns casos típicos de crescente complexidade, mostramos recursos do &lt;span class="filename">rc.d&lt;/span> adequados para cada caso e discutimos como eles funcionam. Essa análise deve fornecer pontos de referência para estudos posteriores do design e aplicação eficiente do &lt;span class="filename">rc.d&lt;/span>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="rcng-intro">1. Introdução&lt;a class="anchor" href="#rcng-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>No histórico BSD, havia um script de inicialização monolítico, &lt;span class="filename">/etc/rc&lt;/span>. Ele era invocado pelo &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a> no momento da inicialização do sistema e realizava todas as tarefas de usuário necessárias para a operação multiusuário: verificação e montagem de sistemas de arquivos, configuração da rede, inicialização de daemons e assim por diante. A lista precisa de tarefas não era a mesma em todos os sistemas; os administradores precisavam personalizá-la. Com poucas exceções, o &lt;span class="filename">/etc/rc&lt;/span> tinha que ser modificado, e os verdadeiros hackers gostavam disso.&lt;/p>
+&lt;/div></description></item></channel></rss>

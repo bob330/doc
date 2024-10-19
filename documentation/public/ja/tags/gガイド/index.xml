@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gガイド on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/g%E3%82%AC%E3%82%A4%E3%83%89/</link><description>Recent content in Gガイド on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/g%E3%82%AC%E3%82%A4%E3%83%89/index.xml" rel="self" type="application/rss+xml"/><item><title>第2章 FreeBSD のインストール</title><link>http://172.16.201.134:1313/ja/books/handbook/bsdinstall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/bsdinstall/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bsdinstall-synopsis">2.1. この章では&lt;a class="anchor" href="#bsdinstall-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD は、amd64, ARM®, RISC-V®, および PowerPC® 等のさまざまなアーキテクチャに対応しています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>インストールまたは直接 FreeBSD を実行するためのイメージは、アーキテクチャおよびプラットフォームごとに &lt;a href="https://www.freebsd.org/ja/where/">ダウンロード&lt;/a> できます。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>利用できるイメージのタイプは以下の通りです。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>qcow2&lt;/code>, &lt;code>vmdk&lt;/code>, &lt;code>vhd&lt;/code> および raw デバイスイメージといった仮想マシンのディスクイメージ。これらはインストール用のイメージではなく、FreeBSD がすでにインストールされたインスタンスで、すぐに起動して、インストール後の作業を行うことができます。仮想マシンのイメージは、クラウド環境でも使われます。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Raspberry Pi のような組み込みシステム用の SD カードイメージ。これらのファイルをダウンロードしたら、展開し、ボードが起動するように raw イメージとして SD カードに書き込んでください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ISO または USB デバイスから起動して、FreeBSD を通常のデスクトップ、ラップトップ、サーバシステムのドライブ上にインストールするためのインストールイメージ。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章では、3 番目のケースについて、bsdinstall と呼ばれるテキストベースのインストールプログラムを用いた FreeBSD のインストール方法について説明します。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章では、以下について説明します。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>FreeBSD イメージの入手方法および FreeBSD インストールメディアの作り方。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>bsdinstall の起動方法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>bsdinstall が聞いてくる質問がどのような意味であり、 またどのように答えれば良いか。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>インストールに失敗した時の問題の解決方法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>インストールを確定する前に、 FreeBSD の live 版へアクセスする方法。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bsdinstall-hardware">2.2. 最小ハードウェア要件&lt;a class="anchor" href="#bsdinstall-hardware">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD をインストールするために必要なハードウェア要件は、アーキテクチャおよびバージョンごとに異なります。
+FreeBSD の各リリースが対応しているハードウェアアーキテクチャおよびデバイスの一覧は、 &lt;a href="https://www.FreeBSD.org/ja/releases/">FreeBSD リリース情報&lt;/a> のページにまとめられています。
+アーキテクチャごとに推奨される適切なイメージの選択に関しては、 &lt;a href="https://www.FreeBSD.org/ja/where/">FreeBSD ダウンロードページ&lt;/a> でも説明されています。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="bsdinstall-pre">2.3. インストール前に行う作業&lt;a class="anchor" href="#bsdinstall-pre">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>システムが FreeBSD のインストールのための最小ハードウェア要件を満たしていることを確認したら、インストールファイルをダウンロードして、インストール用のメディアを用意してください。
+その前に、以下のチェックリストを確認して、システムをインストールする準備ができていることを確認してください。&lt;/p>
+&lt;/div></description></item></channel></rss>
