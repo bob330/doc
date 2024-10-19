@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>How-To on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/how-to/</link><description>Recent content in How-To on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/how-to/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. Quick Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This section describes how to quickly create a new port.
+For applications where this quick method is not adequate, the full &amp;#34;Slow Porting&amp;#34; process is described in &lt;a href="../slow-porting/#slow-porting">Slow Porting&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>First, get the original tarball and put it into &lt;code>DISTDIR&lt;/code>, which defaults to &lt;span class="filename">/usr/ports/distfiles&lt;/span>.&lt;/p>
+&lt;/div>
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>These steps assume that the software compiled out-of-the-box.
+In other words, absolutely no changes were required for the application to work on a FreeBSD system.
+If anything had to be changed, refer to &lt;a href="../slow-porting/#slow-porting">Slow Porting&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="flavors-intro">7.1. An Introduction to Flavors&lt;a class="anchor" href="#flavors-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Flavors are a way to have multiple variations of a port.
+The port is built multiple times, with variations.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>For example, a port can have a normal version with many features and quite a few dependencies, and a light &amp;#34;lite&amp;#34; version with only basic features and minimal dependencies.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
+&lt;/div></description></item></channel></rss>

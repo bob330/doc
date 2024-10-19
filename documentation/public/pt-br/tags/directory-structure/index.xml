@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Directory Structure on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/directory-structure/</link><description>Recent content in Directory Structure on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/directory-structure/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 4. Estrutura de Diretórios da Documentação</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/structure/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Arquivos e diretórios no repositório &lt;strong>doc/&lt;/strong> seguem uma estrutura destinada a:&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Facilitar a conversão do documento para outros formatos.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Promover a consistência entre as diferentes organizações de documentação, e assim facilitar a alternância entre diferentes documentos.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Facilitar a decisão de onde a nova documentação deve ser colocada.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Além disso, o repositório de documentação deve acomodar documentos em vários idiomas e codificações diferentes. É importante que a estrutura do repositório de documentação não imponha quaisquer padrões particulares ou preferências culturais.&lt;/p>
+&lt;/div></description></item></channel></rss>

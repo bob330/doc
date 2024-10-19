@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Working Copy on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/working-copy/</link><description>Recent content in Working Copy on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/working-copy/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 3. A Área de Trabalho</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>A &lt;em>área de trabalho&lt;/em> é uma cópia da árvore de documentação do repositório do FreeBSD baixada no computador local. As alterações são feitas na cópia de trabalho local, testadas e enviadas como patches para serem submetidas no repositório principal.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Uma cópia completa da árvore de documentação pode ocupar 700 megabytes de espaço em disco. Tenha um gigabyte de espaço total para ter sobra para arquivos temporários e versões de teste dos diversos formatos de saída.&lt;/p>
+&lt;/div></description></item></channel></rss>

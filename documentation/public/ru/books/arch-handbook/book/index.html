@@ -1,0 +1,662 @@
+<!doctype html><html class=theme-light lang=ru><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="FreeBSD Architecture Handbook"><meta name=keywords content="Arch Handbook,FreeBSD"><meta name=copyright content="1995-2024 The FreeBSD Foundation"><link rel=canonical href=http://172.16.201.134:1313/ru/books/arch-handbook/book/><title>FreeBSD Architecture Handbook | FreeBSD Documentation Portal</title>
+<meta name=theme-color content="#790000"><meta name=color-scheme content="system light dark high-contrast"><link rel="shortcut icon" href=http://172.16.201.134:1313/favicon.ico><link rel=stylesheet href=http://172.16.201.134:1313/styles/main.min.css><link rel=stylesheet href=http://172.16.201.134:1313/css/font-awesome-min.css><script defer src=/js/theme-chooser.min.js></script><script defer src=/js/copy-clipboard.min.js></script><script defer src=/js/search.min.js></script><meta name=twitter:card content="summary"><meta name=twitter:domain content="docs.FreeBSD.org"><meta name=twitter:site content="@freebsd"><meta name=twitter:url content="https://twitter.com/freebsd"><meta property="og:title" content="FreeBSD Architecture Handbook"><meta property="og:description" content="FreeBSD Architecture Handbook"><meta property="og:type" content="website"><meta property="og:image" content="http://172.16.201.134:1313/favicon.ico"><meta property="og:image:alt" content="FreeBSD Logo"><meta property="og:locale" content="ru"><meta property="og:url" content="http://172.16.201.134:1313/ru/books/arch-handbook/book/"><meta property="og:site_name" content="FreeBSD Documentation Portal"><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","url":"http:\/\/172.16.201.134:1313\/ru\/books\/arch-handbook\/book\/","name":"FreeBSD Documentation Portal","headline":"FreeBSD Documentation Portal","description":"FreeBSD Documentation Portal"}</script></head><body><header><div class=header-container><div class=logo-menu-bars-container><a href=https://www.FreeBSD.org class=logo><img src=http://172.16.201.134:1313/images/FreeBSD-monochromatic.svg width=160 height=50 alt="FreeBSD logo">
+</a><label class=menu-bars for=menu-bars><i class="fa fa-bars" aria-hidden=true></i></label></div><input id=menu-bars type=checkbox><nav><ul class=menu><li class=menu-item><input id=about type=checkbox>
+<a href=# aria-label="Navigate to About section"><label class=menu-item-description for=about>О нас
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/about/ target=_blank>О нас</a></li><li><a href=https://www.freebsd.org/about/ target=_blank>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/about-us/about-the-foundation/ target=_blank>Фонд FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct/ target=_blank>Кодекс Этики</a></li></ul></li><li class=menu-item><input id=download type=checkbox>
+<a href=# aria-label="Navigate to get FreeBSD section"><label class=menu-item-description for=download>Получить FreeBSD
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/where/ target=_blank>Получить FreeBSD</a></li><li><a href=https://www.freebsd.org/releases/ target=_blank>Информация о релизах</a></li><li><a href=https://www.freebsd.org/releng/ target=_blank>Подготовка релизов</a></li><li><a href=https://www.freebsd.org/security/ target=_blank>Бюллетени Безопасности</a></li></ul></li><li class=menu-item><input id=documentation type=checkbox>
+<a href=# aria-label="Navigate to get Documentation section"><label class=menu-item-description for=documentation>Документация
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=/ru>Портал документации</a></li><li><a href=http://172.16.201.134:1313/ru/books/handbook>Руководство</a></li><li><a href=http://172.16.201.134:1313/ru/books/porters-handbook>Руководство по созданию портов</a></li><li><a href=https://docs.FreeBSD.org/en/books/fdp-primer>Учебник Проекта Документирования</a></li><li><a href=https://man.FreeBSD.org target=_blank>Страницы Справочника</a></li><li><a href=https://papers.FreeBSD.org target=_blank>Презентации и публикации</a></li><li><a href=https://wiki.FreeBSD.org target=_blank>Wiki</a></li><li><a href=http://172.16.201.134:1313/ru/books>Книги</a></li><li><a href=http://172.16.201.134:1313/ru/articles>Статьи</a></li></ul></li><li class=menu-item><input id=community type=checkbox>
+<a href=# aria-label="Navigate to get Community section"><label class=menu-item-description for=community>Сообщество
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/community/>Сообщество</a></li><li><a href=http://172.16.201.134:1313/ru/articles/contributing>Стать участником</a></li><li><a href=https://forums.freebsd.org/ target=_blank>Форум</a></li><li><a href=https://lists.freebsd.org/ target=_blank>Списки рассылки</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank>Каналы IRC</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank>Трекер ошибок</a></li><li><a href=https://www.freebsd.org/support/ target=_blank>Поддержка</a></li></ul></li></ul></nav><div class=search-donate-container><form class=search method=get id=search-header-form action=https://docs.freebsd.org/search name=search-header-form><input type=hidden name=DB value=ru>
+<input id=words name=P type=text size=20 maxlength=255>
+<button>
+<i class="fa fa-search" aria-hidden=true></i></button></form><div class=donate><a href=https://freebsdfoundation.org/donate/ target=_blank><span class=heart>♥</span>
+Пожертвования</a></div></div></div></header><input type=checkbox class="hidden toggle" id=menu-control><main class=main-wrapper-book><a id=top></a><div class=book><h1 class=title>FreeBSD Architecture Handbook</h1><div class="admonitionblock note"><p><i class="fa fa-exclamation-circle" aria-hidden=true></i>
+Этот перевод может быть устаревшим. Для того, чтобы помочь с переводом, пожалуйста, обратитесь к <a href=https://translate-dev.freebsd.org/ target=_blank>Сервер переводов FreeBSD</a>.</p></div><div class=copyright>Copyright © 2000-2006, 2012-2013 The FreeBSD Documentation Project</div><div class=legalnotice><a id=trademarks></a><details><summary>товарные знаки</summary><p>FreeBSD является зарегистрированным товарным знаком Фонда FreeBSD.</p><p>Apple, AirPort, FireWire, Mac, Macintosh, Mac OS, Quicktime и TrueType это торговые марки Apple Computer, Inc., зарегистрированные в Соединенных Штатах и других странах.</p><p>Microsoft, FrontPage, IntelliMouse, MS-DOS, Outlook, Windows, Windows Media и Windows NT это или зарегистрированные торговые марки или торговые марки Microsoft Corporation в Соединенных Штатах и/или других странах.</p><p>Unix это зарегистрированная торговая марка Open Group в Соединенных Штатах и других странах.</p><p>Многие из обозначений, используемые производителями и продавцами для обозначения своих продуктов, заявляются в качестве товарных знаков. Когда такие обозначения появляются в этом документе, и Проекту FreeBSD известно о товарном знаке, к обозначению добавляется знак “™” или “®”.</p></details></div><div class=toc-mobile><h3>Содержание</h3><nav id=TableOfContents><ul><li><a href=#locking>Глава 1. Замечания по блокировке</a><ul><li><a href=#locking-mutexes>1.1. Мьютексы</a></li><li><a href=#locking-sx>1.2. Разделяемые эксклюзивные блокировки</a></li><li><a href=#locking-atomic>1.3. Атомарно защищенные переменные</a></li></ul></li><li><a href=#driverbasics>Глава 2. Написание драйверов устройств для FreeBSD</a><ul><li><a href=#driverbasics-intro>2.1. Введение</a></li><li><a href=#driverbasics-kld>2.2. Механизм динамического компоновщика ядра - KLD</a></li><li><a href=#driverbasics-access>2.3. Обращение к драйверу устройства</a></li><li><a href=#driverbasics-char>2.4. Символьные устройства</a></li><li><a href=#driverbasics-block>2.5. Блочные устройства (которых больше нет)</a></li><li><a href=#driverbasics-net>2.6. Сетевые драйверы</a></li></ul></li><li><a href=#oss>Глава 3. Подсистема звука</a><ul><li><a href=#oss-intro>3.1. Введение</a></li><li><a href=#oss-files>3.2. Файлы</a></li><li><a href=#pcm-probe-and-attach>3.3. Обнаружение, подключение, и т.д.</a></li><li><a href=#oss-interfaces>3.4. Интерфейсы</a></li></ul></li></ul></nav></div><div class=book-content><div id=preamble><div class=sectionbody><hr></div></div><div class=sect1><h2 id=locking>Глава 1. Замечания по блокировке<a class=anchor href=#locking></a></h2><div class=sectionbody><div class=paragraph><p><em>Эта глава поддерживается проектом FreeBSD SMP Next Generation Project. Комментарии и пожелания направляйте в <a href=https://lists.FreeBSD.org/subscription/freebsd-smp>Список рассылки, посвящённый поддержке многопроцессорности (SMP) во FreeBSD</a>.</em></p></div><div class=paragraph><p>Этот документ описывает механизм блокировки, используемый в ядре FreeBSD для обеспечения эффективной поддержки нескольких процессоров в ядре. Блокировку можно рассматривать с нескольких точек зрения. Структуры данных могут быть защищены с помощью блокировок mutex или <a href="https://man.freebsd.org/cgi/man.cgi?query=lockmgr&amp;sektion=9&amp;format=html">lockmgr(9)</a>. Несколько переменных защищены просто в силу атомарности используемых для доступа к ним операций.</p></div><div class=sect2><h3 id=locking-mutexes>1.1. Мьютексы<a class=anchor href=#locking-mutexes></a></h3><div class=paragraph><p>Мьютекс (mutex) - это просто блокировка, используемая для реализации гарантированной исключительности. В частности, в каждый момент времени мьютексом может владеть только один объект. Если какой-то объект хочет получить мьютекс, который уже кто-то занял, он должен дождаться момента его освобождения. В ядре FreeBSD владельцами мьютексов являются процессы.</p></div><div class=paragraph><p>Мьютексы могут быть затребованы рекурсивно, но предполагается, что они занимаются на короткое время. В частности, владельцу мьютекса нельзя выдерживать паузу. Если вам нужно выполнить блокировку на время паузы, используйте блокировку через <a href="https://man.freebsd.org/cgi/man.cgi?query=lockmgr&amp;sektion=9&amp;format=html">lockmgr(9)</a>.</p></div><div class=paragraph><p>Каждый мьютекс имеет несколько представляющих интерес характеристик:</p></div><div class=dlist><dl><dt class=hdlist1>Имя переменной</dt><dd><p>Имя переменной <span class=type>struct mtx</span> в исходных текстах ядра.</p></dd><dt class=hdlist1>Логическое имя</dt><dd><p>Имя мьютекса, назначенное ему через <code>mtx_init</code>. Это имя выводится в сообщениях трассировки KTR и диагностических предупреждающих и ошибочных сообщениях и используется для идентификации мьютексов в отладочном коде.</p></dd><dt class=hdlist1>Тип</dt><dd><p>Тип мьютекса в терминах флагов <span class=constant>MTX_*</span>. Значение каждого флага связано с его смыслом так, как это описано в <a href="https://man.freebsd.org/cgi/man.cgi?query=mutex&amp;sektion=9&amp;format=html">mutex(9)</a>.</p><div class=dlist><dl><dt class=hdlist1><span class=constant>MTX_DEF</span></dt><dd><p>Sleep-мьютекс</p></dd><dt class=hdlist1><span class=constant>MTX_SPIN</span></dt><dd><p>Spin-мьютекс</p></dd><dt class=hdlist1><span class=constant>MTX_RECURSE</span></dt><dd><p>Этому мьютексу разрешается блокировать рекурсивно.</p></dd></dl></div></dd><dt class=hdlist1>Защиты</dt><dd><p>Список структур данных или членов структур данных, которые защищает этот мьютекс. Для членов структур данных имя будет в форме . члена структуры/.</p></dd><dt class=hdlist1>Зависимые функции</dt><dd><p>Функции, которые можно вызвать, если этот мьютекс занят.</p></dd></dl></div><table class="tableblock frame-all grid-all stretch"><caption class=title>Таблица 1. Список мьютексов</caption><col style=width:13.6363%><col style=width:9.0909%><col style=width:9.0909%><col style=width:50%><col style=width:18.1819%><thead><tr><th class="tableblock halign-left valign-top">Variable Name</th><th class="tableblock halign-left valign-top">Logical Name</th><th class="tableblock halign-left valign-top">Type</th><th class="tableblock halign-left valign-top">Protectees</th><th class="tableblock halign-left valign-top">Dependent Functions</th></tr></thead><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock>sched_lock</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>"sched lock"</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>MTX_SPIN</code> | <code>MTX_RECURSE</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>_gmonparam</code>, <code>cnt.v_swtch</code>, <code>cp_time</code>, <code>curpriority</code>, <code>mtx</code>.<code>mtx_blocked</code>, <code>mtx</code>.<code>mtx_contested</code>, <code>proc</code>.<code>p_procq</code>, <code>proc</code>.<code>p_slpq</code>, <code>proc</code>.<code>p_sflag</code>, <code>proc</code>.<code>p_stat</code>, <code>proc</code>.<code>p_estcpu</code>, <code>proc</code>.<code>p_cpticks</code> <code>proc</code>.<code>p_pctcpu</code>, <code>proc</code>.<code>p_wchan</code>, <code>proc</code>.<code>p_wmesg</code>, <code>proc</code>.<code>p_swtime</code>, <code>proc</code>.<code>p_slptime</code>, <code>proc</code>.<code>p_runtime</code>, <code>proc</code>.<code>p_uu</code>, <code>proc</code>.<code>p_su</code>, <code>proc</code>.<code>p_iu</code>, <code>proc</code>.<code>p_uticks</code>, <code>proc</code>.<code>p_sticks</code>, <code>proc</code>.<code>p_iticks</code>, <code>proc</code>.<code>p_oncpu</code>, <code>proc</code>.<code>p_lastcpu</code>, <code>proc</code>.<code>p_rqindex</code>, <code>proc</code>.<code>p_heldmtx</code>, <code>proc</code>.<code>p_blocked</code>, <code>proc</code>.<code>p_mtxname</code>, <code>proc</code>.<code>p_contested</code>, <code>proc</code>.<code>p_priority</code>, <code>proc</code>.<code>p_usrpri</code>, <code>proc</code>.<code>p_nativepri</code>, <code>proc</code>.<code>p_nice</code>, <code>proc</code>.<code>p_rtprio</code>, <code>pscnt</code>, <code>slpque</code>, <code>itqueuebits</code>, <code>itqueues</code>, <code>rtqueuebits</code>, <code>rtqueues</code>, <code>queuebits</code>, <code>queues</code>, <code>idqueuebits</code>, <code>idqueues</code>, <code>switchtime</code>, <code>switchticks</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>setrunqueue</code>, <code>remrunqueue</code>, <code>mi_switch</code>, <code>chooseproc</code>, <code>schedclock</code>, <code>resetpriority</code>, <code>updatepri</code>, <code>maybe_resched</code>, <code>cpu_switch</code>, <code>cpu_throw</code>, <code>need_resched</code>, <code>resched_wanted</code>, <code>clear_resched</code>, <code>aston</code>, <code>astoff</code>, <code>astpending</code>, <code>calcru</code>, <code>proc_compare</code></p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>vm86pcb_lock</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>"vm86pcb lock"</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>MTX_DEF</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>vm86pcb</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>vm86_bioscall</code></p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>Giant</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>"Giant"</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>MTX_DEF</code> | <code>MTX_RECURSE</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock>nearly everything</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>lots</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>callout_lock</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>"callout lock"</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>MTX_SPIN</code> | <code>MTX_RECURSE</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>callfree</code>, <code>callwheel</code>, <code>nextsoftcheck</code>, <code>proc</code>.<code>p_itcallout</code>, <code>proc</code>.<code>p_slpcallout</code>, <code>softticks</code>, <code>ticks</code></p></td><td class="tableblock halign-left valign-top"></td></tr></tbody></table></div><div class=sect2><h3 id=locking-sx>1.2. Разделяемые эксклюзивные блокировки<a class=anchor href=#locking-sx></a></h3><div class=paragraph><p>Эти блокировки обеспечивают базовый тип функциональности - на чтение/запись и могут поддерживаться процессами, находящимся в состоянии ожидания. На текущий момент они реализованы в <a href="https://man.freebsd.org/cgi/man.cgi?query=lockmgr&amp;sektion=9&amp;format=html">lockmgr(9)</a>.</p></div><table class="tableblock frame-all grid-all stretch"><caption class=title>Таблица 2. Список разделяемых эксклюзивных блокировок</caption><col style=width:50%><col style=width:50%><thead><tr><th class="tableblock halign-left valign-top">Имя переменной</th><th class="tableblock halign-left valign-top">Защиты</th></tr></thead><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>allproc_lock</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>allproc</code> <code>zombproc</code> <code>pidhashtbl</code> <code>proc</code>.<code>p_list</code> <code>proc</code>.<code>p_hash</code> <code>nextpid</code></p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>proctree_lock</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>proc</code>.<code>p_children</code> <code>proc</code>.<code>p_sibling</code></p></td></tr></tbody></table></div><div class=sect2><h3 id=locking-atomic>1.3. Атомарно защищенные переменные<a class=anchor href=#locking-atomic></a></h3><div class=paragraph><p>Переменной, защищенной атомарно, является особая переменная, которая не защищается явной блокировкой. Вместо этого для доступа к данным переменных используются специальные атомарные операции, как описано в <a href="https://man.freebsd.org/cgi/man.cgi?query=atomic&amp;sektion=9&amp;format=html">atomic(9)</a>. Лишь несколько переменных используются таким образом, хотя другие примитивы синхронизации, такие как мьютексы, реализованы с атомарно защищенными переменными.</p></div><div class=ulist><ul><li><p><code>mtx</code>.<code>mtx_lock</code></p></li></ul></div></div></div></div><div class=sect1><h2 id=driverbasics>Глава 2. Написание драйверов устройств для FreeBSD<a class=anchor href=#driverbasics></a></h2><div class=sectionbody><div class=paragraph><p>Эту главу написал Murray Stokely &lt;<a href=mailto:murray@FreeBSD.org>murray@FreeBSD.org</a>> на основе множества источников, включая справочную страницу intro(4), которую создал Jörg Wunsch &lt;<a href=mailto:joerg@FreeBSD.org>joerg@FreeBSD.org</a>>.</p></div><div class=sect2><h3 id=driverbasics-intro>2.1. Введение<a class=anchor href=#driverbasics-intro></a></h3><div class=paragraph><p>Эта глава является кратким введением в процесс написания драйверов устройств для FreeBSD. В этом контексте термин устройство используется в основном для вещей, связанных с оборудованием, относящимся к системе, таких, как диски, печатающие устройства или графические дисплеи с клавиатурами. Драйвер устройства является программной компонентой операционной системы, управляющей некоторым устройством. Имеются также так называемые псевдо-устройства, в случае которых драйвер устройства эмулирует поведение устройства программно, без наличия какой-либо соответствующей аппаратуры. Драйверы устройств могут быть вкомпилированы в систему статически или могут загружаться по требованию при помощи механизма динамического компоновщика ядра <code>kld</code>.</p></div><div class=paragraph><p>Большинство устройств в Unix-подобной операционной системе доступны через файлы устройств (device-nodes), иногда также называемые специальными файлами. В иерархии файловой системы эти файлы обычно находятся в каталоге <span class=filename>/dev</span>. В версиях FreeBSD, более старых, чем 5.0-RELEASE, в которых поддержка <a href="https://man.freebsd.org/cgi/man.cgi?query=devfs&amp;sektion=5&amp;format=html">devfs(5)</a> не интегрирована в систему, каждый файл устройства должен создаваться статически и вне зависимости от наличия соответствующего драйвера устройства. Большинство файлов устройств в системе создаются при помощи команды <code>MAKEDEV</code>.</p></div><div class=paragraph><p>Драйверы устройств могут быть условно разделены на две категории; драйверы символьных и сетевых устройств.</p></div></div><div class=sect2><h3 id=driverbasics-kld>2.2. Механизм динамического компоновщика ядра - KLD<a class=anchor href=#driverbasics-kld></a></h3><div class=paragraph><p>Интерфейс kld позволяет системным администраторам динамически добавлять и убирать функциональность из работающей системы. Это позволяет разработчикам драйверов устройств загружать собственные изменения в работающее ядро без постоянных перезагрузок для тестирования изменений.</p></div><div class=paragraph><p>Для работы с интерфейсом kld используются следующие команды привилегированного режима:</p></div><div class=ulist><ul><li><p><code>kldload</code> - загружает новый модуль ядра</p></li><li><p><code>kldunload</code> - выгружает модуль ядра</p></li><li><p><code>kldstat</code> - выводит список загруженных в данный момент модулей</p></li></ul></div><div class=paragraph><p>Скелет модуля ядра</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * KLD Skeleton
+ * Inspired by Andrew Reiter&#39;s Daemonnews article
+ */
+
+#include &lt;sys/types.h&gt;
+#include &lt;sys/module.h&gt;
+#include &lt;sys/systm.h&gt;  /* uprintf */
+#include &lt;sys/errno.h&gt;
+#include &lt;sys/param.h&gt;  /* defines used in kernel.h */
+#include &lt;sys/kernel.h&gt; /* types used in module initialization */
+
+/*
+ * Load handler that deals with the loading and unloading of a KLD.
+ */
+
+static int
+skel_loader(struct module *m, int what, void *arg)
+{
+  int err = 0;
+
+  switch (what) {
+  case MOD_LOAD:                /* kldload */
+    uprintf(&#34;Skeleton KLD loaded.\n&#34;);
+    break;
+  case MOD_UNLOAD:
+    uprintf(&#34;Skeleton KLD unloaded.\n&#34;);
+    break;
+  default:
+    err = EINVAL;
+    break;
+  }
+  return(err);
+}
+
+/* Declare this module to the rest of the kernel */
+
+static moduledata_t skel_mod = {
+  &#34;skel&#34;,
+  skel_loader,
+  NULL
+};
+
+DECLARE_MODULE(skeleton, skel_mod, SI_SUB_KLD, SI_ORDER_ANY);</pre></div></div><div class=sect3><h4 id=_makefile>2.2.1. Makefile<a class=anchor href=#_makefile></a></h4><div class=paragraph><p>Во FreeBSD имеются заготовки для включения в make-файлы, которые вы можете использовать для быстрой компиляции собственных дополнений к ядру.</p></div><div class="literalblock programlisting"><div class=content><pre>SRCS=skeleton.c
+KMOD=skeleton
+
+.include &lt;bsd.kmod.mk&gt;</pre></div></div><div class=paragraph><p>Простой запуск команды <code>make</code> с этим make-файлом приведет к созданию файла <span class=filename>skeleton.ko</span>, который можно загрузить в вашу систему, набрав:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># kldload -v ./skeleton.ko</span></code></pre></div></div></div></div><div class=sect2><h3 id=driverbasics-access>2.3. Обращение к драйверу устройства<a class=anchor href=#driverbasics-access></a></h3><div class=paragraph><p>Unix дает некоторый общий набор системных вызовов для использования в пользовательских приложениях. Когда пользователь обращается к файлу устройства, высокие уровни ядра перенаправляют эти обращения к соответствующему драйверу устройства. Скрипт <code>/dev/MAKEDEV</code> создает большинство файлов устройств в вашей системе, однако если вы ведете разработку своего собственного драйвера, то может появиться необходимость в создании собственных файлов устройств при помощи команды <code>mknod</code>.</p></div><div class=sect3><h4 id=_создание_статических_файлов_устройств>2.3.1. Создание статических файлов устройств<a class=anchor href=#_создание_статических_файлов_устройств></a></h4><div class=paragraph><p>Для создания файла устройства команде <code>mknod</code> требуется указать четыре аргумента. Вы должны указать имя файла устройства, тип устройства, старшее число устройства и младшее число устройства.</p></div></div><div class=sect3><h4 id=_динамические_файлы_устройств>2.3.2. Динамические файлы устройств<a class=anchor href=#_динамические_файлы_устройств></a></h4><div class=paragraph><p>Файловая система устройств, devfs, предоставляет доступ к пространству имен устройств ядра из глобального пространства имен файловой системы. Это устраняет потенциальную проблемы наличия драйвера без статического файла устройства или файла устройства без установленного драйвера устройства. Devfs все еще находится в разработке, однако она уже достаточно хорошо работает.</p></div></div></div><div class=sect2><h3 id=driverbasics-char>2.4. Символьные устройства<a class=anchor href=#driverbasics-char></a></h3><div class=paragraph><p>Драйвер символьного устройства передает данные непосредственно в или из процесса пользователя. Это самый распространенный тип драйвера устройства и в дереве исходных текстов имеется достаточно простых примеров таких драйверов.</p></div><div class=paragraph><p>В этом простом примере псевдо-устройство запоминает какие угодно значения, которые вы в него записываете, и затем может выдавать их назад при чтении из этого устройства. Приведены две версии, одна для FreeBSD 4.X, а другая для FreeBSD 5.X.</p></div><div class=exampleblock><div class=title>Пример 1. Пример драйвера псевдо-устройства Echo для FreeBSD 4.X</div><div class=content><div class="literalblock programlisting"><div class=content><pre>/*
+ * Simple `echo&#39; pseudo-device KLD
+ *
+ * Murray Stokely
+ */
+
+#define MIN(a,b) (((a)  (b)) ? (a) : (b))
+
+#include sys/types.h
+#include sys/module.h
+#include sys/systm.h  /* uprintf */
+#include sys/errno.h
+#include sys/param.h  /* defines used in kernel.h */
+#include sys/kernel.h /* types used in module initialization */
+#include sys/conf.h   /* cdevsw struct */
+#include sys/uio.h    /* uio struct */
+#include sys/malloc.h
+
+#define BUFFERSIZE 256
+
+/* Function prototypes */
+d_open_t	echo_open;
+d_close_t	echo_close;
+d_read_t	echo_read;
+d_write_t	echo_write;
+
+/* Character device entry points */
+static struct cdevsw echo_cdevsw = {
+	echo_open,
+	echo_close,
+	echo_read,
+	echo_write,
+	noioctl,
+	nopoll,
+	nommap,
+	nostrategy,
+	&#34;echo&#34;,
+	33,             /* reserved for lkms - /usr/src/sys/conf/majors */
+	nodump,
+	nopsize,
+	D_TTY,
+	-1
+};
+
+struct s_echo {
+	char msg[BUFFERSIZE];
+	int len;
+} t_echo;
+
+/* vars */
+static dev_t sdev;
+static int len;
+static int count;
+static t_echo *echomsg;
+
+MALLOC_DECLARE(M_ECHOBUF);
+MALLOC_DEFINE(M_ECHOBUF, &#34;echobuffer&#34;, &#34;buffer for echo module&#34;);
+
+/*
+ * This function is called by the kld[un]load(2) system calls to
+ * determine what actions to take when a module is loaded or unloaded.
+ */
+
+static int
+echo_loader(struct module *m, int what, void *arg)
+{
+	int err = 0;
+
+	switch (what) {
+	case MOD_LOAD:                /* kldload */
+		sdev = make_dev(echo_cdevsw,
+                    0,
+                    UID_ROOT,
+                    GID_WHEEL,
+                    0600,
+                    &#34;echo&#34;);
+		/* kmalloc memory for use by this driver */
+    		MALLOC(echomsg, t_echo *, sizeof(t_echo), M_ECHOBUF, M_WAITOK);
+		printf(&#34;Echo device loaded.\n&#34;);
+		break;
+	case MOD_UNLOAD:
+		destroy_dev(sdev);
+		FREE(echomsg,M_ECHOBUF);
+		printf(&#34;Echo device unloaded.\n&#34;);
+		break;
+	default:
+    		err = EINVAL;
+    		break;
+  	}
+	return(err);
+}
+
+int
+echo_open(dev_t dev, int oflags, int devtype, struct proc *p)
+{
+	int err = 0;
+
+	uprintf(&#34;Opened device \&#34;echo\&#34; successfully.\n&#34;);
+	return(err);
+}
+
+int
+echo_close(dev_t dev, int fflag, int devtype, struct proc *p)
+{
+	uprintf(&#34;Closing device \&#34;echo.\&#34;\n&#34;);
+	return(0);
+}
+
+/*
+ * The read function just takes the buf that was saved via
+ * echo_write() and returns it to userland for accessing.
+ * uio(9)
+ */
+
+int
+echo_read(dev_t dev, struct uio *uio, int ioflag)
+{
+	int err = 0;
+	int amt;
+
+  /* How big is this read operation?  Either as big as the user wants,
+     or as big as the remaining data */
+  amt = MIN(uio-&gt;uio_resid, (echomsg-&gt;len - uio-&gt;uio_offset &gt; 0) ? echomsg-&gt;len - uio-&gt;uio_offset : 0);
+  if ((err = uiomove(echomsg-&gt;msg + uio-&gt;uio_offset,amt,uio)) != 0) {
+    uprintf(&#34;uiomove failed!\n&#34;);
+  }
+
+  return err;
+}
+
+/*
+ * echo_write takes in a character string and saves it
+ * to buf for later accessing.
+ */
+
+int
+echo_write(dev_t dev, struct uio *uio, int ioflag)
+{
+  int err = 0;
+
+  /* Copy the string in from user memory to kernel memory */
+  err = copyin(uio-&gt;uio_iov-&gt;iov_base, echomsg-&gt;msg, MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE));
+
+  /* Now we need to null terminate */
+  *(echomsg-&gt;msg + MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE)) = 0;
+  /* Record the length */
+  echomsg-&gt;len = MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE);
+
+  if (err != 0) {
+    uprintf(&#34;Write failed: bad address!\n&#34;);
+  }
+
+  count++;
+  return(err);
+}
+
+DEV_MODULE(echo,echo_loader,NULL);</pre></div></div></div></div><div class=exampleblock><div class=title>Пример 2. Пример драйвера псевдо-устройства Echo для FreeBSD 5.X</div><div class=content><div class="literalblock programlisting"><div class=content><pre>/*
+ * Simple `echo&#39; pseudo-device KLD
+ *
+ * Murray Stokely
+ *
+ * Converted to 5.X by Sren (Xride) Straarup
+ */
+
+#include sys/types.h
+#include sys/module.h
+#include sys/systm.h  /* uprintf */
+#include sys/errno.h
+#include sys/param.h  /* defines used in kernel.h */
+#include sys/kernel.h /* types used in module initialization */
+#include sys/conf.h   /* cdevsw struct */
+#include sys/uio.h    /* uio struct */
+#include sys/malloc.h
+
+#define BUFFERSIZE 256
+#define CDEV_MAJOR      33
+
+/* Function prototypes */
+static d_open_t      echo_open;
+static d_close_t     echo_close;
+static d_read_t      echo_read;
+static d_write_t     echo_write;
+
+/* Character device entry points */
+static struct cdevsw echo_cdevsw = {
+       .d_open = echo_open,
+       .d_close = echo_close,
+       .d_maj = CDEV_MAJOR,
+       .d_name = &#34;echo&#34;,
+       .d_read = echo_read,
+       .d_write = echo_write
+};
+
+typedef struct s_echo {
+       char msg[BUFFERSIZE];
+       int len;
+} t_echo;
+
+/* vars */
+static dev_t echo_dev;
+static int count;
+static t_echo *echomsg;
+
+MALLOC_DECLARE(M_ECHOBUF);
+MALLOC_DEFINE(M_ECHOBUF, &#34;echobuffer&#34;, &#34;buffer for echo module&#34;);
+
+/*
+ * This function is called by the kld[un]load(2) system calls to
+ * determine what actions to take when a module is loaded or unloaded.
+ */
+
+static int
+echo_loader(struct module *m, int what, void *arg)
+{
+       int err = 0;
+
+       switch (what) {
+       case MOD_LOAD:                /* kldload */
+               echo_dev = make_dev(echo_cdevsw,
+                   0,
+                   UID_ROOT,
+                   GID_WHEEL,
+                   0600,
+                   &#34;echo&#34;);
+               /* kmalloc memory for use by this driver */
+               MALLOC(echomsg, t_echo *, sizeof(t_echo), M_ECHOBUF, M_WAITOK);
+               printf(&#34;Echo device loaded.\n&#34;);
+               break;
+       case MOD_UNLOAD:
+               destroy_dev(echo_dev);
+               FREE(echomsg,M_ECHOBUF);
+               printf(&#34;Echo device unloaded.\n&#34;);
+               break;
+       default:
+               err = EINVAL;
+               break;
+       }
+       return(err);
+}
+
+static int
+echo_open(dev_t dev, int oflags, int devtype, struct thread *p)
+{
+       int err = 0;
+
+       uprintf(&#34;Opened device \&#34;echo\&#34; successfully.\n&#34;);
+       return(err);
+}
+
+static int
+echo_close(dev_t dev, int fflag, int devtype, struct thread *p)
+{
+       uprintf(&#34;Closing device \&#34;echo.\&#34;\n&#34;);
+       return(0);
+}
+
+/*
+ * The read function just takes the buf that was saved via
+ * echo_write() and returns it to userland for accessing.
+ * uio(9)
+ */
+
+static int
+echo_read(dev_t dev, struct uio *uio, int ioflag)
+{
+	int err = 0;
+	int amt;
+
+	/*
+         * How big is this read operation?  Either as big as the user wants,
+         * or as big as the remaining data
+         */
+	amt = MIN(uio-&gt;uio_resid, (echomsg-&gt;len - uio-&gt;uio_offset &gt; 0) ?
+           echomsg-&gt;len - uio-&gt;uio_offset : 0);
+        if ((err = uiomove(echomsg-&gt;msg + uio-&gt;uio_offset,amt,uio)) != 0) {
+		uprintf(&#34;uiomove failed!\n&#34;);
+	}
+	return(err);
+}
+
+/*
+ * echo_write takes in a character string and saves it
+ * to buf for later accessing.
+ */
+
+static int
+echo_write(dev_t dev, struct uio *uio, int ioflag)
+{
+       int err = 0;
+
+       /* Copy the string in from user memory to kernel memory */
+       err = copyin(uio-&gt;uio_iov-&gt;iov_base, echomsg-&gt;msg,
+           MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE - 1));
+
+       /* Now we need to null terminate, then record the length */
+       *(echomsg-&gt;msg + MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE - 1)) = 0;
+       echomsg-&gt;len = MIN(uio-&gt;uio_iov-&gt;iov_len,BUFFERSIZE);
+
+       if (err != 0) {
+		uprintf(&#34;Write failed: bad address!\n&#34;);
+       }
+       count++;
+       return(err);
+}
+
+DEV_MODULE(echo,echo_loader,NULL);</pre></div></div></div></div><div class=paragraph><p>Для установки этого драйвера во FreeBSD 4.X сначала вам нужно создать файл устройства в вашей файловой системе по команде типа следующей:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># mknod /dev/echo c 33 0</span></code></pre></div></div><div class=paragraph><p>Когда этот драйвер загружен, вы можете выполнять следующие действия:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># echo -n &#34;Test Data&#34; &gt; /dev/echo</span>
+<span class=c># cat /dev/echo</span>
+Test Data</code></pre></div></div><div class=paragraph><p>Устройства, обслуживающие реальное оборудование, описываются в следующей главе.</p></div><div class=paragraph><p>Дополнительные источники информации</p></div><div class=ulist><ul><li><p><a href=http://www.daemonnews.org/200010/blueprints.html>Учебник по программированию механизма динамического компоновщика ядра (KLD)</a> - <a href=http://www.daemonnews.org/>Daemonnews</a> Октябрь 2000</p></li><li><p><a href=http://www.daemonnews.org/200007/newbus-intro.html>Как писать драйверы ядра в парадигме NEWBUS</a> - <a href=http://www.daemonnews.org/>Daemonnews</a> Июль 2000</p></li></ul></div></div><div class=sect2><h3 id=driverbasics-block>2.5. Блочные устройства (которых больше нет)<a class=anchor href=#driverbasics-block></a></h3><div class=paragraph><p>Другие UNIX®-системы могут поддерживать со вторым типом дисковых устройств, так называемых устройств с блочной организацией. Блочные устройства являются дисковыми устройствами, для которых ядро организует кэширование. Такое кэширование делает блочные устройства практически бесполезными, или по крайней мере ненадёжными. Кэширование изменяет последовательность операций записи, лишая приложение возможности узнать реальное содержимое диска в любой момент времени. Это делает предсказуемое и надежное восстановление данных на диске (файловые системы, базы данных и прочее) после сбоя невозможным. Так как запись может быть отложенной, то нет способа сообщить приложению, при выполнении какой именно операции записи ядро встретилось с ошибкой, что таким образом осложняет проблему целостности данных. По этой причине серьёзные приложения не полагаются на блочные устройства, и, на самом деле практически во всех приложениях, которые работают с диском напрямую, имеется большая проблема выбора устройств с последовательным доступом (или "raw"), которые должны использоваться. Из-за реализации отображения каждого диска (раздела) в два устройства с разными смыслами, которая усложняет соответствующий код ядра, во FreeBSD поддержка дисковых устройств с кэшированием была отброшена в процессе модернизации инфраструктуры I/O-операций с дисками.</p></div></div><div class=sect2><h3 id=driverbasics-net>2.6. Сетевые драйверы<a class=anchor href=#driverbasics-net></a></h3><div class=paragraph><p>В случае драйверов сетевых устройств файлы устройств для доступа к ним не используются. Их выбор основан на другом механизме, работающем в ядре, и не использующем вызов open(); об использование сетевых устройств в общем случае рассказано в описании системного вызова socket(2).</p></div><div class=paragraph><p>Почитайте справочную информацию о вызове ifnet(), устройстве loopback, почитайте драйверы Билла Пола (Bill Paul), и так далее..</p></div></div></div></div><div class=sect1><h2 id=oss>Глава 3. Подсистема звука<a class=anchor href=#oss></a></h2><div class=sectionbody><div class=sect2><h3 id=oss-intro>3.1. Введение<a class=anchor href=#oss-intro></a></h3><div class=paragraph><p>Перевод на русский язык: Виталий Богданов (<a href=mailto:gad@gad.glazov.net>gad@gad.glazov.net</a>)</p></div><div class=paragraph><p>В подсистеме звука FreeBSD существует чёткое разделение между частью, поддерживающей общие звуковые возможности и аппаратно зависимой частью. Данная особенность делает более простым добавление поддержки новых устройств.</p></div><div class=paragraph><p><a href="https://man.freebsd.org/cgi/man.cgi?query=pcm&amp;sektion=4&amp;format=html">pcm(4)</a> занимает центральное место в подсистеме звука. Его основными элементами являются:</p></div><div class=ulist><ul><li><p>Интерфейс системных вызовов (read, write, ioctls) к функциям оцифрованного звука и микшера. Командный набор ioctl совместим с интерфейсом <em>OSS</em> или <em>Voxware</em>, позволяя тем самым портирование мультимедиа приложений без дополнительной модификации.</p></li><li><p>Общий код обработки звуковых данных (преобразования форматов, виртуальные каналы).</p></li><li><p>Единый программный интерфейс к аппаратно-зависимым модулям звукового интерфейса.</p></li><li><p>Дополнительная поддержка нескольких общих аппаратных интерфейсов (ac97) или разделяемого аппаратно-специфичного кода (например: функции ISA DMA).</p></li></ul></div><div class=paragraph><p>Поддержка отдельных звуковых карт осуществляется с помощью аппаратно-специфичных драйверов, обеспечивающих канальные и микшерные интерфейсы, включаемые в общий код.</p></div><div class=paragraph><p>В этой главе термином мы будем называть центральную, общую часть звукового драйвера, как противопоставление аппаратно-специфичным модулям.</p></div><div class=paragraph><p>Человек, решающий написать драйвер наверняка захочет использовать в качестве шаблона уже существующий код. Но, если звуковой код хорош и чист, он также в основном лишён комментариев. Этот документ - попытка рассмотрения базового интерфейса и попытка ответить на вопросы, возникшие при адаптировании существующего кода.</p></div><div class=paragraph><p>Для старта с рабочего примера, вы можете найти шаблон драйвера, оснащенного комментариями на <a href=http://people.FreeBSD.org/\~cg/template.c>http://people.FreeBSD.org/~cg/template.c</a></p></div></div><div class=sect2><h3 id=oss-files>3.2. Файлы<a class=anchor href=#oss-files></a></h3><div class=paragraph><p>Весь исходный код, на сегодняшний момент (FreeBSD 4.4), содержится в каталоге <span class=filename>/usr/src/sys/dev/sound/</span>, за исключением публичных определений интерфейса ioctl, находящихся в <span class=filename>/usr/src/sys/sys/soundcard.h</span></p></div><div class=paragraph><p>В подкаталоге <span class=filename>pcm/</span> родительского каталога <span class=filename>/usr/src/sys/dev/sound/</span> находится главный код, а в каталогах <span class=filename>isa/</span> и <span class=filename>pci/</span> содержатся драйвера для ISA и PCI карт.</p></div></div><div class=sect2><h3 id=pcm-probe-and-attach>3.3. Обнаружение, подключение, и т.д.<a class=anchor href=#pcm-probe-and-attach></a></h3><div class=paragraph><p>Обнаружение и подключение звуковых драйверов во многом схоже с драйвером любого другого устройства. За дополнительной информацией вы можете обратиться к главам <a href=#isa-driver>ISA</a> или <a href=#pci>PCI</a> данного руководства.</p></div><div class=paragraph><p>Но всё же, звуковые драйвера немного отличаются:</p></div><div class=ulist><ul><li><p>Они объявляют сами себя, как устройства класса , с частной структурой устройства :</p><div class="literalblock programlisting"><div class=content><pre>          static driver_t xxx_driver = {
+              &#34;pcm&#34;,
+              xxx_methods,
+              sizeof(struct snddev_info)
+          };
+
+          DRIVER_MODULE(snd_xxxpci, pci, xxx_driver, pcm_devclass, 0, 0);
+          MODULE_DEPEND(snd_xxxpci, snd_pcm, PCM_MINVER, PCM_PREFVER,PCM_MAXVER);</pre></div></div><div class=paragraph><p>Большинство звуковых драйверов нуждаются в сохранении личной информации, касающейся их устройства. Структура с личными данными обычно выделяется при вызове функции attach. Её адрес передаётся посредством вызовов <code>pcm_register()</code> и <code>mixer_init()</code>. Позже передаёт назад этот адрес, в качестве параметра в вызовах к интерфейсам звукового драйвера.</p></div></li><li><p>Функция подключения звукового драйвера должна объявлять её микшерный или AC97 интерфейс посредством вызова <code>mixer_init()</code>. Для микшерного интерфейса это взамен вернёт вызов <a href=#xxxmixer-init><code>xxxmixer_init()</code></a>.</p></li><li><p>Функция подключения звукового драйвера передаёт общие настройки каналов посредством вызова <code>pcm_register(dev, sc, nplay, nrec)</code>, где <code>sc</code> - адрес структуры данных устройства, используемой в дальнейших вызовах от , а <code>nplay</code> и <code>nrec</code> - количество каналов проигрывания и записи.</p></li><li><p>Функция подключения звукового драйвера объявляет каждый из её каналов с помощью вызовов <code>pcm_addchan()</code>. Это установит занятость канала в и вызовет взамен вызов <a href=#xxxchannel-init><code>xxxchannel_init()</code></a>.</p></li><li><p>Функция отключения должна вызывать <code>pcm_unregister()</code> перед объявлением её ресурсов свободными.</p></li></ul></div><div class=paragraph><p>Существует два метода работы с не PnP устройствами:</p></div><div class=ulist><ul><li><p>Использование метода <code>device_identify()</code> (пример смотрите в: <span class=filename>sound/isa/es1888.c</span>). <code>device_identify()</code> пытается обнаружить оборудование, использующее известные адреса, и если найдёт поддерживаемое устройство, то создаст новое pcm устройство, которое затем будет передано процессу обнаружения/подключения.</p></li><li><p>Использование выборочной конфигурации ядра с соответствующими хинтами для pcm устройств (пример: <span class=filename>sound/isa/mss.c</span>).</p></li></ul></div><div class=paragraph><p>драйверы должны поддерживать <code>device_suspend</code>, <code>device_resume</code> и <code>device_shutdown</code> функции, для корректного функционирования управления питанием и процесса выгрузки модуля.</p></div></div><div class=sect2><h3 id=oss-interfaces>3.4. Интерфейсы<a class=anchor href=#oss-interfaces></a></h3><div class=paragraph><p>Интерфейс между и звуковыми драйверами определён в терминах <a href=#kernel-objects>объектов ядра</a>.</p></div><div class=paragraph><p>Есть 2 основных интерфейса, которые обычно обеспечивает звуковой драйвер: <em>канальный</em> и, либо <em>микшерный</em> либо <em>AC97</em>.</p></div><div class=paragraph><p>Интерфейс <em>AC97</em> довольно мало использует доступ к ресурсам оборудования (чтение/запись регистров). Данный интерфейс реализован в драйверах для карт с кодеком AC97. В этом случае фактический микшерный интерфейс обеспечивается разделяемым кодом AC97 в .</p></div><div class=sect3><h4 id=_канальный_интерфейс>3.4.1. Канальный интерфейс<a class=anchor href=#_канальный_интерфейс></a></h4><div class=sect4><h5 id=_общие_заметки_о_параметрах_функций>3.4.1.1. Общие заметки о параметрах функций<a class=anchor href=#_общие_заметки_о_параметрах_функций></a></h5><div class=paragraph><p>Звуковые драйверы обычно имеют структуру с личными данными для описания их устройства и по одной структуре на каждый поддерживаемый канал проигрывания или записи данных.</p></div><div class=paragraph><p>Для всех функций канального интерфейса первый параметр - непрозрачный указатель.</p></div><div class=paragraph><p>Второй параметр это указатель на структуру с данными канала. Исключение: У <code>channel_init()</code> это указатель на частную структуру устройства (данная функция возвращает указатель на канал для дальнейшего использования в ).</p></div></div><div class=sect4><h5 id=_обзор_операций_передачи_данных>3.4.1.2. Обзор операций передачи данных<a class=anchor href=#_обзор_операций_передачи_данных></a></h5><div class=paragraph><p>Для передачи данных, и звуковые драйвера используют разделяемую область памяти, описанную в .</p></div><div class=paragraph><p>принадлежит , и звуковые драйверы получают нужные значения с помощью вызовов функций (<code>sndbuf_getxxx()</code>).</p></div><div class=paragraph><p>Область разделяемой памяти имеет размер, определяемый с помощью <code>sndbuf_getsize()</code> и разделён на блоки фиксированного размера, определённого в <code>sndbuf_getblksz()</code> количества байт.</p></div><div class=paragraph><p>При проигрывании, общий механизм передачи данных примерно следующий (обратный механизму, используемому при записи):</p></div><div class=ulist><ul><li><p>В начале, заполняет буфер, затем вызывает функцию звукового драйвера <a href=#channel-trigger><code>xxxchannel_trigger()</code></a> с параметром PCMTRIG_START.</p></li><li><p>Затем звуковой драйвер многократно передаёт всю область памяти (<code>sndbuf_getbuf()</code>, <code>sndbuf_getsize()</code>) устройству, с количеством байт, определённым в <code>sndbuf_getblksz()</code> . Взамен это вызовет <code>chn_intr()</code> функцию для каждого переданного блока (это обычно происходит во время прерывания).</p></li><li><p><code>chn_intr()</code> копирует новые данные в область, которая была передана устройству (сейчас свободная) и вносит соответствующие изменения в структуру .</p></li></ul></div></div></div><div class=sect3><h4 id=xxxchannel-init>3.4.2. channel_init<a class=anchor href=#xxxchannel-init></a></h4><div class=paragraph><p><code>xxxchannel_init()</code> вызывается для инициализации каждого из каналов проигрывания или записи. Вызовы инициируются функцией подключения звукового драйвера. (Подробнее в главе <a href=#pcm-probe-and-attach>Обнаружение и подключение</a>).</p></div><div class="literalblock programlisting"><div class=content><pre>          static void *
+          xxxchannel_init(kobj_t obj, void *data,
+             struct snd_dbuf *b, struct pcm_channel *c, int dir)
+          {
+              struct xxx_info *sc = data;
+              struct xxx_chinfo *ch;
+               ...
+              return ch;
+           }
+
+            b - это адрес канальной
+              struct snd_dbuf.  Она должна
+	      быть инициализирована в функции посредством
+	      вызова sndbuf_alloc().  Нормальный
+	      размер буфера для использования - наименьшее кратное
+	      размера передаваемого блока данных для вашего устройства.
+
+            c - это
+              указатель на структуру
+	      контроля pcm канала.  Это не прозрачный
+	      объект.  Функция должна хранить его в локальной структуре
+	      канала, для дальнейшего использования в вызовах к
+              pcm (например в:
+              chn_intr(c)).
+
+            dir определяет для каких целей
+	      используется канал
+	      (PCMDIR_PLAY или
+              PCMDIR_REC).
+
+            Функция должна возвращать указатель на личную,
+	      область, используемую для контроля этого
+	      канала. Он будет передаваться в качестве параметра в
+	      других вызовах канального интерфейса.
+
+        channel_setformat
+
+        xxxchannel_setformat() настраивает
+	  устройство на конкретный канал определённого формата звука.
+
+                    static int
+          xxxchannel_setformat(kobj_t obj, void *data, u_int32_t format)
+          {
+              struct xxx_chinfo *ch = data;
+               ...
+              return 0;
+           }
+
+            format используется, как
+              AFMT_XXX значение
+              (soundcard.h).
+
+        channel_setspeed
+
+        xxxchannel_setspeed() устанавливает
+	  оборудование канала на определённую шаблонную скорость и возвращает
+	  возможную корректирующую скорость.
+
+                  static int
+          xxxchannel_setspeed(kobj_t obj, void *data, u_int32_t speed)
+          {
+              struct xxx_chinfo *ch = data;
+               ...
+              return speed;
+           }
+
+        channel_setblocksize
+
+        xxxchannel_setblocksize() устанавливает
+          размер передаваемого блока между
+          pcm и звуковым драйвером, и между
+          звуковым драйвером и устройством.  Обычно это будет количество
+	  переданных байт перед прерыванием. Во время трансфера звуковой
+	  драйвер должен должен вызывать
+	  pcm функцию chn_intr() каждый
+	  раз при передаче блока данных такого размера.
+
+        Большинство звуковых драйверов только берут на заметку
+	  размер блока для использования во время передачи данных.
+
+                  static int
+          xxxchannel_setblocksize(kobj_t obj, void *data, u_int32_t blocksize)
+          {
+              struct xxx_chinfo *ch = data;
+                ...
+              return blocksize;
+           }
+
+            Функция возвращает возможно согласованный  размер
+	      блока.  В случае, если размер блока действительно
+	      изменился должен быть произведён вызов
+              sndbuf_resize() для корректирования
+	      буфера.
+
+        channel_trigger
+
+        xxxchannel_trigger() вызывается
+          pcm для контроля над трансферными
+	  операциями в драйвере.
+
+                  static int
+          xxxchannel_trigger(kobj_t obj, void *data, int go)
+          {
+              struct xxx_chinfo *ch = data;
+               ...
+              return 0;
+           }
+
+            go определяет действие для
+	      текущего вызова.  Возможные значения:
+
+                PCMTRIG_START: драйвер
+                  должен начать передачу данных из или в канальный
+	     	  буфер.  Буфер и его размер могут быть получены через
+                  вызов sndbuf_getbuf() и
+                  sndbuf_getsize().
+
+                PCMTRIG_EMLDMAWR /
+                  PCMTRIG_EMLDMARD: говорит
+		  драйверу, что входной или выходной буфер возможно
+		  был обновлён.  Большинство драйверов игнорируют
+		  эти вызовы.
+
+                PCMTRIG_STOP /
+                  PCMTRIG_ABORT: драйвер должен
+                  остановить текущую передачу данных.
+
+        Если драйвер использует ISA DMA,
+          sndbuf_isadma() должна вызываться
+	  перед выполнением действий над устройством, она также
+	  позаботится о вещах со стороны DMA чипа.
+
+        channel_getptr
+
+        xxxchannel_getptr() возвращает
+          текущее смещение в передаваемом буфере.  Обычно вызывается
+	  в chn_intr(), и так
+          pcm узнаёт, где брать данные для
+	  новой передачи.
+
+        channel_free
+
+        xxxchannel_free() вызывается для
+	  освобождения ресурсов канала.  Например: должна вызываться,
+          при выгрузке драйвера, если структуры данных канала
+	  распределялись динамично или, если
+	  sndbuf_alloc() не использовалась
+	  для выделения памяти под буфер.
+
+        channel_getcaps
+
+                  struct pcmchan_caps *
+          xxxchannel_getcaps(kobj_t obj, void *data)
+          {
+              return xxx_caps;
+           }
+
+            Подпрограмма возвращает указатель на (обычно
+	      статически-определяемую) структуру
+              pcmchan_caps (описанную в
+              sound/pcm/channel.h.  Структура содержит
+	      данные о минимуме и максимуме шаблонных частот и
+	      воспринимаемых звуковых форматах.  Для примера смотрите
+	      исходный код любого звукового драйвера.
+
+        Другие функции
+
+        channel_reset(),
+          channel_resetdone(), и
+          channel_notify() предназначены для
+	  специальных целей и не должны употребляться в драйвере
+	  без обсуждения с авторами ({cg}).
+
+        channel_setdir() is deprecated.
+
+      Микшерный интерфейс
+
+        mixer_init
+
+        xxxmixer_init() инициализирует
+          оборудование и говорит pcm какие микшерные
+          устройства доступны для проигрывания и записи
+
+                  static int
+          xxxmixer_init(struct snd_mixer *m)
+          {
+              struct xxx_info   *sc = mix_getdevinfo(m);
+              u_int32_t v;
+
+              [Initialize hardware]
+
+              [Set appropriate bits in v for play mixers]
+              mix_setdevs(m, v);
+              [Set appropriate bits in v for record mixers]
+              mix_setrecdevs(m, v)
+
+              return 0;
+          }
+
+            Устанавливает биты в целом значении и вызывает
+              mix_setdevs() и
+              mix_setrecdevs() чтобы сообщить
+              pcm какие устройства существуют.
+
+        Определения битов микшера могут быть найдены в
+          soundcard.h
+          (SOUND_MASK_XXX значения и
+          SOUND_MIXER_XXX битовые сдвиги).
+
+        mixer_set
+
+        xxxmixer_set() устанавливает уровень
+          громкости для одного микшерного устройства.
+
+                  static int
+          xxxmixer_set(struct snd_mixer *m, unsigned dev,
+                           unsigned left, unsigned right)
+          {
+              struct sc_info *sc = mix_getdevinfo(m);
+              [set volume level]
+              return left | (right  8);
+          }
+
+            Устройство определяется, как SOUND_MIXER_XXX
+              значение Допустимые значения уровней громкости лежат
+              в пределах [0-100].  Равное нулю значение должно выключать звук
+              устройства.
+
+            Вероятно уровни оборудования не будут совпадать с
+              входной шкалой, и будет происходить некоторое округление, подпрограмма
+              будет возвращает точные значения (в промежутке 0-100), как уже
+              было сказано.
+
+        mixer_setrecsrc
+
+        xxxmixer_setrecsrc() устанавливает
+          исходное записывающее устройство.
+
+                  static int
+          xxxmixer_setrecsrc(struct snd_mixer *m, u_int32_t src)
+          {
+              struct xxx_info *sc = mix_getdevinfo(m);
+
+              [look for non zero bit(s) in src, set up hardware]
+
+              [update src to reflect actual action]
+              return src;
+           }
+
+            Желаемые записывающие устройства указываются в битовом поле
+
+            Возвращается фактический набор устройств для записи.
+              Некоторые драйверы могут устанавливать только одно устройство для
+	      записи.  Функция должна возвращать -1, в случае возникновения
+	      ошибки.
+
+        mixer_uninit, mixer_reinit
+
+        xxxmixer_uninit() должна проверить,
+          что все звуки выключены (mute), и, если возможно выключить
+	  оборудование микшера
+
+        xxxmixer_reinit() должна удостовериться,
+          что оборудование микшера включено и все установки, неконтролируемые
+          mixer_set() или
+          mixer_setrecsrc() восстановлены.
+
+      Интерфейс AC97
+
+       AC97
+
+      Поддержка интерфейса AC97 осуществляется
+	драйверами с кодеком AC97.  Он поддерживает только три метода:
+
+        xxxac97_init() возвращает
+          количество найденных ac97 кодеков.
+
+        ac97_read() и
+          ac97_write() читают или записывают
+	  данные определенного регистра.
+
+      Интерфейс AC97 используется кодом
+        AC97 в pcm для выполнения операций
+	более высокого уровня.  За примером обращайтесь к
+        sound/pci/maestro3.c или к другим
+	файлам из каталога sound/pci/.</pre></div></div></div></div></div></div></div><hr><div class=last-modified><p><strong>Изменено</strong>: 1 октября 2023 г. by <a href="https://cgit.freebsd.org/doc/commit/?id=03eb27a31b" target=_blank>Sergio Carlavilla Delgado</a></p></div><div class=buttons><div class=home><i class="fa fa-home" aria-hidden=true title=Главная></i><div class=container><a href=../ class=direction>Главная</a></div></div></div><label class="hidden book-menu-overlay" for=menu-control></label></div><aside class=toc><div class=toc-content><h3>Содержание</h3><nav id=TableOfContents><ul><li><a href=#locking>Глава 1. Замечания по блокировке</a><ul><li><a href=#locking-mutexes>1.1. Мьютексы</a></li><li><a href=#locking-sx>1.2. Разделяемые эксклюзивные блокировки</a></li><li><a href=#locking-atomic>1.3. Атомарно защищенные переменные</a></li></ul></li><li><a href=#driverbasics>Глава 2. Написание драйверов устройств для FreeBSD</a><ul><li><a href=#driverbasics-intro>2.1. Введение</a></li><li><a href=#driverbasics-kld>2.2. Механизм динамического компоновщика ядра - KLD</a></li><li><a href=#driverbasics-access>2.3. Обращение к драйверу устройства</a></li><li><a href=#driverbasics-char>2.4. Символьные устройства</a></li><li><a href=#driverbasics-block>2.5. Блочные устройства (которых больше нет)</a></li><li><a href=#driverbasics-net>2.6. Сетевые драйверы</a></li></ul></li><li><a href=#oss>Глава 3. Подсистема звука</a><ul><li><a href=#oss-intro>3.1. Введение</a></li><li><a href=#oss-files>3.2. Файлы</a></li><li><a href=#pcm-probe-and-attach>3.3. Обнаружение, подключение, и т.д.</a></li><li><a href=#oss-interfaces>3.4. Интерфейсы</a></li></ul></li></ul></nav><hr><div class=resources><h3>Материалы</h3><ul class=contents><li><i class="fa fa-file-pdf-o" aria-hidden=true title="Скачать PDF"></i><a href=https://download.freebsd.org/doc/ru/books/arch-handbook/arch-handbook_ru.pdf>Скачать PDF</a></li><li><i class="fa fa-pencil-square-o" aria-hidden=true title="Редактировать эту страницу"></i><a href=https://github.com/freebsd/freebsd-doc/blob/main/documentation/content/ru/book target=_blank>Редактировать эту страницу</a></li></ul></div></div></aside><a class=to-top href=#top><i class="fa fa-arrow-circle-up" aria-hidden=true></i></a></main><footer><div class=footer-container><section class=logo-column><img src=http://172.16.201.134:1313/images/FreeBSD-colors.svg width=160 height=50 alt="FreeBSD logo"><div class=options-container><div class=language-container><a id=languages href=http://172.16.201.134:1313/ru/languages><img src=http://172.16.201.134:1313/images/language.png class=language-image alt="Выберите язык">
+<span>Русский</span></a></div><div class=theme-container><select id=theme-chooser><option value=theme-system>Система</option><option value=theme-light>Светлый</option><option value=theme-dark>Тёмный</option><option value=theme-high-contrast>Высокая контрастность</option></select></div></div></section><section class=about-column><h3 class=column-title>О нас</h3><ul class=column-elements-container><li><a href=https://www.freebsd.org/about/ target=_blank class=column-element>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/ target=_blank class=column-element>Фонд FreeBSD</a></li><li><a href=https://www.freebsd.org/where/ target=_blank class=column-element>Получить FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct target=_blank class=column-element>Кодекс Этики</a></li><li><a href=https://www.freebsd.org/security/ target=_blank class=column-element>Бюллетени Безопасности</a></li></ul></section><section class=documentation-column><h3 class=column-title>Документация</h3><ul class=column-elements-container><li><a href=/ru class=column-element>Портал документации</a></li><li><a href=https://man.FreeBSD.org target=_blank class=column-element>Страницы Справочника</a></li><li><a href=https://papers.FreeBSD.org target=_blank class=column-element>Презентации и публикации</a></li><li><a href=https://docs-archive.freebsd.org/doc/ target=_blank class=column-element>Предыдущие версии</a></li><li><a href=https://docs-archive.freebsd.org/44doc/ target=_blank class=column-element>Документы 4.4BSD</a></li><li><a href=https://wiki.freebsd.org/ target=_blank class=column-element>Wiki</a></li></ul></section><section class=community-column><h3 class=column-title>Сообщество</h3><ul class=column-elements-container><li><a href=http://172.16.201.134:1313/ru/articles/contributing class=column-element>Принять участие</a></li><li><a href=https://forums.freebsd.org/ target=_blank class=column-element>Форум Сообщества</a></li><li><a href=https://lists.freebsd.org/ target=_blank class=column-element>Списки рассылки</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank class=column-element>Каналы IRC</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank class=column-element>Трекер ошибок</a></li></ul></section><section class=legal-column><h3 class=column-title>Юридическая информация</h3><ul class=column-elements-container><li><a href=https://freebsdfoundation.org/donate/ target=_blank class=column-element>Пожертвования</a></li><li><a href=https://www.freebsd.org/copyright/freebsd-license/ target=_blank class=column-element>Лицензирование</a></li><li><a href=https://www.freebsd.org/privacy/ target=_blank class=column-element>Политика Конфиденциальности</a></li><li><a href=https://www.freebsd.org/copyright/ target=_blank class=column-element>Юридические оговорки</a></li></ul></section><section class=copyright-column><p>&copy; 1994-2024 Проект FreeBSD. Все права защищены</p><span>Сделано с помощью <span class=heart>♥</span> Сообществом FreeBSD</span></section></div></footer></body></html>

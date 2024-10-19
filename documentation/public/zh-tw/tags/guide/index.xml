@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="flavors-intro">7.1. An Introduction to Flavors&lt;a class="anchor" href="#flavors-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Flavors are a way to have multiple variations of a port.
+The port is built multiple times, with variations.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>For example, a port can have a normal version with many features and quite a few dependencies, and a light &amp;#34;lite&amp;#34; version with only basic features and minimal dependencies.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 13. Dos and Don'ts</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/porting-dads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/porting-dads/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="dads-intro">13.1. Introduction&lt;a class="anchor" href="#dads-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Here is a list of common dos and don’ts that are encountered during the porting process.
+Check the port against this list, but also check ports in the &lt;a href="https://bugs.FreeBSD.org/search/">PR database&lt;/a> that others have submitted.
+Submit any comments on ports as described in &lt;a href="https://docs.freebsd.org/zh-tw/articles/contributing/#CONTRIB-GENERAL">Bug Reports and General Commentary&lt;/a>.
+Checking ports in the PR database will both make it faster for us to commit them, and prove that you know what you are doing.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="uses-intro">17.1. An Introduction to &lt;code>USES&lt;/code>&lt;a class="anchor" href="#uses-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;code>USES&lt;/code> macros make it easy to declare requirements and settings for a port.
+They can add dependencies, change building behavior, add metadata to packages, and so on, all by selecting simple, preset values.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Each section in this chapter describes a possible value for &lt;code>USES&lt;/code>, along with its possible arguments.
+Arguments are appended to the value after a colon (&lt;code>:&lt;/code>).
+Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
+&lt;/div></description></item><item><title>章 24. DTrace</title><link>http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="dtrace-synopsis">24.1. 概述&lt;a class="anchor" href="#dtrace-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>DTrace，又被稱作 Dynamic Tracing ，由 Sun™ 開發，用在生產 (production) 跟預生產 (pre-production) 系統中找出效能瓶頸的工具。
+除了診斷性能問題外，DTrace 還可以用於查詢以及除錯 FreeBSD 核心和使用者層級程式的未預期行為。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DTrace 是一個卓越的分析工具，具有一系列令人驚豔、用於診斷系統問題的功能。
+它還可以執行預先寫好的腳本，以使用其功能。
+使用者可以用 DTrace D 語言編寫自己的工具，從而允許他們根據特定的需求客製化。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD 實做提供對核心層級的 DTrace 全面的支援，以及對使用者層級的 DTrace 實驗性的支援。
+使用者層級的 DTrace 允許使用者使用 &lt;code>pid&lt;/code> 執行函式邊界追蹤 (function boundary tracing)，並將 static probes 插入到使用者程式以供之後追蹤。
+一些 ports，像是 &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/databases/postgresql12-server/">databases/postgresql12-server&lt;/a> 和 &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/lang/php74/">lang/php74&lt;/a> 提供 DTrace 選項，以提供 static probes 功能。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DTrace 的官方指南由 Illumos 維護，在 &lt;a href="http://dtrace.org/guide">DTrace Guide&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>讀完這章，您將了解：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>什麼是 DTrace 以及其提供的功能。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Solaris™ 實做的 DTrace 跟 FreeBSD 提供的 DTrace 之間的不同之處。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如何在 FreeBSD 上啟用和使用 DTrace。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

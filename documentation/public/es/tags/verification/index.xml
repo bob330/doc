@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Verification on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/verification/</link><description>Recent content in Verification on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/verification/index.xml" rel="self" type="application/rss+xml"/><item><title>Soporte Para Segundos Bisiestos en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/leap-seconds/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="leapseconds-definition">1. Introducción&lt;a class="anchor" href="#leapseconds-definition">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Un &lt;em>segundo bisiesto&lt;/em> (también llamado segundo intercalar o segundo adicional) es un ajuste de un segundo realizado a UTC en momentos específicos del año para sincronizar escalas de tiempo atómicas con variaciones en la rotación de la Tierra. Este artículo describe cómo interactúa FreeBSD con segundos bisiestos.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>En el momento de escribir estas líneas, el próximo segundo bisiesto ocurrirá el 30 de junio del 2015 a las 23:59:60 UTC. Este segundo bisiesto ocurrirá durante un dí­a laboral para América del Norte y del Sur y la región Asia/Pací­fico.&lt;/p>
+&lt;/div></description></item><item><title>Verificación independiente de la funcionalidad de IPsec en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/ipsec-must/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Has intalado IPsec y parece estar funcionando. ¿Cómo lo sabes? Describo un método para verificar de forma experimental que IPsec está funcionando.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="problem">1. El Problema&lt;a class="anchor" href="#problem">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Primero, asumamos que has &lt;a href="#ipsec-install">Instalando IPsec&lt;/a>. ¿Cómo sabes que está funcionando? (&lt;a href="#caveat">Advertencia&lt;/a>) Claro, tu conexión no funcionará si está mal configurado y funcionará cuando finalmente lo hagas bien. &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=netstat&amp;amp;sektion=1&amp;amp;format=html">netstat(1)&lt;/a> lo mostrará. ¿Pero puedes confirmarlo de forma independiente?&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="solution">2. La Solución&lt;a class="anchor" href="#solution">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Primero, alguna información teórica relevante sobre criptografía:&lt;/p>
+&lt;/div></description></item></channel></rss>

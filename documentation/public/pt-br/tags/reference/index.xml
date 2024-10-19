@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/reference/</link><description>Recent content in Reference on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 11. Páginas de Manual</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="manual-pages-introduction">11.1. Introdução&lt;a class="anchor" href="#manual-pages-introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;em>Páginas de manual&lt;/em>, geralmente abreviadas como &lt;em>man pages&lt;/em>, foram concebidas como lembretes prontamente disponíveis para sintaxe de comandos, detalhes de drivers de dispositivos ou formatos de arquivos de configuração. Elas se tornaram uma referência rápida extremamente valiosa de linha de comando para usuários, administradores de sistema e programadores.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Embora tenham sido planejados como material de referência em vez de tutoriais, as seções EXEMPLOS das páginas de manual geralmente fornecem casos de uso detalhados.&lt;/p>
+&lt;/div></description></item></channel></rss>

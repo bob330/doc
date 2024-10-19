@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/id/tags/FreeBSD/</link><description>Recent content in FreeBSD on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>id</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/id/tags/FreeBSD/index.xml" rel="self" type="application/rss+xml"/><item><title>Pertanyaan yang Sering Ditanyakan Tentang Mailing List FreeBSD</title><link>http://172.16.201.134:1313/id/articles/mailing-list-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/id/articles/mailing-list-faq/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstrak&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Ini adalah pertanyaan yang sering ditanyakan untuk mailing list FreeBSD. Jika anda tertarik untuk membantu proyek ini, kirim email ke &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">Mailing list proyek dokumentasi FreeBSD&lt;/a>. Versi terbaru dokumen ini selalu tersedia di &lt;a href=".">Server World Wide Web FreeBSD&lt;/a>. Dokumen ini juga dapat didownload sebagai satu file &lt;a href=".">HTML&lt;/a> yang besar dengan HTTP atau sebagai teks biasa, PostScript, PDF, dan lain-lain dari &lt;a href="https://download.freebsd.org/doc/">Server FTP FreeBSD&lt;/a>. Anda juga mungkin ingin &lt;a href="https://www.FreeBSD.org/search/">Mencari sesuatu di dokumen ini&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction">1. Pendahuluan&lt;a class="anchor" href="#introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Seperti biasanya dengan FAQ, dokumen ini bertujuan untuk mencakup pertanyaan-pertanyaan yang paling sering ditanyakan tentang mailing list FreeBSD (dan pasti akan menjawabnya!). Walaupun pada awalnya dimaksudkan untuk mengurangi bandwidth and menghindari pertanyaan yang sama ditanyakan berulang kali, FAQ telah dikenali sebagai sumber informasi yang berharga.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/documentation/</link><description>Recent content in Documentation on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/documentation/index.xml" rel="self" type="application/rss+xml"/><item><title>第16章 FreeBSD のアップデートとアップグレード</title><link>http://172.16.201.134:1313/ja/books/handbook/cutting-edge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/cutting-edge/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="updating-upgrading-synopsis">16.1. この章では&lt;a class="anchor" href="#updating-upgrading-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>あるリリースから次のリリースまでの期間にも、 FreeBSD の開発は休みなく続けられています。
+最新の開発ツリーと同期することを好む人がいる一方で、公式のリリース版を好んで使う方もいます。
+しかしながら、公式のリリースといえども、 セキュリティや他の重要な修正のため、時にはアップデートが必要となります。
+FreeBSD は手元のシステムを最新の開発ツリーと同期するために必要なツールをすべて用意しているので、使用しているバージョンに関わらず、これらのツールを使って簡単にシステムのバージョンをアップグレードできます。
+この章では、開発ブランチを追いかける方法、および、FreeBSD システムをアップデートする基本的なツールについて解説します。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章では以下について説明します。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>freebsd-update もしくは Git を使った FreeBSD システムの更新方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>インストールされているシステムと、変更が行われていない状態との比較方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Git またはドキュメント用の ports を使って、 インストールされているドキュメントを最新版にアップデートする方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2 つの開発ブランチ、FreeBSD-STABLE と FreeBSD-CURRENT の違いについて&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ベースシステム全体を再構築しインストールする方法&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章を読む前に、以下の準備をしましょう。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>ネットワーク接続の適切な設定 (&lt;a href="../advanced-networking/#advanced-networking">高度なネットワーク&lt;/a>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>サードパーティ製のソフトウェアのインストール方法の習得 (&lt;a href="../ports/#ports">アプリケーションのインストール - packages と ports&lt;/a>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>この章を通じて、FreeBSD のソースコードのダウンロードやアップデートに &lt;code>git&lt;/code> が使われています。
+必要に応じて &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/devel/git/">devel/git&lt;/a> port または package が使われることもあります。&lt;/p>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="updating-upgrading-freebsdupdate">16.2. FreeBSD Update&lt;a class="anchor" href="#updating-upgrading-freebsdupdate">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>すみやかにセキュリティパッチを適用し、 オペレーティングシステムをアップグレードして、 最新のリリースに保つことは、システム管理における重要な側面です。
+これらの処理を行うために FreeBSD には &lt;code>freebsd-update&lt;/code> と呼ばれるユーティリティが用意されています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>このユーティリティを用いると、FreeBSD のセキュリティおよび eratta アップデートをバイナリによって行うことができます。
+手動でパッチもしくは新しいカーネルをコンパイルし、インストールする必要はありません。
+バイナリアップデートは、セキュリティチームがサポートしているすべてのアーキテクチャとリリースで利用できます。
+&lt;a href="https://www.FreeBSD.org/ja/security/">https://www.FreeBSD.org/ja/security/&lt;/a> には、サポートが行われているリリースや保守終了予定日の一覧があります。&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/releases/</link><description>Recent content in Releases on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>Ingeniería de versiones de FreeBSD</title><link>http://172.16.201.134:1313/es/articles/freebsd-releng/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/freebsd-releng/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artículo describe el proceso detrás del modelo de ingeniería de versiones adoptado por el Proyecto FreeBSD.&lt;/p>
+&lt;/div>
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>Este documento todavía no ha sido actualizado para describir los procedimientos actuales del equipo de Ingeniería de Versiones de FreeBSD que siguieron a la transición de Subversion a Git.&lt;/p>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>&lt;/table>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction">1. Introducción al Proceso de Ingeniería de Versiones de FreeBSD&lt;a class="anchor" href="#introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>El desarrollo de FreeBSD tiene un flujo de trabajo muy específico. En general, todos los cambios en el sistema base de FreeBSD se hacen en la rama head/, que representa la cima del árbol de fuentes.&lt;/p>
+&lt;/div></description></item></channel></rss>

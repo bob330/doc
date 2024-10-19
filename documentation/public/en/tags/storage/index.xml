@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Storage on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/storage/</link><description>Recent content in Storage on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 20. Storage</title><link>http://172.16.201.134:1313/en/books/handbook/disks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/disks/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="disks-synopsis">20.1. Synopsis&lt;a class="anchor" href="#disks-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter covers the use of disks and storage media in FreeBSD.
+This includes SCSI and IDE disks, CD and DVD media, memory-backed disks, and USB storage devices.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>How to add additional hard disks to a FreeBSD system.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to grow the size of a disk’s partition on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure FreeBSD to use USB storage devices.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use CD and DVD media on a FreeBSD system.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use the backup programs available under FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to set up memory disks.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What file system snapshots are and how to use them efficiently.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use quotas to limit disk space usage.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to encrypt disks and swap to secure them against attackers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to configure a highly available storage network.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

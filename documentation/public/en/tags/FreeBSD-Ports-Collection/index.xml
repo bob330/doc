@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD Ports Collection on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/FreeBSD-Ports-Collection/</link><description>Recent content in FreeBSD Ports Collection on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/FreeBSD-Ports-Collection/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD Porter's Handbook</title><link>http://172.16.201.134:1313/en/books/porters-handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+&lt;/div>
+&lt;/div></description></item><item><title>FreeBSD Porter's Handbook</title><link>http://172.16.201.134:1313/en/books/porters-handbook/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/book/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="why-port">Chapter 1. Introduction&lt;a class="anchor" href="#why-port">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The FreeBSD Ports Collection is the way almost everyone installs applications (&amp;#34;ports&amp;#34;) on FreeBSD.
+Like everything else about FreeBSD, it is primarily a volunteer effort.
+It is important to keep this in mind when reading this document.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>In FreeBSD, anyone may submit a new port, or volunteer to maintain an existing unmaintained port.
+No special commit privilege is needed.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="own-port">Chapter 2. Making a New Port&lt;a class="anchor" href="#own-port">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Interested in making a new port, or upgrading existing ports? Great!&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Poudriere on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/Poudriere/</link><description>Recent content in Poudriere on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/Poudriere/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 10. Testing the Port</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/testing/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="make-describe">10.1. Running &lt;code>make describe&lt;/code>&lt;a class="anchor" href="#make-describe">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Several of the FreeBSD port maintenance tools, such as &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=portupgrade&amp;amp;sektion=1&amp;amp;format=html">portupgrade(1)&lt;/a>, rely on a database called &lt;span class="filename">/usr/ports/INDEX&lt;/span> which keeps track of such items as port dependencies.
+&lt;span class="filename">INDEX&lt;/span> is created by the top-level &lt;span class="filename">ports/Makefile&lt;/span> via &lt;code>make index&lt;/code>, which descends into each port subdirectory and executes &lt;code>make describe&lt;/code> there.
+Thus, if &lt;code>make describe&lt;/code> fails in any port, no one can generate &lt;span class="filename">INDEX&lt;/span>, and many people will quickly become unhappy.&lt;/p>
+&lt;/div>
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>It is important to be able to generate this file no matter what options are present in &lt;span class="filename">make.conf&lt;/span>, so please avoid doing things such as using &lt;code>.error&lt;/code> statements when (for instance) a dependency is not satisfied.
+(See &lt;a href="../porting-dads/#dads-dot-error">Avoid Use of the &lt;code>.error&lt;/code> Construct&lt;/a>.)&lt;/p>
+&lt;/div></description></item></channel></rss>

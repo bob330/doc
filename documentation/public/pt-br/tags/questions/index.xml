@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Questions on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/questions/</link><description>Recent content in Questions on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/questions/index.xml" rel="self" type="application/rss+xml"/><item><title>Como obter os melhores resultados da lista de discussão FreeBSD-questions</title><link>http://172.16.201.134:1313/pt-br/articles/freebsd-questions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/freebsd-questions/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento fornece informações úteis para pessoas que procuram preparar um e-mail para a lista de discussão FreeBSD-questions. São fornecidos conselhos e dicas que maximizarão a chance de o leitor receber respostas úteis.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento é regularmente postado na lista de discussão FreeBSD-questions.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_introdução">1. Introdução&lt;a class="anchor" href="#_introdução">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>A &lt;code>FreeBSD-questions&lt;/code> é uma lista de discussão mantida pelo projeto FreeBSD para ajudar pessoas que têm dúvidas sobre o uso normal do FreeBSD. Outro grupo, &lt;code>FreeBSD-hackers&lt;/code>, discute questões mais avançadas, como trabalho futuro de desenvolvimento.&lt;/p>
+&lt;/div></description></item></channel></rss>

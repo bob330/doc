@@ -1,0 +1,1028 @@
+<!doctype html><html class=theme-light lang=zh-tw><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=copyright content="1995-2024 The FreeBSD Foundation"><link rel=canonical href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/><title>章 19. Z 檔案系統 (ZFS) | FreeBSD Documentation Portal</title>
+<meta name=theme-color content="#790000"><meta name=color-scheme content="system light dark high-contrast"><link rel="shortcut icon" href=http://172.16.201.134:1313/favicon.ico><link rel=stylesheet href=http://172.16.201.134:1313/styles/main.min.css><link rel=stylesheet href=http://172.16.201.134:1313/css/font-awesome-min.css><script defer src=/js/theme-chooser.min.js></script><script defer src=/js/copy-clipboard.min.js></script><script defer src=/js/search.min.js></script><meta name=twitter:card content="summary"><meta name=twitter:domain content="docs.FreeBSD.org"><meta name=twitter:site content="@freebsd"><meta name=twitter:url content="https://twitter.com/freebsd"><meta property="og:title" content="章 19. Z 檔案系統 (ZFS)"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:image" content="http://172.16.201.134:1313/favicon.ico"><meta property="og:image:alt" content="FreeBSD Logo"><meta property="og:locale" content="zh-tw"><meta property="og:url" content="http://172.16.201.134:1313/zh-tw/books/handbook/zfs/"><meta property="og:site_name" content="FreeBSD Documentation Portal"><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","url":"http:\/\/172.16.201.134:1313\/zh-tw\/books\/handbook\/zfs\/","name":"FreeBSD Documentation Portal","headline":"FreeBSD Documentation Portal","description":"FreeBSD Documentation Portal"}</script></head><body><header><div class=header-container><div class=logo-menu-bars-container><a href=https://www.FreeBSD.org class=logo><img src=http://172.16.201.134:1313/images/FreeBSD-monochromatic.svg width=160 height=50 alt="FreeBSD logo">
+</a><label class=menu-bars for=menu-bars><i class="fa fa-bars" aria-hidden=true></i></label></div><input id=menu-bars type=checkbox><nav><ul class=menu><li class=menu-item><input id=about type=checkbox>
+<a href=# aria-label="Navigate to About section"><label class=menu-item-description for=about>About
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/about/ target=_blank>About</a></li><li><a href=https://www.freebsd.org/about/ target=_blank>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/about-us/about-the-foundation/ target=_blank>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct/ target=_blank>Code of Conduct</a></li></ul></li><li class=menu-item><input id=download type=checkbox>
+<a href=# aria-label="Navigate to get FreeBSD section"><label class=menu-item-description for=download>Get FreeBSD
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/where/ target=_blank>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/releases/ target=_blank>Release Information</a></li><li><a href=https://www.freebsd.org/releng/ target=_blank>Release Engineering</a></li><li><a href=https://www.freebsd.org/security/ target=_blank>Security Advisories</a></li></ul></li><li class=menu-item><input id=documentation type=checkbox>
+<a href=# aria-label="Navigate to get Documentation section"><label class=menu-item-description for=documentation>Documentation
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=/zh-tw>Documentation portal</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook>FreeBSD Handbook</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/porters-handbook>Porter's Handbook</a></li><li><a href=https://docs.FreeBSD.org/en/books/fdp-primer>Documentation Project Handbook</a></li><li><a href=https://man.FreeBSD.org target=_blank>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank>Presentations and papers</a></li><li><a href=https://wiki.FreeBSD.org target=_blank>Wiki</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books>Books</a></li><li><a href=http://172.16.201.134:1313/zh-tw/articles>Articles</a></li></ul></li><li class=menu-item><input id=community type=checkbox>
+<a href=# aria-label="Navigate to get Community section"><label class=menu-item-description for=community>Community
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/community/>Community</a></li><li><a href=http://172.16.201.134:1313/zh-tw/articles/contributing>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank>Forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank>Bug Tracker</a></li><li><a href=https://www.freebsd.org/support/ target=_blank>Support</a></li></ul></li></ul></nav><div class=search-donate-container><form class=search method=get id=search-header-form action=https://docs.freebsd.org/search name=search-header-form><input type=hidden name=DB value=zh-tw>
+<input id=words name=P type=text size=20 maxlength=255>
+<button>
+<i class="fa fa-search" aria-hidden=true></i></button></form><div class=donate><a href=https://freebsdfoundation.org/donate/ target=_blank><span class=heart>♥</span>
+Donate</a></div></div></div></header><input type=checkbox class="hidden toggle" id=menu-control><main class=main-wrapper-book><a id=top></a><aside class=book-menu><div class=book-menu-content><input id=search-book type=text placeholder=Search aria-label=Search maxlength=128><nav id=MenuContents><ul><li><input type=checkbox id=chapter-eb2a98ce203d8afd517726e6d8776be3 class=toggle>
+<label class="icon cursor" for=chapter-eb2a98ce203d8afd517726e6d8776be3><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/>序</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-audience>給讀者的話</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-changes-from3>自第三版後的主要修訂</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-changes-from2>自第二版後的主要修訂 (2004)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-changes>自第一版後的主要修訂 (2001)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-overview>本書架構</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-conv>本書的編排體裁</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/preface/#preface-acknowledgements>銘謝</a></li></ul></li><li><input type=checkbox id=chapter-14a525fce014b90b8a458a894818255a class=toggle>
+<label for=chapter-14a525fce014b90b8a458a894818255a><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/parti/>部 I. 入門</a></li><li><input type=checkbox id=chapter-f9c9f3451644df30d224350da97d5da6 class=toggle>
+<label class="icon cursor" for=chapter-f9c9f3451644df30d224350da97d5da6><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/introduction/>章 1. 簡介</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/introduction/#introduction-synopsis>1.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/introduction/#nutshell>1.2. 歡迎使用 FreeBSD！</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/introduction/#history>1.3. 關於 FreeBSD 計劃</a></li></ul></li><li><input type=checkbox id=chapter-f693a3fa687a72d63ec8129ee302d664 class=toggle>
+<label class="icon cursor" for=chapter-f693a3fa687a72d63ec8129ee302d664><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/>章 2. 安裝 FreeBSD</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-synopsis>2.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-hardware>2.2. 最低硬體需求</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-pre>2.3. 安裝前準備工作</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-start>2.4. 開始安裝</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#using-bsdinstall>2.5. 使用 bsdinstall</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-partitioning>2.6. 配置磁碟空間</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-final-warning>2.7. 確認安裝</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-post>2.8. 安裝後注意事項</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#bsdinstall-install-trouble>2.9. 疑難排解</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bsdinstall/#using-live-cd>2.10. 使用 Live CD</a></li></ul></li><li><input type=checkbox id=chapter-9f6db261075f578742036fcc6000eecd class=toggle>
+<label class="icon cursor" for=chapter-9f6db261075f578742036fcc6000eecd><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/>章 3. FreeBSD 基礎</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#basics-synopsis>3.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#consoles>3.2. 虛擬 Console 與終端機</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#users-synopsis>3.3. 使用者與基礎帳號管理</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#permissions>3.4. 權限</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#dirstructure>3.5. 目錄結構</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#disk-organization>3.6. 磁碟組織</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#mount-unmount>3.7. 掛載與卸載檔案系統</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#basics-processes>3.8. 程序與 Daemon</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#shells>3.9. Shell</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#editors>3.10. 文字編輯器</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#basics-devices>3.11. 裝置及裝置節點</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/basics/#basics-more-information>3.12. 操作手冊</a></li></ul></li><li><input type=checkbox id=chapter-01c5707e95d14c0ff84bf62600c958d1 class=toggle>
+<label class="icon cursor" for=chapter-01c5707e95d14c0ff84bf62600c958d1><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/>章 4. 安裝應用程式：套件與 Port</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-synopsis>4.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-overview>4.2. 安裝軟體的概要</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-finding-applications>4.3. 搜尋軟體</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#pkgng-intro>4.4. 使用 pkg 管理 Binary 套件</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-using>4.5. 使用 Port 套件集</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-poudriere>4.6. 使用 Poudriere 編譯套件</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-nextsteps>4.7. 安裝後的注意事項</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ports/#ports-broken>4.8. 處理損壞的 Port</a></li></ul></li><li><input type=checkbox id=chapter-3405c00581365a8b5d16af70fe4d1b72 class=toggle>
+<label class="icon cursor" for=chapter-3405c00581365a8b5d16af70fe4d1b72><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/>章 5. X Window 系統</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x11-synopsis>5.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-understanding>5.2. 術語</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-install>5.3. 安裝 Xorg</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-config>5.4. Xorg 設定</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-fonts>5.5. 在 Xorg 使用字型</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-xdm>5.6. X 顯示管理程式</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x11-wm>5.7. 桌面環境</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x-compiz-fusion>5.8. 安裝 Compiz Fusion</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/x11/#x11-understanding>5.9. 疑難排解</a></li></ul></li><li><input type=checkbox id=chapter-0eab3565e8f59f5a8a896dfba7eb3680 class=toggle>
+<label for=chapter-0eab3565e8f59f5a8a896dfba7eb3680><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/partii/>部 II. 一般作業</a></li><li><input type=checkbox id=chapter-b33cf28993f3f7bf5baf036e79da0f39 class=toggle>
+<label class="icon cursor" for=chapter-b33cf28993f3f7bf5baf036e79da0f39><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/>章 6. 桌面應用程式</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/#desktop-synopsis>6.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/#desktop-browsers>6.2. 瀏覽器</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/#desktop-productivity>6.3. 辦工工具</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/#desktop-viewers>6.4. 文件閱覽程式</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/desktop/#desktop-finance>6.5. 財務</a></li></ul></li><li><input type=checkbox id=chapter-152f694a19312ad72ec7bb4e1c3c33b2 class=toggle>
+<label class="icon cursor" for=chapter-152f694a19312ad72ec7bb4e1c3c33b2><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/>章 7. 多媒體</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#multimedia-synopsis>7.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#sound-setup>7.2. 設定音效卡</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#sound-mp3>7.3. MP3 音樂</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#video-playback>7.4. 影片播放</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#tvcard>7.5. 電視卡</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#mythtv>7.6. MythTV</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/multimedia/#scanners>7.7. 影像掃描器</a></li></ul></li><li><input type=checkbox id=chapter-80888b4ee02e3e409e5f71cf97a36450 class=toggle>
+<label class="icon cursor" for=chapter-80888b4ee02e3e409e5f71cf97a36450><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/>章 8. 設定 FreeBSD 核心</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-synopsis>8.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-custom-kernel>8.2. 為何要編譯自訂的核心?</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-devices>8.3. 偵測系統硬體</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-config>8.4. 設定檔</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-building>8.5. 編譯與安裝自訂核心</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/kernelconfig/#kernelconfig-trouble>8.6. 如果發生錯誤</a></li></ul></li><li><input type=checkbox id=chapter-cb174c55879b17ab955f2f16989a79e0 class=toggle>
+<label class="icon cursor" for=chapter-cb174c55879b17ab955f2f16989a79e0><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/>章 9. 列印</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-quick-start>9.1. 快速開始</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-connections>9.2. 印表機連線</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-pdls>9.3. 常見的頁面描述語言</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-direct>9.4. 直接列印</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-lpd>9.5. LPD (行列式印表機 Daemon)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/printing/#printing-other>9.6. 其他列印系統</a></li></ul></li><li><input type=checkbox id=chapter-c12b8c3f2a8fcefce87087241f695c83 class=toggle>
+<label class="icon cursor" for=chapter-c12b8c3f2a8fcefce87087241f695c83><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/linuxemu/>章 10. Linux® Binary 相容性</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/linuxemu/#linuxemu-synopsis>10.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/linuxemu/#linuxemu-lbc-install>10.2. 設定 Linux™ Binary 相容性</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/linuxemu/#linuxemu-advanced>10.3. 進階主題</a></li></ul></li><li><input type=checkbox id=chapter-03b11ba627b9a0c85b247f5641bde272 class=toggle>
+<label for=chapter-03b11ba627b9a0c85b247f5641bde272><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/partiii/>部 III. 系統管理</a></li><li><input type=checkbox id=chapter-6c31587f8d736319f099cd4dc1961301 class=toggle>
+<label class="icon cursor" for=chapter-6c31587f8d736319f099cd4dc1961301><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/>章 11. 設定與調校</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#config-synopsis>11.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-starting-services>11.2. 啟動服務</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-cron>11.3. 設定 cron(8)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-rcd>11.4. 管理 FreeBSD 中的服務</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#config-network-setup>11.5. 設定網路介面卡</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-virtual-hosts>11.6. 虛擬主機</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-syslog>11.7. 設定系統日誌</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-configfiles>11.8. 設定檔</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-sysctl>11.9. 使用 sysctl(8) 調校</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-disk>11.10. 調校磁碟</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#configtuning-kernel-limits>11.11. 調校核心限制</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#adding-swap-space>11.12. 增加交換空間</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/config/#acpi-overview>11.13. 電源與資源管理</a></li></ul></li><li><input type=checkbox id=chapter-459f0012b3b4f0b6b123010f029da5e4 class=toggle>
+<label class="icon cursor" for=chapter-459f0012b3b4f0b6b123010f029da5e4><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/>章 12. FreeBSD 開機程序</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/#boot-synopsis>12.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/#boot-introduction>12.2. FreeBSD 開機程序</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/#boot-splash>12.3. 設定開機啟動畫面</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/#device-hints>12.4. 裝置提示</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/boot/#boot-shutdown>12.5. 關機程序</a></li></ul></li><li><input type=checkbox id=chapter-917c75fcffbb14d48ed6d0a48e7028f2 class=toggle>
+<label class="icon cursor" for=chapter-917c75fcffbb14d48ed6d0a48e7028f2><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/>章 13. 安全性</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-synopsis>13.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-intro>13.2. 簡介</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#one-time-passwords>13.3. 一次性密碼</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#tcpwrappers>13.4. TCP Wrapper</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#kerberos5>13.5. Kerberos</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#openssl>13.6. OpenSSL</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#ipsec>13.7. VPN over IPsec</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#openssh>13.8. OpenSSH</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#fs-acl>13.9. 存取控制清單</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-pkg>13.10. 監視第三方安全性問題</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-advisories>13.11. FreeBSD 安全報告</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-accounting>13.12. 程序追蹤</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-resourcelimits>13.13. 限制資源</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/security/#security-sudo>13.14. 使用 Sudo 分享管理權限</a></li></ul></li><li><input type=checkbox id=chapter-1a2a8e719703649c2c66d99aa7a25fd4 class=toggle>
+<label class="icon cursor" for=chapter-1a2a8e719703649c2c66d99aa7a25fd4><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/>章 14. Jail</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-synopsis>14.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-terms>14.2. Jail 相關術語</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-build>14.3. 建立和控制 Jail</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-tuning>14.4. 調校與管理</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-application>14.5. 更新多個 Jail</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/jails/#jails-ezjail>14.6. 使用 ezjail 管理 Jail</a></li></ul></li><li><input type=checkbox id=chapter-8f4620c77e572cbb58917911a33c73cf class=toggle>
+<label class="icon cursor" for=chapter-8f4620c77e572cbb58917911a33c73cf><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/>章 15. 強制存取控制 (MAC)</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-synopsis>15.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-inline-glossary>15.2. 關鍵詞</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-understandlabel>15.3. 了解 MAC 標籤</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-planning>15.4. 規劃安全架構</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-policies>15.5. 可用的 MAC 管理政策</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-userlocked>15.6. User Lock Down</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-implementing>15.7. 在 MAC Jail 中使用 Nagios</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mac/#mac-troubleshoot>15.8. MAC 架構疑難排解</a></li></ul></li><li><input type=checkbox id=chapter-9598d66a76cb3182057b6bcd775149a0 class=toggle>
+<label class="icon cursor" for=chapter-9598d66a76cb3182057b6bcd775149a0><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/audit/>章 16. 安全事件稽查</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/audit/#audit-synopsis>16.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/audit/#audit-inline-glossary>16.2. 關鍵詞</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/audit/#audit-config>16.3. 稽查設定</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/audit/#audit-administration>16.4. 查看稽查線索</a></li></ul></li><li><input type=checkbox id=chapter-e1edcad13d9db6e8e4cb645d378ecfaf class=toggle>
+<label class="icon cursor" for=chapter-e1edcad13d9db6e8e4cb645d378ecfaf><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/>章 17. 儲存設備</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-synopsis>17.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-adding>17.2. 加入磁碟</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-growing>17.3. 重設大小與擴增磁碟</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#usb-disks>17.4. USB 儲存裝置</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#creating-cds>17.5. 建立與使用 CD 媒體</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#creating-dvds>17.6. 建立與使用 DVD 媒體</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#floppies>17.7. 建立與使用軟碟</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#backup-basics>17.8. 備份基礎概念</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-virtual>17.9. 記憶體磁碟</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#snapshots>17.10. 檔案系統快照</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#quotas>17.11. 磁碟配額</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-encrypting>17.12. 磁碟分割區加密</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#swap-encrypting>17.13. 交換空間加密</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/disks/#disks-hast>17.14. 高可用存儲空間 (HAST)</a></li></ul></li><li><input type=checkbox id=chapter-dde37901a0e0ea32745b67607854900f class=toggle>
+<label class="icon cursor" for=chapter-dde37901a0e0ea32745b67607854900f><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/>章 18. GEOM: 模組化磁碟轉換框架</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-synopsis>18.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-striping>18.2. RAID0 - 串連 (Striping)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-mirror>18.3. RAID1 - 鏡像 (Mirroring)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-raid3>18.4. RAID3 - 位元級串連與獨立奇偶校驗</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-graid>18.5. 軟體 RAID 裝置</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-ggate>18.6. GEOM Gate Network</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-glabel>18.7. 磁碟裝置標籤</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom/#geom-gjournal>18.8. UFS Journaling 透過 GEOM</a></li></ul></li><li><input type=checkbox id=chapter-73e82560fcb7145b7c0e2ec47af8fc04 class=toggle checked>
+<label class="icon cursor" for=chapter-73e82560fcb7145b7c0e2ec47af8fc04><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/>章 19. Z 檔案系統 (ZFS)</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-differences>19.1. 什麼使 ZFS 與眾不同</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-quickstart>19.2. 快速入門指南</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-zpool>19.3. <code>zpool</code> 管理</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-zfs>19.4. <code>zfs</code> 管理</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-zfs-allow>19.5. 委託管理</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-advanced>19.6. 進階主題</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-links>19.7. 其他資源</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/zfs/#zfs-term>19.8. ZFS 特色與術語</a></li></ul></li><li><input type=checkbox id=chapter-7af71270807eb7b70cd3eedc6577b254 class=toggle>
+<label class="icon cursor" for=chapter-7af71270807eb7b70cd3eedc6577b254><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/filesystems/>章 20. 其他檔案系統</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/filesystems/#filesystems-synopsis>20.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/filesystems/#filesystems-linux>20.2. Linux™ 檔案系統</a></li></ul></li><li><input type=checkbox id=chapter-375257268d95faaf87faf4f7a2e6aa67 class=toggle>
+<label class="icon cursor" for=chapter-375257268d95faaf87faf4f7a2e6aa67><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/>章 21. 虛擬化</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-synopsis>21.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-guest-parallels>21.2. 在 Mac OS™ X 的 Parallels 安裝 FreeBSD 為客端</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-guest-virtualpc>21.3. 在 Windows™ 的 Virtual PC 安裝 FreeBSD 為客端</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-guest-vmware>21.4. 在 Mac OS™ 的 VMware Fusion 安裝 FreeBSD 為客端</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-guest-virtualbox>21.5. 在 VirtualBox™ 安裝 FreeBSD 作為客端</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-host-virtualbox>21.6. 以 FreeBSD 作為主端使用 VirtualBox™</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-host-bhyve>21.7. 以 FreeBSD 作為主端安裝 bhyve</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/virtualization/#virtualization-host-xen>21.8. 以 FreeBSD 作為主端安裝 Xen™</a></li></ul></li><li><input type=checkbox id=chapter-49f1e96591c090304ea532012257f4ef class=toggle>
+<label class="icon cursor" for=chapter-49f1e96591c090304ea532012257f4ef><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/l10n/>章 22. 在地化 - i18n/L10n 使用與安裝</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/l10n/#l10n-synopsis>22.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/l10n/#using-localization>22.2. 使用語系</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/l10n/#l10n-compiling>22.3. 尋找 i18n 應用程式</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/l10n/#lang-setup>22.4. 特定語言的語系設定</a></li></ul></li><li><input type=checkbox id=chapter-dead2b4c5ea325dd390a9b0dccd8f763 class=toggle>
+<label class="icon cursor" for=chapter-dead2b4c5ea325dd390a9b0dccd8f763><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/>章 23. 更新與升級 FreeBSD</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#updating-upgrading-synopsis>23.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#updating-upgrading-freebsdupdate>23.2. FreeBSD 更新</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#updating-upgrading-documentation>23.3. 更新文件集</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#current-stable>23.4. 追蹤開發分支</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#makeworld>23.5. 從原始碼更新 FreeBSD</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/cutting-edge/#small-lan>23.6. 多部機器追蹤</a></li></ul></li><li><input type=checkbox id=chapter-913e72bfb3d6947b2869d3e9447a6eaa class=toggle>
+<label class="icon cursor" for=chapter-913e72bfb3d6947b2869d3e9447a6eaa><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/usb-device-mode/>章 25. USB Device Mode / USB OTG</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/usb-device-mode/#usb-device-mode-synopsis>25.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/usb-device-mode/#usb-device-mode-terminals>25.2. USB 虛擬序列埠</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/usb-device-mode/#usb-device-mode-network>25.3. USB 裝置模式網路介面</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/usb-device-mode/#usb-device-mode-storage>25.4. USB 虛擬儲存裝置</a></li></ul></li><li><input type=checkbox id=chapter-bbd25f9a194f9c39ca2d658c75767db5 class=toggle>
+<label for=chapter-bbd25f9a194f9c39ca2d658c75767db5><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/partiv/>部 IV. 網路通訊</a></li><li><input type=checkbox id=chapter-29c1eeb0e9dedc487a98399e2737ee8a class=toggle>
+<label class="icon cursor" for=chapter-29c1eeb0e9dedc487a98399e2737ee8a><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/>章 24. DTrace</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/#dtrace-synopsis>24.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/#dtrace-implementation>24.2. 實作差異</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/#dtrace-enable>24.3. 開啟 DTrace 支援</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/#dtrace-using>24.4. 使用 DTrace</a></li></ul></li><li><input type=checkbox id=chapter-499dab596afd7ddac77e80295314e0dd class=toggle>
+<label class="icon cursor" for=chapter-499dab596afd7ddac77e80295314e0dd><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/>章 26. 序列通訊</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#serial-synopsis>26.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#serial>26.2. 序列術語與硬體</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#term>26.3. 終端機</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#dialup>26.4. 撥入服務</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#dialout>26.5. 撥出服務</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/serialcomms/#serialconsole-setup>26.6. 設定序列 Console</a></li></ul></li><li><input type=checkbox id=chapter-95e4571c48bee1cced5e84a538d302e3 class=toggle>
+<label class="icon cursor" for=chapter-95e4571c48bee1cced5e84a538d302e3><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/>章 27. PPP</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/#ppp-and-slip-synopsis>27.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/#userppp>27.2. 設定 PPP</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/#ppp-troubleshoot>27.3. PPP 連線疑難排解</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/#pppoe>27.4. 在乙太網路使用 PPP (PPPoE)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/ppp-and-slip/#pppoa>27.5. 在 ATM 使用 PPP (PPPoA)</a></li></ul></li><li><input type=checkbox id=chapter-f089ac726c401c9b4bd5c34a295e11bb class=toggle>
+<label class="icon cursor" for=chapter-f089ac726c401c9b4bd5c34a295e11bb><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/>章 28. 電子郵件</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-synopsis>28.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-using>28.2. 郵件組成</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#sendmail>28.3. Sendmail 設定檔</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-changingmta>28.4. 更改郵件傳輸代理程式</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-trouble>28.5. 疑難排解</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-advanced>28.6. 進階主題</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#outgoing-only>28.7. 寄件設定</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#SMTP-dialup>28.8. 在撥號連線使用郵件</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#SMTP-Auth>28.9. SMTP 認證</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-agents>28.10. 郵件使用者代理程式</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-fetchmail>28.11. 使用 fetchmail</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mail/#mail-procmail>28.12. 使用 procmail</a></li></ul></li><li><input type=checkbox id=chapter-6de4de3fe925639d4175ce4b6f8c1829 class=toggle>
+<label class="icon cursor" for=chapter-6de4de3fe925639d4175ce4b6f8c1829><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/>章 29. 網路伺服器</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-servers-synopsis>29.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-inetd>29.2. inetd 超級伺服器</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-nfs>29.3. 網路檔案系統 (NFS)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-nis>29.4. 網路資訊系統 (NIS)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-ldap>29.5. 輕量級目錄存取協定 (LDAP)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-dhcp>29.6. 動態主機設置協定 (DHCP)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-dns>29.7. 網域名稱系統 (DNS)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-apache>29.8. Apache HTTP 伺服器</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-ftp>29.9. 檔案傳輸協定 (FTP)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-samba>29.10. Microsoft™Windows™ 用戶端檔案與列印服務 (Samba)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-ntp>29.11. NTP 時間校對</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/network-servers/#network-iscsi>29.12. iSCSI Initiator 與 Target 設定</a></li></ul></li><li><input type=checkbox id=chapter-776d855c7b75e048f90b5c2c9b35ffe0 class=toggle>
+<label class="icon cursor" for=chapter-776d855c7b75e048f90b5c2c9b35ffe0><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/>章 30. 防火牆</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-intro>30.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-concepts>30.2. 防火牆概念</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-pf>30.3. PF</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-ipfw>30.4. IPFW</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-ipf>30.5. IPFILTER (IPF)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/firewalls/#firewalls-blacklistd>30.6. Blacklistd</a></li></ul></li><li><input type=checkbox id=chapter-5b07f776a0e6155c1c89aa0d15610380 class=toggle>
+<label class="icon cursor" for=chapter-5b07f776a0e6155c1c89aa0d15610380><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/>章 31. 進階網路設定</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#advanced-networking-synopsis>31.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-routing>31.2. 通訊閘與路由</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-wireless>31.3. 無線網路</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-usb-tethering>31.4. USB 網路共享</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-bluetooth>31.5. 藍牙</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-bridging>31.6. 橋接</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-aggregation>31.7. Link Aggregation 與容錯移轉</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-diskless>31.8. PXE 無磁碟作業</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-ipv6>31.9. IPv6</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#carp>31.10. 共用位址備援協定 (CARP)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/advanced-networking/#network-vlan>31.11. VLANs</a></li></ul></li><li><input type=checkbox id=chapter-171a77aa9d067a1024f849470e1f33e8 class=toggle>
+<label for=chapter-171a77aa9d067a1024f849470e1f33e8><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/partv/>部 V. 附錄</a></li><li><input type=checkbox id=chapter-8050f436a0a7986a4aaded93d8e49469 class=toggle>
+<label class="icon cursor" for=chapter-8050f436a0a7986a4aaded93d8e49469><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mirrors/>附錄 A. 取得 FreeBSD</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mirrors/#mirrors-cdrom>A.1. CD 與 DVD 合集</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mirrors/#mirrors-ftp>A.2. FTP 站</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mirrors/#svn>A.3. 使用 Subversion</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/mirrors/#mirrors-rsync>A.4. 使用 rsync</a></li></ul></li><li><input type=checkbox id=chapter-128b630a8f88f158e7027fe6c2184d21 class=toggle>
+<label class="icon cursor" for=chapter-128b630a8f88f158e7027fe6c2184d21><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/>附錄 B. 參考書目</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-freebsd>B.1. FreeBSD 相關書籍</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-userguides>B.2. 使用指南</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-adminguides>B.3. 管理指南</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-programmers>B.4. 開發指南</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-osinternals>B.5. 深入作業系統</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-security>B.6. 安全性參考文獻</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-hardware>B.7. 硬體參考文獻</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-history>B.8. UNIX™ 歷史</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/bibliography/#bibliography-journals>B.9. 期刊與雜誌</a></li></ul></li><li><input type=checkbox id=chapter-8bbb8867c46dac315e2253945d8c18a8 class=toggle>
+<label class="icon cursor" for=chapter-8bbb8867c46dac315e2253945d8c18a8><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/eresources/>附錄 C. 網路資源</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/eresources/#eresources-www>C.1. 網站</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/eresources/#eresources-mail>C.2. 郵遞論壇 (Mailing List)</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/eresources/#eresources-news>C.3. Usenet 新聞群組</a></li><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/eresources/#eresources-web>C.4. 官方鏡像站</a></li></ul></li><li><input type=checkbox id=chapter-a80ea4f5a4480b8725422710f954ef36 class=toggle>
+<label class="icon cursor" for=chapter-a80ea4f5a4480b8725422710f954ef36><a role=button></a></label><a href=http://172.16.201.134:1313/zh-tw/books/handbook/pgpkeys/>附錄 D. OpenPGP 金鑰</a><ul><li><a href=http://172.16.201.134:1313/zh-tw/books/handbook/pgpkeys/#pgpkeys-officers>D.1. Officers</a></li></ul></li><li></li></ul></nav></div></aside><div class=book><div class=book-menu-mobile><label for=menu-control><span class=menu-control-button><i class="fa fa-list" aria-hidden=true title="Book menu"></i>
+Book menu</span></label></div><h1 class=title>章 19. Z 檔案系統 (ZFS)</h1><div class="admonitionblock note"><p><i class="fa fa-exclamation-circle" aria-hidden=true></i>
+This translation may be out of date. To help with the translations please access the <a href=https://translate-dev.freebsd.org/ target=_blank>FreeBSD translations instance</a>.</p></div><div class=toc-mobile><h3>目錄</h3><nav id=TableOfContents><ul><li><a href=#zfs-differences>19.1. 什麼使 ZFS 與眾不同</a></li><li><a href=#zfs-quickstart>19.2. 快速入門指南</a></li><li><a href=#zfs-zpool>19.3. <code>zpool</code> 管理</a></li><li><a href=#zfs-zfs>19.4. <code>zfs</code> 管理</a></li><li><a href=#zfs-zfs-allow>19.5. 委託管理</a></li><li><a href=#zfs-advanced>19.6. 進階主題</a></li><li><a href=#zfs-links>19.7. 其他資源</a></li><li><a href=#zfs-term>19.8. ZFS 特色與術語</a></li></ul></nav></div><div class=book-content><div id=preamble><div class=sectionbody><div class=paragraph><p><em>Z 檔案系統</em> 或 ZFS 是設計來克服許多在以往設計中發現的主要問題的一個先進的檔案系統。</p></div><div class=paragraph><p>最初由 Sun™ 所開發，後來的開放源始碼 ZFS 開發已移到 <a href=http://open-zfs.org>OpenZFS 計劃</a>。</p></div><div class=paragraph><p>ZFS 的設計目標主要有三個：</p></div><div class=ulist><ul><li><p>資料完整性：所有資料都會有一個資料的校驗碼 (<a href=#zfs-term-checksum>checksum</a>)，資料寫入時會計算校驗碼然後一併寫入，往後讀取資料時會再計算一次校驗碼，若校驗碼與當初寫入時不相符，便可偵測到資料錯誤，此時若有可用的資料備援 (Data redundancy)，ZFS 會嘗試自動修正錯誤。</p></li><li><p>儲存池：實體的儲存裝置都會先被加入到一個儲存池 (Pool)，這個共用的儲存池可用來配置儲存空間，儲存池的空間可被所有的檔案系統使用且透過加入新的儲存裝置來增加空間。</p></li><li><p>效能：提供多個快取機制來增加效能。先進、以記憶體為基礎的讀取快取可使用 <a href=#zfs-term-arc>ARC</a>。第二層以磁碟為基礎的讀取快取可使用 <a href=#zfs-term-l2arc>L2ARC</a>，以磁碟為基礎的同步寫入快取則可使用 <a href=#zfs-term-zil>ZIL</a>。</p></li></ul></div><div class=paragraph><p>完整的功能清單與術語在 <a href=#zfs-term>ZFS 特色與術語</a> 中有詳述。</p></div></div></div><div class=sect1><h2 id=zfs-differences>19.1. 什麼使 ZFS 與眾不同<a class=anchor href=#zfs-differences></a></h2><div class=sectionbody><div class=paragraph><p>ZFS 與以往任何的檔案系統有顯著的不同，因為它不只是一個檔案系統，ZFS 的獨特優點來自結合了以往被分開的磁碟區管理程式 (Volume Manager) 及檔案系統兩個角色，讓檔案系統也能夠察覺磁碟底層結構的變動。傳統在一個磁碟上只能建立一個檔案系統，若有兩個磁碟則會需要建立兩個分開的檔案系統，在傳統要解決這個問題要使用硬體 RAID 來製作一個空間實際上由數顆實體磁碟所組成的單一的邏輯磁碟給作業系統，作業系統便可在這個邏輯磁碟上放置檔案系統，即使是在那些使用 GEOM 提供的軟體 RAID 解決方案也是一樣，把 UFS 檔案系統放在 RAID Transform 上面當做是一個單一的裝置。ZFS 結合了磁碟區管理程式 (Volume Manager) 與檔案系統來解決這個問題並讓建立多個檔案系統可以共用一個儲存池 (Pool)。ZFS 最大的優點是可以察覺實體磁碟配置的變動，當有額外的磁碟加入到儲存池時可以自動擴增現有的檔案系統，所有的檔案系統便可使用這個新的空間。ZFS 也有數個不同的屬性可以套用到各別檔案系統上，比起單一檔案系統，對建立數個不同檔案系統與資料集 (Dataset) 時有許多的好處。</p></div></div></div><div class=sect1><h2 id=zfs-quickstart>19.2. 快速入門指南<a class=anchor href=#zfs-quickstart></a></h2><div class=sectionbody><div class=paragraph><p>這裡有一個啟動機制，可讓 FreeBSD 在系統初始化時掛載 ZFS 儲存池。要開啟這個功能，可加入此行到 <span class=filename>/etc/rc.conf</span>：</p></div><div class="literalblock programlisting"><div class=content><pre>zfs_enable=&#34;YES&#34;</pre></div></div><div class=paragraph><p>然後啟動服務：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># service zfs start</span></code></pre></div></div><div class=paragraph><p>本節的例子會假設有三個 SCSI 磁碟，名稱分別為 <span class=filename>da0</span>, <span class=filename>da1</span> 及 <span class=filename>da2</span>。SATA 硬體的使用者裝置名稱改為 <span class=filename>ada</span> 。</p></div><div class=sect2><h3 id=zfs-quickstart-single-disk-pool>19.2.1. 單磁碟儲存池<a class=anchor href=#zfs-quickstart-single-disk-pool></a></h3><div class=paragraph><p>要使用一個磁碟裝置建立一個簡單、無備援的儲存池可：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create example /dev/da0</span></code></pre></div></div><div class=paragraph><p>要檢視這個新的儲存池，可查看 <code>df</code> 的輸出結果：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># df</span>
+Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235230  1628718    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032846 48737598     2%    /usr
+example      17547136       0 17547136     0%    /example</code></pre></div></div><div class=paragraph><p>這個輸出結果說明 <code>example</code> 儲存池已建立且被掛載，現在已經可以作為檔案系統存取，可以在上面建立檔案且使用者可以瀏覽：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cd /example</span>
+<span class=c># ls</span>
+<span class=c># touch testfile</span>
+<span class=c># ls -al</span>
+total 4
+drwxr-xr-x   2 root  wheel    3 Aug 29 23:15 <span class=nb>.</span>
+drwxr-xr-x  21 root  wheel  512 Aug 29 23:12 ..
+<span class=nt>-rw-r--r--</span>   1 root  wheel    0 Aug 29 23:15 testfile</code></pre></div></div><div class=paragraph><p>但是，這個儲存池並未運用到任何 ZFS 功能，若要在這個儲存池上建立一個有開啟壓縮功能的資料集：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs create example/compressed</span>
+<span class=c># zfs set compression=gzip example/compressed</span></code></pre></div></div><div class=paragraph><p><code>example/compressed</code> 資料集現在是一個 ZFS 壓縮的檔案系統，可以試著複製較大的檔案到 <span class=filename>/example/compressed</span>。</p></div><div class=paragraph><p>壓縮功能也可以使用以下指令關閉：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set compression=off example/compressed</span></code></pre></div></div><div class=paragraph><p>要卸載檔案系統，使用 <code>zfs umount</code> 然後再使用 <code>df</code> 確認：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs umount example/compressed</span>
+<span class=c># df</span>
+Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235232  1628716    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032864 48737580     2%    /usr
+example      17547008       0 17547008     0%    /example</code></pre></div></div><div class=paragraph><p>要重新掛載檔案系統以便再次使用，使用 <code>zfs mount</code> 然後以 <code>df</code> 檢查：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs mount example/compressed</span>
+<span class=c># df</span>
+Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed</code></pre></div></div><div class=paragraph><p>儲存池與檔案系統也可以從 <code>mount</code> 的結果查詢到：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># mount</span>
+/dev/ad0s1a on / <span class=o>(</span>ufs, <span class=nb>local</span><span class=o>)</span>
+devfs on /dev <span class=o>(</span>devfs, <span class=nb>local</span><span class=o>)</span>
+/dev/ad0s1d on /usr <span class=o>(</span>ufs, <span class=nb>local</span>, soft-updates<span class=o>)</span>
+example on /example <span class=o>(</span>zfs, <span class=nb>local</span><span class=o>)</span>
+example/compressed on /example/compressed <span class=o>(</span>zfs, <span class=nb>local</span><span class=o>)</span></code></pre></div></div><div class=paragraph><p>在建立之後，ZFS 的資料集可如同其他檔案系統一般使用，且有許多額外功能可在每個資料集上設定。例如，建立一個預計存放重要的資料的新檔案系統 <code>data</code>，要設定每個資料區塊 (Data block) 要保留兩份備份：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs create example/data</span>
+<span class=c># zfs set copies=2 example/data</span></code></pre></div></div><div class=paragraph><p>現在，可以使用 <code>df</code> 指令來查看資料與空間的使用率：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># df</span>
+Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed
+example/data        17547008       0 17547008     0%    /example/data</code></pre></div></div><div class=paragraph><p>注意，從這個可以發現每個在儲存池上的檔案系統都擁有相同的可用空間，這是為什麼要在這些範例使用 <code>df</code> 的原因，為了要顯示檔案系統只會用它們所需要使用到的空間，且均取自同一個儲存池。ZFS 淘汰了磁碟區 (Volume) 與分割區 (Partition) 的概念，且允許多個檔案系統共用相同的儲存池。</p></div><div class=paragraph><p>不需要使用時可摧毀檔案系統後再摧毀儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs destroy example/compressed</span>
+<span class=c># zfs destroy example/data</span>
+<span class=c># zpool destroy example</span></code></pre></div></div></div><div class=sect2><h3 id=zfs-quickstart-raid-z>19.2.2. RAID-Z<a class=anchor href=#zfs-quickstart-raid-z></a></h3><div class=paragraph><p>磁碟損壞時，要避免資料因磁碟故障造成遺失便是使用 RAID。ZFS 在它的儲存池設計中支援了這項功能。RAID-Z 儲存池需要使用三個或更多的磁碟，但可以提供比鏡像 (Mirror) 儲存池更多的可用空間。</p></div><div class=paragraph><p>這個例子會建立一個 RAID-Z 儲存池，並指定要加入這個儲存池的磁碟：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create storage raidz da0 da1 da2</span></code></pre></div></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>Sun™ 建議用在 RAID-Z 設定的裝置數在三到九個之間。若需要由 10 個或更多磁碟組成單一儲存池的環境，可考慮分成較小的 RAID-Z 群組。若只有兩個可用的磁碟且需要做備援 (Redundancy)，可考慮使用 ZFS 鏡像 (Mirror)。請參考 <a href="https://man.freebsd.org/cgi/man.cgi?query=zpool&amp;sektion=8&amp;format=html">zpool(8)</a> 取得更多詳細資訊。</p></div></td></tr></tbody></table></div><div class=paragraph><p>先前的例子已經建立了 <code>storage</code> 儲存池 (zpool)，現在這個例子會在該儲存池中建立一個新的檔案系統，名稱為 <code>home</code>：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs create storage/home</span></code></pre></div></div><div class=paragraph><p>可以設定開啟壓縮及保留目錄及檔案額外備份的功能：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set copies=2 storage/home</span>
+<span class=c># zfs set compression=gzip storage/home</span></code></pre></div></div><div class=paragraph><p>要讓這個空間作為使用者的新家目錄位置，需複製使用者資料到這個目錄並建立適合的符號連結 (Symbolic link)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp -rp /home/* /storage/home</span>
+<span class=c># rm -rf /home /usr/home</span>
+<span class=c># ln -s /storage/home /home</span>
+<span class=c># ln -s /storage/home /usr/home</span></code></pre></div></div><div class=paragraph><p>現在使用者的資料會儲存在新建立的 <span class=filename>/storage/home</span>，可以加入新使用者並登入該使用者來測試。</p></div><div class=paragraph><p>試著建立檔案系統快照 (Snapshot)，稍後可用來還原 (Rollback)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs snapshot storage/home@08-30-08</span></code></pre></div></div><div class=paragraph><p>快照只可以使用整個檔案系統製作，無法使用各別目錄或檔案。</p></div><div class=paragraph><p><code>@</code> 字元用來區隔檔案系統名稱 (File system) 或磁碟區 (Volume) 名稱，若有重要的目錄意外被刪除，檔案系統可以備份然後還原到先前目錄還存在時的快照 (Snapshot)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs rollback storage/home@08-30-08</span></code></pre></div></div><div class=paragraph><p>要列出所有可用的快照，可在檔案系統的 <span class=filename>.zfs/snapshot</span> 目錄執行 <code>ls</code>，舉例來說，要查看先前已做的快照：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># ls /storage/home/.zfs/snapshot</span></code></pre></div></div><div class=paragraph><p>也可以寫一個 Script 來對使用者資料做例行性的快照，但隨著時間快照可能消耗大量的磁碟空間。先前的快照可以使用指令移除：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs destroy storage/home@08-30-08</span></code></pre></div></div><div class=paragraph><p>在測試之後，便可讓 <span class=filename>/storage/home</span> 成為真正的 <span class=filename>/home</span> 使用此指令：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set mountpoint=/home storage/home</span></code></pre></div></div><div class=paragraph><p>執行 <code>df</code> 興 <code>mount</code> 來確認系統現在是否以把檔案系統做為真正的 <span class=filename>/home</span>：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># mount</span>
+/dev/ad0s1a on / <span class=o>(</span>ufs, <span class=nb>local</span><span class=o>)</span>
+devfs on /dev <span class=o>(</span>devfs, <span class=nb>local</span><span class=o>)</span>
+/dev/ad0s1d on /usr <span class=o>(</span>ufs, <span class=nb>local</span>, soft-updates<span class=o>)</span>
+storage on /storage <span class=o>(</span>zfs, <span class=nb>local</span><span class=o>)</span>
+storage/home on /home <span class=o>(</span>zfs, <span class=nb>local</span><span class=o>)</span>
+<span class=c># df</span>
+Filesystem   1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a    2026030  235240  1628708    13%    /
+devfs                1       1        0   100%    /dev
+/dev/ad0s1d   54098308 1032826 48737618     2%    /usr
+storage       26320512       0 26320512     0%    /storage
+storage/home  26320512       0 26320512     0%    /home</code></pre></div></div><div class=paragraph><p>這個動作完成 RAID-Z 最後的設定，有關已建立的檔案系統每日狀態更新可以做為 <a href="https://man.freebsd.org/cgi/man.cgi?query=periodic&amp;sektion=8&amp;format=html">periodic(8)</a> 的一部份在每天晚上執行。加入此行到 <span class=filename>/etc/periodic.conf</span>：</p></div><div class="literalblock programlisting"><div class=content><pre>daily_status_zfs_enable=&#34;YES&#34;</pre></div></div></div><div class=sect2><h3 id=zfs-quickstart-recovering-raid-z>19.2.3. 復原 RAID-Z<a class=anchor href=#zfs-quickstart-recovering-raid-z></a></h3><div class=paragraph><p>每個軟體 RAID 都有監控其狀態 (<code>state</code>) 的方式，而 RAID-Z 裝置的狀態可以使用這個指令來查看：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status -x</span></code></pre></div></div><div class=paragraph><p>如果所有儲存池為上線 (<a href=#zfs-term-online>Online</a>) 且正常，則訊息會顯示：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell>all pools are healthy</code></pre></div></div><div class=paragraph><p>如果有發生問題，可能磁碟會呈現離線 (<a href=#zfs-term-offline>Offline</a>) 的狀態，此時儲存池的狀態會是：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell>  pool: storage
+ state: DEGRADED
+status: One or more devices has been taken offline by the administrator.
+	Sufficient replicas exist <span class=k>for </span>the pool to <span class=k>continue </span>functioning <span class=k>in </span>a
+	degraded state.
+action: Online the device using <span class=s1>&#39;zpool online&#39;</span> or replace the device with
+	<span class=s1>&#39;zpool replace&#39;</span><span class=nb>.</span>
+ scrub: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     DEGRADED     0     0     0
+	  raidz1    DEGRADED     0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     OFFLINE      0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>這代表著裝置在之前被管理者使用此指令拿下線：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool offline storage da1</span></code></pre></div></div><div class=paragraph><p>現在系統可以關機然後更換 <span class=filename>da1</span>，當系統恢復上線，則可以替換掉儲存池中故障的磁碟：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool replace storage da1</span></code></pre></div></div><div class=paragraph><p>到這裡，可以再檢查狀態一次，這時不需使用 <code>-x</code> 參數來顯示所有的儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status storage</span>
+ pool: storage
+ state: ONLINE
+ scrub: resilver completed with 0 errors on Sat Aug 30 19:44:11 2008
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>在這個例子中，所有的磁碟均已正常運作。</p></div></div><div class=sect2><h3 id=zfs-quickstart-data-verification>19.2.4. 資料檢驗<a class=anchor href=#zfs-quickstart-data-verification></a></h3><div class=paragraph><p>ZFS 使用校驗碼 (Checksum) 來檢驗資料的完整性 (Integrity)，會在建立檔案系統時便自動開啟。</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><i class="fa icon-warning" title=Warning></i></td><td class=content><div class=paragraph><p>校驗碼 (Checksum) 可以關閉，但並<em>不</em>建議！校驗碼只會使用非常少的儲存空間來確保資料的完整性。若關閉校驗碼會使許多 ZFS 功能無法正常運作，且關閉校驗碼對並不會明顯的改善效能。</p></div></td></tr></tbody></table></div><div class=paragraph><p>檢驗校驗碼這個動作即所謂的<em>清潔 (Scrub)</em>，可以使用以下指令來檢驗 <code>storage</code> 儲存池的資料完整性：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool scrub storage</span></code></pre></div></div><div class=paragraph><p>清潔所需要的時間依儲存的資料量而定，較大的資料量相對會需要花費較長的時間來檢驗。清潔會對 I/O 有非常密集的操作且一次只能進行一個清潔動作。在清潔完成之後，可以使用 <code>status</code> 來查看狀態：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status storage</span>
+ pool: storage
+ state: ONLINE
+ scrub: scrub completed with 0 errors on Sat Jan 26 19:57:37 2013
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>查詢結果會顯示上次完成清潔的時間來協助追蹤是否要再做清潔。定期清潔可以協助保護資料不會默默損壞且確保儲存池的完整性。</p></div><div class=paragraph><p>請參考 <a href="https://man.freebsd.org/cgi/man.cgi?query=zfs&amp;sektion=8&amp;format=html">zfs(8)</a> 及 <a href="https://man.freebsd.org/cgi/man.cgi?query=zpool&amp;sektion=8&amp;format=html">zpool(8)</a> 來取得其他 ZFS 選項。</p></div></div></div></div><div class=sect1><h2 id=zfs-zpool>19.3. <code>zpool</code> 管理<a class=anchor href=#zfs-zpool></a></h2><div class=sectionbody><div class=paragraph><p>ZFS 管理分成兩個主要的工具。<code>zpool</code> 工具用來控制儲存池的運作並可處理磁碟的新增、移除、更換與管理。<a href=#zfs-zfs><code>zfs</code></a> 工具用來建立、摧毀與管理檔案系統 (<a href=#zfs-term-filesystem>File system</a>) 與磁碟區 (<a href=#zfs-term-volume>Volume</a>) 的資料集。</p></div><div class=sect2><h3 id=zfs-zpool-create>19.3.1. 建立與摧毀儲存池<a class=anchor href=#zfs-zpool-create></a></h3><div class=paragraph><p>建立 ZFS 儲存池 (<em>zpool</em>) 要做幾個涉及長遠規劃的決定，因為建立儲存池之後便無法再更改儲存池的結構。最重要的決定是要使用那一種型態的 vdev 來將實體磁碟設為同一群組。請參考 <a href=#zfs-term-vdev>vdev 型態</a> 的清單來取得有關可用選項的詳細資訊。大部份的 vdev 型態不允許在建立儲存池之後再加入額外的磁碟，鏡像 (Mirror) 是可以允許加入額外的磁碟到 vdev 的其中一個例外，另一個則是串連 (Stripe)，可以加入額外的磁碟到 vdev 來升級為鏡像。雖然可以加入額外的 vdev 來擴充儲存池，但儲存池的配置在建立之後便無法更改，若要要更改，則必須先備份資料，把儲存池摧毀後再重新建立。</p></div><div class=paragraph><p>建立一個簡單的鏡像儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create mypool mirror /dev/ada1 /dev/ada2</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada1    ONLINE       0     0     0
+            ada2    ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>可以一次建立數個 vdev，磁碟群組間使用 vdev 型態關鍵字來區隔，在這個例子使用 <code>mirror</code>：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create mypool mirror /dev/ada1 /dev/ada2 mirror /dev/ada3 /dev/ada4</span>
+  pool: mypool
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada1    ONLINE       0     0     0
+            ada2    ONLINE       0     0     0
+          mirror-1  ONLINE       0     0     0
+            ada3    ONLINE       0     0     0
+            ada4    ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>儲存池也可以不使用整個磁碟而改使用分割區 (Partition) 來建立。把 ZFS 放到不同的分割區可讓同一個磁碟有其他的分割區可做其他用途，尤其是有 Bootcode 與檔案系統要用來開機的分割區，這讓磁碟可以用來開機也同樣可以做為儲存池的一部份。在 FreeBSD 用分割區來替代整個磁碟並不會對效能有影響。使用分割區也讓管理者可以對磁碟容量做 <em>少算的預備</em>，使用比完整容量少的容量，未來若要替換的磁碟號稱與原磁碟相同，但實際上卻比較小時，也可符合這個較小的分割區容量，以使用替換的磁碟。</p></div><div class=paragraph><p>使用分割區建立一個 <a href=#zfs-term-vdev-raidz>RAID-Z2</a> 儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create mypool raidz2 /dev/ada0p3 /dev/ada1p3 /dev/ada2p3 /dev/ada3p3 /dev/ada4p3 /dev/ada5p3</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          raidz2-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+            ada3p3  ONLINE       0     0     0
+            ada4p3  ONLINE       0     0     0
+            ada5p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>不需使用的儲存池可以摧毀，來讓磁碟可以再次使用。摧毀一個儲存池要先卸載所有該儲存池的資料集。若資料集在使用中，卸載的操作會失敗且儲存池不會被摧毀。儲存池的摧毀可以使用 <code>-f</code> 來強制執行，但這可能造成那些有開啟這些資料集之中檔案的應用程式無法辨識的行為。</p></div></div><div class=sect2><h3 id=zfs-zpool-attach>19.3.2. 加入與移除裝置<a class=anchor href=#zfs-zpool-attach></a></h3><div class=paragraph><p>加入磁碟到儲存池 (zpool) 會有兩種情形：使用 <code>zpool attach</code> 加入一個磁碟到既有的 vdev，或使用 <code>zpool add</code> 加入 vdev 到儲存池。只有部份 <a href=#zfs-term-vdev>vdev 型態</a> 允許在 vdev 建立之後加入磁碟。</p></div><div class=paragraph><p>由單一磁碟所建立的儲存池缺乏備援 (Redundancy) 功能，可以偵測到資料的損壞但無法修復，因為資料沒有其他備份可用。備份數 (<a href=#zfs-term-copies>Copies</a>) 屬性可以讓您從較小的故障中復原，如磁碟壞軌 (Bad sector)，但無法提供與鏡像或 RAID-Z 同樣層級的保護。由單一磁碟所建立的儲存池可以使用 <code>zpool attach</code> 來加入額外的磁碟到 vdev，來建立鏡像。<code>zpool attach</code> 也可用來加入額外的磁碟到鏡像群組，來增加備援與讀取效率。若使用的磁碟已有分割區，可以複製該磁碟的分割區配置到另一個，使用 <code>gpart backup</code> 與 <code>gpart restore</code> 可讓這件事變的很簡單。</p></div><div class=paragraph><p>加入 <em>ada1p3</em> 來升級單一磁碟串連 (stripe) vdev <em>ada0p3</em> 採用鏡像型態 (mirror)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          ada0p3    ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool attach mypool ada0p3 ada1p3</span>
+Make sure to <span class=nb>wait </span><span class=k>until </span>resilver is <span class=k>done </span>before rebooting.
+
+If you boot from pool <span class=s1>&#39;mypool&#39;</span>, you may need to update
+boot code on newly attached disk <span class=s1>&#39;ada1p3&#39;</span><span class=nb>.</span>
+
+Assuming you use GPT partitioning and <span class=s1>&#39;da0&#39;</span> is your new boot disk
+you may use the following <span class=nb>command</span>:
+
+        gpart bootcode <span class=nt>-b</span> /boot/pmbr <span class=nt>-p</span> /boot/gptzfsboot <span class=nt>-i</span> 1 da0
+<span class=c># gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 ada1</span>
+bootcode written to ada1
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+status: One or more devices is currently being resilvered.  The pool will
+        <span class=k>continue </span>to <span class=k>function</span>, possibly <span class=k>in </span>a degraded state.
+action: Wait <span class=k>for </span>the resilver to complete.
+  scan: resilver <span class=k>in </span>progress since Fri May 30 08:19:19 2014
+        527M scanned out of 781M at 47.9M/s, 0h0m to go
+        527M resilvered, 67.53% <span class=k>done
+</span>config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0  <span class=o>(</span>resilvering<span class=o>)</span>
+
+errors: No known data errors
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: resilvered 781M <span class=k>in </span>0h0m with 0 errors on Fri May 30 08:15:58 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>若不想選擇加入磁碟到既有的 vdev ，對 RAID-Z 來說，可選擇另一種方式，便是加入另一個 vdev 到儲存池。額外的 vdev 可以提供更高的效能，分散寫入資料到 vdev 之間，每個 vdev 會負責自己的備援。也可以混合使用不同的 vdev 型態，但並不建議，例如混合使用 <code>mirror</code> 與 <code>RAID-Z</code>，加入一個無備援的 vdev 到一個含有 mirror 或 RAID-Z vdev 的儲存池會讓資料損壞的風險擴大整個儲存池，由於會分散寫入資料，若在無備援的磁碟上發生故障的結果便是遺失大半寫到儲存池的資料區塊。</p></div><div class=paragraph><p>在每個 vdev 間的資料是串連的，例如，有兩個 mirror vdev，便跟 RAID 10 一樣在兩個 mirror 間分散寫入資料，且會做空間的分配，因此 vdev 會在同時達到全滿 100% 的用量。若 vdev 間的可用空間量不同則會影響到效能，因為資料量會不成比例的寫入到使用量較少的 vdev。</p></div><div class=paragraph><p>當連接額外的裝置到一個可以開機的儲存池，要記得更新 Bootcode。</p></div><div class=paragraph><p>連接第二個 mirror 群組 (<span class=filename>ada2p3</span> 及 <span class=filename>ada3p3</span>) 到既有的 mirror：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: resilvered 781M <span class=k>in </span>0h0m with 0 errors on Fri May 30 08:19:35 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool add mypool mirror ada2p3 ada3p3</span>
+<span class=c># gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 ada2</span>
+bootcode written to ada2
+<span class=c># gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 ada3</span>
+bootcode written to ada3
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: scrub repaired 0 <span class=k>in </span>0h0m with 0 errors on Fri May 30 08:29:51 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+          mirror-1  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+            ada3p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>現在已無法從儲存池上移除 vdev，且磁碟只能夠在有足夠備援空間的情況下從 mirror 移除，若在 mirror 群組中只剩下一個磁碟，便會取消 mirror 然後還原為 stripe，若剩下的那個磁碟故障，便會影響到整個儲存池。</p></div><div class=paragraph><p>從一個三方 mirror 群組移除一個磁碟：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: scrub repaired 0 <span class=k>in </span>0h0m with 0 errors on Fri May 30 08:29:51 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool detach mypool ada2p3</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: scrub repaired 0 <span class=k>in </span>0h0m with 0 errors on Fri May 30 08:29:51 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-status>19.3.3. 檢查儲存池狀態<a class=anchor href=#zfs-zpool-status></a></h3><div class=paragraph><p>儲存池的狀態很重要，若有磁碟機離線或偵測到讀取、寫入或校驗碼 (Checksum) 錯誤，對應的錯誤計數便會增加。<code>status</code> 會顯示儲存池中每一個磁碟機的設定與狀態及整個儲存池的狀態。需要處置的方式與有關最近清潔 (<a href=#zfs-zpool-scrub><code>Scrub</code></a>) 的詳細資訊也會一併顯示。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: scrub repaired 0 <span class=k>in </span>2h25m with 0 errors on Sat Sep 14 04:25:50 2013
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          raidz2-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+            ada3p3  ONLINE       0     0     0
+            ada4p3  ONLINE       0     0     0
+            ada5p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-clear>19.3.4. 清除錯誤<a class=anchor href=#zfs-zpool-clear></a></h3><div class=paragraph><p>當偵測到錯誤發生，讀取、寫入或校驗碼 (Checksum) 的計數便會增加。使用 <code>zpool clear <em>mypool</em></code> 可以清除錯誤訊息及重置計數。清空錯誤狀態對當儲存池發生錯誤要使用自動化 Script 通知的管理者來說會很重要，因在舊的錯誤尚未清除前不會回報後續的錯誤。</p></div></div><div class=sect2><h3 id=zfs-zpool-replace>19.3.5. 更換運作中的裝置<a class=anchor href=#zfs-zpool-replace></a></h3><div class=paragraph><p>可能有一些情況會需要更換磁碟為另一個磁碟，當要更換運作中的磁碟，此程序會維持舊有的磁碟在更換的過程為上線的狀態，儲存池不會進入降級 (<a href=#zfs-term-degraded>Degraded</a>) 的狀態，來減少資料遺失的風險。<code>zpool replace</code> 會複製所有舊磁碟的資料到新磁碟，操作完成之後舊磁碟便會與 vdev 中斷連線。若新磁碟容量較舊磁碟大，也可以會增加儲存池來使用新的空間，請參考 <a href=#zfs-zpool-online>擴增儲存池</a>。</p></div><div class=paragraph><p>更換儲存池中正在運作的狀置：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool replace mypool ada1p3 ada2p3</span>
+Make sure to <span class=nb>wait </span><span class=k>until </span>resilver is <span class=k>done </span>before rebooting.
+
+If you boot from pool <span class=s1>&#39;zroot&#39;</span>, you may need to update
+boot code on newly attached disk <span class=s1>&#39;ada2p3&#39;</span><span class=nb>.</span>
+
+Assuming you use GPT partitioning and <span class=s1>&#39;da0&#39;</span> is your new boot disk
+you may use the following <span class=nb>command</span>:
+
+        gpart bootcode <span class=nt>-b</span> /boot/pmbr <span class=nt>-p</span> /boot/gptzfsboot <span class=nt>-i</span> 1 da0
+<span class=c># gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 ada2</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+status: One or more devices is currently being resilvered.  The pool will
+        <span class=k>continue </span>to <span class=k>function</span>, possibly <span class=k>in </span>a degraded state.
+action: Wait <span class=k>for </span>the resilver to complete.
+  scan: resilver <span class=k>in </span>progress since Mon Jun  2 14:21:35 2014
+        604M scanned out of 781M at 46.5M/s, 0h0m to go
+        604M resilvered, 77.39% <span class=k>done
+</span>config:
+
+        NAME             STATE     READ WRITE CKSUM
+        mypool           ONLINE       0     0     0
+          mirror-0       ONLINE       0     0     0
+            ada0p3       ONLINE       0     0     0
+            replacing-1  ONLINE       0     0     0
+              ada1p3     ONLINE       0     0     0
+              ada2p3     ONLINE       0     0     0  <span class=o>(</span>resilvering<span class=o>)</span>
+
+errors: No known data errors
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: resilvered 781M <span class=k>in </span>0h0m with 0 errors on Mon Jun  2 14:21:52 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-resilver>19.3.6. 處理故障裝置<a class=anchor href=#zfs-zpool-resilver></a></h3><div class=paragraph><p>當儲存池中的磁碟故障，該故障硬碟所屬的 vdev 便會進入降級 (<a href=#zfs-term-degraded>Degraded</a>) 狀態，所有的資料仍可使用，但效能可能會降低，因為遺失的資料必須從可用的備援資料計算才能取得。要將 vdev 恢復完整運作的狀態必須更換故障的實體裝置。然後 ZFS 便會開始修復 (<a href=#zfs-term-resilver>Resilver</a>，古代鏡子的修復稱 Resilver) 作業，會從可用的備援資料計算出故障磁碟中的資料並寫入到替換的裝置上。完成後 vdev 便會重新返回上線 (<a href=#zfs-term-online>Online</a>) 的狀態。</p></div><div class=paragraph><p>若 vdev 沒有任何備援資料或有多個裝置故障，沒有足夠的備援資料可以補償，儲存池便會進入故障 (<a href=#zfs-term-faulted>Faulted</a>) 的狀態。</p></div><div class=paragraph><p>更換故障的磁碟時，故障磁碟的名稱會更換為裝置的 GUID，若替換裝置要使用相同的裝置名稱，則在 <code>zpool replace</code> 不須加上新裝置名稱參數。</p></div><div class=paragraph><p>使用 <code>zpool replace</code> 更換故障的磁碟：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: DEGRADED
+status: One or more devices could not be opened.  Sufficient replicas exist <span class=k>for
+        </span>the pool to <span class=k>continue </span>functioning <span class=k>in </span>a degraded state.
+action: Attach the missing device and online it using <span class=s1>&#39;zpool online&#39;</span><span class=nb>.</span>
+   see: http://illumos.org/msg/ZFS-8000-2Q
+  scan: none requested
+config:
+
+        NAME                    STATE     READ WRITE CKSUM
+        mypool                  DEGRADED     0     0     0
+          mirror-0              DEGRADED     0     0     0
+            ada0p3              ONLINE       0     0     0
+            316502962686821739  UNAVAIL      0     0     0  was /dev/ada1p3
+
+errors: No known data errors
+<span class=c># zpool replace mypool 316502962686821739 ada2p3</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: DEGRADED
+status: One or more devices is currently being resilvered.  The pool will
+        <span class=k>continue </span>to <span class=k>function</span>, possibly <span class=k>in </span>a degraded state.
+action: Wait <span class=k>for </span>the resilver to complete.
+  scan: resilver <span class=k>in </span>progress since Mon Jun  2 14:52:21 2014
+        641M scanned out of 781M at 49.3M/s, 0h0m to go
+        640M resilvered, 82.04% <span class=k>done
+</span>config:
+
+        NAME                        STATE     READ WRITE CKSUM
+        mypool                      DEGRADED     0     0     0
+          mirror-0                  DEGRADED     0     0     0
+            ada0p3                  ONLINE       0     0     0
+            replacing-1             UNAVAIL      0     0     0
+              15732067398082357289  UNAVAIL      0     0     0  was /dev/ada1p3/old
+              ada2p3                ONLINE       0     0     0  <span class=o>(</span>resilvering<span class=o>)</span>
+
+errors: No known data errors
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: resilvered 781M <span class=k>in </span>0h0m with 0 errors on Mon Jun  2 14:52:38 2014
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-scrub>19.3.7. 清潔儲存池<a class=anchor href=#zfs-zpool-scrub></a></h3><div class=paragraph><p>建議儲存池要定期清潔 (<a href=#zfs-term-scrub>Scrub</a>)，最好是每一個月清潔一次。 <code>scrub</code> 作業對磁碟操作非常的密集，在執行時會降低磁碟的效能。在排程 <code>scrub</code> 時避免在使用高峰的時期，或使用 <a href=#zfs-advanced-tuning-scrub_delay><code>vfs.zfs.scrub_delay</code></a> 來調整 <code>scrub</code> 的相對優先權來避免影響其他的工作。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool scrub mypool</span>
+<span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+  scan: scrub <span class=k>in </span>progress since Wed Feb 19 20:52:54 2014
+        116G scanned out of 8.60T at 649M/s, 3h48m to go
+        0 repaired, 1.32% <span class=k>done
+</span>config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          raidz2-0  ONLINE       0     0     0
+            ada0p3  ONLINE       0     0     0
+            ada1p3  ONLINE       0     0     0
+            ada2p3  ONLINE       0     0     0
+            ada3p3  ONLINE       0     0     0
+            ada4p3  ONLINE       0     0     0
+            ada5p3  ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>若發生需要取消清潔作業的事，可以下 <code>zpool scrub -s <em>mypool</em></code>。</p></div></div><div class=sect2><h3 id=zfs-zpool-selfheal>19.3.8. 自我修復<a class=anchor href=#zfs-zpool-selfheal></a></h3><div class=paragraph><p>校驗碼 (Checksum) 會隨資料區塊一併儲存，這使得檔案系統可以做到<em>自我修復</em>。這個功能可以在校驗碼與儲存池中的另一個裝置不同時自動修復資料。舉例來說，有兩個磁碟做鏡像 (Mirror)，其中一個磁碟機開始失常並無法正常儲存資料，甚至是資料放在長期封存的儲存裝置上，已經很久沒有被存取。傳統的檔案系統需要執行演算法來檢查並修復資料如 <a href="https://man.freebsd.org/cgi/man.cgi?query=fsck&amp;sektion=8&amp;format=html">fsck(8)</a>，這些指令耗費時間，且在嚴重時需要管理者手動決定要做那一種修復操作。當 ZFS 偵測到資料區塊的校驗碼不對時，它除了把資料交給需要的應用程式外，也會修正在磁碟上錯誤的資料。這件事不需要與系統管理者作任何互動便會在一般的儲存池操作時完成。</p></div><div class=paragraph><p>接下來的例子會示範自我修復會如何運作。建立一個使用磁碟 <span class=filename>/dev/ada0</span> 及 <span class=filename>/dev/ada1</span> 做鏡像的儲存池。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool create healer mirror /dev/ada0 /dev/ada1</span>
+<span class=c># zpool status healer</span>
+  pool: healer
+ state: ONLINE
+  scan: none requested
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    healer      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+       ada0     ONLINE       0     0     0
+       ada1     ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool list</span>
+NAME     SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG   CAP  DEDUP  HEALTH  ALTROOT
+healer   960M  92.5K   960M         -         -     0%    0%  1.00x  ONLINE  -</code></pre></div></div><div class=paragraph><p>將部份需要使用自我修復功能來保護的重要資料複製到該儲存池，建立一個儲存池的校驗碼供稍後做比較時使用。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp /some/important/data /healer</span>
+<span class=c># zfs list</span>
+NAME     SIZE  ALLOC   FREE    CAP  DEDUP  HEALTH  ALTROOT
+healer   960M  67.7M   892M     7%  1.00x  ONLINE  -
+<span class=c># sha1 /healer &gt; checksum.txt</span>
+<span class=c># cat checksum.txt</span>
+SHA1 <span class=o>(</span>/healer<span class=o>)</span> <span class=o>=</span> 2753eff56d77d9a536ece6694bf0a82740344d1f</code></pre></div></div><div class=paragraph><p>寫入隨機的資料到鏡像的第一個磁碟來模擬資料損毀的情況。要避免 ZFS 偵測到錯誤時馬上做修復，接著要將儲存池匯出，待模擬資料損毀之後再匯入。</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><i class="fa icon-warning" title=Warning></i></td><td class=content><div class=paragraph><p>這是一個危險的操作，會破壞重要的資料。在這裡使用僅為了示範用，不應在儲存池正常運作時嘗試使用，也不應將這個故意損壞資料的例子用在任何其他的檔案系統上，所以請勿使用任何不屬於該儲存池的其他磁碟裝置名稱並確定在執行指令前已對儲存池做正確的備份！</p></div></td></tr></tbody></table></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool export healer</span>
+<span class=c># dd if=/dev/random of=/dev/ada1 bs=1m count=200</span>
+200+0 records <span class=k>in
+</span>200+0 records out
+209715200 bytes transferred <span class=k>in </span>62.992162 secs <span class=o>(</span>3329227 bytes/sec<span class=o>)</span>
+<span class=c># zpool import healer</span></code></pre></div></div><div class=paragraph><p>儲存池的狀態顯示有一個裝置發生了錯誤。注意，應用程式從儲存池讀取的資料中並沒有任何的錯誤資料，ZFS 會自 <span class=filename>ada0</span> 裝置提供有正確校驗碼的資料。結果裡面 <code>CKSUM</code> 欄位含有非零值便是有錯誤校驗碼的裝置。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status healer</span>
+    pool: healer
+   state: ONLINE
+  status: One or more devices has experienced an unrecoverable error.  An
+          attempt was made to correct the error.  Applications are unaffected.
+  action: Determine <span class=k>if </span>the device needs to be replaced, and clear the errors
+          using <span class=s1>&#39;zpool clear&#39;</span> or replace the device with <span class=s1>&#39;zpool replace&#39;</span><span class=nb>.</span>
+     see: http://illumos.org/msg/ZFS-8000-4J
+    scan: none requested
+  config:
+
+      NAME        STATE     READ WRITE CKSUM
+      healer      ONLINE       0     0     0
+        mirror-0  ONLINE       0     0     0
+         ada0     ONLINE       0     0     0
+         ada1     ONLINE       0     0     1
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>錯誤已經被偵測到並且由未被影響的 <span class=filename>ada0</span> 鏡像磁碟上的備援提供資料。可與原來的校驗碼做比較來看儲存池是否已修復為一致。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># sha1 /healer &gt;&gt; checksum.txt</span>
+<span class=c># cat checksum.txt</span>
+SHA1 <span class=o>(</span>/healer<span class=o>)</span> <span class=o>=</span> 2753eff56d77d9a536ece6694bf0a82740344d1f
+SHA1 <span class=o>(</span>/healer<span class=o>)</span> <span class=o>=</span> 2753eff56d77d9a536ece6694bf0a82740344d1f</code></pre></div></div><div class=paragraph><p>儲存池在故意竄改資料前與後的兩個校驗碼仍相符顯示了 ZFS 在校驗碼不同時偵測與自動修正錯誤的能力。注意，這只在當儲存池中有足夠的備援時才可做到，由單一裝置組成的儲存池並沒有自我修復的能力。這也是為什麼在 ZFS 中校驗碼如此重要，任何原因都不該關閉。不需要 <a href="https://man.freebsd.org/cgi/man.cgi?query=fsck&amp;sektion=8&amp;format=html">fsck(8)</a> 或類似的檔案系統一致性檢查程式便能夠偵測與修正問題，且儲存儲存池在發生問題時仍可正常運作。接著需要做清潔作業來覆蓋在 <span class=filename>ada1</span> 上的錯誤資料。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool scrub healer</span>
+<span class=c># zpool status healer</span>
+  pool: healer
+ state: ONLINE
+status: One or more devices has experienced an unrecoverable error.  An
+            attempt was made to correct the error.  Applications are unaffected.
+action: Determine <span class=k>if </span>the device needs to be replaced, and clear the errors
+            using <span class=s1>&#39;zpool clear&#39;</span> or replace the device with <span class=s1>&#39;zpool replace&#39;</span><span class=nb>.</span>
+   see: http://illumos.org/msg/ZFS-8000-4J
+  scan: scrub <span class=k>in </span>progress since Mon Dec 10 12:23:30 2012
+        10.4M scanned out of 67.0M at 267K/s, 0h3m to go
+        9.63M repaired, 15.56% <span class=k>done
+</span>config:
+
+    NAME        STATE     READ WRITE CKSUM
+    healer      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+       ada0     ONLINE       0     0     0
+       ada1     ONLINE       0     0   627  <span class=o>(</span>repairing<span class=o>)</span>
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>清潔作業會從 <span class=filename>ada0</span> 讀取資料並重新寫入任何在 <span class=filename>ada1</span> 上有錯誤校驗碼的資料。這個操作可以由 <code>zpool status</code> 的輸出中呈現修復中 <code>(repairing)</code> 的項目來辨識。這個作業完成後，儲存池的狀態會更改為：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status healer</span>
+  pool: healer
+ state: ONLINE
+status: One or more devices has experienced an unrecoverable error.  An
+        attempt was made to correct the error.  Applications are unaffected.
+action: Determine <span class=k>if </span>the device needs to be replaced, and clear the errors
+             using <span class=s1>&#39;zpool clear&#39;</span> or replace the device with <span class=s1>&#39;zpool replace&#39;</span><span class=nb>.</span>
+   see: http://illumos.org/msg/ZFS-8000-4J
+  scan: scrub repaired 66.5M <span class=k>in </span>0h2m with 0 errors on Mon Dec 10 12:26:25 2012
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    healer      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+       ada0     ONLINE       0     0     0
+       ada1     ONLINE       0     0 2.72K
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>清潔操作完成便同步了 <span class=filename>ada0</span> 到 <span class=filename>ada1</span> 間的所有資料。執行 <code>zpool clear</code> 可以清除 (<a href=#zfs-zpool-clear>Clear</a>) 儲存池狀態的錯誤訊息。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool clear healer</span>
+<span class=c># zpool status healer</span>
+  pool: healer
+ state: ONLINE
+  scan: scrub repaired 66.5M <span class=k>in </span>0h2m with 0 errors on Mon Dec 10 12:26:25 2012
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    healer      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+       ada0     ONLINE       0     0     0
+       ada1     ONLINE       0     0     0
+
+errors: No known data errors</code></pre></div></div><div class=paragraph><p>儲存池現在恢復完整運作的狀態且清除所有的錯誤了。</p></div></div><div class=sect2><h3 id=zfs-zpool-online>19.3.9. 擴增儲存池<a class=anchor href=#zfs-zpool-online></a></h3><div class=paragraph><p>可用的備援儲存池大小會受到每個 vdev 中容量最小的裝置限制。最小的裝置可以替換成較大的裝置，在更換 (<a href=#zfs-zpool-replace>Replace</a>) 或修復 (<a href=#zfs-term-resilver>Resilver</a>) 作業後，儲存池可以成長到該新裝置的可用容量。例如，要做一個 1 TB 磁碟機與一個 2 TB 磁碟機的鏡像，可用的空間會是 1 TB，當 1 TB 磁碟機備更換成另一個 2 TB 的磁碟機時，修復程序會複製既有的資料到新的磁碟機，由於現在兩個裝置都有 2 TB 的容量，所以鏡像的可用空間便會成長到 2 TB。</p></div><div class=paragraph><p>可以在每個裝置用 <code>zpool online -e</code> 來觸發擴充的動作，在擴充完所有裝置後，儲存池便可使用額外的空間。</p></div></div><div class=sect2><h3 id=zfs-zpool-import>19.3.10. 匯入與匯出儲存池<a class=anchor href=#zfs-zpool-import></a></h3><div class=paragraph><p>儲存池在移動到其他系統之前需要做匯出 (<em>Export</em>)，會卸載所有的資料集，然後標記每個裝置為已匯出，為了避免被其他磁碟子系統存取，因此仍會鎖定這些裝置。這個動作讓儲存池可以在支援 ZFS 的其他機器、其他作業系統做匯入 (<em>Import</em>)，甚至是不同的硬體架構 (有一些注意事項，請參考 <a href="https://man.freebsd.org/cgi/man.cgi?query=zpool&amp;sektion=8&amp;format=html">zpool(8)</a>)。當資料集有被開啟的檔案，可使用 <code>zpool export -f</code> 來強制匯出儲存池，使用這個指令需要小心，資料集是被強制卸載的，因此有可能造成在該資料集開啟檔案的應用程式發生無法預期的結果。</p></div><div class=paragraph><p>匯出未使用的儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool export mypool</span></code></pre></div></div><div class=paragraph><p>匯入儲存池會自動掛載資料集，若不想自動掛載，可以使用 <code>zpool import -N</code>。<code>zpool import -o</code> 可以設定在匯入時暫時使用的屬性。<code>zpool import altroot=</code> 允許匯入時指定基礎掛載點 (Base mount point) 來替換檔案系統根目錄。若儲存池先前用在不同的系統且不正常匯出，可能會需要使用 <code>zpool import -f</code> 來強制匯入。<code>zpool import -a</code> 會匯入所有沒有被其他系統使用的儲存池。</p></div><div class=paragraph><p>列出所有可以匯入的儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool import</span>
+   pool: mypool
+     <span class=nb>id</span>: 9930174748043525076
+  state: ONLINE
+ action: The pool can be imported using its name or numeric identifier.
+ config:
+
+        mypool      ONLINE
+          ada2p3    ONLINE</code></pre></div></div><div class=paragraph><p>使用替代的根目錄匯入儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool import -o altroot=/mnt mypool</span>
+<span class=c># zfs list</span>
+zfs list
+NAME                 USED  AVAIL  REFER  MOUNTPOINT
+mypool               110K  47.0G    31K  /mnt/mypool</code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-upgrade>19.3.11. 升級儲存儲存池<a class=anchor href=#zfs-zpool-upgrade></a></h3><div class=paragraph><p>在升級 FreeBSD 之後或儲存池是由其他使用舊版 ZFS 的系統匯入，儲存池可以手動升級到最新版本的 ZFS 來支援新的功能。在升級前請評估儲存池是否還要在舊的系統做匯入，由於升級是一個單向的程序，舊的儲存池可以升級，但有新功能的儲存池無法降級。</p></div><div class=paragraph><p>升級一個 v28 的儲存以支援功能旗標 (<code>Feature Flags</code>)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+status: The pool is formatted using a legacy on-disk format.  The pool can
+        still be used, but some features are unavailable.
+action: Upgrade the pool using <span class=s1>&#39;zpool upgrade&#39;</span><span class=nb>.</span>  Once this is <span class=k>done</span>, the
+        pool will no longer be accessible on software that does not support feat
+        flags.
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+	    ada0    ONLINE       0     0     0
+	    ada1    ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool upgrade</span>
+This system supports ZFS pool feature flags.
+
+The following pools are formatted with legacy version numbers and can
+be upgraded to use feature flags.  After being upgraded, these pools
+will no longer be accessible by software that does not support feature
+flags.
+
+VER  POOL
+<span class=nt>---</span>  <span class=nt>------------</span>
+28   mypool
+
+Use <span class=s1>&#39;zpool upgrade -v&#39;</span> <span class=k>for </span>a list of available legacy versions.
+Every feature flags pool has all supported features enabled.
+<span class=c># zpool upgrade mypool</span>
+This system supports ZFS pool feature flags.
+
+Successfully upgraded <span class=s1>&#39;mypool&#39;</span> from version 28 to feature flags.
+Enabled the following features on <span class=s1>&#39;mypool&#39;</span>:
+  async_destroy
+  empty_bpobj
+  lz4_compress
+  multi_vdev_crash_dump</code></pre></div></div><div class=paragraph><p>ZFS 的新功能在 <code>zpool upgrade</code> 尚未完成之前無法使用。可以用 <code>zpool upgrade -v</code> 來查看升級後有那些新功能，也同時會列出已經支援那些功能。</p></div><div class=paragraph><p>升級儲存池支援新版的功能旗標 (Feature flags)：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool status</span>
+  pool: mypool
+ state: ONLINE
+status: Some supported features are not enabled on the pool. The pool can
+        still be used, but some features are unavailable.
+action: Enable all features using <span class=s1>&#39;zpool upgrade&#39;</span><span class=nb>.</span> Once this is <span class=k>done</span>,
+        the pool may no longer be accessible by software that does not support
+        the features. See zpool-features<span class=o>(</span>7<span class=o>)</span> <span class=k>for </span>details.
+  scan: none requested
+config:
+
+        NAME        STATE     READ WRITE CKSUM
+        mypool      ONLINE       0     0     0
+          mirror-0  ONLINE       0     0     0
+	    ada0    ONLINE       0     0     0
+	    ada1    ONLINE       0     0     0
+
+errors: No known data errors
+<span class=c># zpool upgrade</span>
+This system supports ZFS pool feature flags.
+
+All pools are formatted using feature flags.
+
+Some supported features are not enabled on the following pools. Once a
+feature is enabled the pool may become incompatible with software
+that does not support the feature. See zpool-features<span class=o>(</span>7<span class=o>)</span> <span class=k>for </span>details.
+
+POOL  FEATURE
+<span class=nt>---------------</span>
+zstore
+      multi_vdev_crash_dump
+      spacemap_histogram
+      enabled_txg
+      hole_birth
+      extensible_dataset
+      bookmarks
+      filesystem_limits
+<span class=c># zpool upgrade mypool</span>
+This system supports ZFS pool feature flags.
+
+Enabled the following features on <span class=s1>&#39;mypool&#39;</span>:
+  spacemap_histogram
+  enabled_txg
+  hole_birth
+  extensible_dataset
+  bookmarks
+  filesystem_limits</code></pre></div></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><i class="fa icon-warning" title=Warning></i></td><td class=content><div class=paragraph><p>在使用儲存池來開機的系統上的 Boot code 也必須一併更新來支援新的儲存池版本，可在含有 Boot code 的分割區使用 <code>gpart bootcode</code> 來更新。目前有兩種 Boot code 可使用，需視系統開機的方式使用：GPT (最常用的選項) 以及 EFI (較新的系統)。</p></div><div class=paragraph><p>針對傳統使用 GPT 開機的系統，可以使用以下指令：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 ada1</span></code></pre></div></div><div class=paragraph><p>針對使用 EFI 開機的系統可以執行以下指令：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># gpart bootcode -p /boot/boot1.efifat -i 1 ada1</span></code></pre></div></div><div class=paragraph><p>套用 Boot code 到所有儲存池中可開機的磁碟。請參考 <a href="https://man.freebsd.org/cgi/man.cgi?query=gpart&amp;sektion=8&amp;format=html">gpart(8)</a> 以取得更多資訊。</p></div></td></tr></tbody></table></div></div><div class=sect2><h3 id=zfs-zpool-history>19.3.12. 顯示已記錄的儲存池歷史日誌<a class=anchor href=#zfs-zpool-history></a></h3><div class=paragraph><p>修改儲存池的指令會被記錄下來，會記錄的動作包含資料集的建立，屬性更改或更換磁碟。這個歷史記錄用來查看儲存池是如何建立、由誰執行、什麼動作及何時。歷史記錄並非儲存在日誌檔 (Log file)，而是儲存在儲存池。查看這個歷史記錄的指令名稱為 <code>zpool history</code>：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool history</span>
+History <span class=k>for</span> <span class=s1>&#39;tank&#39;</span>:
+2013-02-26.23:02:35 zpool create tank mirror /dev/ada0 /dev/ada1
+2013-02-27.18:50:58 zfs <span class=nb>set </span><span class=nv>atime</span><span class=o>=</span>off tank
+2013-02-27.18:51:09 zfs <span class=nb>set </span><span class=nv>checksum</span><span class=o>=</span>fletcher4 tank
+2013-02-27.18:51:18 zfs create tank/backup</code></pre></div></div><div class=paragraph><p>輸出結果顯示曾在該儲存池上執行的 <code>zpool</code> 與 <code>zfs</code> 指令以及時間戳記。只有會修改儲存池或類似的指令會被記錄下來，像是 <code>zfs list</code> 這種指令並不會被記錄。當不指定儲存池名稱時，會列出所有儲存池的歷史記錄。</p></div><div class=paragraph><p>在提供選項 <code>-i</code> 或 <code>-l</code> 時 <code>zpool history</code> 可以顯更多詳細資訊。<code>-i</code> 會顯示使用者觸發的事件外，也會顯示內部記錄的 ZFS 事件。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool history -i</span>
+History <span class=k>for</span> <span class=s1>&#39;tank&#39;</span>:
+2013-02-26.23:02:35 <span class=o>[</span>internal pool create txg:5] pool spa 28<span class=p>;</span> zfs spa 28<span class=p>;</span> zpl 5<span class=p>;</span>uts  9.1-RELEASE 901000 amd64
+2013-02-27.18:50:53 <span class=o>[</span>internal property <span class=nb>set </span>txg:50] <span class=nv>atime</span><span class=o>=</span>0 dataset <span class=o>=</span> 21
+2013-02-27.18:50:58 zfs <span class=nb>set </span><span class=nv>atime</span><span class=o>=</span>off tank
+2013-02-27.18:51:04 <span class=o>[</span>internal property <span class=nb>set </span>txg:53] <span class=nv>checksum</span><span class=o>=</span>7 dataset <span class=o>=</span> 21
+2013-02-27.18:51:09 zfs <span class=nb>set </span><span class=nv>checksum</span><span class=o>=</span>fletcher4 tank
+2013-02-27.18:51:13 <span class=o>[</span>internal create txg:55] dataset <span class=o>=</span> 39
+2013-02-27.18:51:18 zfs create tank/backup</code></pre></div></div><div class=paragraph><p>更多詳細的資訊可加上 <code>-l</code> 來取得，歷史記錄會以較長的格式顯示，包含的資訊有執行指令的使用者名稱、主機名稱以及更改的項目。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool history -l</span>
+History <span class=k>for</span> <span class=s1>&#39;tank&#39;</span>:
+2013-02-26.23:02:35 zpool create tank mirror /dev/ada0 /dev/ada1 <span class=o>[</span>user 0 <span class=o>(</span>root<span class=o>)</span> on :global]
+2013-02-27.18:50:58 zfs <span class=nb>set </span><span class=nv>atime</span><span class=o>=</span>off tank <span class=o>[</span>user 0 <span class=o>(</span>root<span class=o>)</span> on myzfsbox:global]
+2013-02-27.18:51:09 zfs <span class=nb>set </span><span class=nv>checksum</span><span class=o>=</span>fletcher4 tank <span class=o>[</span>user 0 <span class=o>(</span>root<span class=o>)</span> on myzfsbox:global]
+2013-02-27.18:51:18 zfs create tank/backup <span class=o>[</span>user 0 <span class=o>(</span>root<span class=o>)</span> on myzfsbox:global]</code></pre></div></div><div class=paragraph><p>輸出結果顯示 <code>root</code> 使用者使用 <span class=filename>/dev/ada0</span> 及 <span class=filename>/dev/ada1</span> 建立鏡像的儲存池。主機名稱 <code>myzfsbox</code> 在建立完儲存池後也同樣會顯示。由於儲存池可以從一個系統匯出再匯入到另一個系統，因此主機名稱也很重要，這樣一來可以清楚的辦識在其他系統上執行的每一個指令的主機名稱。</p></div><div class=paragraph><p>兩個 <code>zpool history</code> 選項可以合併使用來取得最完整的儲存池詳細資訊。儲存池歷史記錄在追蹤執行什麼動作或要取得除錯所需的輸出結果提供了非常有用的資訊。</p></div></div><div class=sect2><h3 id=zfs-zpool-iostat>19.3.13. 監視效能<a class=anchor href=#zfs-zpool-iostat></a></h3><div class=paragraph><p>內建的監視系統可以即時顯示儲存池的 I/O 統計資訊。它會顯示儲存池剩餘的空間與使用的空間，每秒執行了多少讀取與寫入的操作，有多少 I/O 頻寬被使用。預設會監視所有在系統中的儲存池都並顯示出來，可以提供儲存池名稱來只顯示該儲存池的監視資訊。舉一個簡單的例子：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool iostat</span>
+               capacity     operations    bandwidth
+pool        alloc   free   <span class=nb>read  </span>write   <span class=nb>read  </span>write
+<span class=nt>----------</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>
+data         288G  1.53T      2     11  11.3K  57.1K</code></pre></div></div><div class=paragraph><p>要持續監視 I/O 的活動可以在最後的參數指定一個數字，這個數字代表每次更新資訊所間隔的秒數。在每次經過間隔的時間後會列出新一行的統計資訊，按下 <span class=keyseq><kbd>Ctrl</kbd>+<kbd>C</kbd></span> 可以中止監視。或者在指令列的間隔時間之後再指定一個數字，代表總共要顯示的統計資訊筆數。</p></div><div class=paragraph><p>使用 <code>-v</code> 可以顯示更詳細的 I/O 統計資訊。每個在儲存池中的裝置會以一行統計資訊顯示。這可以幫助了解每一個裝置做了多少讀取與寫入的操作，並可協助確認是否有各別裝置拖慢了整個儲存池的速度。以下範例會顯示有兩個裝置的鏡像儲存池：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool iostat -v</span>
+                            capacity     operations    bandwidth
+pool                     alloc   free   <span class=nb>read  </span>write   <span class=nb>read  </span>write
+<span class=nt>-----------------------</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>
+data                      288G  1.53T      2     12  9.23K  61.5K
+  mirror                  288G  1.53T      2     12  9.23K  61.5K
+    ada1                     -      -      0      4  5.61K  61.7K
+    ada2                     -      -      1      4  5.04K  61.7K
+<span class=nt>-----------------------</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span>  <span class=nt>-----</span></code></pre></div></div></div><div class=sect2><h3 id=zfs-zpool-split>19.3.14. 分割儲存儲存池<a class=anchor href=#zfs-zpool-split></a></h3><div class=paragraph><p>由一個或多個鏡像 vdev 所組成的儲存池可以切分開成兩個儲存池。除非有另外指定，否則每個鏡像的最後一個成員會被分離來然用來建立一個含有相同資料的新儲存池。在做這個操作的第一次應先使用 <code>-n</code>，會顯示預計會做的操作而不會真的執行，這可以協助確認操作是否與使用者所要的相同。</p></div></div></div></div><div class=sect1><h2 id=zfs-zfs>19.4. <code>zfs</code> 管理<a class=anchor href=#zfs-zfs></a></h2><div class=sectionbody><div class=paragraph><p><code>zfs</code> 工具負責建立、摧毀與管理在一個儲存池中所有的 ZFS 資料集。儲存池使用 <a href=#zfs-zpool><code>zpool</code></a> 來管理。</p></div><div class=sect2><h3 id=zfs-zfs-create>19.4.1. 建立與摧毀資料集<a class=anchor href=#zfs-zfs-create></a></h3><div class=paragraph><p>不同於傳統的磁碟與磁碟區管理程式 (Volume manager) ，在 ZFS 中的空間並<em>不</em>會預先分配。傳統的檔案系統在分割與分配空間完後，若沒有增加新的磁碟便無法再增加額外的檔案系統。在 ZFS，可以隨時建立新的檔案系統，每個資料集 (<a href=#zfs-term-dataset><em>Dataset</em></a>) 都有自己的屬性，包含壓縮 (Compression)、去重複 (Deduplication)、快取 (Caching) 與配額 (Quota) 功能以及其他有用的屬性如唯讀 (Readonly)、區分大小寫 (Case sensitivity)、網路檔案分享 (Network file sharing) 以及掛載點 (Mount point)。資料集可以存在於其他資料集中，且子資料集會繼承其父資料集的屬性。每個資料集都可以作為一個單位來管理、委託 (<a href=#zfs-zfs-allow>Delegate</a>)、備份 (<a href=#zfs-zfs-send>Replicate</a>)、快照 (<a href=#zfs-zfs-snapshot>Snapshot</a>)、監禁 (<a href=#zfs-zfs-jail>Jail</a>) 與摧毀 (Destroy)，替每種不同類型或集合的檔案建立各別的資料集還有許多的好處。唯一的缺點是在當有非常大數量的資料集時，部份指令例如 <code>zfs list</code> 會變的較緩慢，且掛載上百個或其至上千個資料集可能會使 FreeBSD 的開機程序變慢。</p></div><div class=paragraph><p>建立一個新資料集並開啟 <a href=#zfs-term-compression-lz4>LZ4 壓縮</a>：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list</span>
+NAME                  USED  AVAIL  REFER  MOUNTPOINT
+mypool                781M  93.2G   144K  none
+mypool/ROOT           777M  93.2G   144K  none
+mypool/ROOT/default   777M  93.2G   777M  /
+mypool/tmp            176K  93.2G   176K  /tmp
+mypool/usr            616K  93.2G   144K  /usr
+mypool/usr/home       184K  93.2G   184K  /usr/home
+mypool/usr/ports      144K  93.2G   144K  /usr/ports
+mypool/usr/src        144K  93.2G   144K  /usr/src
+mypool/var           1.20M  93.2G   608K  /var
+mypool/var/crash      148K  93.2G   148K  /var/crash
+mypool/var/log        178K  93.2G   178K  /var/log
+mypool/var/mail       144K  93.2G   144K  /var/mail
+mypool/var/tmp        152K  93.2G   152K  /var/tmp
+<span class=c># zfs create -o compress=lz4 mypool/usr/mydataset</span>
+<span class=c># zfs list</span>
+NAME                   USED  AVAIL  REFER  MOUNTPOINT
+mypool                 781M  93.2G   144K  none
+mypool/ROOT            777M  93.2G   144K  none
+mypool/ROOT/default    777M  93.2G   777M  /
+mypool/tmp             176K  93.2G   176K  /tmp
+mypool/usr             704K  93.2G   144K  /usr
+mypool/usr/home        184K  93.2G   184K  /usr/home
+mypool/usr/mydataset  87.5K  93.2G  87.5K  /usr/mydataset
+mypool/usr/ports       144K  93.2G   144K  /usr/ports
+mypool/usr/src         144K  93.2G   144K  /usr/src
+mypool/var            1.20M  93.2G   610K  /var
+mypool/var/crash       148K  93.2G   148K  /var/crash
+mypool/var/log         178K  93.2G   178K  /var/log
+mypool/var/mail        144K  93.2G   144K  /var/mail
+mypool/var/tmp         152K  93.2G   152K  /var/tmp</code></pre></div></div><div class=paragraph><p>摧毀資料集會比刪除所有在資料集上所殘留的檔案來的快，由於摧毀資料集並不會掃描所有檔案並更新所有相關的 Metadata。</p></div><div class=paragraph><p>摧毀先前建立的資料集：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list</span>
+NAME                   USED  AVAIL  REFER  MOUNTPOINT
+mypool                 880M  93.1G   144K  none
+mypool/ROOT            777M  93.1G   144K  none
+mypool/ROOT/default    777M  93.1G   777M  /
+mypool/tmp             176K  93.1G   176K  /tmp
+mypool/usr             101M  93.1G   144K  /usr
+mypool/usr/home        184K  93.1G   184K  /usr/home
+mypool/usr/mydataset   100M  93.1G   100M  /usr/mydataset
+mypool/usr/ports       144K  93.1G   144K  /usr/ports
+mypool/usr/src         144K  93.1G   144K  /usr/src
+mypool/var            1.20M  93.1G   610K  /var
+mypool/var/crash       148K  93.1G   148K  /var/crash
+mypool/var/log         178K  93.1G   178K  /var/log
+mypool/var/mail        144K  93.1G   144K  /var/mail
+mypool/var/tmp         152K  93.1G   152K  /var/tmp
+<span class=c># zfs destroy mypool/usr/mydataset</span>
+<span class=c># zfs list</span>
+NAME                  USED  AVAIL  REFER  MOUNTPOINT
+mypool                781M  93.2G   144K  none
+mypool/ROOT           777M  93.2G   144K  none
+mypool/ROOT/default   777M  93.2G   777M  /
+mypool/tmp            176K  93.2G   176K  /tmp
+mypool/usr            616K  93.2G   144K  /usr
+mypool/usr/home       184K  93.2G   184K  /usr/home
+mypool/usr/ports      144K  93.2G   144K  /usr/ports
+mypool/usr/src        144K  93.2G   144K  /usr/src
+mypool/var           1.21M  93.2G   612K  /var
+mypool/var/crash      148K  93.2G   148K  /var/crash
+mypool/var/log        178K  93.2G   178K  /var/log
+mypool/var/mail       144K  93.2G   144K  /var/mail
+mypool/var/tmp        152K  93.2G   152K  /var/tmp</code></pre></div></div><div class=paragraph><p>在最近版本的 ZFS，<code>zfs destroy</code> 是非同步的，且釋放出的空間會許要花費數分鐘才會出現在儲存池上，可使用 <code>zpool get freeing <em>poolname</em></code> 來查看 <code>freeing</code> 屬性，這個屬性會指出資料集在背景已經釋放多少資料區塊了。若有子資料集，如快照 (<a href=#zfs-term-snapshot>Snapshot</a>) 或其他資料集存在的話，則會無法摧毀父資料集。要摧毀一個資料集及其所有子資料集，可使用 <code>-r</code> 來做遞迴摧毀資料集及其所有子資料集，可用 <code>-n -v</code> 來列出會被這個操作所摧毀的資料集及快照，而不會真的摧毀，因摧毀快照所釋放出的空間也會同時顯示。</p></div></div><div class=sect2><h3 id=zfs-zfs-volume>19.4.2. 建立與摧毀磁碟區<a class=anchor href=#zfs-zfs-volume></a></h3><div class=paragraph><p>磁碟區 (Volume) 是特殊類型的資料集，不會被掛載成一個檔案系統，而是會被當做儲存區塊裝置出現在 <span class=filename>/dev/zvol/poolname/dataset</span> 下。這讓磁碟區可供其他檔案系統使用、拿來備份虛擬機器的磁碟或是使用 iSCSI 或 HAST 通訊協定匯出。</p></div><div class=paragraph><p>磁碟區可以被格式化成任何檔案系統，或不使用檔案系統來儲存原始資料。對一般使用者，磁碟區就像是一般的磁碟，可以放置一般的檔案系統在這些 <em>zvols</em> 上，並提供一般磁碟或檔案系統一般所沒有的功能。例如，使用壓縮屬性在一個 250 MB 的磁碟區可建立一個壓縮的 FAT 檔案系統。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs create -V 250m -o compression=on tank/fat32</span>
+<span class=c># zfs list tank</span>
+NAME USED AVAIL REFER MOUNTPOINT
+tank 258M  670M   31K /tank
+<span class=c># newfs_msdos -F32 /dev/zvol/tank/fat32</span>
+<span class=c># mount -t msdosfs /dev/zvol/tank/fat32 /mnt</span>
+<span class=c># df -h /mnt | grep fat32</span>
+Filesystem           Size Used Avail Capacity Mounted on
+/dev/zvol/tank/fat32 249M  24k  249M     0%   /mnt
+<span class=c># mount | grep fat32</span>
+/dev/zvol/tank/fat32 on /mnt <span class=o>(</span>msdosfs, <span class=nb>local</span><span class=o>)</span></code></pre></div></div><div class=paragraph><p>摧毀一個磁碟區與摧毀一個一般的檔案系統資料集差不多。操作上幾乎是即時的，但在背景會需要花費數分鐘來讓釋放空間再次可用。</p></div></div><div class=sect2><h3 id=zfs-zfs-rename>19.4.3. 重新命名資料集<a class=anchor href=#zfs-zfs-rename></a></h3><div class=paragraph><p>資料集的名稱可以使用 <code>zfs rename</code> 更改。父資料集也同樣可以使用這個指令來更改名稱。重新命名一個資料集到另一個父資料集也會更改自父資料集繼承的屬性值。重新命名資料集後，會被卸載然後重新掛載到新的位置 (依繼承的新父資料集而定)，可使用 <code>-u</code> 來避免重新掛載。</p></div><div class=paragraph><p>重新命名一個資料集並移動該資料集到另一個父資料集：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list</span>
+NAME                   USED  AVAIL  REFER  MOUNTPOINT
+mypool                 780M  93.2G   144K  none
+mypool/ROOT            777M  93.2G   144K  none
+mypool/ROOT/default    777M  93.2G   777M  /
+mypool/tmp             176K  93.2G   176K  /tmp
+mypool/usr             704K  93.2G   144K  /usr
+mypool/usr/home        184K  93.2G   184K  /usr/home
+mypool/usr/mydataset  87.5K  93.2G  87.5K  /usr/mydataset
+mypool/usr/ports       144K  93.2G   144K  /usr/ports
+mypool/usr/src         144K  93.2G   144K  /usr/src
+mypool/var            1.21M  93.2G   614K  /var
+mypool/var/crash       148K  93.2G   148K  /var/crash
+mypool/var/log         178K  93.2G   178K  /var/log
+mypool/var/mail        144K  93.2G   144K  /var/mail
+mypool/var/tmp         152K  93.2G   152K  /var/tmp
+<span class=c># zfs rename mypool/usr/mydataset mypool/var/newname</span>
+<span class=c># zfs list</span>
+NAME                  USED  AVAIL  REFER  MOUNTPOINT
+mypool                780M  93.2G   144K  none
+mypool/ROOT           777M  93.2G   144K  none
+mypool/ROOT/default   777M  93.2G   777M  /
+mypool/tmp            176K  93.2G   176K  /tmp
+mypool/usr            616K  93.2G   144K  /usr
+mypool/usr/home       184K  93.2G   184K  /usr/home
+mypool/usr/ports      144K  93.2G   144K  /usr/ports
+mypool/usr/src        144K  93.2G   144K  /usr/src
+mypool/var           1.29M  93.2G   614K  /var
+mypool/var/crash      148K  93.2G   148K  /var/crash
+mypool/var/log        178K  93.2G   178K  /var/log
+mypool/var/mail       144K  93.2G   144K  /var/mail
+mypool/var/newname   87.5K  93.2G  87.5K  /var/newname
+mypool/var/tmp        152K  93.2G   152K  /var/tmp</code></pre></div></div><div class=paragraph><p>快照也可以像這樣重新命名，由於快照的本質使其無法被重新命名到另一個父資料集。要遞迴重新命名快照可指定 <code>-r</code>，然後在子資料集中所有同名的快照也會一併被重新命名。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -t snapshot</span>
+NAME                                USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/newname@first_snapshot      0      -  87.5K  -
+<span class=c># zfs rename mypool/var/newname@first_snapshot new_snapshot_name</span>
+<span class=c># zfs list -t snapshot</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/newname@new_snapshot_name      0      -  87.5K  -</code></pre></div></div></div><div class=sect2><h3 id=zfs-zfs-set>19.4.4. 設定資料集屬性<a class=anchor href=#zfs-zfs-set></a></h3><div class=paragraph><p>每個 ZFS 資料集有數個屬性可以用來控制其行為。大部份的屬性會自動繼承自其父資料集，但可以被自己覆蓋。設定資料集上的屬性可使用 <code>zfs set <em>property=value dataset</em></code>。大部份屬性有限制可用的值，<code>zfs get</code> 會顯示每個可以使用的屬性及其可用的值。大部份可以使用 <code>zfs inherit</code> 還原成其繼承的值。</p></div><div class=paragraph><p>也可設定使用者自訂的屬性。這些屬性也會成為資料集設定的一部份，且可以被用來提供資料集或其內容的額外資訊。要別分自訂屬性與 ZFS 提供的屬性，會使用冒號 (<code>:</code>) 建立一個自訂命名空間供自訂屬性使用。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set custom:costcenter=1234 tank</span>
+<span class=c># zfs get custom:costcenter tank</span>
+NAME PROPERTY           VALUE SOURCE
+tank custom:costcenter  1234  <span class=nb>local</span></code></pre></div></div><div class=paragraph><p>要移除自訂屬性，可用 <code>zfs inherit</code> 加上 <code>-r</code>。若父資料集未定義任何自訂屬性，將會將該屬性完全移除 (更改動作仍會記錄於儲存池的歷史記錄)。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs inherit -r custom:costcenter tank</span>
+<span class=c># zfs get custom:costcenter tank</span>
+NAME    PROPERTY           VALUE              SOURCE
+tank    custom:costcenter  -                  -
+<span class=c># zfs get all tank | grep custom:costcenter</span>
+<span class=c>#</span></code></pre></div></div><div class=sect3><h4 id=zfs-zfs-set-share>19.4.4.1. 取得與設定共享屬性<a class=anchor href=#zfs-zfs-set-share></a></h4><div class=paragraph><p>Two commonly used and useful dataset properties are the NFS and SMB share options. Setting these define if and how ZFS datasets may be shared on the network. At present, only setting sharing via NFS is supported on FreeBSD. To get the current status of a share, enter:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get sharenfs mypool/usr/home</span>
+NAME             PROPERTY  VALUE    SOURCE
+mypool/usr/home  sharenfs  on       <span class=nb>local</span>
+<span class=c># zfs get sharesmb mypool/usr/home</span>
+NAME             PROPERTY  VALUE    SOURCE
+mypool/usr/home  sharesmb  off      <span class=nb>local</span></code></pre></div></div><div class=paragraph><p>To enable sharing of a dataset, enter:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c>#  zfs set sharenfs=on mypool/usr/home</span></code></pre></div></div><div class=paragraph><p>It is also possible to set additional options for sharing datasets through NFS, such as <code>-alldirs</code>, <code>-maproot</code> and <code>-network</code>. To set additional options to a dataset shared through NFS, enter:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c>#  zfs set sharenfs=&#34;-alldirs,-maproot=root,-network=192.168.1.0/24&#34; mypool/usr/home</span></code></pre></div></div></div></div><div class=sect2><h3 id=zfs-zfs-snapshot>19.4.5. 管理快照 (Snapshot)<a class=anchor href=#zfs-zfs-snapshot></a></h3><div class=paragraph><p>快照 (<a href=#zfs-term-snapshot>Snapshot</a>) 是 ZFS 最強大的功能之一。快照提供了資料集唯讀、單一時間點 (Point-in-Time) 的複製功能，使用了寫入時複製 (Copy-On-Write, COW) 的技術，可以透過保存在磁碟上的舊版資料快速的建立快照。若沒有快照存在，在資料被覆蓋或刪除時，便回收空間供未來使用。由於只記錄前一個版本與目前資料集的差異，因此快照可節省磁碟空間。快照只允許在整個資料集上使用，無法在各別檔案或目錄。當建立了一個資料集的快照時，便備份了所有內含的資料，這包含了檔案系統屬性、檔案、目錄、權限等等。第一次建立快照時只會使用到更改參照到資料區塊的空間，不會用到其他額外的空間。使用 <code>-r</code> 可以對使用同名的資料集及其所有子資料集的建立一個遞迴快照，提供一致且即時 (Moment-in-time) 的完整檔案系統快照功能，這對於那些彼此有相關或相依檔案存放在不同資料集的應用程式非常重要。不使用快照所備份的資料其實是分散不同時間點的。</p></div><div class=paragraph><p>ZFS 中的快照提供了多種功能，即使是在其他缺乏快照功能的檔案系統上。一個使用快照的典型例子是在安裝軟體或執行系統升級這種有風險的動作時，能有一個快速的方式可以備份檔案系統目前的狀態，若動作失敗，可以使用快照還原 (Roll back) 到與快照建立時相同的系統狀態，若升級成功，便可刪除快照來釋放空間。若沒有快照功能，升級失敗通常會需要使用備份來恢復 (Restore) 系統，而這個動作非常繁瑣、耗時且可能會需要停機一段時間系統無法使用。使用快照可以快速的還原，即使系統正在執行一般的運作，只而要短暫或甚至不需停機。能夠節省大量在有數 TB 的儲存系統上從備份複製所需資料的時間。快照並非要用來取代儲存池的完整備份，但可以用在快速且簡單的保存某個特定時間點的資料集。</p></div><div class=sect3><h4 id=zfs-zfs-snapshot-creation>19.4.5.1. 建立快照<a class=anchor href=#zfs-zfs-snapshot-creation></a></h4><div class=paragraph><p>快照可以使用 <code>zfs snapshot <em>dataset</em>@<em>snapshotname</em></code> 來建立。加入 <code>-r</code> 可以遞迴對所有同名的子資料集建立快照。</p></div><div class=paragraph><p>建立一個整個儲存池的遞迴快照：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -t all</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool                                 780M  93.2G   144K  none
+mypool/ROOT                            777M  93.2G   144K  none
+mypool/ROOT/default                    777M  93.2G   777M  /
+mypool/tmp                             176K  93.2G   176K  /tmp
+mypool/usr                             616K  93.2G   144K  /usr
+mypool/usr/home                        184K  93.2G   184K  /usr/home
+mypool/usr/ports                       144K  93.2G   144K  /usr/ports
+mypool/usr/src                         144K  93.2G   144K  /usr/src
+mypool/var                            1.29M  93.2G   616K  /var
+mypool/var/crash                       148K  93.2G   148K  /var/crash
+mypool/var/log                         178K  93.2G   178K  /var/log
+mypool/var/mail                        144K  93.2G   144K  /var/mail
+mypool/var/newname                    87.5K  93.2G  87.5K  /var/newname
+mypool/var/newname@new_snapshot_name      0      -  87.5K  -
+mypool/var/tmp                         152K  93.2G   152K  /var/tmp
+<span class=c># zfs snapshot -r mypool@my_recursive_snapshot</span>
+<span class=c># zfs list -t snapshot</span>
+NAME                                        USED  AVAIL  REFER  MOUNTPOINT
+mypool@my_recursive_snapshot                   0      -   144K  -
+mypool/ROOT@my_recursive_snapshot              0      -   144K  -
+mypool/ROOT/default@my_recursive_snapshot      0      -   777M  -
+mypool/tmp@my_recursive_snapshot               0      -   176K  -
+mypool/usr@my_recursive_snapshot               0      -   144K  -
+mypool/usr/home@my_recursive_snapshot          0      -   184K  -
+mypool/usr/ports@my_recursive_snapshot         0      -   144K  -
+mypool/usr/src@my_recursive_snapshot           0      -   144K  -
+mypool/var@my_recursive_snapshot               0      -   616K  -
+mypool/var/crash@my_recursive_snapshot         0      -   148K  -
+mypool/var/log@my_recursive_snapshot           0      -   178K  -
+mypool/var/mail@my_recursive_snapshot          0      -   144K  -
+mypool/var/newname@new_snapshot_name           0      -  87.5K  -
+mypool/var/newname@my_recursive_snapshot       0      -  87.5K  -
+mypool/var/tmp@my_recursive_snapshot           0      -   152K  -</code></pre></div></div><div class=paragraph><p>建立的快照不會顯示在一般的 <code>zfs list</code> 操作結果，要列出快照需在 <code>zfs list</code> 後加上 <code>-t snapshot</code>，使用 <code>-t all</code> 可以同時列出檔案系統的內容及快照。</p></div><div class=paragraph><p>快照並不會直接掛載，因此 <code>MOUNTPOINT</code> 欄位的路徑如此顯示。在 <code>AVAIL</code> 欄位不會有可用的磁碟空間，因為快照建立之後便無法再寫入。比較快照與其原來建立時的資料集：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -rt all mypool/usr/home</span>
+NAME                                    USED  AVAIL  REFER  MOUNTPOINT
+mypool/usr/home                         184K  93.2G   184K  /usr/home
+mypool/usr/home@my_recursive_snapshot      0      -   184K  -</code></pre></div></div><div class=paragraph><p>同時顯示資料集與快照可以了解快照如何使用 <a href=#zfs-term-cow>COW</a> 技術來運作。快照只會保存有更動 (<em>差異</em>) 的資料，並非整個檔案系統的內容，這個意思是說，快照只會在有做更動時使用一小部份的空間，複製一個檔案到該資料集，可以讓空間使用量變的更明顯，然後再做第二個快照：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp /etc/passwd /var/tmp</span>
+<span class=c># zfs snapshot mypool/var/tmp@after_cp</span>
+<span class=c># zfs list -rt all mypool/var/tmp</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/tmp                         206K  93.2G   118K  /var/tmp
+mypool/var/tmp@my_recursive_snapshot    88K      -   152K  -
+mypool/var/tmp@after_cp                   0      -   118K  -</code></pre></div></div><div class=paragraph><p>第二快照只會包含了資料集做了複製動作後的更動，這樣的機制可以節省大量的空間。注意在複製之後快照 <em>mypool/var/tmp@my_recursive_snapshot</em> 於 <code>USED</code> 欄位中的大小也更改了，這說明了這個更動在前次快照與之後快照間的關係。</p></div></div><div class=sect3><h4 id=zfs-zfs-snapshot-diff>19.4.5.2. 比對快照<a class=anchor href=#zfs-zfs-snapshot-diff></a></h4><div class=paragraph><p>ZFS 提供了內建指令可以用來比對兩個快照 (Snapshot) 之間的差異，在使用者想要查看一段時間之間檔案系統所的變更時非常有用。例如 <code>zfs diff</code> 可以讓使用者在最後一次快照中找到意外刪除的檔案。對前面一節所做的兩個快照使用這個指令會產生以下結果：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -rt all mypool/var/tmp</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/tmp                         206K  93.2G   118K  /var/tmp
+mypool/var/tmp@my_recursive_snapshot    88K      -   152K  -
+mypool/var/tmp@after_cp                   0      -   118K  -
+<span class=c># zfs diff mypool/var/tmp@my_recursive_snapshot</span>
+M       /var/tmp/
++       /var/tmp/passwd</code></pre></div></div><div class=paragraph><p>指令會列出指定快照 (在這個例子中為 <code><em>mypool/var/tmp@my_recursive_snapshot</em></code>) 與目前檔案系統間的更改。第一個欄位是更改的類型：</p></div><table class="tableblock frame-all grid-all stretch informaltable"><col style=width:50%><col style=width:50%><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock>+</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>加入了該路徑或檔案。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>-</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>刪除了該路徑或檔案。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>M</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>修改了該路徑或檔案。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>R</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>重新命名了該路徑或檔案。</p></td></tr></tbody></table><div class=paragraph><p>對照這個表格來看輸出的結果，可以明顯的看到 <span class=filename>passwd</span> 是在快照 <code><em>mypool/var/tmp@my_recursive_snapshot</em></code> 建立之後才加入的，結果也同樣看的到掛載到 <code><em>/var/tmp</em></code> 的父目錄已經做過修改。</p></div><div class=paragraph><p>在使用 ZFS 備份功能來傳輸一個資料集到另一個主機備份時比對兩個快照也同樣很有用。</p></div><div class=paragraph><p>比對兩個快照需要提供兩個資料集的完整資料集名稱與快照名稱：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp /var/tmp/passwd /var/tmp/passwd.copy</span>
+<span class=c># zfs snapshot mypool/var/tmp@diff_snapshot</span>
+<span class=c># zfs diff mypool/var/tmp@my_recursive_snapshot mypool/var/tmp@diff_snapshot</span>
+M       /var/tmp/
++       /var/tmp/passwd
++       /var/tmp/passwd.copy
+<span class=c># zfs diff mypool/var/tmp@my_recursive_snapshot mypool/var/tmp@after_cp</span>
+M       /var/tmp/
++       /var/tmp/passwd</code></pre></div></div><div class=paragraph><p>備份管理者可以比對兩個自傳送主機所接收到的兩個快照並查看實際在資料集中的變更。請參考 <a href=#zfs-zfs-send>備份</a> 一節來取得更多資訊。</p></div></div><div class=sect3><h4 id=zfs-zfs-snapshot-rollback>19.4.5.3. 使用快照還原<a class=anchor href=#zfs-zfs-snapshot-rollback></a></h4><div class=paragraph><p>只要至少有一個可用的快照便可以隨時還原。大多數在已不需要目前資料集，想要改用較舊版的資料的情況，例如，本地開發的測試發生錯誤、不良的系統更新破壞了系統的整體功能或需要還原意外刪除檔案或目錄 …​ 等，都是非常常見的情形。幸運的，要還原到某個快照只需要簡單輸入 <code>zfs rollback <em>snapshotname</em></code>。會依快照所做的變更數量來決定處理的時間，還原的操作會在一段時間後完成。在這段時間中，資料集會一直保持一致的狀態，類似一個符合 ACID 原則的資料庫在做還原。還原可在資料集處於上線及可存取的情況下完成，不需要停機。還原到快照之後，資料集便回到當初執行快照時相同的狀態，所有沒有在快照中的其他資料便會被丟棄，因此往後若還有可能需要部份資料時，建議在還原到前一個快照之前先對目前的資料集做快照，這樣一來，使用者便可以在快照之間來回快換，而不會遺失重要的資料。</p></div><div class=paragraph><p>在第一個範例中，因為 <code>rm</code> 操作不小心移除了預期外的資料，要還原到快照。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -rt all mypool/var/tmp</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/tmp                         262K  93.2G   120K  /var/tmp
+mypool/var/tmp@my_recursive_snapshot    88K      -   152K  -
+mypool/var/tmp@after_cp               53.5K      -   118K  -
+mypool/var/tmp@diff_snapshot              0      -   120K  -
+<span class=c># ls /var/tmp</span>
+passwd          passwd.copy     vi.recover
+<span class=c># rm /var/tmp/passwd*</span>
+<span class=c># ls /var/tmp</span>
+vi.recover</code></pre></div></div><div class=paragraph><p>在此時，使用者發現到刪除了太多檔案並希望能夠還原。ZFS 提供了簡單的方可以取回檔案，便是使用還原 (Rollback)，但這只在有定期對重要的資料使用快照時可用。要拿回檔案並從最後一次快照重新開始，可執行以下指令：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs rollback mypool/var/tmp@diff_snapshot</span>
+<span class=c># ls /var/tmp</span>
+passwd          passwd.copy     vi.recover</code></pre></div></div><div class=paragraph><p>還原操作會將資料集還原為最後一次快照的狀態。這也可以還原到更早之前，有其他在其之後建立的快照。要這麼做時，ZFS 會發出這個警告：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -rt snapshot mypool/var/tmp</span>
+AME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/tmp@my_recursive_snapshot    88K      -   152K  -
+mypool/var/tmp@after_cp               53.5K      -   118K  -
+mypool/var/tmp@diff_snapshot              0      -   120K  -
+<span class=c># zfs rollback mypool/var/tmp@my_recursive_snapshot</span>
+cannot rollback to <span class=s1>&#39;mypool/var/tmp@my_recursive_snapshot&#39;</span>: more recent snapshots exist
+use <span class=s1>&#39;-r&#39;</span> to force deletion of the following snapshots:
+mypool/var/tmp@after_cp
+mypool/var/tmp@diff_snapshot</code></pre></div></div><div class=paragraph><p>這個警告是因在該快照與資料集的目前狀態之間有其他快照存在，然而使用者想要還原到該快照。要完成這樣的還原動作，必須刪除在這之間的快照，因為 ZFS 無法追蹤不同資料集狀態間的變更。在使用者未指定 <code>-r</code> 來確認這個動作前，ZFS 不會刪除受影響的快照。若確定要這麼做，那麼必須要知道會遺失所有在這之間的快照，然後可執行以下指令：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs rollback -r mypool/var/tmp@my_recursive_snapshot</span>
+<span class=c># zfs list -rt snapshot mypool/var/tmp</span>
+NAME                                   USED  AVAIL  REFER  MOUNTPOINT
+mypool/var/tmp@my_recursive_snapshot     8K      -   152K  -
+<span class=c># ls /var/tmp</span>
+vi.recover</code></pre></div></div><div class=paragraph><p>可從 <code>zfs list -t snapshot</code> 的結果來確認 <code>zfs rollback -r</code> 會移除的快照。</p></div></div><div class=sect3><h4 id=zfs-zfs-snapshot-snapdir>19.4.5.4. 從快照還原個別檔案<a class=anchor href=#zfs-zfs-snapshot-snapdir></a></h4><div class=paragraph><p>快照會掛載在父資料集下的隱藏目錄：<span class=filename>.zfs/snapshots/snapshotname</span>。預設不會顯示這些目錄，即使是用 <code>ls -a</code> 指令。雖然該目錄不會顯示，但該目錄實際存在，而且可以像一般的目錄一樣存取。一個名稱為 <code>snapdir</code> 的屬性可以控制是否在目錄清單中顯示這些隱藏目錄，設定該屬性為可見 (<code>visible</code>) 可以讓這些目錄出現在 <code>ls</code> 以及其他處理目錄內容的指令中。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get snapdir mypool/var/tmp</span>
+NAME            PROPERTY  VALUE    SOURCE
+mypool/var/tmp  snapdir   hidden   default
+<span class=c># ls -a /var/tmp</span>
+<span class=nb>.</span>               ..              passwd          vi.recover
+<span class=c># zfs set snapdir=visible mypool/var/tmp</span>
+<span class=c># ls -a /var/tmp</span>
+<span class=nb>.</span>               ..              .zfs            passwd          vi.recover</code></pre></div></div><div class=paragraph><p>要還原個別檔案到先前的狀態非常簡單，只要從快照中複製檔案到父資料集。在 <span class=filename>.zfs/snapshot</span> 目錄結構下有一個與先前所做的快照名稱相同的目錄，可以很容易的找到。在下個範例中，我們會示範從隱藏的 <span class=filename>.zfs</span> 目錄還原一個檔案，透過從含有該檔案的最新版快照複製：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># rm /var/tmp/passwd</span>
+<span class=c># ls -a /var/tmp</span>
+<span class=nb>.</span>               ..              .zfs            vi.recover
+<span class=c># ls /var/tmp/.zfs/snapshot</span>
+after_cp                my_recursive_snapshot
+<span class=c># ls /var/tmp/.zfs/snapshot/after_cp</span>
+passwd          vi.recover
+<span class=c># cp /var/tmp/.zfs/snapshot/after_cp/passwd /var/tmp</span></code></pre></div></div><div class=paragraph><p>執行 <code>ls .zfs/snapshot</code> 時，雖然 <code>snapdir</code> 可能已經設為隱藏，但仍可能可以顯示該目錄中的內容，這取決於管理者是否要顯示這些目錄，可以只顯示特定的資料集，而其他的則不顯示。從這個隱藏的 <span class=filename>.zfs/snapshot</span> 複製檔案或目錄非常簡單，除此之外，嘗試其他的動作則會出現以下錯誤：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp /etc/rc.conf /var/tmp/.zfs/snapshot/after_cp/</span>
+<span class=nb>cp</span>: /var/tmp/.zfs/snapshot/after_cp/rc.conf: Read-only file system</code></pre></div></div><div class=paragraph><p>這個錯誤用來提醒使用者快照是唯讀的，在建立之後不能更改。無法複製檔案進去或從該快照目錄中移除，因為這會變更該資料集所代表的狀態。</p></div><div class=paragraph><p>快照所消耗的空間是依據自快照之後父檔案系統做了多少變更來決定，快照的 <code>written</code> 屬性可以用來追蹤有多少空間被快照所使用。</p></div><div class=paragraph><p>使用 <code>zfs destroy <em>dataset</em>@<em>snapshot</em></code> 可以摧毀快照並回收空間。加上 <code>-r</code> 可以遞迴移除所有在父資料集下使用同名的快照。加入 <code>-n -v</code> 來顯示將要移除的快照清單以及估計回收的空間，而不會實際執行摧毀的操作。</p></div></div></div><div class=sect2><h3 id=zfs-zfs-clones>19.4.6. 管理複本 (Clone)<a class=anchor href=#zfs-zfs-clones></a></h3><div class=paragraph><p>複本 (Clone) 是快照的複製，但更像是一般的資料集，與快照不同的是，複本是非唯讀的 (可寫)，且可掛載，可以有自己的屬性。使用 <code>zfs clone</code> 建立複本之後，便無法再摧毀用來建立複本的快照。複本與快照的父/子關係可以使用 <code>zfs promote</code> 來對換。提升複本之後 ，快照便會成為複本的子資料集，而不是原來的父資料集，這個動作會改變空間計算的方式，但並不會實際改變空間的使用量。複本可以被掛載到 ZFS 檔案系統階層中的任何一點，並非只能位於原來快照的位置底下。</p></div><div class=paragraph><p>要示範複本功能會用到這個範例資料集：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs list -rt all camino/home/joe</span>
+NAME                    USED  AVAIL  REFER  MOUNTPOINT
+camino/home/joe         108K   1.3G    87K  /usr/home/joe
+camino/home/joe@plans    21K      -  85.5K  -
+camino/home/joe@backup    0K      -    87K  -</code></pre></div></div><div class=paragraph><p>會使用到複本一般是要在可以保留快照以便出錯時可還原的情況下使用指定的資料集做實驗，由於快照並無法做更改，所以會建立一個可以讀/寫的快照複本。當在複本中做完想要執行的動作後，便可以提升複本成資料集，然後移除舊的檔案系統。嚴格來說這並非必要，因為複本與資料集可同時存在，不會有任何問題。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs clone camino/home/joe@backup camino/home/joenew</span>
+<span class=c># ls /usr/home/joe*</span>
+/usr/home/joe:
+backup.txz     plans.txt
+
+/usr/home/joenew:
+backup.txz     plans.txt
+<span class=c># df -h /usr/home</span>
+Filesystem          Size    Used   Avail Capacity  Mounted on
+usr/home/joe        1.3G     31k    1.3G     0%    /usr/home/joe
+usr/home/joenew     1.3G     31k    1.3G     0%    /usr/home/joenew</code></pre></div></div><div class=paragraph><p>建立完的複本便有與建立快照時狀態相同的資料集，現在複本可以獨立於原來的資料集來做更改。剩下唯一與資料集之間的關係便是快照，ZFS 會在屬性 <code>origin</code> 記錄這個關係，一旦在快照與複本之間的相依關係因為使用 <code>zfs promote</code> 提升而移除時，複本的 <code>origin</code> 也會因為成為一個完全獨立的資料集而移除。以下範例會示範這個動作：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get origin camino/home/joenew</span>
+NAME                  PROPERTY  VALUE                     SOURCE
+camino/home/joenew    origin    camino/home/joe@backup    -
+<span class=c># zfs promote camino/home/joenew</span>
+<span class=c># zfs get origin camino/home/joenew</span>
+NAME                  PROPERTY  VALUE   SOURCE
+camino/home/joenew    origin    -       -</code></pre></div></div><div class=paragraph><p>做為部份更改之後，例如複製 <span class=filename>loader.conf</span> 到提升後的複本，這個例子中的舊目錄便無須保留，取而代之的是提升後的複本，這個動作可以用兩個連續的指令來完成：在舊資料集上執行 <code>zfs destroy</code> 並在與舊資料相似名稱 (也可能用完全不同的名稱) 的複本上執行 <code>zfs rename</code>。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># cp /boot/defaults/loader.conf /usr/home/joenew</span>
+<span class=c># zfs destroy -f camino/home/joe</span>
+<span class=c># zfs rename camino/home/joenew camino/home/joe</span>
+<span class=c># ls /usr/home/joe</span>
+backup.txz     loader.conf     plans.txt
+<span class=c># df -h /usr/home</span>
+Filesystem          Size    Used   Avail Capacity  Mounted on
+usr/home/joe        1.3G    128k    1.3G     0%    /usr/home/joe</code></pre></div></div><div class=paragraph><p>快照的複本現在可以如同一般資料集一樣使用，它的內容包含了所有來自原始快照的資料以及後來加入的檔案，例如 <span class=filename>loader.conf</span>。複本可以在許多不同的情境下使用提供 ZFS 的使用者有用的功能，例如，Jail 可以透過含有已安裝了各種應用程式集的快照來提供，使用者可以複製這些快照然後加入自己想要嘗試的應用程式，一但更改可以滿足需求，便可提升複本為完整的資料集然後提供給終端使用者，讓終端使用者可以如同實際擁有資料集一般的使用，這個以節省提供這些 Jail 的時間與管理成本。</p></div></div><div class=sect2><h3 id=zfs-zfs-send>19.4.7. 備份 (Replication)<a class=anchor href=#zfs-zfs-send></a></h3><div class=paragraph><p>將資料保存在單一地點的單一儲存池上會讓資料暴露在盜竊、自然或人為的風險之下，定期備份整個儲存池非常重要，ZFS 提供了內建的序列化 (Serialization) 功能可以將資料以串流傳送到標準輸出。使用這項技術，不僅可以將資料儲存到另一個已連結到本地系統的儲存池，也可以透過網路將資料傳送到另一個系統，這種備份方式以快照為基礎 (請參考章節 <a href=#zfs-zfs-snapshot>ZFS 快照(Snapshot)</a>)。用來備份資料的指令為 <code>zfs send</code> 及 <code>zfs receive</code>。</p></div><div class=paragraph><p>以下例子將示範使用兩個儲存池來做 ZFS 備份：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool list</span>
+NAME    SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG   CAP  DEDUP  HEALTH  ALTROOT
+backup  960M    77K   896M         -         -     0%    0%  1.00x  ONLINE  -
+mypool  984M  43.7M   940M         -         -     0%    4%  1.00x  ONLINE  -</code></pre></div></div><div class=paragraph><p>名為 <em>mypool</em> 的儲存池為主要的儲存池，資料會定期寫入與讀取的位置。第二個儲存池 <em>backup</em> 用來待命 (Standby)，萬一主要儲存池無法使用時可替換。注意，ZFS 並不會自動做容錯移轉 (Fail-over)，必須要由系統管理者在需要的時候手動完成。快照會用來提供一個與檔系統一致的版本來做備份，<em>mypool</em> 的快照建立之後，便可以複製到 <em>backup</em> 儲存池，只有快照可以做備份，最近一次快照之後所做的變更不會含在內容裡面。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs snapshot mypool@backup1</span>
+<span class=c># zfs list -t snapshot</span>
+NAME                    USED  AVAIL  REFER  MOUNTPOINT
+mypool@backup1             0      -  43.6M  -</code></pre></div></div><div class=paragraph><p>快照存在以後，便可以使用 <code>zfs send</code> 來建立一個代表快照內容的串流，這個串流可以儲存成檔案或由其他儲存池接收。串流會寫入到標準輸出，但是必須要重新導向到一個檔案或轉接到其他地方，否則會錯誤：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs send mypool@backup1</span>
+Error: Stream can not be written to a terminal.
+You must redirect standard output.</code></pre></div></div><div class=paragraph><p>要使用 <code>zfs send</code> 備份一個資料集，可重新導向到一個位於在已掛載到備份儲存池上的檔案。確定該儲存池有足夠的空間容納要傳送的快照，這裡指的是該快照中內含的所有資料，並非只有上次快照到該快照間的變更。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs send mypool@backup1 &gt; /backup/backup1</span>
+<span class=c># zpool list</span>
+NAME    SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+backup  960M  63.7M   896M         -         -     0%     6%  1.00x  ONLINE  -
+mypool  984M  43.7M   940M         -         -     0%     4%  1.00x  ONLINE  -</code></pre></div></div><div class=paragraph><p><code>zfs send</code> 會傳輸在快照 <em>backup1</em> 中所有的資料到儲存池 <em>backup</em>。可以使用 <a href="https://man.freebsd.org/cgi/man.cgi?query=cron&amp;sektion=8&amp;format=html">cron(8)</a> 排程來自動完成建立與傳送快照的動作。</p></div><div class=paragraph><p>若不想將備份以封存檔案儲存，ZFS 可用實際的檔案系統來接收資料，讓備份的資料可以直接被存取。要取得實際包含在串流中的資料可以用 <code>zfs receive</code> 將串流轉換回檔案與目錄。以下例子會以管線符號連接 <code>zfs send</code> 及 <code>zfs receive</code>，將資料從一個儲存池複製到另一個，傳輸完成後可以直接使用接收儲存池上的資料。一個資料集只可以被複製到另一個空的資料集。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs snapshot mypool@replica1</span>
+<span class=c># zfs send -v mypool@replica1 | zfs receive backup/mypool</span>
+send from @ to mypool@replica1 estimated size is 50.1M
+total estimated size is 50.1M
+TIME        SENT   SNAPSHOT
+
+<span class=c># zpool list</span>
+NAME    SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+backup  960M  63.7M   896M         -         -     0%     6%  1.00x  ONLINE  -
+mypool  984M  43.7M   940M         -         -     0%     4%  1.00x  ONLINE  -</code></pre></div></div><div class=sect3><h4 id=zfs-send-incremental>19.4.7.1. 漸進式備份<a class=anchor href=#zfs-send-incremental></a></h4><div class=paragraph><p><code>zfs send</code> 也可以比較兩個快照之間的差異，並且只傳送兩者之間的差異，這麼做可以節省磁碟空間及傳輸時間。例如：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs snapshot mypool@replica2</span>
+<span class=c># zfs list -t snapshot</span>
+NAME                    USED  AVAIL  REFER  MOUNTPOINT
+mypool@replica1         5.72M      -  43.6M  -
+mypool@replica2             0      -  44.1M  -
+<span class=c># zpool list</span>
+NAME    SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG   CAP  DEDUP  HEALTH  ALTROOT
+backup  960M  61.7M   898M         -         -     0%    6%  1.00x  ONLINE  -
+mypool  960M  50.2M   910M         -         -     0%    5%  1.00x  ONLINE  -</code></pre></div></div><div class=paragraph><p>會建立一個名為 <em>replica2</em> 的第二個快照，這個快照只中只會含有目前與前次快照 <em>replica1</em> 之間檔案系統所做的變更。使用 <code>zfs send -i</code> 並指定要用來產生漸進備份串流的快照，串流中只會含有做過更改的資料。這個動作只在接收端已經有初始快照時才可用。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs send -v -i mypool@replica1 mypool@replica2 | zfs receive /backup/mypool</span>
+send from @replica1 to mypool@replica2 estimated size is 5.02M
+total estimated size is 5.02M
+TIME        SENT   SNAPSHOT
+
+<span class=c># zpool list</span>
+NAME    SIZE  ALLOC   FREE   CKPOINT  EXPANDSZ   FRAG  CAP  DEDUP  HEALTH  ALTROOT
+backup  960M  80.8M   879M         -         -     0%   8%  1.00x  ONLINE  -
+mypool  960M  50.2M   910M         -         -     0%   5%  1.00x  ONLINE  -
+
+<span class=c># zfs list</span>
+NAME                         USED  AVAIL  REFER  MOUNTPOINT
+backup                      55.4M   240G   152K  /backup
+backup/mypool               55.3M   240G  55.2M  /backup/mypool
+mypool                      55.6M  11.6G  55.0M  /mypool
+
+<span class=c># zfs list -t snapshot</span>
+NAME                                         USED  AVAIL  REFER  MOUNTPOINT
+backup/mypool@replica1                       104K      -  50.2M  -
+backup/mypool@replica2                          0      -  55.2M  -
+mypool@replica1                             29.9K      -  50.0M  -
+mypool@replica2                                 0      -  55.0M  -</code></pre></div></div><div class=paragraph><p>如此一來，便成功傳輸漸進式的串流，只有做過更改的資料會被備份，不會傳送完整的 <em>replica1</em>。由於不會備份完整的儲存池，只傳送差異的部份，所以可以減少傳輸的時間並節省磁碟空間，特別是在網路緩慢或需要考量每位元傳輸成本時非常有用。</p></div><div class=paragraph><p>從儲存池 <em>mypool</em> 複製所有檔案與資料的新檔案系統 <em>backup/mypool</em> 便可以使用。若指定 <code>-P</code>，會一併複製資料集的屬性，這包含壓縮 (Compression) 設定，配額 (Quota) 及掛載點 (Mount point)。若指定 <code>-R</code>，會複製所有指定資料集的子資料集，及這些子資料集的所有屬性。可將傳送與接收自動化來定期使用第二個儲存池做備份。</p></div></div><div class=sect3><h4 id=zfs-send-ssh>19.4.7.2. 透過 SSH 傳送加密的備份<a class=anchor href=#zfs-send-ssh></a></h4><div class=paragraph><p>透過網路來傳送串流是一個做遠端備份不錯的方式，但是也有一些缺點，透過網路連線傳送的資料沒有加密，這會讓任何人都可以在未告知傳送方的情況下攔截並轉換串流回資料，這是我們所不想見到的情況，特別是在使用網際網路傳送串流到遠端的主機時。SSH 可用來加密要透過網路連線傳送的資料，在 ZFS 只需要將串流重新導向到標準輸出，如此一來便可簡單的轉接到 SSH。若要讓檔案系統內容在傳送或在遠端系統中也維持在加密的狀態可考慮使用 <a href=https://wiki.freebsd.org/PEFS>PEFS</a>。</p></div><div class=paragraph><p>有一些設定以及安全性注意事項必須先完成，只有對 <code>zfs send</code> 操作必要的步驟才會在此說明，要取得更多有關 SSH 的資訊請參考 <a href=../security/#openssh>OpenSSH</a>。</p></div><div class=paragraph><p>必要的環境設定：</p></div><div class=ulist><ul><li><p>使用 SSH 金鑰設定傳送端與接收端間無密碼的 SSH 存取</p></li><li><p>正常會需要 <code>root</code> 的權限來傳送與接收串流，這需要可以 <code>root</code> 登入到接收端系統。但是，預設因安全性考慮會關閉以 <code>root</code> 登入。ZFS 委託 (<a href=#zfs-zfs-allow>ZFS Delegation</a>) 系統可以用來允許一個非 <code>root</code> 使用者在每個系統上執行各自的發送與接收操作。</p></li><li><p>在傳送端系統上：</p><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs allow -u someuser send,snapshot mypool</span></code></pre></div></div></li><li><p>要掛載儲存池，無權限的使用者必須擁有該目錄且必須允許一般的使用者掛載檔案系統。在接收端系統上：</p><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># sysctl vfs.usermount=1</span>
+vfs.usermount: 0 -&gt; 1
+<span class=c># sysrc -f /etc/sysctl.conf vfs.usermount=1</span>
+<span class=c># zfs create recvpool/backup</span>
+<span class=c># zfs allow -u someuser create,mount,receive recvpool/backup</span>
+<span class=c># chown someuser /recvpool/backup</span></code></pre></div></div></li></ul></div><div class=paragraph><p>無權限的使用者現在有能力可以接收並掛載資料集，且 <em>home</em> 資料集可以被複製到遠端系統：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell>% zfs snapshot <span class=nt>-r</span> mypool/home@monday
+% zfs send <span class=nt>-R</span> mypool/home@monday | ssh someuser@backuphost zfs recv <span class=nt>-dvu</span> recvpool/backup</code></pre></div></div><div class=paragraph><p>替儲存在儲存池 <em>mypool</em> 上的檔案系統資料集 <em>home</em> 製作一個遞迴快照 <em>monday</em>，然後使用 <code>zfs send -R</code> 來傳送包含該資料集及其所有子資料集、快照、複製與設定的串流。輸出會被導向到 SSH 連線的遠端主機 <em>backuphost</em> 上等候輸入的 <code>zfs receive</code>，在此建議使用完整網域名稱或 IP 位置。接收端的機器會寫入資料到 <em>recvpool</em> 儲存池上的 <em>backup</em> 資料集，在 <code>zfs recv</code> 加上 <code>-d</code> 可覆寫在接收端使用相同名稱的快照，加上 <code>-u</code> 可讓檔案系統在接收端不會被掛載，當使用 <code>-v</code>，會顯示更多有關傳輸的詳細資訊，包含已花費的時間及已傳輸的資料量。</p></div></div></div><div class=sect2><h3 id=zfs-zfs-quota>19.4.8. 資料集、使用者以及群組配額<a class=anchor href=#zfs-zfs-quota></a></h3><div class=paragraph><p>資料集配額 (<a href=#zfs-term-quota>Dataset quota</a>) 可用來限制特定資料集可以使用的的空間量。參考配額 (<a href=#zfs-term-refquota>Reference Quota</a>) 的功能也非常相似，差在參考配額只會計算資料集自己使用的空間，不含快照與子資料集。類似的，使用者 (<a href=#zfs-term-userquota>User</a>) 與群組 (<a href=#zfs-term-groupquota>Group</a>) 配額可以用來避免使用者或群組用掉儲存池或資料集的所有空間。</p></div><div class=paragraph><p>要設定 <span class=filename>storage/home/bob</span> 的資料集配額為 10 GB：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set quota=10G storage/home/bob</span></code></pre></div></div><div class=paragraph><p>要設定 <span class=filename>storage/home/bob</span> 的參考配額為 10 GB：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set refquota=10G storage/home/bob</span></code></pre></div></div><div class=paragraph><p>要移除 <span class=filename>storage/home/bob</span> 的 10 GB 配額：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set quota=none storage/home/bob</span></code></pre></div></div><div class=paragraph><p>設定使用者配額的一般格式為 <code>userquota@<em>user</em>=<em>size</em></code> 使用者的名稱必須使用以下格式：</p></div><div class=ulist><ul><li><p>POSIX 相容的名稱，如 <em>joe</em>。</p></li><li><p>POSIX 數字 ID，如 <em>789</em>。</p></li><li><p>SID 名稱，如 <em>joe.bloggs@example.com</em>。</p></li><li><p>SID 數字 ID，如 <em>S-1-123-456-789</em>。</p></li></ul></div><div class=paragraph><p>例如，要設定使用者名為 <em>joe</em> 的使用者配額為 50 GB：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set userquota@joe=50G</span></code></pre></div></div><div class=paragraph><p>要移除所有配額：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set userquota@joe=none</span></code></pre></div></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>使用者配額的屬性不會顯示在 <code>zfs get all</code>。非 <code>root</code> 的使用者只可以看到自己的配額，除非它們有被授予 <code>userquota</code> 權限，擁有這個權限的使用者可以檢視與設定任何人的配額。</p></div></td></tr></tbody></table></div><div class=paragraph><p>要設定群組配額的一般格式為：<code>groupquota@<em>group</em>=<em>size</em></code>。</p></div><div class=paragraph><p>要設定群組 <em>firstgroup</em> 的配額為 50 GB 可使用：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set groupquota@firstgroup=50G</span></code></pre></div></div><div class=paragraph><p>要移除群組 <em>firstgroup</em> 的配額，或確保該群組未設定配額可使用：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set groupquota@firstgroup=none</span></code></pre></div></div><div class=paragraph><p>如同使用者配額屬性，非 <code>root</code> 使用者只可以查看自己所屬群組的配額。而 <code>root</code> 或擁有 <code>groupquota</code> 權限的使用者，可以檢視並設定所有群組的任何配額。</p></div><div class=paragraph><p>要顯示在檔案系統或快照上每位使用者所使用的空間量及配額可使用 <code>zfs userspace</code>，要取得群組的資訊則可使用 <code>zfs groupspace</code>，要取得有關支援的選項資訊或如何只顯示特定選項的資訊請參考 <a href="https://man.freebsd.org/cgi/man.cgi?query=zfs&amp;sektion=1&amp;format=html">zfs(1)</a>。</p></div><div class=paragraph><p>有足夠權限的使用者及 <code>root</code> 可以使用以下指令列出 <span class=filename>storage/home/bob</span> 的配額：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get quota storage/home/bob</span></code></pre></div></div></div><div class=sect2><h3 id=zfs-zfs-reservation>19.4.9. 保留空間<a class=anchor href=#zfs-zfs-reservation></a></h3><div class=paragraph><p>保留空間 (<a href=#zfs-term-reservation>Reservation</a>) 可以確保資料集最少可用的空間量，其他任何資料集無法使用保留的空間，這個功能在要確保有足夠的可用空間來存放重要的資料集或日誌檔時特別有用。</p></div><div class=paragraph><p><code>reservation</code> 屬性的一般格式為 <code>reservation=<em>size</em></code>，所以要在 <span class=filename>storage/home/bob</span> 設定保留 10 GB 的空間可以用：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set reservation=10G storage/home/bob</span></code></pre></div></div><div class=paragraph><p>要清除任何保留空間：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set reservation=none storage/home/bob</span></code></pre></div></div><div class=paragraph><p>同樣的原則可以應用在 <code>refreservation</code> 屬性來設定參考保留空間 (<a href=#zfs-term-refreservation>Reference Reservation</a>)，參考保留空間的一般格式為 <code>refreservation=<em>size</em></code>。</p></div><div class=paragraph><p>這個指令會顯示任何已設定於 <span class=filename>storage/home/bob</span> 的 reservation 或 refreservation：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get reservation storage/home/bob</span>
+<span class=c># zfs get refreservation storage/home/bob</span></code></pre></div></div></div><div class=sect2><h3 id=zfs-zfs-compression>19.4.10. 壓縮 (Compression)<a class=anchor href=#zfs-zfs-compression></a></h3><div class=paragraph><p>ZFS 提供直接的壓縮功能，在資料區塊層級壓縮資料不僅可以節省空間，也可以增加磁碟的效能。若資料壓縮了 25%，但壓縮的資料會使用了與未壓縮版本相同的速率寫入到磁碟，所以實際的寫入速度會是原來的 125%。壓縮功能也可來替代去重複 (<a href=#zfs-zfs-deduplication>Deduplication</a>) 功能，因為壓縮並不需要使用額外的記憶體。</p></div><div class=paragraph><p>ZFS 提了多種不同的壓縮演算法，每一種都有不同的優缺點，隨著 ZFS v5000 引進了 LZ4 壓縮技術，可對整個儲存池開啟壓縮，而不像其他演算法需要消耗大量的效能來達成，最大的優點是 LZ4 擁有 <em>提早放棄</em> 的功能，若 LZ4 無法在資料一開始的部份達成至少 12.5% 的壓縮率，便會以不壓縮的方式來寫入資料區塊來避免 CPU 在那些已經壓縮過或無法壓縮的資料上浪費運算能力。要取得更多有關 ZFS 中可用的壓縮演算法詳細資訊，可參考術語章節中的壓縮 (<a href=#zfs-term-compression>Compression</a>) 項目。</p></div><div class=paragraph><p>管理者可以使用資料集的屬性來監視壓縮的效果。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs get used,compressratio,compression,logicalused mypool/compressed_dataset</span>
+NAME        PROPERTY          VALUE     SOURCE
+mypool/compressed_dataset  used              449G      -
+mypool/compressed_dataset  compressratio     1.11x     -
+mypool/compressed_dataset  compression       lz4       <span class=nb>local
+</span>mypool/compressed_dataset  logicalused       496G      -</code></pre></div></div><div class=paragraph><p>資料集目前使用了 449 GB 的空間 (在 used 屬性)。在尚未壓縮前，該資料集應該會使用 496 GB 的空間 (於 <code>logicalused</code> 屬性)，這個結果顯示目前的壓縮比為 1.11:1。</p></div><div class=paragraph><p>壓縮功能在與使用者配額 (<a href=#zfs-term-userquota>User Quota</a>) 一併使用時可能會產生無法預期的副作用。使用者配額會限制一個使用者在一個資料集上可以使用多少空間，但衡量的依據是以 <em>壓縮後</em> 所使用的空間，因此，若一個使用者有 10 GB 的配額，寫入了 10 GB 可壓縮的資料，使用者將還會有空間儲存額外的資料。若使用者在之後更新了一個檔案，例如一個資料庫，可能有更多或較少的可壓縮資料，那麼剩餘可用的空間量也會因此而改變，這可能會造成奇怪的現象便是，一個使用者雖然沒有增加實際的資料量 (於 <code>logicalused</code> 屬性)，但因為更改影響了壓縮率，導致使用者達到配額的上限。</p></div><div class=paragraph><p>壓縮功能在與備份功能一起使用時也可能會有類似的問題，通常會使用配額功能來限制能夠儲存的資料量來確保有足夠的備份空間可用。但是由於配額功能並不會考量壓縮狀況，可能會有比未壓縮版本備份更多的資料量會被寫入到資料集。</p></div></div><div class=sect2><h3 id=zfs-zfs-deduplication>19.4.11. 去重複 (Deduplication)<a class=anchor href=#zfs-zfs-deduplication></a></h3><div class=paragraph><p>當開啟，去重複 (<a href=#zfs-term-deduplication>Deduplication</a>) 功能會使用每個資料區塊的校驗碼 (Checksum) 來偵測重複的資料區塊，當新的資料區塊與現有的資料區塊重複，ZFS 便會寫入連接到現有資料的參考來替代寫入重複的資料區塊，這在資料中有大量重複的檔案或資訊時可以節省大量的空間，要注意的是：去重複功能需要使用大量的記憶體且大部份可節省的空間可改開啟壓縮功能來達成，而壓縮功能不需要使用額外的記憶體。</p></div><div class=paragraph><p>要開啟去重複功能，需在目標儲存池設定 <code>dedup</code> 屬性：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zfs set dedup=on pool</span></code></pre></div></div><div class=paragraph><p>只有要被寫入到儲存池的新資料才會做去重複的動作，先前已被寫入到儲存池的資料不會因此啟動了這個選項而做去重複。查看已開啟去重複屬性的儲存池會如下：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool list</span>
+NAME  SIZE ALLOC  FREE   CKPOINT  EXPANDSZ   FRAG   CAP   DEDUP   HEALTH   ALTROOT
+pool 2.84G 2.19M 2.83G         -         -     0%    0%   1.00x   ONLINE   -</code></pre></div></div><div class=paragraph><p><code>DEDUP</code> 欄位會顯示儲存池的實際去重複率，數值為 <code>1.00x</code> 代表資料尚未被去重複。在下一個例子會在前面所建立的去重複儲存池中複製三份 Port 樹到不同的目錄中。</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># for d in dir1 dir2 dir3; do</span>
+<span class=o>&gt;</span> <span class=nb>mkdir</span> <span class=nv>$d</span> <span class=o>&amp;&amp;</span> <span class=nb>cp</span> <span class=nt>-R</span> /usr/ports <span class=nv>$d</span> &amp;
+<span class=o>&gt;</span> <span class=k>done</span></code></pre></div></div><div class=paragraph><p>已經偵測到重複的資料並做去重複：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zpool list</span>
+NAME SIZE  ALLOC  FREE   CKPOINT  EXPANDSZ   FRAG  CAP   DEDUP   HEALTH   ALTROOT
+pool 2.84G 20.9M 2.82G         -         -     0%   0%   3.00x   ONLINE   -</code></pre></div></div><div class=paragraph><p><code>DEDUP</code> 欄位顯示有 <code>3.00x</code> 的去重複率，這代表已偵測到多份複製的 Port 樹資料並做了去重複的動作，且只會使用第三份資料所佔的空間。去重複能節省空間的潛力可以非常巨大，但會需要消耗大量的記憶體來持續追蹤去重複的資料區塊。</p></div><div class=paragraph><p>去重複並非總是有效益的，特別是當儲存池中的資料本身並沒有重複時。ZFS 可以透過在現有儲存池上模擬開啟去重複功能來顯示可能節省的空間：</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=shell><span class=c># zdb -S pool</span>
+Simulated DDT histogram:
+
+bucket              allocated                       referenced
+______   ______________________________   ______________________________
+refcnt   blocks   LSIZE   PSIZE   DSIZE   blocks   LSIZE   PSIZE   DSIZE
+<span class=nt>------</span>   <span class=nt>------</span>   <span class=nt>-----</span>   <span class=nt>-----</span>   <span class=nt>-----</span>   <span class=nt>------</span>   <span class=nt>-----</span>   <span class=nt>-----</span>   <span class=nt>-----</span>
+     1    2.58M    289G    264G    264G    2.58M    289G    264G    264G
+     2     206K   12.6G   10.4G   10.4G     430K   26.4G   21.6G   21.6G
+     4    37.6K    692M    276M    276M     170K   3.04G   1.26G   1.26G
+     8    2.18K   45.2M   19.4M   19.4M    20.0K    425M    176M    176M
+    16      174   2.83M   1.20M   1.20M    3.33K   48.4M   20.4M   20.4M
+    32       40   2.17M    222K    222K    1.70K   97.2M   9.91M   9.91M
+    64        9     56K   10.5K   10.5K      865   4.96M    948K    948K
+   128        2   9.50K      2K      2K      419   2.11M    438K    438K
+   256        5   61.5K     12K     12K    1.90K   23.0M   4.47M   4.47M
+    1K        2      1K      1K      1K    2.98K   1.49M   1.49M   1.49M
+ Total    2.82M    303G    275G    275G    3.20M    319G    287G    287G
+
+dedup <span class=o>=</span> 1.05, compress <span class=o>=</span> 1.11, copies <span class=o>=</span> 1.00, dedup <span class=k>*</span> compress / copies <span class=o>=</span> 1.16</code></pre></div></div><div class=paragraph><p>在 <code>zdb -S</code> 分析完儲存池後會顯示在啟動去重複後可達到的空間減少比例。在本例中，<code>1.16</code> 是非常差的空間節省比例，因為這個比例使用壓縮功能便能達成。若在此儲存池上啟動去重複並不能明顯的節省空間使用量，那麼就不值得耗費大量的記憶體來開啟去重複功能。透過公式 <em>ratio = dedup * compress / copies</em>，系統管理者可以規劃儲存空間的配置，來判斷要處理的資料是否有足夠的重複資料區塊來平衡所需的記憶體。若資料是可壓縮的，那麼空間節少的效果可能會非常好，建議先開啟壓縮功能，且壓縮功能也可以大大提高效能。去重複功能只有在可以節省可觀的空間且有足夠的記憶體做 <a href=#zfs-term-deduplication>DDT</a> 時才開啟。</p></div></div><div class=sect2><h3 id=zfs-zfs-jail>19.4.12. ZFS 與 Jail<a class=anchor href=#zfs-zfs-jail></a></h3><div class=paragraph><p><code>zfs jail</code> 以及相關的 <code>jailed</code> 屬性可以用來將一個 ZFS 資料集委託給一個 <a href=../jails/#jails>Jail</a> 管理。<code>zfs jail <em>jailid</em></code> 可以將一個資料集連結到一個指定的 Jail，而 <code>zfs unjail</code> 則可解除連結。資料集要可以在 Jail 中控制需設定 <code>jailed</code> 屬性，一旦資料集被隔離便無法再掛載到主機，因為有掛載點可能會破壞主機的安全性。</p></div></div></div></div><div class=sect1><h2 id=zfs-zfs-allow>19.5. 委託管理<a class=anchor href=#zfs-zfs-allow></a></h2><div class=sectionbody><div class=paragraph><p>一個全面性的權限委託系統可能無權限的使用者執行 ZFS 的管理功能。例如，若每個使用者的家目錄均為一個資料集，便可以給予使用者權限建立與摧毀它們家目錄中的快照。可以給予備份使用者使用備份功能的權限。一個使用量統計的 Script 可以允許其在執行時能存取所有使用者的空間利用率資料。甚至可以將委託權限委託給其他人，每個子指令與大多數屬性都可使用權限委託。</p></div><div class=sect2><h3 id=zfs-zfs-allow-create>19.5.1. 委託資料集建立<a class=anchor href=#zfs-zfs-allow-create></a></h3><div class=paragraph><p><code>zfs allow <em>someuser</em> create <em>mydataset</em></code> 可以給予指定的使用者在指定的父資料集下建立子資料集的權限。這裡需要注意：建立新資料集會牽涉到掛載，因此需要設定 FreeBSD 的 <code>vfs.usermount</code> <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a> 為 <code>1</code> 來允許非 root 的使用者掛載一個檔案系統。這裡還有另一項限制可以避免濫用：非 <code>root</code> 使用者必須擁有掛載點在檔案系統中所在位置的權限才可掛載。</p></div></div><div class=sect2><h3 id=zfs-zfs-allow-allow>19.5.2. 委託權限委託<a class=anchor href=#zfs-zfs-allow-allow></a></h3><div class=paragraph><p><code>zfs allow <em>someuser</em> allow <em>mydataset</em></code> 可以給予指定的使用者有權限指派它們在目標資料集或其子資料集上擁有的任何權限給其他人。若該使用者擁有 <code>snapshot</code> 權限及 <code>allow</code> 權限，則該使用者可以授權 <code>snapshot</code> 權限給其他使用者。</p></div></div></div></div><div class=sect1><h2 id=zfs-advanced>19.6. 進階主題<a class=anchor href=#zfs-advanced></a></h2><div class=sectionbody><div class=sect2><h3 id=zfs-advanced-tuning>19.6.1. 調校<a class=anchor href=#zfs-advanced-tuning></a></h3><div class=paragraph><p>這裡有數個可調校的項目可以調整，來讓 ZFS 在面對各種工作都能以最佳狀況運作。</p></div><div class=ulist><ul><li><p><a id=zfs-advanced-tuning-arc_max></a><code><em>vfs.zfs.arc_max</em></code> - Maximum size of the <a href=#zfs-term-arc>ARC</a>. The default is all RAM but 1 GB, or 5/8 of all RAM, whichever is more. However, a lower value should be used if the system will be running any other daemons or processes that may require memory. This value can be adjusted at runtime with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a> and can be set in <span class=filename>/boot/loader.conf</span> or <span class=filename>/etc/sysctl.conf</span>.</p></li><li><p><a id=zfs-advanced-tuning-arc_meta_limit></a><code><em>vfs.zfs.arc_meta_limit</em></code> - Limit the portion of the <a href=#zfs-term-arc>ARC</a> that can be used to store metadata. The default is one fourth of <code>vfs.zfs.arc_max</code>. Increasing this value will improve performance if the workload involves operations on a large number of files and directories, or frequent metadata operations, at the cost of less file data fitting in the <a href=#zfs-term-arc>ARC</a>. This value can be adjusted at runtime with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a> and can be set in <span class=filename>/boot/loader.conf</span> or <span class=filename>/etc/sysctl.conf</span>.</p></li><li><p><a id=zfs-advanced-tuning-arc_min></a><code><em>vfs.zfs.arc_min</em></code> - Minimum size of the <a href=#zfs-term-arc>ARC</a>. The default is one half of <code>vfs.zfs.arc_meta_limit</code>. Adjust this value to prevent other applications from pressuring out the entire <a href=#zfs-term-arc>ARC</a>. This value can be adjusted at runtime with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a> and can be set in <span class=filename>/boot/loader.conf</span> or <span class=filename>/etc/sysctl.conf</span>.</p></li><li><p><a id=zfs-advanced-tuning-vdev-cache-size></a><code><em>vfs.zfs.vdev.cache.size</em></code> - A preallocated amount of memory reserved as a cache for each device in the pool. The total amount of memory used will be this value multiplied by the number of devices. This value can only be adjusted at boot time, and is set in <span class=filename>/boot/loader.conf</span>.</p></li><li><p><a id=zfs-advanced-tuning-min-auto-ashift></a><code><em>vfs.zfs.min_auto_ashift</em></code> - Minimum <code>ashift</code> (sector size) that will be used automatically at pool creation time. The value is a power of two. The default value of <code>9</code> represents <code>2^9 = 512</code>, a sector size of 512 bytes. To avoid <em>write amplification</em> and get the best performance, set this value to the largest sector size used by a device in the pool.</p><div class=paragraph><p>Many drives have 4 KB sectors. Using the default <code>ashift</code> of <code>9</code> with these drives results in write amplification on these devices. Data that could be contained in a single 4 KB write must instead be written in eight 512-byte writes. ZFS tries to read the native sector size from all devices when creating a pool, but many drives with 4 KB sectors report that their sectors are 512 bytes for compatibility. Setting <code>vfs.zfs.min_auto_ashift</code> to <code>12</code> (<code>2^12 = 4096</code>) before creating a pool forces ZFS to use 4 KB blocks for best performance on these drives.</p></div><div class=paragraph><p>Forcing 4 KB blocks is also useful on pools where disk upgrades are planned. Future disks are likely to use 4 KB sectors, and <code>ashift</code> values cannot be changed after a pool is created.</p></div><div class=paragraph><p>In some specific cases, the smaller 512-byte block size might be preferable. When used with 512-byte disks for databases, or as storage for virtual machines, less data is transferred during small random reads. This can provide better performance, especially when using a smaller ZFS record size.</p></div></li><li><p><a id=zfs-advanced-tuning-prefetch_disable></a><code><em>vfs.zfs.prefetch_disable</em></code> - Disable prefetch. A value of <code>0</code> is enabled and <code>1</code> is disabled. The default is <code>0</code>, unless the system has less than 4 GB of RAM. Prefetch works by reading larger blocks than were requested into the <a href=#zfs-term-arc>ARC</a> in hopes that the data will be needed soon. If the workload has a large number of random reads, disabling prefetch may actually improve performance by reducing unnecessary reads. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-vdev-trim_on_init></a><code><em>vfs.zfs.vdev.trim_on_init</em></code> - Control whether new devices added to the pool have the <code>TRIM</code> command run on them. This ensures the best performance and longevity for SSDs, but takes extra time. If the device has already been secure erased, disabling this setting will make the addition of the new device faster. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-vdev-max_pending></a><code><em>vfs.zfs.vdev.max_pending</em></code> - Limit the number of pending I/O requests per device. A higher value will keep the device command queue full and may give higher throughput. A lower value will reduce latency. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-top_maxinflight></a><code><em>vfs.zfs.top_maxinflight</em></code> - Maxmimum number of outstanding I/Os per top-level <a href=#zfs-term-vdev>vdev</a>. Limits the depth of the command queue to prevent high latency. The limit is per top-level vdev, meaning the limit applies to each <a href=#zfs-term-vdev-mirror>mirror</a>, <a href=#zfs-term-vdev-raidz>RAID-Z</a>, or other vdev independently. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-l2arc_write_max></a><code><em>vfs.zfs.l2arc_write_max</em></code> - Limit the amount of data written to the <a href=#zfs-term-l2arc>L2ARC</a> per second. This tunable is designed to extend the longevity of SSDs by limiting the amount of data written to the device. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-l2arc_write_boost></a><code><em>vfs.zfs.l2arc_write_boost</em></code> - The value of this tunable is added to <a href=#zfs-advanced-tuning-l2arc_write_max><code>vfs.zfs.l2arc_write_max</code></a> and increases the write speed to the SSD until the first block is evicted from the <a href=#zfs-term-l2arc>L2ARC</a>. This "Turbo Warmup Phase" is designed to reduce the performance loss from an empty <a href=#zfs-term-l2arc>L2ARC</a> after a reboot. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-scrub_delay></a><code><em>vfs.zfs.scrub_delay</em></code> - Number of ticks to delay between each I/O during a <a href=#zfs-term-scrub><code>scrub</code></a>. To ensure that a <code>scrub</code> does not interfere with the normal operation of the pool, if any other I/O is happening the <code>scrub</code> will delay between each command. This value controls the limit on the total IOPS (I/Os Per Second) generated by the <code>scrub</code>. The granularity of the setting is determined by the value of <code>kern.hz</code> which defaults to 1000 ticks per second. This setting may be changed, resulting in a different effective IOPS limit. The default value is <code>4</code>, resulting in a limit of: 1000 ticks/sec / 4 = 250 IOPS. Using a value of <em>20</em> would give a limit of: 1000 ticks/sec / 20 = 50 IOPS. The speed of <code>scrub</code> is only limited when there has been recent activity on the pool, as determined by <a href=#zfs-advanced-tuning-scan_idle><code>vfs.zfs.scan_idle</code></a>. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-resilver_delay></a><code><em>vfs.zfs.resilver_delay</em></code> - Number of milliseconds of delay inserted between each I/O during a <a href=#zfs-term-resilver>resilver</a>. To ensure that a resilver does not interfere with the normal operation of the pool, if any other I/O is happening the resilver will delay between each command. This value controls the limit of total IOPS (I/Os Per Second) generated by the resilver. The granularity of the setting is determined by the value of <code>kern.hz</code> which defaults to 1000 ticks per second. This setting may be changed, resulting in a different effective IOPS limit. The default value is 2, resulting in a limit of: 1000 ticks/sec / 2 = 500 IOPS. Returning the pool to an <a href=#zfs-term-online>Online</a> state may be more important if another device failing could <a href=#zfs-term-faulted>Fault</a> the pool, causing data loss. A value of 0 will give the resilver operation the same priority as other operations, speeding the healing process. The speed of resilver is only limited when there has been other recent activity on the pool, as determined by <a href=#zfs-advanced-tuning-scan_idle><code>vfs.zfs.scan_idle</code></a>. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-scan_idle></a><code><em>vfs.zfs.scan_idle</em></code> - Number of milliseconds since the last operation before the pool is considered idle. When the pool is idle the rate limiting for <a href=#zfs-term-scrub><code>scrub</code></a> and <a href=#zfs-term-resilver>resilver</a> are disabled. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li><li><p><a id=zfs-advanced-tuning-txg-timeout></a><code><em>vfs.zfs.txg.timeout</em></code> - Maximum number of seconds between <a href=#zfs-term-txg>transaction group</a>s. The current transaction group will be written to the pool and a fresh transaction group started if this amount of time has elapsed since the previous transaction group. A transaction group my be triggered earlier if enough data is written. The default value is 5 seconds. A larger value may improve read performance by delaying asynchronous writes, but this may cause uneven performance when the transaction group is written. This value can be adjusted at any time with <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>.</p></li></ul></div></div><div class=sect2><h3 id=zfs-advanced-i386>19.6.2. i386 上的 ZFS<a class=anchor href=#zfs-advanced-i386></a></h3><div class=paragraph><p>ZFS 所提供的部份功能需要使用大量記憶體，且可能需要對有限 RAM 的系統調校來取得最佳的效率。</p></div><div class=sect3><h4 id=_記憶體>19.6.2.1. 記憶體<a class=anchor href=#_記憶體></a></h4><div class=paragraph><p>最低需求，總系統記憶體應至少有 1 GB，建議的 RAM 量需視儲存池的大小以及使用的 ZFS 功能而定。一般的經驗法則是每 1 TB 的儲存空間需要 1 GB 的 RAM，若有開啟去重複的功能，一般的經驗法則是每 1 TB 的要做去重複的儲存空間需要 5 GB 的 RAM。雖然有部份使用者成功使用較少的 RAM 來運作 ZFS，但系統在負載較重時有可能會因為記憶用耗而導致當機，對於要使用低於建議 RAM 需求量來運作的系統可能會需要更進一步的調校。</p></div></div><div class=sect3><h4 id=_核心設定>19.6.2.2. 核心設定<a class=anchor href=#_核心設定></a></h4><div class=paragraph><p>由於在 i386™ 平台上位址空間的限制，在 i386™ 架構上的 ZFS 使用者必須加入這個選項到自訂核心設定檔，重新編譯核心並重新開啟：</p></div><div class="literalblock programlisting"><div class=content><pre>options        KVA_PAGES=512</pre></div></div><div class=paragraph><p>這個選項會增加核心位址空間，允許調整 <code>vm.kvm_size</code> 超出目前的 1 GB 限制或在 PAE 的 2 GB 限制。要找到這個選項最合適的數值，可以將想要的位址空間換算成 MB 然後除以 4，在本例中，以 2 GB 計算後即為 <code>512</code>。</p></div></div><div class=sect3><h4 id=_載入程式可調參數>19.6.2.3. 載入程式可調參數<a class=anchor href=#_載入程式可調參數></a></h4><div class=paragraph><p>在所有的 FreeBSD 架構上均可增加 <span class=filename>kmem</span> 位址空間，經測試在一個 1 GB 實體記憶體的測試系統上，加入以下選項到 <span class=filename>/boot/loader.conf</span>，重新開啟系統，可成功設定：</p></div><div class="literalblock programlisting"><div class=content><pre>vm.kmem_size=&#34;330M&#34;
+vm.kmem_size_max=&#34;330M&#34;
+vfs.zfs.arc_max=&#34;40M&#34;
+vfs.zfs.vdev.cache.size=&#34;5M&#34;</pre></div></div><div class=paragraph><p>要取得更多詳細的 ZFS 相關調校的建議清單，請參考 <a href=https://wiki.freebsd.org/ZFSTuningGuide class=bare>https://wiki.freebsd.org/ZFSTuningGuide</a>。</p></div></div></div></div></div><div class=sect1><h2 id=zfs-links>19.7. 其他資源<a class=anchor href=#zfs-links></a></h2><div class=sectionbody><div class=ulist><ul><li><p><a href=https://wiki.freebsd.org/ZFS>FreeBSD Wiki - ZFS</a></p></li><li><p><a href=https://wiki.freebsd.org/ZFSTuningGuide>FreeBSD Wiki - ZFS Tuning</a></p></li><li><p><a href=http://wiki.illumos.org/display/illumos/ZFS>Illumos Wiki - ZFS</a></p></li><li><p><a href=http://docs.oracle.com/cd/E19253-01/819-5461/index.html>Oracle Solaris ZFS Administration Guide</a></p></li><li><p><a href=https://calomel.org/zfs_raid_speed_capacity.html>Calomel Blog - ZFS Raidz Performance, Capacity and Integrity</a></p></li></ul></div></div></div><div class=sect1><h2 id=zfs-term>19.8. ZFS 特色與術語<a class=anchor href=#zfs-term></a></h2><div class=sectionbody><div class=paragraph><p>ZFS 是一個從本質上與眾不同的檔案系統，由於它並非只是一個檔案系統，ZFS 結合了檔案系統及磁碟區管理程式，讓額外的儲存裝置可以即時的加入到系統並可讓既有的檔案系統立即使用這些在儲存池中空間。透過結合傳統區分為二的兩個角色，ZFS 能夠克服以往 RAID 磁碟群組無法擴充的限制。每個在儲存池頂層的裝置稱作 <em>vdev</em>，其可以是一個簡單的磁碟或是一個 RAID 如鏡像或 RAID-Z 陣列。ZFS 的檔案系統 (稱作 <em>資料集 (Dataset)</em>) 每一個資料集均可存取整個存池所共通的可用空間，隨著使用儲存池來配置空間區塊，儲存池能給每個檔案系統使用的可用空間就會減少，這個方法可以避免擴大分割區會使的可用空間分散分割區之間的常見問題。</p></div><table class="tableblock frame-all grid-all stretch informaltable"><col style=width:50%><col style=width:50%><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock>儲存池 (Pool)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><em>儲存池 (Pool)</em> 是建構 ZFS 最基礎的單位。一個儲存池可由一個或多個 vdev 所組成，是用來儲存資料的底層裝置。儲存池會被拿來建立一個或多個檔案系統 (資料集 Dataset) 或區塊裝置 (磁碟區 Volume)，這些資料集與磁碟區會共用儲存池的剩餘可用空間。每一個儲存池可由名稱與 GUID 來辨識。可用的功能會依儲存池上的 ZFS 版本而有不同。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>vdev 型態 (vdev Types)</p></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>儲存池是由一個或多個 vdev 所組成，vdev 可以是一個磁碟或是 RAID Transform 的磁碟群組。當使用多個 vdev，ZFS 可以分散資料到各個 vdev 來增加效能與最大的可用空間。</p></div><div class=ulist><ul><li><p><em>磁碟 (Disk)</em> - 最基本的 vdev 型態便是一個標準的資料區塊裝置，這可以是一整個磁碟 (例如 <span class=filename>/dev/ada0</span> 或 <span class=filename>/dev/da0</span>) 或一個分割區 (<span class=filename>/dev/ada0p3</span>)。在 FreeBSD 上，使用分割區來替代整個磁碟不會影響效能，這可能與 Solaris 說明文件所建議的有所不同。</p></li><li><p><em>檔案 (File)</em> - 除了磁碟外，ZFS 儲存池可以使用一般檔案為基礎，這在測試與實驗時特別有用。在 <code>zpool create</code> 時使用檔案的完整路徑作為裝置路徑。所有 vdev 必須至少有 128 MB 的大小。</p></li><li><p><em>鏡像 (Mirror)</em> - 要建立鏡像，需使用 <code>mirror</code> 關鍵字，後面接著要做為該鏡像成員裝置的清單。一個鏡像需要由兩個或多個裝置來組成，所有的資料都會被寫入到所有的成員裝置。鏡像 vdev 可以對抗所有成員故障只剩其中一個而不損失任何資料。</p><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>正常單一磁碟的 vdev 可以使用 <code>zpool <a href=#zfs-zpool-attach>attach</a></code> 隨時升級成為鏡像 vdev。</p></div></td></tr></tbody></table></div></li><li><p><em>RAID-Z</em> - ZFS 實作了 RAID-Z，以標準的 RAID-5 修改而來，可提供奇偶校驗 (Parity) 更佳的分散性並去除了 "RAID-5 write hole" 導致在預期之外的重啟後資料與奇偶校驗資訊不一致的問題。ZFS 支援三個層級的 RAID-Z，可提供不同程度的備援來換取減少不同程度的可用空間，類型的名稱以陣列中奇偶校驗裝置的數量與儲存池可以容許磁碟故障的數量來命名，從 RAID-Z1 到 RAID-Z3 。</p><div class=paragraph><p>在 RAID-Z1 配置 4 個磁碟，每個磁碟 1 TB，可用的儲存空間則為 3 TB，且若其中一個磁碟故障仍可以降級 (Degraded) 的模式運作，若在故障磁碟尚未更換並修復 (Resilver) 之前又有磁碟故障，所有在儲存池中的資料便會遺失。</p></div><div class=paragraph><p>在 RAID-Z3 配置 8 個 1 TB 的磁碟，磁碟區將會可以提供 5 TB 的可用空間且在 3 個磁碟故障的情況下仍可運作。Sun™ 建議單一個 vdev 不要使用超過 9 個磁碟。若配置需要使用更多磁碟，建議分成兩個 vdev，這樣儲存池的資料便會分散到這兩個 vdev。</p></div><div class=paragraph><p>使用兩個 RAID-Z2 各由 8 個磁碟組成的 vdev 的配置可以建立一個類似 RAID-60 的陣列。RAID-Z 群組的儲存空量會接近其中最小的磁碟乘上非奇偶校驗磁碟的數量。4 個 1 TB 磁碟在 RAID-Z1 會有接近 3 TB 的實際大小，且一個由 8 個 1 TB 磁碟組成的 RAID-Z3 陣列會有 5 TB 的可用空間。</p></div></li><li><p><em>備援 (Spare)</em> - ZFS 有特殊的虛擬 vdev 型態可用來持續追蹤可用的熱備援裝置 (Hot spare)。注意，安裝的熱備援裝置並不會自動佈署，熱備援裝置需要手動使用 <code>zfs replace</code> 設定替換故障的裝置。</p></li><li><p><em>日誌 (Log)</em> - ZFS 記錄裝置，也被稱作 ZFS 意圖日誌 (ZFS Intent Log, <a href=#zfs-term-zil>ZIL</a>) 會從正常的儲存池裝置移動意圖日誌到獨立的裝置上，通常是一個 SSD。有了獨立的日誌裝置，可以明顯的增進有大量同步寫入應用程式的效能，特別是資料庫。日誌裝置可以做成鏡像，但不支援 RAID-Z，若使用多個日誌裝置，寫入動作會被負載平衡分散到這些裝置。</p></li><li><p><em>快取 (Cache)</em> - 加入快取 vdev 到儲存池可以增加儲存空間的 <a href=#zfs-term-l2arc>L2ARC</a> 快取。快取裝置無法做鏡像，因快取裝置只會儲存額外的現有資料的複本，並沒有資料遺失的風險。</p></li></ul></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>交易群組 (Transaction Group, TXG)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>交易群組是一種將更動的資料區塊包裝成一組的方式，最後再一次寫入到儲存池。交易群組是 ZFS 用來檢驗一致性的基本單位。每個交易群組會被分配一個獨一無二的 64-bit 連續代號。最多一次可以有三個活動中的交易群組，這三個交易群組的每一個都有這三種狀態：</p><p class=tableblock>* <em>開放 (Open)</em> - 新的交易群組建立之後便處於開放的狀態，可以接受新的寫入動作。永遠會有開放狀態的交易群組，即始交易群組可能會因到達上限而拒絕新的寫入動作。一但開放的交易群組到達上限或到達 <a href=#zfs-advanced-tuning-txg-timeout><code>vfs.zfs.txg.timeout</code></a>，交易群組便會繼續進入下一個狀態。
+* <em>靜置中 (Quiescing)</em> - 一個短暫的狀態，會等候任何未完成的操作完成，不會阻擋新開放的交易群組建立。一旦所有在群組中的交易完成，交易群組便會進入到最終狀態。
+* <em>同步中 (Syncing)</em> - 所有在交易群組中的資料會被寫任到穩定的儲存空間，這個程序會依序修改其他也需同樣寫入到穩定儲存空間的資料，如 Metadata 與空間對應表。同步的程多會牽涉多個循環，首先是同步所有更改的資料區塊，也是最大的部份，接著是 Metadata，這可能會需要多個循環來完成。由於要配置空間供資料區塊使用會產生新的 Metadata，同步中狀態在到達循環完成而不再需要分配任何額外空間的狀態前無法結束。同步中狀態也是完成 <em>synctask</em> 的地方，Synctask 是指管理操作，如：建立或摧毀快照與資料集，會修改 uberblock，也會在此時完成。同步狀態完成後，其他處於狀態中狀態的交易群組便會進入同步中狀態。
+所有管理功能如快照 (<a href=#zfs-term-snapshot><code>Snapshot</code></a>) 會作為交易群組的一部份寫入。當 synctask 建立之後，便會加入到目前開放的交易群組中，然後該群組會盡快的進入同步中狀態來減少管理指令的延遲。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>Adaptive Replacement Cache (ARC)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>ZFS 使用了自適應替換快取 (Adaptive Replacement Cache, ARC)，而不是傳統的最近最少使用 (Least Recently Used, LRU) 快取，LRU 快取在快取中是一個簡單的項目清單，會依每個物件最近使用的時間來排序，新項會加入到清單的最上方，當快取額滿了便會去除清單最下方的項目來空出空間給較常使用的物件。ARC 結合了四種快取清單，最近最常使用 (Most Recently Used, MRU) 及最常使用 (Most Frequently Used, MFU) 物件加上兩個清單各自的幽靈清單 (Ghost list)，這些幽靈清單會追蹤最近被去除的物件來避免又被加回到快取，避免過去只有偶爾被使用的物件加入清單可以增加快取的命中率。同時使用 MRU 及 MFU 的另外一個優點是掃描一個完整檔案系統可以去除在 MRU 或 LRU 快取中的所有資料，有利於這些才剛存取的內容。使用 ZFS 也有 MFU 可只追蹤最常使用的物件並保留最常被存取的資料區塊快取。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>L2ARC</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>L2ARC 是 ZFS 快取系統的第二層，主要的 ARC 會儲存在 RAM 當中，但因為 RAM 可用的空間量通常有限，因此 ZFS 也可以使用 <a href=#zfs-term-vdev-cache>快取 vdev (Cache vdev)</a>。固態磁碟 (Solid State Disk, SSD) 常被拿來此處作為快取裝置，因為比起傳統旋轉碟片的磁碟，固態磁碟有較快的速度與較低的延遲。L2ARC 是選用的，但使用可以明顯增進那些已使用 SSD 快取的檔案讀取速度，無須從一般磁碟讀取。L2ARC 也同樣可以加速去重複 (<a href=#zfs-term-deduplication>Deduplication</a>)，因為 DDT 並不適合放在 RAM，但適合放在 L2ARC，比起要從磁碟讀取，可以加快不少速度。為了避免 SSD 因寫入次速過多而過早耗損，加入到快取裝置的資料速率會被限制，直到快取用盡 (去除第一個資料區塊來騰出空間) 之前，寫入到 L2ARC 的資料速率會限制在寫入限制 (Write limit) 與加速限制 (Boost limit) 的總合，之後則會限制為寫入限制，可以控制這兩個速度限制的 <a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a> 數值分別為 <a href=#zfs-advanced-tuning-l2arc_write_max><code>vfs.zfs.l2arc_write_max</code></a> 控制每秒有多少數位元組可寫入到快取，而 <a href=#zfs-advanced-tuning-l2arc_write_boost><code>vfs.zfs.l2arc_write_boost</code></a> 可在 "渦輪預熱階段" (即寫入加速) 時增加寫入限制。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>ZIL</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>ZIL 會使用比主要儲存池還更快的儲存裝置來加速同步寫入動作 (Synchronous transaction)，如 SSD。當應用程式請求做一個同步的寫入時 (保証資料會安全的儲存到磁碟，而不是先快取稍後再寫入)，資料會先寫入到速度較快的 ZIL 儲存空間，之後再一併寫入到一般的磁碟。這可大量的減少延遲並增進效能。ZIL 只會有利於使用像資料庫這類的同步工作，一般非同步的寫入像複製檔案，則完全不會用到 ZIL。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>寫入時複製 (Copy-On-Write)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>不像傳統的檔案系統，在 ZFS，當資料要被覆寫時，不會直接覆寫舊資料所在的位置，而是將新資料會寫入到另一個資料區塊，只在資料寫入完成後才會更新 Metadata 指向新的位置。因此，在發生寫入中斷 (在寫入檔案的過程中系統當機或電源中斷) 時，原來檔案的完整內容並不會遺失，只會放棄未寫入完成的新資料，這也意謂著 ZFS 在發生預期之外的關機後不需要做 <a href="https://man.freebsd.org/cgi/man.cgi?query=fsck&amp;sektion=8&amp;format=html">fsck(8)</a>。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>資料集 (Dataset)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><em>資料集 (Dataset)</em> 是 ZFS 檔案系統、磁碟區、快照或複本的通用術語。每個資料集都有獨一無二的名稱使用 <em>poolname/path@snapshot</em> 格式。儲存池的根部技術上來說也算一個資料集，子資料集會採用像目錄一樣的層級來命名，例如 <em>mypool/home</em>，home 資料集是 <em>mypool</em> 的子資料集並且會繼承其屬性。這可以在往後繼續擴展成 <em>mypool/home/user</em>，這個孫資料集會繼承其父及祖父的屬性。在子資料集的屬性可以覆蓋預設繼承自父及祖父的屬性。資料集及其子資料級的管理權限可以委託 (<a href=#zfs-zfs-allow>Delegate</a>) 給他人。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>檔案系統 (File system)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>ZFS 資料集最常被當做檔案系統使用。如同大多數其他的檔案系統，ZFS 檔案系統會被掛載在系統目錄層級的某一處且內含各自擁有權限、旗標及 Metadata 的檔案與目錄。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>磁碟區 (Volume)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>除了一般的檔案系統資料集之外，ZFS 也可以建立磁碟區 (Volume)，磁碟區是資料區塊裝置。磁碟區有許多與資料集相似的功能，包含複製時寫入、快照、複本以及資料校驗。要在 ZFS 的頂層執行其他檔案系統格式時使用磁碟區非常有用，例如 UFS 虛擬化或匯出 iSCSI 延伸磁區 (Extent)。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>快照 (Snapshot)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>ZFS 的寫入時複製 (<a href=#zfs-term-cow>Copy-On-Write</a>, COW) 設計可以使用任意的名稱做到幾乎即時、一致的快照。在製做資料集的快照或父資料集遞迴快照 (會包含其所有子資料集) 之後，新的資料會寫入到資的資料區塊，但不會回收舊的資料區塊為可用空間，快照中會使用原版本的檔案系統，而快照之後所做的變更則會儲存在目前的檔案系統，因此不會重複使用額外的空間。當新的資料寫入到目前的檔案系統，便會配置新的資料區塊來儲存這些資料。快照表面大小 (Apparent size) 會隨著在目前檔案系統停止使用的資料區塊而成長，但僅限於快照。可以用唯讀的方式掛載這些快照來復原先前版本的檔案，也可以還原 (<a href=#zfs-zfs-snapshot>Rollback</a>) 目前的檔案系統到指定的快照，來還原任何在快照之後所做的變更。每個在儲存池中的資料區塊都會有一個參考記數器，可以用來持續追蹤有多少快照、複本、資料集或是磁碟區使用這個資料區塊，當刪除檔案與快照參照的計數變會滅少，直到沒有任何東西參考這個資料區塊才會被回收為可用空間。快照也可使用 <a href=#zfs-zfs-snapshot>hold</a> 來標記，檔標記為 hold 時，任何嘗試要刪除該快照的動作便會回傳 <code>EBUSY</code> 的錯誤，每個快照可以標記多個不同唯一名稱的 hold，而 <a href=#zfs-zfs-snapshot>release</a> 指令則可以移除 hold，這樣才可刪除快照。在磁碟區上快可以製作快照，但只能用來複製或還原，無法獨立掛載。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>複本 (Clone)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>快照也可以做複本，複本是可寫入版本的快照，讓檔案系統可分支成為新的資料集。如同快照，複本一開始不會消耗任何額外空間，隨著新資料寫入到複本會配置新的資料區塊，複本的表面大小 (Apparent size) 才會成長，當在複本檔案系統或磁碟區的資料區塊被覆寫時，在先前資料區塊的參考計數則會減少。建立複本所使用的快照無法被刪除，因為複本會相依該快照，快照為父，複本為子。複本可以被提升 (<em>promoted</em>)、反轉相依關係，來讓複本成為父，之前的父變為子，這個操作不需要額外的空間。由於反轉了父與子使用的空間量，所以可能會影響既有的配額 (Quota) 與保留空間 (Reservation)。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>校驗碼 (Checksum)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>配置每個資料區塊快的同時也會做資料校驗，資料校驗用的演算法是依資料集屬性而有所不同的，請參考 <a href=#zfs-zfs-set><code>set</code></a>。每個資料區塊會在讀取的過成便完成校驗，讓 ZFS 可以偵測到隱藏的損壞，若資料不符合預期的校驗碼，ZFS 會嘗試從任何可用的備援來還原資料，例如鏡像 (Mirror) 或 RAID-Z。要檢驗所有資料的校驗碼可以使用清潔 (<a href=#zfs-term-scrub><code>Scrub</code></a>)，資料校驗的演算法有：</p><p class=tableblock>* <code>fletcher2</code>
+* <code>fletcher4</code>
+* <code>sha256</code>
+<code>fletcher</code> 演算法最快，而 <code>sha256</code> 雖較消耗效能，但其有強大的密碼雜湊與較低的衝突率。也可關閉資料校驗，但並不建議。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>壓縮 (Compression)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>每個資料集都有壓縮 (Compression) 屬性，預設是關閉的，這個屬性可以設定使用以下幾個壓縮演算法的其中一個來壓縮寫入到資料集的新資料。壓縮除了減少空間使用量外，常也會增加讀取與寫入的吞吐量，因為會減少讀取與寫入的資料區塊。</p><p class=tableblock><a id=zfs-term-compression-lz4></a>* <em>LZ4</em> - ZFS 儲存池版本 5000 (功能旗標) 後所增加，LZ4 現在是建議的壓縮演算法，在處理可壓縮的資料時 LZ4 壓縮比 LZJB 快將近 50%，在處理不可壓縮的資料時快將近三倍，LZ4 解壓縮也比 LZJB 將近 80%。在現代的 CPU 上，LZ4 經常平均可用 500 MB/s 的速度壓縮，而解壓縮可到達 1.5 GB/s (每個 CPU 核心)。</p><p class=tableblock><a id=zfs-term-compression-lzjb></a>* <em>LZJB</em> - 預設的壓縮演算法。由 Jeff Bonwick 所開發 (ZFS 的創始人之一)。LZJB 與 GZIP 相比，可以較低的 CPU 提供較佳的壓縮功能。在未來預設的壓縮演算法將會更換為 LZ4。</p><p class=tableblock><a id=zfs-term-compression-gzip></a>* <em>GZIP</em> - 在 ZFS 可用的熱門串流壓縮演算法。使用 GZIP 主要的優點之一便是可設定壓縮層級。當設定 <code>compress</code> 屬性，管理者可以選擇壓縮層級範圍從最低的壓縮層級 <code>gzip1</code> 到最高的壓縮層級 <code>gzip9</code>。這讓管理者可以控制要使用多少 CPU 來節省磁碟空間。</p><p class=tableblock><a id=zfs-term-compression-zle></a>* <em>ZLE</em> - 零長度編號是一個特殊的壓縮演算法，它只會壓縮連續的零。這種壓縮演算法只在資料集中含有大量為零的資料區塊時有用。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>備份數 (Copies)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>當設定大於 1 的數值時，<code>copies</code> 屬性會指示 ZFS 備份每個在檔案系統 (<a href=#zfs-term-filesystem>File System</a>) 或磁碟區 (<a href=#zfs-term-volume>Volume</a>) 的資料區塊數份。在重要的資料集上設定這個屬性可以做額外的備援以在資料校驗碼不相符時可做復原。在沒有做備援的儲存池上，備份功能提供只是一種資料的備援方式，備份功能可以復原單一壞軌或其他情況的次要損壞，但無法復原儲存池中整個磁碟損壞所損失的資料。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>去重複 (Deduplication)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>校驗碼讓在寫入時可以偵測重複資料區塊，使用去重複，可以增加既有、完全相同的資料區塊參考數來節省儲存空間。要偵測重複的資料區塊需要在記憶體中儲存去重複資料表 (Deduplication table, DDT)，這個資料表中會有唯一的校驗碼清單、這些資料區塊的所在位置以及參考數。當寫入新資料時，便會計算校驗碼然後比對清單中是否有符合的既有資料區塊已在清單。去重複使用了 SHA256 校驗碼演算法來提供一個安全的加密雜湊，去重複功能是可以調校的，若 <code>dedup</code> 設為 <code>on</code> 只要符合校驗碼便會認為資料完全相同，若 <code>dedup</code> 設為 <code>verify</code> 則會一個一個位元檢查兩個資料區塊的資料來確保資料真的完全相同，若資料不同便會註記與雜湊衝突並會分別儲存兩個資料區塊。由於 DDT 須要儲存每個唯一資料區塊的雜湊，所以會消耗大量的記憶體，一般的經驗法則是每 1 TB 的去重複資料需要使用 5-6 GB 的記憶體。由於要有足夠的 RAM 來儲存整個 DDT 在實務上並不實際，導致在每個新資料區塊寫入前需要從磁碟來讀取 DDT 會對效能有很大的影響，去重複功能可以使用 L2ARC 儲存 DDT 以在快速的系統記憶體及較慢的磁碟之間取得一個平衡點。也可以考慮使用壓縮功能來取代此功能，因為壓縮也能節省相近的空間使用量而不需要大量額外的記憶體。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>清潔 (Scrub)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>ZFS 有 <code>scrub</code> 來替代 <a href="https://man.freebsd.org/cgi/man.cgi?query=fsck&amp;sektion=8&amp;format=html">fsck(8)</a> 來做一致性的檢查。<code>scrub</code> 會讀取所有儲存在儲存池中的資料區塊並且根據儲存在 Metadata 中已知良好的校驗碼來檢驗這些資料區塊的校驗碼，定期檢查儲存池中儲存的所有資料可以確保實際使用這些資料前已將所有損壞的資料區塊復原。在不正常的關閉之後並不需要做清潔動作，但建議每三個月至少執行一次。在正常使用讀取時便會檢查每個資料區塊的校驗碼，但清潔動作可以確保那些不常用的資料也會被檢查以避免隱藏的損壞，如此便能增進資料的安全性，特別是對用來保存資料的儲存裝置。<code>scrub</code> 可以使用 <a href=#zfs-advanced-tuning-scrub_delay><code>vfs.zfs.scrub_delay</code></a> 調整相對優先權來避免清潔動作降低儲存池上其他工作的效率。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>資料集配額 (Dataset Quota)</p></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>除了配額及空間保留外，ZFS 提供非常快速且準確的資料集、使用者及群組空間的計算功能，這可讓管理者調整空間配置的方式且可為重要的檔案系統保留空間。</p></div><div class=paragraph><p>ZFS supports different types of quotas: the dataset quota, the <a href=#zfs-term-refquota>reference quota (refquota)</a>, the <a href=#zfs-term-userquota>user quota</a>, and the <a href=#zfs-term-groupquota>group quota</a>.</p></div><div class=paragraph><p>配額會限制資料集及後裔包含資料集的快照、子資料集及子資料集的快照能使用的空間量。</p></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>磁碟區上無法設定配額，因為 <code>volsize</code> 屬性已經被用來做內定的配額。</p></div></td></tr></tbody></table></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>參考配額 (Reference Quota)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>參考配額可以設定一個硬性限制 (Hard limit) 來限制資料集能使用的空間量，而這個硬性限制只包含了資料集參考的空間，並不含其後裔所使用的空間，如：檔案系統或快照。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>使用者配額 (User Quota)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>使用者配額在用來限制特定使用者能使用的空間量時非常有用。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>群組配額 (Group Quota)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>群組配額可以限制特定群組能使用的空間量。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>資料集保留空間 (Dataset Reservation)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>reservation</code> 屬性可以確保對特定資料集及其後裔最小可用的空間量，若在 <span class=filename>storage/home/bob</span> 設定 10 GB 的保留空間且其他資料集嘗試使用所有剩餘的空間時，會保留至少 10 GB 的空間供這個資料集使用。若要製作 <span class=filename>storage/home/bob</span> 的快照，該快照所使用的空間也會被列入保留空間計算。 <a href=#zfs-term-refreservation><code>refreservation</code></a> 屬性也以類似的方式運作，但是他 <em>不包含</em> 後裔，例如：快照。</p><p class=tableblock>不管那一種保留空間在許多情境皆很有用，例如：要規劃與測試磁碟空間配置在新系統上的適應性，或是確保有足夠的空間供稽查日誌或系統還原程序及檔案使用。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>參考保留空間 (Reference Reservation)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock><code>refreservation</code> 屬性可以確保對特定資料集 <em>不包含</em> 其後裔最小可用的空間，這代表若在 <span class=filename>storage/home/bob</span> 設定 10 GB 的保留空間且其他資料集嘗試使用所有剩餘的空間時，會保留至少 10 GB 的空間供這個資料集使用。於正常 <a href=#zfs-term-reservation>reservation</a> 不同的是，由快照及後裔資料集所使用的空間並不會列入保留空間計算。例如，若要製作一個 <span class=filename>storage/home/bob</span> 的快照，在 <code>refreservation</code> 空間之外必須要有足夠的空間才能成功完成這項操作，主資料集的後裔並不會列入 <code>refreservation</code> 空間額計算，所以也不會佔用保留空間。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>修復 (Resilver)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>當有磁碟故障且被更換後，新的磁碟必須回存先前所遺失的資料，會使用分散在其他磁碟上的奇偶校驗資訊來計算並寫入遺失的資料到新的磁碟機的這個程序稱作 <em>修復 (Resilvering)</em>。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>上線 (Online)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>一個儲存池或 vdev 處於線上 (<code>Online</code>) 狀態時代表所有該裝置的成員均已連結且正常運作。個別裝置處於線上 (<code>Online</code>) 狀態時代表功能正常。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>離線 (Offline)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>若有足夠的備援可避免儲存池或 vdev 進入故障 (<a href=#zfs-term-faulted>Faulted</a>) 狀態，個別裝置若可由管理者設為離線 (<code>Offline</code>) 狀態，管理者可以選擇要設定那一個磁碟為離線來準備更換或是讓其更容易辨識。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>降級 (Degraded)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>一個儲存池或 vdev 處於降級 (<code>Degraded</code>) 狀態代表其有一個或多個磁碟已斷線或故障，此時儲存池仍可以使用，但只要再有其他的裝置故障，儲存池會無法復原。重新連線缺少的裝置或更換故障的磁碟，並在新裝置完成修復 (<a href=#zfs-term-resilver>Resilver</a>) 程序可讓儲存池返回線上 (<a href=#zfs-term-online>Online</a>) 狀態。</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>故障 (Faulted)</p></td><td class="tableblock halign-left valign-top"><p class=tableblock>一個儲存池或 vdev 處於故障 (<code>Faulted</code>) 狀態代表無法運作，會無法存取在該裝置上的資料。當在 vdev 中缺少或故障的裝置數超過備援的層級，儲存池或 vdev 會進入故障 (<code>Faulted</code>) 狀態。若缺少的裝置可以重新連結上，儲存池便會返回線上 (<a href=#zfs-term-online>Online</a>) 狀態。若沒有足夠的備援可補償故障的磁碟數量便會遺失儲存池中的內容且只能從備份還原。</p></td></tr></tbody></table></div></div></div><hr><div class=last-modified><p><strong>最後修改於</strong>: March 9, 2024 由 <a href="https://cgit.freebsd.org/doc/commit/?id=6199af92e7" target=_blank>Danilo G. Baio</a></p></div><div class=buttons><div class=prev><i class="fa fa-angle-left" aria-hidden=true title=Prev></i><div class=container><a href=http://172.16.201.134:1313/zh-tw/books/handbook/geom class=direction>Prev</a></div></div><div class=home><i class="fa fa-home" aria-hidden=true title=Home></i><div class=container><a href=../ class=direction>Home</a></div></div><div class=next><div class=container><a href=http://172.16.201.134:1313/zh-tw/books/handbook/filesystems class=direction>Next</a></div><i class="fa fa-angle-right" aria-hidden=true title=Next></i></div></div><label class="hidden book-menu-overlay" for=menu-control></label></div><aside class=toc><div class=toc-content><h3>目錄</h3><nav id=TableOfContents><ul><li><a href=#zfs-differences>19.1. 什麼使 ZFS 與眾不同</a></li><li><a href=#zfs-quickstart>19.2. 快速入門指南</a></li><li><a href=#zfs-zpool>19.3. <code>zpool</code> 管理</a></li><li><a href=#zfs-zfs>19.4. <code>zfs</code> 管理</a></li><li><a href=#zfs-zfs-allow>19.5. 委託管理</a></li><li><a href=#zfs-advanced>19.6. 進階主題</a></li><li><a href=#zfs-links>19.7. 其他資源</a></li><li><a href=#zfs-term>19.8. ZFS 特色與術語</a></li></ul></nav><hr><div class=resources><h3>資源</h3><ul class=contents><li><i class="fa fa-file-pdf-o" aria-hidden=true title="下載 PDF"></i><a href=https://download.freebsd.org/doc/zh-tw/books/handbook/handbook_zh-tw.pdf>下載 PDF</a></li><li><i class="fa fa-pencil-square-o" aria-hidden=true title=編輯此頁></i><a href=https://github.com/freebsd/freebsd-doc/blob/main/documentation/content/zh-tw/_index target=_blank>編輯此頁</a></li></ul></div></div></aside><a class=to-top href=#top><i class="fa fa-arrow-circle-up" aria-hidden=true></i></a></main><footer><div class=footer-container><section class=logo-column><img src=http://172.16.201.134:1313/images/FreeBSD-colors.svg width=160 height=50 alt="FreeBSD logo"><div class=options-container><div class=language-container><a id=languages href=http://172.16.201.134:1313/zh-tw/languages><img src=http://172.16.201.134:1313/images/language.png class=language-image alt=選擇語言>
+<span>繁體中文</span></a></div><div class=theme-container><select id=theme-chooser><option value=theme-system>System</option><option value=theme-light>淺色</option><option value=theme-dark>深色</option><option value=theme-high-contrast>高對比</option></select></div></div></section><section class=about-column><h3 class=column-title>About</h3><ul class=column-elements-container><li><a href=https://www.freebsd.org/about/ target=_blank class=column-element>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/ target=_blank class=column-element>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/where/ target=_blank class=column-element>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct target=_blank class=column-element>Code of Conduct</a></li><li><a href=https://www.freebsd.org/security/ target=_blank class=column-element>Security Advisories</a></li></ul></section><section class=documentation-column><h3 class=column-title>Documentation</h3><ul class=column-elements-container><li><a href=/zh-tw class=column-element>Documentation portal</a></li><li><a href=https://man.FreeBSD.org target=_blank class=column-element>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank class=column-element>Presentations and papers</a></li><li><a href=https://docs-archive.freebsd.org/doc/ target=_blank class=column-element>Previous versions</a></li><li><a href=https://docs-archive.freebsd.org/44doc/ target=_blank class=column-element>4.4BSD Documents</a></li><li><a href=https://wiki.freebsd.org/ target=_blank class=column-element>Wiki</a></li></ul></section><section class=community-column><h3 class=column-title>Community</h3><ul class=column-elements-container><li><a href=http://172.16.201.134:1313/zh-tw/articles/contributing class=column-element>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank class=column-element>Community forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank class=column-element>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank class=column-element>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank class=column-element>Bug Tracker</a></li></ul></section><section class=legal-column><h3 class=column-title>Legal</h3><ul class=column-elements-container><li><a href=https://freebsdfoundation.org/donate/ target=_blank class=column-element>Donations</a></li><li><a href=https://www.freebsd.org/copyright/freebsd-license/ target=_blank class=column-element>Licensing</a></li><li><a href=https://www.freebsd.org/privacy/ target=_blank class=column-element>Privacy Policy</a></li><li><a href=https://www.freebsd.org/copyright/ target=_blank class=column-element>Legal notices</a></li></ul></section><section class=copyright-column><p>&copy; 1994-2024 The FreeBSD Project. All rights reserved</p><span>Made with <span class=heart>♥</span> by the FreeBSD Community</span></section></div></footer></body></html>

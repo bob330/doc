@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/vim/</link><description>Recent content in Vim on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 13. Configuração do Editor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Ajustar a configuração do editor de texto pode tornar o trabalho nos arquivos da documentação mais rápido e fácil, além de ajudar os documentos a ficarem em conformidade com as diretrizes do projeto.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="editor-config-vim">13.1. Vim&lt;a class="anchor" href="#editor-config-vim">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Instale o &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/editors/vim/">editors/vim&lt;/a> e em seguida siga as instruções em &lt;a href="../editor-config/#editor-config-vim-config">Uso&lt;/a>. Usuários mais avançados podem usar um linter mais adequado como o &lt;a href="https://github.com/dense-analysis/ale">Ale&lt;/a> que também pode atuar como um &lt;a href="https://langserver.org/">Protocolo de Servidor de Idiomas&lt;/a> do Vim.&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="editor-config-vim-use">13.1.1. Uso&lt;a class="anchor" href="#editor-config-vim-use">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>Os escritores de páginas de manuais podem usar os seguintes atalhos de teclado para reformatar:&lt;/p>
+&lt;/div></description></item></channel></rss>

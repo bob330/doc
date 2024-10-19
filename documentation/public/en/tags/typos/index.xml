@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typos on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/typos/</link><description>Recent content in Typos on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/typos/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 12. Writing Style</title><link>http://172.16.201.134:1313/en/books/fdp-primer/writing-style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/writing-style/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="writing-style-tips">12.1. Tips&lt;a class="anchor" href="#writing-style-tips">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Technical documentation can be improved by consistent use of several principles.
+Most of these can be classified into three goals: &lt;em>be clear&lt;/em>, &lt;em>be complete&lt;/em>, and &lt;em>be concise&lt;/em>.
+These goals can conflict with each other.
+Good writing consists of a balance between them.&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="writing-style-be-clear">12.1.1. Be Clear&lt;a class="anchor" href="#writing-style-be-clear">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>Clarity is extremely important.
+The reader may be a novice, or reading the document in a second language.
+Strive for simple, uncomplicated text that clearly explains the concepts.&lt;/p>
+&lt;/div></description></item></channel></rss>

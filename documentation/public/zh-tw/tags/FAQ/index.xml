@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FAQ on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/FAQ/</link><description>Recent content in FAQ on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/FAQ/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD 常見問答集</title><link>http://172.16.201.134:1313/zh-tw/books/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/faq/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>摘要&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>這份文件是 FreeBSD 常見問答集 ( (FAQ) )。我們盡可能地讓這份 FAQ 提供有用的資訊。&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前言">1. 前言&lt;a class="anchor" href="#_前言">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_什麼是_freebsd">1.1. 什麼是 FreeBSD？&lt;a class="anchor" href="#_什麼是_freebsd">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>FreeBSD 是一個使用於桌機、筆電、伺服器與嵌入式系統平台的現代作業系統，支援多種&lt;a href="https://www.FreeBSD.org/platforms/">平台&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>它是根據 U.C. Berkeley 所開發出來的 &amp;#34;4.4BSD-Lite&amp;#34; ，並加上了許多 &amp;#34;4.4BSD-Lite2&amp;#34; 的增強功能。它同時也間接使用了 U.C. Berkeley 所開發出來並由 William Jolitz 移植到 i386™ 的 &amp;#34;Net/2&amp;#34;，也就是 &amp;#34;386BSD&amp;#34;，不過現在 386BSD 的程式碼只剩下極少數還留 存在 FreeBSD 中。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD 已被廣泛地被世界各地的公司行號、ISP、研究人員、電腦 專家、學生，以及家庭用戶所使用，用在工作、教育以及娛樂上。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果想看關於 FreeBSD 更深入的資料，請看 &lt;a href="https://docs.freebsd.org/en/books/handbook/">FreeBSD 使用手冊&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_發展_freebsd_計畫的目的是什麼">1.2. 發展 FreeBSD 計畫的目的是什麼？&lt;a class="anchor" href="#_發展_freebsd_計畫的目的是什麼">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>FreeBSD 計畫的目的是提供可以任意使用且沒有限制的穩定快速與一般用途的作業系統。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_freebsd_版權有任何限制嗎">1.3. FreeBSD 版權有任何限制嗎？&lt;a class="anchor" href="#_freebsd_版權有任何限制嗎">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>有的。但是這並不是限制你怎麼去使用這些程式碼，而是你怎麼看待 FreeBSD 這個計畫。可以在此閱讀 &lt;a href="https://www.FreeBSD.org/copyright/freebsd-license/"> 版權本文&lt;/a>，簡單來說總結如下:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>請勿宣稱是您寫了這個程式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果它出問題了，不要控告我們。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不要移除和修改版權&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>我們許多人在這個計畫投入很多心血，並不會介意獲得一些財務上的報酬，但是我們並沒有堅持一定要有。我們相信我們首要的&amp;#34;任務&amp;#34;是將程式碼提供給所有使用者，無論他們有任何的目的，這麼一來，這些程式碼才能被用在最多地方，也才能發揮它們最大的利益。我們相信這就是自由軟體最基本的目標之一，而且我們會盡全力去支持它。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在我們 source tree 中有部份的程式碼是採用所謂的&lt;a href="https://www.FreeBSD.org/copyright/COPYING">GNU General Public License (GPL)&lt;/a> 或 &lt;a href="https://www.FreeBSD.org/copyright/COPYING.LIB">GNU Library General Public License (LGPL)&lt;/a>版權宣告，雖然這些版權宣告是用來保障而非限制使用者的權 利，畢竟是不那麼自由了些。由於這些 GPL 的軟體在商業使用上會引起 非常複雜的版權問題，因此只要有機會，我們會盡量以採用比較鬆的 &lt;a href="https://www.FreeBSD.org/copyright/freebsd-license/">FreeBSD 版權&lt;/a> 的軟體來取代這些 GPL 版權宣告的軟體。&lt;/p>
+&lt;/div></description></item></channel></rss>

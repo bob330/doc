@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Organizations on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/organizations/</link><description>Recent content in Organizations on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/organizations/index.xml" rel="self" type="application/rss+xml"/><item><title>Contribuidores do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/contributors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/contributors/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artigo lista pessoas e organizações que fizeram alguma contribuição para o FreeBSD. Para ver a lista atual de Committers do FreeBSD você pode dar uma olhada na seguinte &lt;a href="#staff-committers">lista&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="staff-committers">1. Os Desenvolvedores do FreeBSD&lt;a class="anchor" href="#staff-committers">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Esta lista, que inclui todos os membros do Core Team, nomeia todos que têm privilégios de commit para uma ou mais das três árvores de código (doc, ports e src). Para ver os membros atuais do Core Team, você pode dar uma olhada na &lt;a href="https://www.freebsd.org/administration/#t-core">página de administração&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

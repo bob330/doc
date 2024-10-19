@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/introduction/</link><description>Recent content in Introduction on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction-devel">1.1. Developing on FreeBSD&lt;a class="anchor" href="#introduction-devel">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>So here we are.
+System all installed and you are ready to start programming.
+But where to start? What does FreeBSD provide? What can it do for me, as a programmer?&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>These are some questions which this chapter tries to answer.
+Of course, programming has different levels of proficiency like any other trade.
+For some it is a hobby, for others it is their profession.
+The information in this chapter might be aimed toward the beginning programmer;
+indeed, it could serve useful for the programmer unfamiliar with the FreeBSD platform.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/introduction/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction-synopsis">1.1. Synopsis&lt;a class="anchor" href="#introduction-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Thank you for your interest in FreeBSD! The following chapter covers various aspects of the FreeBSD Project, such as its history, goals, development model, and so on.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>How FreeBSD relates to other computer operating systems.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The history of the FreeBSD Project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The goals of the FreeBSD Project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The basics of the FreeBSD open-source development model.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>And of course: where the name &amp;#34;FreeBSD&amp;#34; comes from.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Chapter 6. Asciidoctor Primer</title><link>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Most FDP documentation is written with AsciiDoc.
+This chapter explains what that means, how to read and understand the documentation source, and the techniques used.
+To get a complete reference of the Asciidoctor capabilities please consult the &lt;a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation&lt;/a>.
+Some of the examples used in this chapter have been taken from the &lt;a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference">AsciiDoc Syntax Quick Reference&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="asciidoctor-primer-overview">6.1. Overview&lt;a class="anchor" href="#asciidoctor-primer-overview">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>In the original days of computers, electronic text was simple.
+There were a few character sets like ASCII or EBCDIC, but that was about it.
+Text was text, and what you saw really was what you got.
+No frills, no formatting, no intelligence.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="flavors-intro">7.1. An Introduction to Flavors&lt;a class="anchor" href="#flavors-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Flavors are a way to have multiple variations of a port.
+The port is built multiple times, with variations.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>For example, a port can have a normal version with many features and quite a few dependencies, and a light &amp;#34;lite&amp;#34; version with only basic features and minimal dependencies.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 8. SMPng Design Document</title><link>http://172.16.201.134:1313/en/books/arch-handbook/smp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/smp/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="smp-intro">8.1. Introduction&lt;a class="anchor" href="#smp-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This document presents the current design and implementation of the SMPng Architecture. First, the basic primitives and tools are introduced. Next, a general architecture for the FreeBSD kernel’s synchronization and execution model is laid out. Then, locking strategies for specific subsystems are discussed, documenting the approaches taken to introduce fine-grained synchronization and parallelism for each subsystem. Finally, detailed implementation notes are provided to motivate design choices, and make the reader aware of important implications involving the use of specific primitives.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="manual-pages-introduction">11.1. Introduction&lt;a class="anchor" href="#manual-pages-introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;em>Manual pages&lt;/em>, commonly shortened to &lt;em>man pages&lt;/em>, were conceived as readily-available reminders for command syntax, device driver details, or configuration file formats.
+They have become an extremely valuable quick-reference from the command line for users, system administrators, and programmers.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Although intended as reference material rather than tutorials, the EXAMPLES sections of manual pages often provide detailed use case.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Manual pages are generally shown interactively by the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=man&amp;amp;sektion=1&amp;amp;format=html">man(1)&lt;/a> command.
+When the user types &lt;code>man ls&lt;/code>, a search is performed for a manual page matching &lt;code>ls&lt;/code>.
+The first matching result is displayed.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>http://172.16.201.134:1313/en/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="uses-intro">17.1. An Introduction to &lt;code>USES&lt;/code>&lt;a class="anchor" href="#uses-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;code>USES&lt;/code> macros make it easy to declare requirements and settings for a port.
+They can add dependencies, change building behavior, add metadata to packages, and so on, all by selecting simple, preset values.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Each section in this chapter describes a possible value for &lt;code>USES&lt;/code>, along with its possible arguments.
+Arguments are appended to the value after a colon (&lt;code>:&lt;/code>).
+Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
+&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>http://172.16.201.134:1313/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>An article about configuring CUPS on FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="printing-cups">1. An Introduction to the Common Unix Printing System (CUPS)&lt;a class="anchor" href="#printing-cups">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>CUPS, the Common UNIX Printing System, provides a portable printing layer for UNIX®-based operating systems.
+It has been developed by Easy Software Products to promote a standard printing solution for all UNIX® vendors and users.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>CUPS uses the Internet Printing Protocol (IPP) as the basis for managing print jobs and queues.
+The Line Printer Daemon (LPD), Server Message Block (SMB), and AppSocket (aka JetDirect) protocols are also supported with reduced functionality.
+CUPS adds network printer browsing and PostScript Printer Description (PPD) based printing options to support real-world printing under UNIX®.
+As a result, CUPS is ideally-suited for sharing and accessing printers in mixed environments of FreeBSD, Linux®, Mac OS® X, or Windows®.&lt;/p>
+&lt;/div></description></item><item><title>For People New to Both FreeBSD and UNIX®</title><link>http://172.16.201.134:1313/en/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Congratulations on installing FreeBSD! This introduction is for people new to both FreeBSD &lt;em>and&lt;/em> UNIX®-so it starts with basics.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="in-and-out">1. Logging in and Getting Out&lt;a class="anchor" href="#in-and-out">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Log in (when you see &lt;code>login:&lt;/code>) as a user you created during installation or as &lt;code>root&lt;/code>.
+(Your FreeBSD installation will already have an account for &lt;code>root&lt;/code>;
+who can go anywhere and do anything, including deleting essential files, so be careful!)
+The symbols % and # in the following stand for the prompt (yours may be different), with % indicating an ordinary user and # indicating &lt;code>root&lt;/code>.&lt;/p>
+&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article describes the underlying principles and mechanisms of the Pluggable Authentication Modules (PAM) library, and explains how to configure PAM, how to integrate PAM into applications, and how to write PAM modules.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pam-intro">1. Introduction&lt;a class="anchor" href="#pam-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The Pluggable Authentication Modules (PAM) library is a generalized API for authentication-related services which allows a system administrator to add new authentication methods simply by installing new PAM modules, and to modify authentication policies by editing configuration files.&lt;/p>
+&lt;/div></description></item></channel></rss>

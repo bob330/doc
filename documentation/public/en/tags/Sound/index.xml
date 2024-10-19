@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sound on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Sound/</link><description>Recent content in Sound on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Sound/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 15. Sound Subsystem</title><link>http://172.16.201.134:1313/en/books/arch-handbook/sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/sound/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="oss-intro">15.1. Introduction&lt;a class="anchor" href="#oss-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The FreeBSD sound subsystem cleanly separates generic sound handling issues from device-specific ones. This makes it easier to add support for new hardware.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=pcm&amp;amp;sektion=4&amp;amp;format=html">pcm(4)&lt;/a> framework is the central piece of the sound subsystem. It mainly implements the following elements:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>A system call interface (read, write, ioctls) to digitized sound and mixer functions. The ioctl command set is compatible with the legacy &lt;em>OSS&lt;/em> or &lt;em>Voxware&lt;/em> interface, allowing common multimedia applications to be ported without modification.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Common code for processing sound data (format conversions, virtual channels).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A uniform software interface to hardware-specific audio interface modules.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Additional support for some common hardware interfaces (ac97), or shared hardware-specific code (ex: ISA DMA routines).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

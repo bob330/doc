@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Port on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/port/</link><description>Recent content in Port on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/port/index.xml" rel="self" type="application/rss+xml"/><item><title>Instrucciones para los Mentores de Ports</title><link>http://172.16.201.134:1313/es/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="port-mentor.guidelines">1. Guía para las Relaciones Mentor/Aprendiz&lt;a class="anchor" href="#port-mentor.guidelines">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Esta sección está destinada a ayudar a desmitificar el proceso de orientación (mentorship), así como a promover abiertamente una discusión constructiva para adaptar y desarrollar las directrices. En nuestras vidas tenemos demasiadas reglas; no somos una organización gubernamental que impone una regulación, sino un colectivo de personas afines que trabajan para lograr un objetivo común, manteniendo la garantía de calidad del producto que llamamos árbol de ports.&lt;/p>
+&lt;/div></description></item></channel></rss>

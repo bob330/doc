@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD Versions on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/FreeBSD-versions/</link><description>Recent content in FreeBSD Versions on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/FreeBSD-versions/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 18. __FreeBSD_version Values</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/versions/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Here is a convenient list of &lt;code>__FreeBSD_version&lt;/code> values as defined in &lt;a href="https://cgit.freebsd.org/src/tree/sys/sys/param.h">sys/param.h&lt;/a>:&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="versions-14">18.1. FreeBSD 14 Versions&lt;a class="anchor" href="#versions-14">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;table id="freebsd-versions-table-14" class="tableblock frame-none grid-all stretch">
+&lt;caption class="title">表 1. FreeBSD 14 &lt;code>__FreeBSD_version&lt;/code> Values&lt;/caption>
+&lt;colgroup>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 25%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Value&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Revision&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Date&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Release&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400000&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=a53ce3fc4938e37d5ec89304846203d2083c61a2">a53ce3fc4938&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">January 22, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400001&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=739ecbcf1c4fd22b5f6ee0bb180a67644046a3e0">739ecbcf1c4f&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">January 23, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding symlink support to lockless lookup.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400002&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=2cf84258922f306a3f84866685d2f5346f67db58">2cf84258922f&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">January 26, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after fixing a clang assertion when building the &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/devel/onetbb/">devel/onetbb&lt;/a> port.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400003&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=d386f3a3c32f0396aa7995349dd65d6c59711393">d386f3a3c32f&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">January 28, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding various LinuxKPI bits conflicting with drm-kmod.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400004&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=68f6800ce05c386ff045b4416d8595d09c4d8fdd">68f6800ce05c&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">February 8, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after kernel interfaces for dispatching cryptographic operations were changed.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400005&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=45eabf5754ac1d291bd677fdf29f59ce4bbc2c8f">45eabf5754ac&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">February 17, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing the API of &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=ptrace&amp;amp;sektion=2&amp;amp;format=html">ptrace(2)&lt;/a> &lt;code>PT_GETDBREGS&lt;/code>/&lt;code>PT_SETDBREGS&lt;/code> on arm64.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400006&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=c96151d33509655efb7fb26768cb56a041c176f1">c96151d33509&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">March 17, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=sndstat&amp;amp;sektion=4&amp;amp;format=html">sndstat(4)&lt;/a> enumeration ioctls.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400007&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=d36d6816151705907393889d661cbfd25c630ca8">d36d68161517&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">April 6, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after fixing wrong &lt;code>dlpi_tls_data&lt;/code>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400008&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=e152bbecb221a592e7dbcabe3d1170a60f0d0dfe">e152bbecb221&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">April 11, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing the internal KAPI between the krpc and NFS modules.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400009&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=9ca874cf740ee68c5742df8b5f9e20910085c011">9ca874cf740e&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">April 20, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding TCP LRO support for VLAN and VxLAN.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400010&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=a3a02acde1009f03dc78e979e051acee9f9247c2">a3a02acde100&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">April 21, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=sndstat&amp;amp;sektion=4&amp;amp;format=html">sndstat(4)&lt;/a> ioctls nvlist schema and definitions.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400015&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=d72cd275187c6399caf0ca4125292dc7e55fa478">d72cd275187c&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">May 25, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding more LinuxKPI changes needing adjustments to drm-kmod.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400016&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=21e3c1fbe2460f144f6d4dfd61c3346b2de59667">21e3c1fbe246&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">May 25, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after removing support for KTLS software backends.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400017&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=beb817edfe22cdea91e19a60c42caabd9404da48">beb817edfe22&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">May 25, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding &lt;code>crypto_cursor_segment()&lt;/code>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400018&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=a4b07a2701f568c2c0f0c0426091f1489244a92d">a4b07a2701f5&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">May 30, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after allowing the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VFS_QUOTACTL&amp;amp;sektion=9&amp;amp;format=html">VFS_QUOTACTL(9)&lt;/a> implementation to indicate busy state changes.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400019&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=37d64dcdfa519157aff9711f1f226ad7bd778f46">37d64dcdfa51&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 7, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after including &lt;code>pr_err_once()&lt;/code> in the LinuxKPI &lt;span class="filename">printk.h&lt;/span>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400020&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=8a1a42b2a7a428fb97fda9f19fd0d67a4eec7535">8a1a42b2a7a4&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 9, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding macros for &lt;code>might_lock_nested()&lt;/code> and &lt;code>lockdep_(re/un/)pin_lock()&lt;/code> to the LinuxKPI.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=b47f461c8e67253fdb394968428b760e880baa08">b47f461c8e67&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 10, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding a &lt;code>list_for_each_entry_lockless()&lt;/code> macro to the LinuxKPI.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400022&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=40cc9a3a6b81a65a03712dfd93bbed48552a97ad">40cc9a3a6b81&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 11, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after commit &lt;a href="https://cgit.freebsd.org/src/commit/?id=e1a907a25cfa422c0d1acaf9f91352ada04f4bca">e1a907a25cfa&lt;/a> changed the internal KAPI between the krpc and nfsserver modules.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400023&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=d409305fa3838fb39b38c26fc085fb729b8766d5">d409305fa383&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 13, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after upgrading llvm, clang, compiler-rt, libc++, libunwind, lld, lldb and openmp to llvmorg-12.0.0-0-gd28af7c654d8, a.k.a. 12.0.0 release.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400024&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=41dfd8bd6466fd39957dee2614d88c81cdf420a7">41dfd8bd6466&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jun 18, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after various additions to LinuxKPI.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400025&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=5fa1eb1cd927219070b5753b64114a9240d76bf8">5fa1eb1cd927&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jul 5, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after various additions to LinuxKPI.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400026&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=fad3f322efb53d4924fdda34f9f23f881659c269">fad3f322efb5&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jul 16, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing the internal KAPI between the nfscommon and nfsd modules.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400027&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=cc55ee8009a550810d38777fd6ace9abf3a2f6b4">cc55ee8009a5&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jul 28, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding out-of-line LSE atomics helpers to &lt;span class="filename">libcompiler_rt.a&lt;/span> on aarch64.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400028&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=792b602a337ddc5efaa5e5326d9433fe3da7f303">792b602a337d&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Jul 31, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after making FPU sections thread-safe in the LinuxKPI.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400029&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=245ec7651e4221043d1032fb3f82f335dc65fc7f">245ec7651e42&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Aug 5, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after adding &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=fspacectl&amp;amp;sektion=2&amp;amp;format=html">fspacectl(2)&lt;/a>, &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=vn_deallocate&amp;amp;sektion=9&amp;amp;format=html">vn_deallocate(9)&lt;/a> and &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_DEALLOCATE&amp;amp;sektion=9&amp;amp;format=html">VOP_DEALLOCATE(9)&lt;/a>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400030&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=95941b963606f6e03282cd6f866f3166dcedfa5b">95941b963606&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Aug 12, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_DEALLOCATE&amp;amp;sektion=9&amp;amp;format=html">VOP_DEALLOCATE(9)&lt;/a> parameter changes and addition of &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=fspacectl&amp;amp;sektion=2&amp;amp;format=html">fspacectl(2)&lt;/a> support to POSIX shared memory.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400031&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=1a4c5061fc5ba8f2eee41456a6873547915f268a">1a4c5061fc5b&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Aug 24, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=fspacectl&amp;amp;sektion=2&amp;amp;format=html">fspacectl(2)&lt;/a>, &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=vn_deallocate&amp;amp;sektion=9&amp;amp;format=html">vn_deallocate(9)&lt;/a> and &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_DEALLOCATE&amp;amp;sektion=9&amp;amp;format=html">VOP_DEALLOCATE(9)&lt;/a> to update rmsr.r_offset to a meaningful value.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400032&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=76321d2d432ed270d93b282e54e59b708c0cf3b4">76321d2d432e&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Aug 25, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=fspacectl&amp;amp;sektion=2&amp;amp;format=html">fspacectl(2)&lt;/a>, &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=vn_deallocate&amp;amp;sektion=9&amp;amp;format=html">vn_deallocate(9)&lt;/a> and &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_DEALLOCATE&amp;amp;sektion=9&amp;amp;format=html">VOP_DEALLOCATE(9)&lt;/a> to make calculating the number of bytes zeroed easier.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400033&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=c751d067c166db71ce8bf3a323c62ac3428bd32a">c751d067c166&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Sep 7, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after moving the socket buffer locks into the containing socket and renaming sb(un)lock to SOCK_IO_RECV_LOCK, SOCK_IO_RECV_UNLOCK, SOCK_IO_SEND_LOCK, and SOCK_IO_SEND_UNLOCK.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400034&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=c751d067c166db71ce8bf3a323c62ac3428bd32a">c751d067c166&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Sep 29, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after LinuxKPI changes.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400035&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=16f1ee11e6574d7f8d8a9dc6ebc9be3036ff9fd0">16f1ee11e657&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 4, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after splitting libtinfow from libncurses.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400036&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=ac847dbf73685a5df9f70bbcdefa9fdeb559071d">ac847dbf7368&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 6, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after extending the AES-CCM and Chacha20-Poly1305 ciphers in OCF to support multiple nonce lengths.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400037&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=2b68eb8e1dbbdaf6a0df1c83b26f5403ca52d4c3">2b68eb8e1dbb&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 11, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after removal of thread argument from &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_STAT&amp;amp;sektion=9&amp;amp;format=html">VOP_STAT(9)&lt;/a> and fo_stat.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400038&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=0d6516b453469ce1d92ec903c4c4df9ee08be0f9">0d6516b45346&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 17, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after LinuxKPI gained support of lazy BAR allocation.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400039&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=bd49c454ca62170506a98959c1acab7ad50c3276">bd49c454ca62&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 19, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after page allocator changes.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400040&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=f38bef2ce417d6270f32b4ed17cec84bfd95d548">f38bef2ce417&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Oct 30, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after libdialog shared library version number bump.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400041&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=0c276dee030b241e12e1ceb1b2ab619004f08ce1">0c276dee030b&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Nov 6, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after changing the arguments for &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=VOP_ALLOCATE&amp;amp;sektion=9&amp;amp;format=html">VOP_ALLOCATE(9)&lt;/a>.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">1400042&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://cgit.freebsd.org/src/commit/?id=20aa359773befc8182f6b5dcb5aad7390cab6c26">20aa359773be&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Nov 13, 2021&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">14.0-CURRENT after upgrading llvm, clang, compiler-rt, libc++, libunwind, lld, lldb and openmp to llvmorg-13.0.0-0-gd7b669b3a303, a.k.a. 13.0.0 release.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item></channel></rss>

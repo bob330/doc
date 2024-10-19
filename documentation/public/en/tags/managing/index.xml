@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Managing on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/managing/</link><description>Recent content in Managing on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/managing/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 17. Jails and Containers</title><link>http://172.16.201.134:1313/en/books/handbook/jails/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/jails/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="jails-synopsis">17.1. Synopsis&lt;a class="anchor" href="#jails-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Since system administration is a difficult task, many tools have been developed to make life easier for the administrator.
+These tools often enhance the way systems are installed, configured, and maintained.
+One of the tools which can be used to enhance the security of a FreeBSD system is &lt;em>jails&lt;/em>.
+Jails have been available since FreeBSD 4.X and continue to be enhanced in their usefulness, performance, reliability, and security.&lt;/p>
+&lt;/div></description></item></channel></rss>

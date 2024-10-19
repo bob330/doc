@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Filtering on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/filtering/</link><description>Recent content in Filtering on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/filtering/index.xml" rel="self" type="application/rss+xml"/><item><title>Pontes de Filtragem (Filtering Bridges)</title><link>http://172.16.201.134:1313/pt-br/articles/filtering-bridges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/filtering-bridges/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Muitas vezes é útil dividir uma rede física (como uma Ethernet) em dois segmentos separados sem precisar criar sub-redes e usar um roteador para conectá-los. O dispositivo que conecta as duas redes dessa forma é chamado de bridge. Um sistema FreeBSD com duas interfaces de rede é suficiente para atuar como uma ponte.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Uma bridge funciona analisando os endereços de nível MAC (endereços Ethernet) dos dispositivos conectados a cada uma de suas interfaces de rede e, em seguida, encaminhando o tráfego entre as duas redes apenas se a origem e o destino estiverem em segmentos diferentes. Em muitos aspectos, um bridge é semelhante a um switch Ethernet com apenas duas portas.&lt;/p>
+&lt;/div></description></item></channel></rss>

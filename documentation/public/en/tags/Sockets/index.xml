@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sockets on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Sockets/</link><description>Recent content in Sockets on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Sockets/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 7. Sockets</title><link>http://172.16.201.134:1313/en/books/developers-handbook/sockets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/sockets/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="sockets-synopsis">7.1. Synopsis&lt;a class="anchor" href="#sockets-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>BSD sockets take interprocess communications to a new level.
+It is no longer necessary for the communicating processes to run on the same machine.
+They still &lt;em>can&lt;/em>, but they do not have to.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Not only do these processes not have to run on the same machine, they do not have to run under the same operating system.
+Thanks to BSD sockets, your FreeBSD software can smoothly cooperate with a program running on a Macintosh®, another one running on a Sun™ workstation, yet another one running under Windows® 2000, all connected with an Ethernet-based local area network.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pkg on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/pkg/</link><description>Recent content in Pkg on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/pkg/index.xml" rel="self" type="application/rss+xml"/><item><title>第4章 アプリケーションのインストール - packages と ports</title><link>http://172.16.201.134:1313/ja/books/handbook/ports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/ports/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="ports-synopsis">4.1. この章では&lt;a class="anchor" href="#ports-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD の基本システムには数多くのシステムツールが含まれています。 FreeBSD は、サードパーティ製のソフトウェアの導入を支援するために、 ソースコードをコンパイルしてインストールする Ports Collection と、 コンパイル済みのバイナリをインストールする packages という相補的な 2 つの技術を提供しています。 どちらのシステムを用いても、 ローカルメディアやネットワーク上からソフトウェアをインストールできます。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章を読むと、以下のことがわかります。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>packages と ports の違い&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>FreeBSD に移植されたサードパーティ製のソフトウェアの探し方&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>pkg を用いてバイナリ package を管理する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ports Collection を用いてサードパーティ製のソフトウェアをソースコードから構築する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>インストール後の設定のために、 アプリケーションとともにインストールされたファイルを探す方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ソフトウェアのインストールに失敗した場合に、どうしたらよいか&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="ports-overview">4.2. ソフトウェアのインストール&lt;a class="anchor" href="#ports-overview">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>UNIX® システムでは、 サードパーティ製ソフトウェアの典型的なインストール手順は以下のようになります。&lt;/p>
+&lt;/div>
+&lt;div class="exampleblock procedure">
+&lt;div class="content">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>ソースコード、 またはバイナリ形式で配布されているソフトウェアを探し出し、 ダウンロードする。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配布時のフォーマットからソフトウェアを取り出す。 一般的には &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=compress&amp;amp;sektion=1&amp;amp;format=html">compress(1)&lt;/a>, &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=gzip&amp;amp;sektion=1&amp;amp;format=html">gzip(1)&lt;/a>, &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=bzip2&amp;amp;sektion=1&amp;amp;format=html">bzip2(1)&lt;/a> または、&lt;a href="https://man.freebsd.org/cgi/man.cgi?query=xz&amp;amp;sektion=1&amp;amp;format=html">xz(1)&lt;/a> といったプログラムで圧縮された tarball です。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;span class="filename">INSTALL&lt;/span> または &lt;span class="filename">README&lt;/span> ファイル、あるいは &lt;span class="filename">doc/&lt;/span> サブディレクトのファイルからドキュメントを探しだし、 ソフトウェアのインストール方法を調べる。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ソース形式でソフトウェアが配布されている場合はコンパイルを行う。 ここでは、&lt;span class="filename">Makefile&lt;/span> の編集、 または、&lt;code>configure&lt;/code> スクリプトの実行を伴うことがあります。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ソフトウェアの動作を確認し、インストールする。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD &lt;em>port&lt;/em> は、 アプリケーションをソースコードからコンパイルする際の処理を自動化するように設計されたファイルの集まりです。 port を構成するファイルは、 自動的にアプリケーションをダウンロードし、展開、パッチ作業、 コンパイル、そしてインストールを行うために必要な情報を含んでいます。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>ソフトウェアが、すでに FreeBSD に移植され、 FreeBSD 上で試験されていなければ、 適切にインストールが行われ、動作するように、 編集する必要があるかもしれません。&lt;/p>
+&lt;/div></description></item></channel></rss>

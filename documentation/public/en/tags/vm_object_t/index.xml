@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vm_object_t on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/vm_object_t/</link><description>Recent content in Vm_object_t on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/vm_object_t/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 7. Virtual Memory System</title><link>http://172.16.201.134:1313/en/books/arch-handbook/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/vm/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="vm-physmem">7.1. Management of Physical Memory &lt;code>vm_page_t&lt;/code>&lt;a class="anchor" href="#vm-physmem">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Physical memory is managed on a page-by-page basis through the &lt;code>vm_page_t&lt;/code> structure. Pages of physical memory are categorized through the placement of their respective &lt;code>vm_page_t&lt;/code> structures on one of several paging queues.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A page can be in a wired, active, inactive, cache, or free state. Except for the wired state, the page is typically placed in a doubly link list queue representing the state that it is in. Wired pages are not placed on any queue.&lt;/p>
+&lt;/div></description></item></channel></rss>

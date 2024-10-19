@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Uses on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/USES/</link><description>Recent content in Uses on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/USES/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 15. Order of Variables in Port Makefiles</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/order/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/order/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>The first sections of the &lt;span class="filename">Makefile&lt;/span> must always come in the same order.
+This standard makes it so everyone can easily read any port without having to search for variables in a random order.&lt;/p>
+&lt;/div>
+&lt;div class="admonitionblock note">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-note" title="Note">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>The sections and variables described here are mandatory in a ordinary port.
+In a slave port, many sections and variables can be skipped.&lt;/p>
+&lt;/div>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>&lt;/table>
+&lt;/div>
+&lt;div class="admonitionblock important">
+&lt;table>
+&lt;tbody>&lt;tr>
+&lt;td class="icon">
+&lt;i class="fa icon-important" title="Important">&lt;/i>
+&lt;/td>
+&lt;td class="content">
+&lt;div class="paragraph">
+&lt;p>Each following block must be separated from the previous block by a single blank line.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="uses-intro">17.1. An Introduction to &lt;code>USES&lt;/code>&lt;a class="anchor" href="#uses-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;code>USES&lt;/code> macros make it easy to declare requirements and settings for a port.
+They can add dependencies, change building behavior, add metadata to packages, and so on, all by selecting simple, preset values.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Each section in this chapter describes a possible value for &lt;code>USES&lt;/code>, along with its possible arguments.
+Arguments are appended to the value after a colon (&lt;code>:&lt;/code>).
+Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
+&lt;/div></description></item></channel></rss>

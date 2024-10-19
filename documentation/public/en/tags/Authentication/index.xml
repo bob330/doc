@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authentication on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Authentication/</link><description>Recent content in Authentication on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>LDAP Authentication</title><link>http://172.16.201.134:1313/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document is intended as a guide for the configuration of an LDAP server (principally an OpenLDAP server) for authentication on FreeBSD.
+This is useful for situations where many servers need the same user accounts, for example as a replacement for NIS.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="preface">1. Preface&lt;a class="anchor" href="#preface">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This document is intended to give the reader enough of an understanding of LDAP to configure an LDAP server.
+This document will attempt to provide an explanation of &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> and &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> for use with client machines services for use with the LDAP server.&lt;/p>
+&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article describes the underlying principles and mechanisms of the Pluggable Authentication Modules (PAM) library, and explains how to configure PAM, how to integrate PAM into applications, and how to write PAM modules.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pam-intro">1. Introduction&lt;a class="anchor" href="#pam-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The Pluggable Authentication Modules (PAM) library is a generalized API for authentication-related services which allows a system administrator to add new authentication methods simply by installing new PAM modules, and to modify authentication policies by editing configuration files.&lt;/p>
+&lt;/div></description></item></channel></rss>

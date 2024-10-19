@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Linux/</link><description>Recent content in Linux on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía Rápida de FreeBSD para Usuarios de Linux(R)</title><link>http://172.16.201.134:1313/es/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumen&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento está pensado para que usuarios intermedios y avanzados de Linux® se familiaricen rápidamente con el funcionamiento de FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introducción&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este documento resalta algunas de las diferencias técnicas entre FreeBSD y Linux® de forma que los usuarios intermedios y avanzados de Linux® se puedan familiarizar con el funcionamiento básico de FreeBSD.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este documento asume que FreeBSD ya está instalado. Consulta el capítulo &lt;a href="https://docs.freebsd.org/es/books/handbook/#bsdinstall">Instalar FreeBSD&lt;/a> del FreeBSD Handbook para obtener ayuda con el proceso de instalación.&lt;/p>
+&lt;/div></description></item></channel></rss>

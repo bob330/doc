@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Volume Manager on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Volume-Manager/</link><description>Recent content in Volume Manager on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Volume-Manager/index.xml" rel="self" type="application/rss+xml"/><item><title>The vinum Volume Manager</title><link>http://172.16.201.134:1313/en/articles/vinum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/vinum/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="vinum-synopsis">1. Synopsis&lt;a class="anchor" href="#vinum-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>No matter the type of disks, there are always potential problems.
+The disks can be too small, too slow, or too unreliable to meet the system’s requirements.
+While disks are getting bigger, so are data storage requirements.
+Often a file system is needed that is bigger than a disk’s capacity.
+Various solutions to these problems have been proposed and implemented.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>One method is through the use of multiple, and sometimes redundant, disks.
+In addition to supporting various cards and controllers for hardware Redundant Array of Independent Disks RAID systems, the base FreeBSD system includes the &lt;span class="filename">vinum&lt;/span> volume manager, a block device driver that implements virtual disk drives and addresses these three problems.
+&lt;span class="filename">vinum&lt;/span> provides more flexibility, performance, and reliability than traditional disk storage and implements &lt;code>RAID&lt;/code>-0, &lt;code>RAID&lt;/code>-1, and &lt;code>RAID&lt;/code>-5 models, both individually and in combination.&lt;/p>
+&lt;/div></description></item></channel></rss>

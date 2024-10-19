@@ -1,0 +1,958 @@
+<!doctype html><html class=theme-light lang=en><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Bootstrapping and Kernel Initialization"><meta name=keywords content="boot,BIOS,kernel,MBR,FreeBSD"><meta name=copyright content="1995-2024 The FreeBSD Foundation"><link rel=canonical href=http://172.16.201.134:1313/en/books/arch-handbook/boot/><title>Chapter 1. Bootstrapping and Kernel Initialization | FreeBSD Documentation Portal</title>
+<meta name=theme-color content="#790000"><meta name=color-scheme content="system light dark high-contrast"><link rel="shortcut icon" href=http://172.16.201.134:1313/favicon.ico><link rel=stylesheet href=http://172.16.201.134:1313/styles/main.min.css><link rel=stylesheet href=http://172.16.201.134:1313/css/font-awesome-min.css><script defer src=/js/theme-chooser.min.js></script><script defer src=/js/copy-clipboard.min.js></script><script defer src=/js/search.min.js></script><meta name=twitter:card content="summary"><meta name=twitter:domain content="docs.FreeBSD.org"><meta name=twitter:site content="@freebsd"><meta name=twitter:url content="https://twitter.com/freebsd"><meta property="og:title" content="Chapter 1. Bootstrapping and Kernel Initialization"><meta property="og:description" content="Bootstrapping and Kernel Initialization"><meta property="og:type" content="website"><meta property="og:image" content="http://172.16.201.134:1313/favicon.ico"><meta property="og:image:alt" content="FreeBSD Logo"><meta property="og:locale" content="en"><meta property="og:url" content="http://172.16.201.134:1313/en/books/arch-handbook/boot/"><meta property="og:site_name" content="FreeBSD Documentation Portal"><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","url":"http:\/\/172.16.201.134:1313\/en\/books\/arch-handbook\/boot\/","name":"FreeBSD Documentation Portal","headline":"FreeBSD Documentation Portal","description":"FreeBSD Documentation Portal"}</script></head><body><header><div class=header-container><div class=logo-menu-bars-container><a href=https://www.FreeBSD.org class=logo><img src=http://172.16.201.134:1313/images/FreeBSD-monochromatic.svg width=160 height=50 alt="FreeBSD logo">
+</a><label class=menu-bars for=menu-bars><i class="fa fa-bars" aria-hidden=true></i></label></div><input id=menu-bars type=checkbox><nav><ul class=menu><li class=menu-item><input id=about type=checkbox>
+<a href=# aria-label="Navigate to About section"><label class=menu-item-description for=about>About
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/about/ target=_blank>About</a></li><li><a href=https://www.freebsd.org/about/ target=_blank>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/about-us/about-the-foundation/ target=_blank>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct/ target=_blank>Code of Conduct</a></li></ul></li><li class=menu-item><input id=download type=checkbox>
+<a href=# aria-label="Navigate to get FreeBSD section"><label class=menu-item-description for=download>Get FreeBSD
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/where/ target=_blank>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/releases/ target=_blank>Release Information</a></li><li><a href=https://www.freebsd.org/releng/ target=_blank>Release Engineering</a></li><li><a href=https://www.freebsd.org/security/ target=_blank>Security Advisories</a></li></ul></li><li class=menu-item><input id=documentation type=checkbox>
+<a href=# aria-label="Navigate to get Documentation section"><label class=menu-item-description for=documentation>Documentation
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=/en>Documentation portal</a></li><li><a href=http://172.16.201.134:1313/en/books/handbook>FreeBSD Handbook</a></li><li><a href=http://172.16.201.134:1313/en/books/porters-handbook>Porter's Handbook</a></li><li><a href=https://docs.FreeBSD.org/en/books/fdp-primer>Documentation Project Handbook</a></li><li><a href=https://man.FreeBSD.org target=_blank>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank>Presentations and papers</a></li><li><a href=https://wiki.FreeBSD.org target=_blank>Wiki</a></li><li><a href=http://172.16.201.134:1313/en/books>Books</a></li><li><a href=http://172.16.201.134:1313/en/articles>Articles</a></li></ul></li><li class=menu-item><input id=community type=checkbox>
+<a href=# aria-label="Navigate to get Community section"><label class=menu-item-description for=community>Community
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/community/>Community</a></li><li><a href=http://172.16.201.134:1313/en/articles/contributing>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank>Forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank>Bug Tracker</a></li><li><a href=https://www.freebsd.org/support/ target=_blank>Support</a></li></ul></li></ul></nav><div class=search-donate-container><form class=search method=get id=search-header-form action=https://docs.freebsd.org/search name=search-header-form><input type=hidden name=DB value=en>
+<input id=words name=P type=text size=20 maxlength=255>
+<button>
+<i class="fa fa-search" aria-hidden=true></i></button></form><div class=donate><a href=https://freebsdfoundation.org/donate/ target=_blank><span class=heart>♥</span>
+Donate</a></div></div></div></header><input type=checkbox class="hidden toggle" id=menu-control><main class=main-wrapper-book><a id=top></a><aside class=book-menu><div class=book-menu-content><input id=search-book type=text placeholder=Search aria-label=Search maxlength=128><nav id=MenuContents><ul><li><input type=checkbox id=chapter-6dcd22d99f78db2a9aacae23be13866e class=toggle>
+<label for=chapter-6dcd22d99f78db2a9aacae23be13866e><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/parti/>Part I. Kernel</a></li><li><input type=checkbox id=chapter-9cc61bc35df69063dc03a5911e1ad9c9 class=toggle checked>
+<label class="icon cursor" for=chapter-9cc61bc35df69063dc03a5911e1ad9c9><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/>Chapter 1. Bootstrapping and Kernel Initialization</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-synopsis>1.1. Synopsis</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-overview>1.2. Overview</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-bios>1.3. The BIOS</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-boot0>1.4. The Master Boot Record (<code>boot0</code>)</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-boot1>1.5. <code>boot1</code> Stage</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#btx-server>1.6. The BTX Server</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot2>1.7. boot2 Stage</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-loader>1.8. loader Stage</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/boot/#boot-kernel>1.9. Kernel Initialization</a></li></ul></li><li><input type=checkbox id=chapter-3a651b0a4b9f6238336624d3c0fa5187 class=toggle>
+<label class="icon cursor" for=chapter-3a651b0a4b9f6238336624d3c0fa5187><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/locking/>Chapter 2. Locking Notes</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/locking/#locking-mutexes>2.1. Mutexes</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/locking/#locking-sx>2.2. Shared Exclusive Locks</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/locking/#locking-atomic>2.3. Atomically Protected Variables</a></li></ul></li><li><input type=checkbox id=chapter-bf0b823c107a80f3035dfd6fae09d023 class=toggle>
+<label class="icon cursor" for=chapter-bf0b823c107a80f3035dfd6fae09d023><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/kobj/>Chapter 3. Kernel Objects</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/kobj/#kernel-objects-term>3.1. Terminology</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/kobj/#kernel-objects-operation>3.2. Kobj Operation</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/kobj/#kernel-objects-using>3.3. Using Kobj</a></li></ul></li><li><input type=checkbox id=chapter-41dab1afed6cf3ffa54628db4227e196 class=toggle>
+<label class="icon cursor" for=chapter-41dab1afed6cf3ffa54628db4227e196><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/jail/>Chapter 4. The Jail Subsystem</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/jail/#jail-arch>4.1. Architecture</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/jail/#jail-restrictions>4.2. Restrictions</a></li></ul></li><li><input type=checkbox id=chapter-e7d9ebcb448b0045179ebe22f8e2e9d8 class=toggle>
+<label class="icon cursor" for=chapter-e7d9ebcb448b0045179ebe22f8e2e9d8><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/sysinit/>Chapter 5. The SYSINIT Framework</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sysinit/#sysinit-term>5.1. Terminology</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sysinit/#sysinit-operation>5.2. SYSINIT Operation</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sysinit/#sysinit-using>5.3. Using SYSINIT</a></li></ul></li><li><input type=checkbox id=chapter-8b57b16ba53538421a8fb2152b25976f class=toggle>
+<label class="icon cursor" for=chapter-8b57b16ba53538421a8fb2152b25976f><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/>Chapter 6. The TrustedBSD MAC Framework</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-copyright>6.1. MAC Documentation Copyright</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-synopsis>6.2. Synopsis</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-introduction>6.3. Introduction</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-background>6.4. Policy Background</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-framework-kernel-arch>6.5. MAC Framework Kernel Architecture</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-policy-architecture>6.6. MAC Policy Architecture</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-entry-point-reference>6.7. MAC Policy Entry Point Reference</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-userland-arch>6.8. Userland Architecture</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/mac/#mac-conclusion>6.9. Conclusion</a></li></ul></li><li><input type=checkbox id=chapter-28609916419208e3a19d240cf7593906 class=toggle>
+<label class="icon cursor" for=chapter-28609916419208e3a19d240cf7593906><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/>Chapter 7. Virtual Memory System</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-physmem>7.1. Management of Physical Memory <code>vm_page_t</code></a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-cache>7.2. The Unified Buffer Cache <code>vm_object_t</code></a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-fileio>7.3. Filesystem I/O <code>struct buf</code></a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-pagetables>7.4. Mapping Page Tables <code>vm_map_t, vm_entry_t</code></a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-kvm>7.5. KVM Memory Mapping</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/vm/#vm-tuning>7.6. Tuning the FreeBSD VM System</a></li></ul></li><li><input type=checkbox id=chapter-716edd44e8ad22ea57cdf273d2578872 class=toggle>
+<label class="icon cursor" for=chapter-716edd44e8ad22ea57cdf273d2578872><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/>Chapter 8. SMPng Design Document</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-intro>8.1. Introduction</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-lock-fundamentals>8.2. Basic Tools and Locking Fundamentals</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-design>8.3. General Architecture and Design</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-lock-strategies>8.4. Specific Locking Strategies</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-implementation-notes>8.5. Implementation Notes</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-misc>8.6. Miscellaneous Topics</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/smp/#smp-glossary>Glossary</a></li></ul></li><li><input type=checkbox id=chapter-448f803e40f97b1ff8336db9ba637745 class=toggle>
+<label for=chapter-448f803e40f97b1ff8336db9ba637745><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/partii/>Part II. Device Drivers</a></li><li><input type=checkbox id=chapter-6971d35b0bbe2a0bdb005a02546cd580 class=toggle>
+<label class="icon cursor" for=chapter-6971d35b0bbe2a0bdb005a02546cd580><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/>Chapter 9. Writing FreeBSD Device Drivers</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/#driverbasics-intro>9.1. Introduction</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/#driverbasics-kld>9.2. Dynamic Kernel Linker Facility - KLD</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/#driverbasics-char>9.3. Character Devices</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/#driverbasics-block>9.4. Block Devices (Are Gone)</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/driverbasics/#driverbasics-net>9.5. Network Drivers</a></li></ul></li><li><input type=checkbox id=chapter-9cc7968be065b256e57086439d93e9a4 class=toggle>
+<label class="icon cursor" for=chapter-9cc7968be065b256e57086439d93e9a4><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/>Chapter 10. ISA Device Drivers</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-synopsis>10.1. Synopsis</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-basics>10.2. Basic Information</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-device-t>10.3. <code>device_t</code> Pointer</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-config>10.4. Configuration File and the Order of Identifying and Probing During Auto-Configuration</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-resources>10.5. Resources</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-busmem>10.6. Bus Memory Mapping</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-dma>10.7. DMA</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-probe>10.8. xxx_isa_probe</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-attach>10.9. xxx_isa_attach</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-detach>10.10. xxx_isa_detach</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-shutdown>10.11. xxx_isa_shutdown</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/isa/#isa-driver-intr>10.12. xxx_intr</a></li></ul></li><li><input type=checkbox id=chapter-0b427d421e89aa3107f62d5b70f6a0f2 class=toggle>
+<label class="icon cursor" for=chapter-0b427d421e89aa3107f62d5b70f6a0f2><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/pci/>Chapter 11. PCI Devices</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/pci/#pci-probe>11.1. Probe and Attach</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/pci/#pci-bus>11.2. Bus Resources</a></li></ul></li><li><input type=checkbox id=chapter-0b7eb8d45a0ea6bc9c2882e903b93959 class=toggle>
+<label class="icon cursor" for=chapter-0b7eb8d45a0ea6bc9c2882e903b93959><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/>Chapter 12. Common Access Method SCSI Controllers</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-synopsis>12.1. Synopsis</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-general>12.2. General Architecture</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#_globals_and_boilerplate>12.3. Globals and Boilerplate</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#_device_configuration_xxx_attach>12.4. Device configuration: xxx_attach</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#_processing_cam_messages_xxx_action>12.5. Processing CAM messages: xxx_action</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-polling>12.6. Polling xxx_poll</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-async>12.7. Asynchronous Events</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-interrupts>12.8. Interrupts</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-errors>12.9. Errors Summary</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/scsi/#scsi-timeout>12.10. Timeout Handling</a></li></ul></li><li><input type=checkbox id=chapter-bdaa4909dfbdcec8d7be976fd87cb00e class=toggle>
+<label class="icon cursor" for=chapter-bdaa4909dfbdcec8d7be976fd87cb00e><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/>Chapter 13. USB Devices</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/#usb-intro>13.1. Introduction</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/#usb-hc>13.2. Host Controllers</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/#usb-dev>13.3. USB Device Information</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/#usb-devprobe>13.4. Device Probe and Attach</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/usb/#usb-protocol>13.5. USB Drivers Protocol Information</a></li></ul></li><li><input type=checkbox id=chapter-5fc5c179f5014d968a5c8feec7e10e59 class=toggle>
+<label class="icon cursor" for=chapter-5fc5c179f5014d968a5c8feec7e10e59><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/newbus/>Chapter 14. Newbus</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/newbus/#newbus-devdrivers>14.1. Device Drivers</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/newbus/#newbus-overview>14.2. Overview of Newbus</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/newbus/#newbus-api>14.3. Newbus API</a></li></ul></li><li><input type=checkbox id=chapter-7d3796cced00105c77e7f87e84edd73b class=toggle>
+<label class="icon cursor" for=chapter-7d3796cced00105c77e7f87e84edd73b><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/sound/>Chapter 15. Sound Subsystem</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sound/#oss-intro>15.1. Introduction</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sound/#oss-files>15.2. Files</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sound/#pcm-probe-and-attach>15.3. Probing, Attaching, etc.</a></li><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/sound/#oss-interfaces>15.4. Interfaces</a></li></ul></li><li><input type=checkbox id=chapter-41c74c3e72fcf5116f6d999c36ef185b class=toggle>
+<label class="icon cursor" for=chapter-41c74c3e72fcf5116f6d999c36ef185b><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/pccard/>Chapter 16. PC Card</a><ul><li><a href=http://172.16.201.134:1313/en/books/arch-handbook/pccard/#pccard-adddev>16.1. Adding a Device</a></li></ul></li><li><input type=checkbox id=chapter-2a7cf37011599a8e3d62d1e3008c3c5d class=toggle>
+<label for=chapter-2a7cf37011599a8e3d62d1e3008c3c5d><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/partiii/>Part III. Appendices</a></li><li><input type=checkbox id=chapter-d4c82056f0235da9fde0d29203d44f9a class=toggle>
+<label for=chapter-d4c82056f0235da9fde0d29203d44f9a><a role=button></a></label><a href=http://172.16.201.134:1313/en/books/arch-handbook/bibliography/>Bibliography</a></li><li></li></ul></nav></div></aside><div class=book><div class=book-menu-mobile><label for=menu-control><span class=menu-control-button><i class="fa fa-list" aria-hidden=true title="Book menu"></i>
+Book menu</span></label></div><h1 class=title>Chapter 1. Bootstrapping and Kernel Initialization</h1><div class=toc-mobile><h3>Table of Contents</h3><nav id=TableOfContents><ul><li><a href=#boot-synopsis>1.1. Synopsis</a></li><li><a href=#boot-overview>1.2. Overview</a></li><li><a href=#boot-bios>1.3. The BIOS</a></li><li><a href=#boot-boot0>1.4. The Master Boot Record (<code>boot0</code>)</a></li><li><a href=#boot-boot1>1.5. <code>boot1</code> Stage</a></li><li><a href=#btx-server>1.6. The BTX Server</a></li><li><a href=#boot2>1.7. boot2 Stage</a></li><li><a href=#boot-loader>1.8. loader Stage</a></li><li><a href=#boot-kernel>1.9. Kernel Initialization</a></li></ul></nav></div><div class=book-content><div id=preamble><div class=sectionbody></div></div><div class=sect1><h2 id=boot-synopsis>1.1. Synopsis<a class=anchor href=#boot-synopsis></a></h2><div class=sectionbody><div class=paragraph><p>This chapter is an overview of the boot and system initialization processes, starting from the BIOS (firmware) POST, to the first user process creation.
+Since the initial steps of system startup are very architecture dependent, the IA-32 architecture is used as an example.
+But the AMD64 and ARM64 architectures are much more important and compelling examples and should be explained in the near future according to the topic of this document.</p></div><div class=paragraph><p>The FreeBSD boot process can be surprisingly complex.
+After control is passed from the BIOS, a considerable amount of low-level configuration must be done before the kernel can be loaded and executed.
+This setup must be done in a simple and flexible manner, allowing the user a great deal of customization possibilities.</p></div></div></div><div class=sect1><h2 id=boot-overview>1.2. Overview<a class=anchor href=#boot-overview></a></h2><div class=sectionbody><div class=paragraph><p>The boot process is an extremely machine-dependent activity.
+Not only must code be written for every computer architecture, but there may also be multiple types of booting on the same architecture.
+For example, a directory listing of <span class=filename>stand</span> reveals a great amount of architecture-dependent code.
+There is a directory for each of the various supported architectures.
+FreeBSD supports the CSM boot standard (Compatibility Support Module).
+So CSM is supported (with both GPT and MBR partitioning support) and UEFI booting (GPT is totally supported, MBR is mostly supported).
+It also supports loading files from ext2fs, MSDOS, UFS and ZFS.
+FreeBSD also supports the boot environment feature of ZFS which allows the HOST OS to communicate details about what to boot that go beyond a simple partition as was possible in the past.
+But UEFI is more relevant than the CSM these days.
+The example that follows shows booting an x86 computer from an MBR-partitioned hard drive with the FreeBSD <span class=filename>boot0</span> multi-boot loader stored in the very first sector.
+That boot code starts the FreeBSD three-stage boot process.</p></div><div class=paragraph><p>The key to understanding this process is that it is a series of stages of increasing complexity.
+These stages are <span class=filename>boot1</span>, <span class=filename>boot2</span>, and <span class=filename>loader</span> (see <a href="https://man.freebsd.org/cgi/man.cgi?query=boot&amp;sektion=8&amp;format=html">boot(8)</a> for more detail).
+The boot system executes each stage in sequence.
+The last stage, <span class=filename>loader</span>, is responsible for loading the FreeBSD kernel.
+Each stage is examined in the following sections.</p></div><div class=paragraph><p>Here is an example of the output generated by the different boot stages.
+Actual output may differ from machine to machine:</p></div><table class="tableblock frame-none grid-all stretch informaltable"><col style=width:20%><col style=width:80%><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock><strong>FreeBSD Component</strong></p></td><td class="tableblock halign-left valign-top"><p class=tableblock><strong>Output (may vary)</strong></p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>boot0</code></p></td><td class="tableblock halign-left valign-top"><div class=content><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash>F1    FreeBSD
+F2    BSD
+F5    Disk 2</code></pre></div></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>boot2</code> <sup class=footnote>[<a id=_footnoteref_1 class=footnote href=#_footnotedef_1 title="View footnote.">1</a>]</sup></p></td><td class="tableblock halign-left valign-top"><div class=content><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash><span class=o>&gt;&gt;</span>FreeBSD/x86 BOOT
+Default: 0:ad<span class=o>(</span>0p4<span class=o>)</span>/boot/loader
+boot:</code></pre></div></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock><span class=filename>loader</span></p></td><td class="tableblock halign-left valign-top"><div class=content><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash>BTX loader 1.00 BTX version is 1.02
+Consoles: internal video/keyboard
+BIOS drive C: is disk0
+BIOS 639kB/2096064kB available memory
+
+FreeBSD/x86 bootstrap loader, Revision 1.1
+Console internal video/keyboard
+<span class=o>(</span>root@releng1.nyi.freebsd.org, Fri Apr  9 04:04:45 UTC 2021<span class=o>)</span>
+Loading /boot/defaults/loader.conf
+/boot/kernel/kernel <span class=nv>text</span><span class=o>=</span>0xed9008 <span class=nv>data</span><span class=o>=</span>0x117d28+0x176650 <span class=nv>syms</span><span class=o>=[</span>0x8+0x137988+0x8+0x1515f8]</code></pre></div></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock>kernel</p></td><td class="tableblock halign-left valign-top"><div class=content><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash>Copyright <span class=o>(</span>c<span class=o>)</span> 1992-2021 The FreeBSD Project.
+Copyright <span class=o>(</span>c<span class=o>)</span> 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+        The Regents of the University of California. All rights reserved.
+FreeBSD is a registered trademark of The FreeBSD Foundation.
+FreeBSD 13.0-RELEASE 0 releng/13.0-n244733-ea31abc261f: Fri Apr  9 04:04:45 UTC 2021
+    root@releng1.nyi.freebsd.org:/usr/obj/usr/src/i386.i386/sys/GENERIC i386
+FreeBSD clang version 11.0.1 <span class=o>(</span>git@github.com:llvm/llvm-project.git llvmorg-11.0.1-0-g43ff75f2c3fe<span class=o>)</span></code></pre></div></div></div></td></tr></tbody></table></div></div><div class=sect1><h2 id=boot-bios>1.3. The BIOS<a class=anchor href=#boot-bios></a></h2><div class=sectionbody><div class=paragraph><p>When the computer powers on, the processor’s registers are set to some predefined values.
+One of the registers is the <em>instruction pointer</em> register, and its value after a power on is well defined: it is a 32-bit value of <code>0xfffffff0</code>.
+The instruction pointer register (also known as the Program Counter) points to code to be executed by the processor.
+Another important register is the <code>cr0</code> 32-bit control register, and its value just after a reboot is <code>0</code>.
+One of <code>cr0</code>'s bits, the PE (Protection Enabled) bit, indicates whether the processor is running in 32-bit protected mode or 16-bit real mode.
+Since this bit is cleared at boot time, the processor boots in 16-bit real mode.
+Real mode means, among other things, that linear and physical addresses are identical.
+The reason for the processor not to start immediately in 32-bit protected mode is backwards compatibility.
+In particular, the boot process relies on the services provided by the BIOS, and the BIOS itself works in legacy, 16-bit code.</p></div><div class=paragraph><p>The value of <code>0xfffffff0</code> is slightly less than 4 GB, so unless the machine has 4 GB of physical memory, it cannot point to a valid memory address.
+The computer’s hardware translates this address so that it points to a BIOS memory block.</p></div><div class=paragraph><p>The BIOS (Basic Input Output System) is a chip on the motherboard that has a relatively small amount of read-only memory (ROM).
+This memory contains various low-level routines that are specific to the hardware supplied with the motherboard.
+The processor will first jump to the address 0xfffffff0, which really resides in the BIOS’s memory.
+Usually this address contains a jump instruction to the BIOS’s POST routines.</p></div><div class=paragraph><p>The POST (Power On Self Test) is a set of routines including the memory check, system bus check, and other low-level initialization so the CPU can set up the computer properly.
+The important step of this stage is determining the boot device.
+Modern BIOS implementations permit the selection of a boot device, allowing booting from a floppy, CD-ROM, hard disk, or other devices.</p></div><div class=paragraph><p>The very last thing in the POST is the <code>INT 0x19</code> instruction.
+The <code>INT 0x19</code> handler reads 512 bytes from the first sector of boot device into the memory at address <code>0x7c00</code>.
+The term <em>first sector</em> originates from hard drive architecture, where the magnetic plate is divided into a number of cylindrical tracks.
+Tracks are numbered, and every track is divided into a number (usually 64) of sectors.
+Track numbers start at 0, but sector numbers start from 1.
+Track 0 is the outermost on the magnetic plate, and sector 1, the first sector, has a special purpose.
+It is also called the MBR, or Master Boot Record.
+The remaining sectors on the first track are never used.</p></div><div class=paragraph><p>This sector is our boot-sequence starting point.
+As we will see, this sector contains a copy of our <span class=filename>boot0</span> program.
+A jump is made by the BIOS to address <code>0x7c00</code> so it starts executing.</p></div></div></div><div class=sect1><h2 id=boot-boot0>1.4. The Master Boot Record (<code>boot0</code>)<a class=anchor href=#boot-boot0></a></h2><div class=sectionbody><div class=paragraph><p>After control is received from the BIOS at memory address <code>0x7c00</code>, <span class=filename>boot0</span> starts executing.
+It is the first piece of code under FreeBSD control.
+The task of <span class=filename>boot0</span> is quite simple: scan the partition table and let the user choose which partition to boot from.
+The Partition Table is a special, standard data structure embedded in the MBR (hence embedded in <span class=filename>boot0</span>) describing the four standard PC "partitions".
+<span class=filename>boot0</span> resides in the filesystem as <span class=filename>/boot/boot0</span>.
+It is a small 512-byte file, and it is exactly what FreeBSD’s installation procedure wrote to the hard disk’s MBR if you chose the "bootmanager" option at installation time.
+Indeed, <span class=filename>boot0</span> <em>is</em> the MBR.</p></div><div class=paragraph><p>As mentioned previously, we’re calling the BIOS <code>INT 0x19</code> to load the MBR (<span class=filename>boot0</span>) into memory at address <code>0x7c00</code>.
+The source file for <span class=filename>boot0</span> can be found in <span class=filename>stand/i386/boot0/boot0.S</span> - which is an awesome piece of code written by Robert Nordier.</p></div><div class=paragraph><p>A special structure starting from offset <code>0x1be</code> in the MBR is called the <em>partition table</em>.
+It has four records of 16 bytes each, called <em>partition records</em>, which represent how the hard disk is partitioned, or, in FreeBSD’s terminology, sliced.
+One byte of those 16 says whether a partition (slice) is bootable or not.
+Exactly one record must have that flag set, otherwise <span class=filename>boot0</span>'s code will refuse to proceed.</p></div><div class=paragraph><p>A partition record has the following fields:</p></div><div class=ulist><ul><li><p>the 1-byte filesystem type</p></li><li><p>the 1-byte bootable flag</p></li><li><p>the 6 byte descriptor in CHS format</p></li><li><p>the 8 byte descriptor in LBA format</p></li></ul></div><div class=paragraph><p>A partition record descriptor contains information about where exactly the partition resides on the drive.
+Both descriptors, LBA and CHS, describe the same information, but in different ways: LBA (Logical Block Addressing) has the starting sector for the partition and the partition’s length, while CHS (Cylinder Head Sector) has coordinates for the first and last sectors of the partition.
+The partition table ends with the special signature <code>0xaa55</code>.</p></div><div class=paragraph><p>The MBR must fit into 512 bytes, a single disk sector.
+This program uses low-level "tricks" like taking advantage of the side effects of certain instructions and reusing register values from previous operations to make the most out of the fewest possible instructions.
+Care must also be taken when handling the partition table, which is embedded in the MBR itself.
+For these reasons, be very careful when modifying <span class=filename>boot0.S</span>.</p></div><div class=paragraph><p>Note that the <span class=filename>boot0.S</span> source file is assembled "as is": instructions are translated one by one to binary, with no additional information (no ELF file format, for example).
+This kind of low-level control is achieved at link time through special control flags passed to the linker.
+For example, the text section of the program is set to be located at address <code>0x600</code>.
+In practice this means that <span class=filename>boot0</span> must be loaded to memory address <code>0x600</code> in order to function properly.</p></div><div class=paragraph><p>It is worth looking at the <span class=filename>Makefile</span> for <span class=filename>boot0</span> (<span class=filename>stand/i386/boot0/Makefile</span>), as it defines some of the run-time behavior of <span class=filename>boot0</span>.
+For instance, if a terminal connected to the serial port (COM1) is used for I/O, the macro <code>SIO</code> must be defined (<code>-DSIO</code>).
+<code>-DPXE</code> enables boot through PXE by pressing <kbd>F6</kbd>.
+Additionally, the program defines a set of <em>flags</em> that allow further modification of its behavior.
+All of this is illustrated in the <span class=filename>Makefile</span>.
+For example, look at the linker directives which command the linker to start the text section at address <code>0x600</code>, and to build the output file "as is" (strip out any file formatting):</p></div><div class="literalblock programlisting"><div class=content><pre>      BOOT_BOOT0_ORG?=0x600
+      ORG=${BOOT_BOOT0_ORG}</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/Makefile</span> <a id=boot-boot0-makefile-as-is></a></div><p>Let us now start our study of the MBR, or <span class=filename>boot0</span>, starting where execution begins.</p></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>Some modifications have been made to some instructions in favor of better exposition.
+For example, some macros are expanded, and some macro tests are omitted when the result of the test is known.
+This applies to all of the code examples shown.</p></div></td></tr></tbody></table></div><div class="literalblock programlisting"><div class=content><pre>start:
+      cld			# String ops inc
+      xorw %ax,%ax		# Zero
+      movw %ax,%es		# Address
+      movw %ax,%ds		#  data
+      movw %ax,%ss		# Set up
+      movw $LOAD,%sp		#  stack</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-entrypoint></a></div><p>This first block of code is the entry point of the program.
+It is where the BIOS transfers control.
+First, it makes sure that the string operations autoincrement its pointer operands (the <code>cld</code> instruction) <sup class=footnote>[<a id=_footnoteref_2 class=footnote href=#_footnotedef_2 title="View footnote.">2</a>]</sup>.
+Then, as it makes no assumption about the state of the segment registers, it initializes them.
+Finally, it sets the stack pointer register (<code>%sp</code>) to ($LOAD = address <code>0x7c00</code>), so we have a working stack.</p></div><div class=paragraph><p>The next block is responsible for the relocation and subsequent jump to the relocated code.</p></div><div class="literalblock programlisting"><div class=content><pre>      movw %sp,%si     # Source
+      movw $start,%di		# Destination
+      movw $0x100,%cx		# Word count
+      rep			# Relocate
+      movsw			#  code
+      movw %di,%bp		# Address variables
+      movb $0x8,%cl		# Words to clear
+      rep			# Zero
+      stosw			#  them
+      incb -0xe(%di)		# Set the S field to 1
+      jmp main-LOAD+ORIGIN	# Jump to relocated code</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-relocation></a></div><p>As <span class=filename>boot0</span> is loaded by the BIOS to address <code>0x7C00</code>, it copies itself to address <code>0x600</code> and then transfers control there (recall that it was linked to execute at address <code>0x600</code>).
+The source address, <code>0x7c00</code>, is copied to register <code>%si</code>.
+The destination address, <code>0x600</code>, to register <code>%di</code>.
+The number of words to copy, <code>256</code> (the program’s size = 512 bytes), is copied to register <code>%cx</code>.
+Next, the <code>rep</code> instruction repeats the instruction that follows, that is, <code>movsw</code>, the number of times dictated by the <code>%cx</code> register.
+The <code>movsw</code> instruction copies the word pointed to by <code>%si</code> to the address pointed to by <code>%di</code>.
+This is repeated another 255 times.
+On each repetition, both the source and destination registers, <code>%si</code> and <code>%di</code>, are incremented by one.
+Thus, upon completion of the 256-word (512-byte) copy, <code>%di</code> has the value <code>0x600</code>`512`= `0x800`, and `%si` has the value `0x7c00`<code>512</code>= <code>0x7e00</code>; we have thus completed the code <em>relocation</em>.
+Since the last update of this document, the copy instructions have changed in the code, so instead of the movsb and stosb, movsw and stosw have been introduced, which copy 2 bytes(1 word) in one iteration.</p></div><div class=paragraph><p>Next, the destination register <code>%di</code> is copied to <code>%bp</code>.
+<code>%bp</code> gets the value <code>0x800</code>.
+The value <code>8</code> is copied to <code>%cl</code> in preparation for a new string operation (like our previous <code>movsw</code>).
+Now, <code>stosw</code> is executed 8 times.
+This instruction copies a <code>0</code> value to the address pointed to by the destination register (<code>%di</code>, which is <code>0x800</code>), and increments it.
+This is repeated another 7 times, so <code>%di</code> ends up with value <code>0x810</code>.
+Effectively, this clears the address range <code>0x800</code>-<code>0x80f</code>.
+This range is used as a (fake) partition table for writing the MBR back to disk.
+Finally, the sector field for the CHS addressing of this fake partition is given the value 1 and a jump is made to the main function from the relocated code.
+Note that until this jump to the relocated code, any reference to an absolute address was avoided.</p></div><div class=paragraph><p>The following code block tests whether the drive number provided by the BIOS should be used, or the one stored in <span class=filename>boot0</span>.</p></div><div class="literalblock programlisting"><div class=content><pre>main:
+      testb $SETDRV,_FLAGS(%bp)	# Set drive number?
+#ifndef CHECK_DRIVE	/* disable drive checks */
+      jz save_curdrive		# no, use the default
+#else
+      jnz disable_update	# Yes
+      testb %dl,%dl		# Drive number valid?
+      js save_curdrive		# Possibly (0x80 set)
+#endif</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-drivenumber></a></div><p>This code tests the <code>SETDRV</code> bit (<code>0x20</code>) in the <em>flags</em> variable.
+Recall that register <code>%bp</code> points to address location <code>0x800</code>, so the test is done to the <em>flags</em> variable at address <code>0x800</code>-<code>69</code>= <code>0x7bb</code>.
+This is an example of the type of modifications that can be done to <span class=filename>boot0</span>.
+The <code>SETDRV</code> flag is not set by default, but it can be set in the <span class=filename>Makefile</span>.
+When set, the drive number stored in the MBR is used instead of the one provided by the BIOS.
+We assume the defaults, and that the BIOS provided a valid drive number, so we jump to <code>save_curdrive</code>.</p></div><div class=paragraph><p>The next block saves the drive number provided by the BIOS, and calls <code>putn</code> to print a new line on the screen.</p></div><div class="literalblock programlisting"><div class=content><pre>save_curdrive:
+      movb %dl, (%bp)		# Save drive number
+      pushw %dx			# Also in the stack
+#ifdef	TEST	/* test code, print internal bios drive */
+      rolb $1, %dl
+      movw $drive, %si
+      call putkey
+#endif
+      callw putn		# Print a newline</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-savedrivenumber></a></div><p>Note that we assume <code>TEST</code> is not defined, so the conditional code in it is not assembled and will not appear in our executable <span class=filename>boot0</span>.</p></div><div class=paragraph><p>Our next block implements the actual scanning of the partition table.
+It prints to the screen the partition type for each of the four entries in the partition table.
+It compares each type with a list of well-known operating system file systems.
+Examples of recognized partition types are NTFS (Windows®, ID 0x7), <code>ext2fs</code> (Linux®, ID 0x83), and, of course, <code>ffs</code>/<code>ufs2</code> (FreeBSD, ID 0xa5).
+The implementation is fairly simple.</p></div><div class="literalblock programlisting"><div class=content><pre>      movw $(partbl+0x4),%bx	# Partition table (+4)
+      xorw %dx,%dx		# Item number
+
+read_entry:
+      movb %ch,-0x4(%bx)	# Zero active flag (ch == 0)
+      btw %dx,_FLAGS(%bp)	# Entry enabled?
+      jnc next_entry		# No
+      movb (%bx),%al		# Load type
+      test %al, %al		# skip empty partition
+      jz next_entry
+      movw $bootable_ids,%di	# Lookup tables
+      movb $(TLEN+1),%cl	# Number of entries
+      repne			# Locate
+      scasb			#  type
+      addw $(TLEN-1), %di	# Adjust
+      movb (%di),%cl		# Partition
+      addw %cx,%di		#  description
+      callw putx		# Display it
+
+next_entry:
+      incw %dx			# Next item
+      addb $0x10,%bl		# Next entry
+      jnc read_entry		# Till done</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-partition-scan></a></div><p>It is important to note that the active flag for each entry is cleared, so after the scanning, <em>no</em> partition entry is active in our memory copy of <span class=filename>boot0</span>.
+Later, the active flag will be set for the selected partition.
+This ensures that only one active partition exists if the user chooses to write the changes back to disk.</p></div><div class=paragraph><p>The next block tests for other drives.
+At startup, the BIOS writes the number of drives present in the computer to address <code>0x475</code>.
+If there are any other drives present, <span class=filename>boot0</span> prints the current drive to screen.
+The user may command <span class=filename>boot0</span> to scan partitions on another drive later.</p></div><div class="literalblock programlisting"><div class=content><pre>      popw %ax			# Drive number
+      subb $0x80-0x1,%al		# Does next
+      cmpb NHRDRV,%al		#  drive exist? (from BIOS?)
+      jb print_drive		# Yes
+      decw %ax			# Already drive 0?
+      jz print_prompt		# Yes</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-test-drives></a></div><p>We make the assumption that a single drive is present, so the jump to <code>print_drive</code> is not performed.
+We also assume nothing strange happened, so we jump to <code>print_prompt</code>.</p></div><div class=paragraph><p>This next block just prints out a prompt followed by the default option:</p></div><div class="literalblock programlisting"><div class=content><pre>print_prompt:
+      movw $prompt,%si		# Display
+      callw putstr		#  prompt
+      movb _OPT(%bp),%dl	# Display
+      decw %si			#  default
+      callw putkey		#  key
+      jmp start_input		# Skip beep</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-prompt></a></div><p>Finally, a jump is performed to <code>start_input</code>, where the BIOS services are used to start a timer and for reading user input from the keyboard; if the timer expires, the default option will be selected:</p></div><div class="literalblock programlisting"><div class=content><pre>start_input:
+      xorb %ah,%ah		# BIOS: Get
+      int $0x1a			#  system time
+      movw %dx,%di		# Ticks when
+      addw _TICKS(%bp),%di	#  timeout
+read_key:
+      movb $0x1,%ah		# BIOS: Check
+      int $0x16			#  for keypress
+      jnz got_key		# Have input
+      xorb %ah,%ah		# BIOS: int 0x1a, 00
+      int $0x1a			#  get system time
+      cmpw %di,%dx		# Timeout?
+      jb read_key		# No</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-start-input></a></div><p>An interrupt is requested with number <code>0x1a</code> and argument <code>0</code> in register <code>%ah</code>.
+The BIOS has a predefined set of services, requested by applications as software-generated interrupts through the <code>int</code> instruction and receiving arguments in registers (in this case, <code>%ah</code>).
+Here, particularly, we are requesting the number of clock ticks since last midnight; this value is computed by the BIOS through the RTC (Real Time Clock).
+This clock can be programmed to work at frequencies ranging from 2 Hz to 8192 Hz.
+The BIOS sets it to 18.2 Hz at startup.
+When the request is satisfied, a 32-bit result is returned by the BIOS in registers <code>%cx</code> and <code>%dx</code> (lower bytes in <code>%dx</code>).
+This result (the <code>%dx</code> part) is copied to register <code>%di</code>, and the value of the <code>TICKS</code> variable is added to <code>%di</code>.
+This variable resides in <span class=filename>boot0</span> at offset <code>_TICKS</code> (a negative value) from register <code>%bp</code> (which, recall, points to <code>0x800</code>).
+The default value of this variable is <code>0xb6</code> (182 in decimal).
+Now, the idea is that <span class=filename>boot0</span> constantly requests the time from the BIOS, and when the value returned in register <code>%dx</code> is greater than the value stored in <code>%di</code>, the time is up and the default selection will be made.
+Since the RTC ticks 18.2 times per second, this condition will be met after 10 seconds (this default behavior can be changed in the <span class=filename>Makefile</span>).
+Until this time has passed, <span class=filename>boot0</span> continually asks the BIOS for any user input; this is done through <code>int 0x16</code>, argument <code>1</code> in <code>%ah</code>.</p></div><div class=paragraph><p>Whether a key was pressed or the time expired, subsequent code validates the selection.
+Based on the selection, the register <code>%si</code> is set to point to the appropriate partition entry in the partition table.
+This new selection overrides the previous default one.
+Indeed, it becomes the new default.
+Finally, the ACTIVE flag of the selected partition is set.
+If it was enabled at compile time, the in-memory version of <span class=filename>boot0</span> with these modified values is written back to the MBR on disk.
+We leave the details of this implementation to the reader.</p></div><div class=paragraph><p>We now end our study with the last code block from the <span class=filename>boot0</span> program:</p></div><div class="literalblock programlisting"><div class=content><pre>      movw $LOAD,%bx		# Address for read
+      movb $0x2,%ah		# Read sector
+      callw intx13		#  from disk
+      jc beep			# If error
+      cmpw $MAGIC,0x1fe(%bx)	# Bootable?
+      jne beep			# No
+      pushw %si			# Save ptr to selected part.
+      callw putn		# Leave some space
+      popw %si			# Restore, next stage uses it
+      jmp *%bx			# Invoke bootstrap</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot0/boot0.S</span> <a id=boot-boot0-check-bootable></a></div><p>Recall that <code>%si</code> points to the selected partition entry.
+This entry tells us where the partition begins on disk.
+We assume, of course, that the partition selected is actually a FreeBSD slice.</p></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><i class="fa icon-note" title=Note></i></td><td class=content><div class=paragraph><p>From now on, we will favor the use of the technically more accurate term "slice" rather than "partition".</p></div></td></tr></tbody></table></div><div class=paragraph><p>The transfer buffer is set to <code>0x7c00</code> (register <code>%bx</code>), and a read for the first sector of the FreeBSD slice is requested by calling <code>intx13</code>.
+We assume that everything went okay, so a jump to <code>beep</code> is not performed.
+In particular, the new sector read must end with the magic sequence <code>0xaa55</code>.
+Finally, the value at <code>%si</code> (the pointer to the selected partition table) is preserved for use by the next stage, and a jump is performed to address <code>0x7c00</code>, where execution of our next stage (the just-read block) is started.</p></div></div></div><div class=sect1><h2 id=boot-boot1>1.5. <code>boot1</code> Stage<a class=anchor href=#boot-boot1></a></h2><div class=sectionbody><div class=paragraph><p>So far we have gone through the following sequence:</p></div><div class=ulist><ul><li><p>The BIOS did some early hardware initialization, including the POST.
+The MBR (<span class=filename>boot0</span>) was loaded from absolute disk sector one to address <code>0x7c00</code>.
+Execution control was passed to that location.</p></li><li><p><span class=filename>boot0</span> relocated itself to the location it was linked to execute (<code>0x600</code>), followed by a jump to continue execution at the appropriate place.
+Finally, <span class=filename>boot0</span> loaded the first disk sector from the FreeBSD slice to address <code>0x7c00</code>.
+Execution control was passed to that location.</p></li></ul></div><div class=paragraph><p><span class=filename>boot1</span> is the next step in the boot-loading sequence.
+It is the first of three boot stages.
+Note that we have been dealing exclusively with disk sectors.
+Indeed, the BIOS loads the absolute first sector, while <span class=filename>boot0</span> loads the first sector of the FreeBSD slice.
+Both loads are to address <code>0x7c00</code>.
+We can conceptually think of these disk sectors as containing the files <span class=filename>boot0</span> and <span class=filename>boot1</span>, respectively, but in reality this is not entirely true for <span class=filename>boot1</span>.
+Strictly speaking, unlike <span class=filename>boot0</span>, <span class=filename>boot1</span> is not part of the boot blocks <sup class=footnote>[<a id=_footnoteref_3 class=footnote href=#_footnotedef_3 title="View footnote.">3</a>]</sup>.
+Instead, a single, full-blown file, <span class=filename>boot</span> (<span class=filename>/boot/boot</span>), is what ultimately is written to disk.
+This file is a combination of <span class=filename>boot1</span>, <span class=filename>boot2</span> and the <code>Boot Extender</code> (or BTX).
+This single file is greater in size than a single sector (greater than 512 bytes).
+Fortunately, <span class=filename>boot1</span> occupies <em>exactly</em> the first 512 bytes of this single file, so when <span class=filename>boot0</span> loads the first sector of the FreeBSD slice (512 bytes), it is actually loading <span class=filename>boot1</span> and transferring control to it.</p></div><div class=paragraph><p>The main task of <span class=filename>boot1</span> is to load the next boot stage.
+This next stage is somewhat more complex.
+It is composed of a server called the "Boot Extender", or BTX, and a client, called <span class=filename>boot2</span>.
+As we will see, the last boot stage, <span class=filename>loader</span>, is also a client of the BTX server.</p></div><div class=paragraph><p>Let us now look in detail at what exactly is done by <span class=filename>boot1</span>, starting like we did for <span class=filename>boot0</span>, at its entry point:</p></div><div class="literalblock programlisting"><div class=content><pre>start:
+	jmp main</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-entry></a></div><p>The entry point at <code>start</code> simply jumps past a special data area to the label <code>main</code>, which in turn looks like this:</p></div><div class="literalblock programlisting"><div class=content><pre>main:
+      cld			# String ops inc
+      xor %cx,%cx		# Zero
+      mov %cx,%es		# Address
+      mov %cx,%ds		#  data
+      mov %cx,%ss		# Set up
+      mov $start,%sp		#  stack
+      mov %sp,%si		# Source
+      mov $MEM_REL,%di		# Destination
+      incb %ch			# Word count
+      rep			# Copy
+      movsw			#  code</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-main></a></div><p>Just like <span class=filename>boot0</span>, this code relocates <span class=filename>boot1</span>, this time to memory address <code>0x700</code>.
+However, unlike <span class=filename>boot0</span>, it does not jump there.
+<span class=filename>boot1</span> is linked to execute at address <code>0x7c00</code>, effectively where it was loaded in the first place.
+The reason for this relocation will be discussed shortly.</p></div><div class=paragraph><p>Next comes a loop that looks for the FreeBSD slice.
+Although <span class=filename>boot0</span> loaded <span class=filename>boot1</span> from the FreeBSD slice, no information was passed to it about this <sup class=footnote>[<a id=_footnoteref_4 class=footnote href=#_footnotedef_4 title="View footnote.">4</a>]</sup>, so <span class=filename>boot1</span> must rescan the partition table to find where the FreeBSD slice starts.
+Therefore it rereads the MBR:</p></div><div class="literalblock programlisting"><div class=content><pre>      mov $part4,%si		# Partition
+      cmpb $0x80,%dl		# Hard drive?
+      jb main.4			# No
+      movb $0x1,%dh		# Block count
+      callw nread		# Read MBR</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-find-freebsd></a></div><p>In the code above, register <code>%dl</code> maintains information about the boot device.
+This is passed on by the BIOS and preserved by the MBR.
+Numbers <code>0x80</code> and greater tells us that we are dealing with a hard drive, so a call is made to <code>nread</code>, where the MBR is read.
+Arguments to <code>nread</code> are passed through <code>%si</code> and <code>%dh</code>.
+The memory address at label <code>part4</code> is copied to <code>%si</code>.
+This memory address holds a "fake partition" to be used by <code>nread</code>.
+The following is the data in the fake partition:</p></div><div class="literalblock programlisting"><div class=content><pre>      part4:
+	.byte 0x80, 0x00, 0x01, 0x00
+	.byte 0xa5, 0xfe, 0xff, 0xff
+	.byte 0x00, 0x00, 0x00, 0x00
+	.byte 0x50, 0xc3, 0x00, 0x00</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot2-make-fake-partition></a></div><p>In particular, the LBA for this fake partition is hardcoded to zero.
+This is used as an argument to the BIOS for reading absolute sector one from the hard drive.
+Alternatively, CHS addressing could be used.
+In this case, the fake partition holds cylinder 0, head 0 and sector 1, which is equivalent to absolute sector one.</p></div><div class=paragraph><p>Let us now proceed to take a look at <code>nread</code>:</p></div><div class="literalblock programlisting"><div class=content><pre>nread:
+      mov $MEM_BUF,%bx		# Transfer buffer
+      mov 0x8(%si),%ax		# Get
+      mov 0xa(%si),%cx		#  LBA
+      push %cs			# Read from
+      callw xread.1		#  disk
+      jnc return		# If success, return</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-nread></a></div><p>Recall that <code>%si</code> points to the fake partition.
+The word <sup class=footnote>[<a id=_footnoteref_5 class=footnote href=#_footnotedef_5 title="View footnote.">5</a>]</sup> at offset <code>0x8</code> is copied to register <code>%ax</code> and word at offset <code>0xa</code> to <code>%cx</code>.
+They are interpreted by the BIOS as the lower 4-byte value denoting the LBA to be read (the upper four bytes are assumed to be zero).
+Register <code>%bx</code> holds the memory address where the MBR will be loaded.
+The instruction pushing <code>%cs</code> onto the stack is very interesting.
+In this context, it accomplishes nothing.
+However, as we will see shortly, <span class=filename>boot2</span>, in conjunction with the BTX server, also uses <code>xread.1</code>.
+This mechanism will be discussed in the next section.</p></div><div class=paragraph><p>The code at <code>xread.1</code> further calls the <code>read</code> function, which actually calls the BIOS asking for the disk sector:</p></div><div class="literalblock programlisting"><div class=content><pre>xread.1:
+	pushl $0x0		#  absolute
+	push %cx		#  block
+	push %ax		#  number
+	push %es		# Address of
+	push %bx		#  transfer buffer
+	xor %ax,%ax		# Number of
+	movb %dh,%al		#  blocks to
+	push %ax		#  transfer
+	push $0x10		# Size of packet
+	mov %sp,%bp		# Packet pointer
+	callw read		# Read from disk
+	lea 0x10(%bp),%sp	# Clear stack
+	lret			# To far caller</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-xread1></a></div><p>Note the long return instruction at the end of this block.
+This instruction pops out the <code>%cs</code> register pushed by <code>nread</code>, and returns.
+Finally, <code>nread</code> also returns.</p></div><div class=paragraph><p>With the MBR loaded to memory, the actual loop for searching the FreeBSD slice begins:</p></div><div class="literalblock programlisting"><div class=content><pre>	mov $0x1,%cx		 # Two passes
+main.1:
+	mov $MEM_BUF+PRT_OFF,%si # Partition table
+	movb $0x1,%dh		 # Partition
+main.2:
+	cmpb $PRT_BSD,0x4(%si)	 # Our partition type?
+	jne main.3		 # No
+	jcxz main.5		 # If second pass
+	testb $0x80,(%si)	 # Active?
+	jnz main.5		 # Yes
+main.3:
+	add $0x10,%si		 # Next entry
+	incb %dh		 # Partition
+	cmpb $0x1+PRT_NUM,%dh		 # In table?
+	jb main.2		 # Yes
+	dec %cx			 # Do two
+	jcxz main.1		 #  passes</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-find-part></a></div><p>If a FreeBSD slice is identified, execution continues at <code>main.5</code>.
+Note that when a FreeBSD slice is found <code>%si</code> points to the appropriate entry in the partition table, and <code>%dh</code> holds the partition number.
+We assume that a FreeBSD slice is found, so we continue execution at <code>main.5</code>:</p></div><div class="literalblock programlisting"><div class=content><pre>main.5:
+	mov %dx,MEM_ARG			   # Save args
+	movb $NSECT,%dh			   # Sector count
+	callw nread			   # Read disk
+	mov $MEM_BTX,%bx			   # BTX
+	mov 0xa(%bx),%si		   # Get BTX length and set
+	add %bx,%si			   #  %si to start of boot2.bin
+	mov $MEM_USR+SIZ_PAG*2,%di			   # Client page 2
+	mov $MEM_BTX+(NSECT-1)*SIZ_SEC,%cx			   # Byte
+	sub %si,%cx			   #  count
+	rep				   # Relocate
+	movsb				   #  client</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-main5></a></div><p>Recall that at this point, register <code>%si</code> points to the FreeBSD slice entry in the MBR partition table, so a call to <code>nread</code> will effectively read sectors at the beginning of this partition.
+The argument passed on register <code>%dh</code> tells <code>nread</code> to read 16 disk sectors.
+Recall that the first 512 bytes, or the first sector of the FreeBSD slice, coincides with the <span class=filename>boot1</span> program.
+Also recall that the file written to the beginning of the FreeBSD slice is not <span class=filename>/boot/boot1</span>, but <span class=filename>/boot/boot</span>.
+Let us look at the size of these files in the filesystem:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash><span class=nt>-r--r--r--</span>  1 root  wheel   512B Jan  8 00:15 /boot/boot0
+<span class=nt>-r--r--r--</span>  1 root  wheel   512B Jan  8 00:15 /boot/boot1
+<span class=nt>-r--r--r--</span>  1 root  wheel   7.5K Jan  8 00:15 /boot/boot2
+<span class=nt>-r--r--r--</span>  1 root  wheel   8.0K Jan  8 00:15 /boot/boot</code></pre></div></div><div class=paragraph><p>Both <span class=filename>boot0</span> and <span class=filename>boot1</span> are 512 bytes each, so they fit <em>exactly</em> in one disk sector.
+<span class=filename>boot2</span> is much bigger, holding both the BTX server and the <span class=filename>boot2</span> client.
+Finally, a file called simply <span class=filename>boot</span> is 512 bytes larger than <span class=filename>boot2</span>.
+This file is a concatenation of <span class=filename>boot1</span> and <span class=filename>boot2</span>.
+As already noted, <span class=filename>boot0</span> is the file written to the absolute first disk sector (the MBR), and <span class=filename>boot</span> is the file written to the first sector of the FreeBSD slice; <span class=filename>boot1</span> and <span class=filename>boot2</span> are <em>not</em> written to disk.
+The command used to concatenate <span class=filename>boot1</span> and <span class=filename>boot2</span> into a single <span class=filename>boot</span> is merely <code>cat boot1 boot2 > boot</code>.</p></div><div class=paragraph><p>So <span class=filename>boot1</span> occupies exactly the first 512 bytes of <span class=filename>boot</span> and, because <span class=filename>boot</span> is written to the first sector of the FreeBSD slice, <span class=filename>boot1</span> fits exactly in this first sector.
+When <code>nread</code> reads the first 16 sectors of the FreeBSD slice, it effectively reads the entire <span class=filename>boot</span> file <sup class=footnote>[<a id=_footnoteref_6 class=footnote href=#_footnotedef_6 title="View footnote.">6</a>]</sup>.
+We will see more details about how <span class=filename>boot</span> is formed from <span class=filename>boot1</span> and <span class=filename>boot2</span> in the next section.</p></div><div class=paragraph><p>Recall that <code>nread</code> uses memory address <code>0x8c00</code> as the transfer buffer to hold the sectors read.
+This address is conveniently chosen.
+Indeed, because <span class=filename>boot1</span> belongs to the first 512 bytes, it ends up in the address range <code>0x8c00</code>-<code>0x8dff</code>.
+The 512 bytes that follows (range <code>0x8e00</code>-<code>0x8fff</code>) is used to store the <em>bsdlabel</em> <sup class=footnote>[<a id=_footnoteref_7 class=footnote href=#_footnotedef_7 title="View footnote.">7</a>]</sup>.</p></div><div class=paragraph><p>Starting at address <code>0x9000</code> is the beginning of the BTX server, and immediately following is the <span class=filename>boot2</span> client.
+The BTX server acts as a kernel, and executes in protected mode in the most privileged level.
+In contrast, the BTX clients (<span class=filename>boot2</span>, for example), execute in user mode.
+We will see how this is accomplished in the next section.
+The code after the call to <code>nread</code> locates the beginning of <span class=filename>boot2</span> in the memory buffer, and copies it to memory address <code>0xc000</code>.
+This is because the BTX server arranges <span class=filename>boot2</span> to execute in a segment starting at <code>0xa000</code>.
+We explore this in detail in the following section.</p></div><div class=paragraph><p>The last code block of <span class=filename>boot1</span> enables access to memory above 1MB <sup class=footnote>[<a id=_footnoteref_8 class=footnote href=#_footnotedef_8 title="View footnote.">8</a>]</sup> and concludes with a jump to the starting point of the BTX server:</p></div><div class="literalblock programlisting"><div class=content><pre>seta20:
+	cli			# Disable interrupts
+seta20.1:
+	dec %cx			# Timeout?
+	jz seta20.3		# Yes
+
+	inb $0x64,%al		# Get status
+	testb $0x2,%al		# Busy?
+	jnz seta20.1		# Yes
+	movb $0xd1,%al		# Command: Write
+	outb %al,$0x64		#  output port
+seta20.2:
+	inb $0x64,%al		# Get status
+	testb $0x2,%al		# Busy?
+	jnz seta20.2		# Yes
+	movb $0xdf,%al		# Enable
+	outb %al,$0x60		#  A20
+seta20.3:
+	sti			# Enable interrupts
+	jmp 0x9010		# Start BTX</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot1.S</span> <a id=boot-boot1-seta20></a></div><p>Note that right before the jump, interrupts are enabled.</p></div></div></div><div class=sect1><h2 id=btx-server>1.6. The BTX Server<a class=anchor href=#btx-server></a></h2><div class=sectionbody><div class=paragraph><p>Next in our boot sequence is the BTX Server.
+Let us quickly remember how we got here:</p></div><div class=ulist><ul><li><p>The BIOS loads the absolute sector one (the MBR, or <span class=filename>boot0</span>), to address <code>0x7c00</code> and jumps there.</p></li><li><p><span class=filename>boot0</span> relocates itself to <code>0x600</code>, the address it was linked to execute, and jumps over there.
+It then reads the first sector of the FreeBSD slice (which consists of <span class=filename>boot1</span>) into address <code>0x7c00</code> and jumps over there.</p></li><li><p><span class=filename>boot1</span> loads the first 16 sectors of the FreeBSD slice into address <code>0x8c00</code>.
+This 16 sectors, or 8192 bytes, is the whole file <span class=filename>boot</span>.
+The file is a concatenation of <span class=filename>boot1</span> and <span class=filename>boot2</span>.
+<span class=filename>boot2</span>, in turn, contains the BTX server and the <span class=filename>boot2</span> client.
+Finally, a jump is made to address <code>0x9010</code>, the entry point of the BTX server.</p></li></ul></div><div class=paragraph><p>Before studying the BTX Server in detail, let us further review how the single, all-in-one <span class=filename>boot</span> file is created.
+The way <span class=filename>boot</span> is built is defined in its <span class=filename>Makefile</span> (<span class=filename>stand/i386/boot2/Makefile</span>).
+Let us look at the rule that creates the <span class=filename>boot</span> file:</p></div><div class="literalblock programlisting"><div class=content><pre>      boot: boot1 boot2
+	cat boot1 boot2 &gt; boot</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/Makefile</span> <a id=boot-boot1-make-boot></a></div><p>This tells us that <span class=filename>boot1</span> and <span class=filename>boot2</span> are needed, and the rule simply concatenates them to produce a single file called <span class=filename>boot</span>.
+The rules for creating <span class=filename>boot1</span> are also quite simple:</p></div><div class="literalblock programlisting"><div class=content><pre>      boot1: boot1.out
+	${OBJCOPY} -S -O binary boot1.out ${.TARGET}
+
+      boot1.out: boot1.o
+	${LD} ${LD_FLAGS} -e start --defsym ORG=${ORG1} -T ${LDSCRIPT} -o ${.TARGET} boot1.o</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/Makefile</span> <a id=boot-boot1-make-boot1></a></div><p>To apply the rule for creating <span class=filename>boot1</span>, <span class=filename>boot1.out</span> must be resolved.
+This, in turn, depends on the existence of <span class=filename>boot1.o</span>.
+This last file is simply the result of assembling our familiar <span class=filename>boot1.S</span>, without linking.
+Now, the rule for creating <span class=filename>boot1.out</span> is applied.
+This tells us that <span class=filename>boot1.o</span> should be linked with <code>start</code> as its entry point, and starting at address <code>0x7c00</code>.
+Finally, <span class=filename>boot1</span> is created from <span class=filename>boot1.out</span> applying the appropriate rule.
+This rule is the <span class=filename>objcopy</span> command applied to <span class=filename>boot1.out</span>.
+Note the flags passed to <span class=filename>objcopy</span>: <code>-S</code> tells it to strip all relocation and symbolic information; <code>-O binary</code> indicates the output format, that is, a simple, unformatted binary file.</p></div><div class=paragraph><p>Having <span class=filename>boot1</span>, let us take a look at how <span class=filename>boot2</span> is constructed:</p></div><div class="literalblock programlisting"><div class=content><pre>      boot2: boot2.ld
+	@set -- `ls -l ${.ALLSRC}`; x=$$((${BOOT2SIZE}-$$5)); \
+	    echo &#34;$$x bytes available&#34;; test $$x -ge 0
+	${DD} if=${.ALLSRC} of=${.TARGET} bs=${BOOT2SIZE} conv=sync
+
+      boot2.ld: boot2.ldr boot2.bin ${BTXKERN}
+	btxld -v -E ${ORG2} -f bin -b ${BTXKERN} -l boot2.ldr \
+	    -o ${.TARGET} -P 1 boot2.bin
+
+      boot2.ldr:
+	${DD} if=/dev/zero of=${.TARGET} bs=512 count=1
+
+      boot2.bin: boot2.out
+	${OBJCOPY} -S -O binary boot2.out ${.TARGET}
+
+      boot2.out: ${BTXCRT} boot2.o sio.o ashldi3.o
+	${LD} ${LD_FLAGS} --defsym ORG=${ORG2} -T ${LDSCRIPT} -o ${.TARGET} ${.ALLSRC}
+
+      boot2.h: boot1.out
+	${NM} -t d ${.ALLSRC} | awk &#39;/([0-9])+ T xread/ \
+	    { x = $$1 - ORG1; \
+	    printf(&#34;#define XREADORG %#x\n&#34;, REL1 + x) }&#39; \
+	    ORG1=`printf &#34;%d&#34; ${ORG1}` \
+	    REL1=`printf &#34;%d&#34; ${REL1}` &gt; ${.TARGET}</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/Makefile</span> <a id=boot-boot1-make-boot2></a></div><p>The mechanism for building <span class=filename>boot2</span> is far more elaborate.
+Let us point out the most relevant facts.
+The dependency list is as follows:</p></div><div class="literalblock programlisting"><div class=content><pre>      boot2: boot2.ld
+      boot2.ld: boot2.ldr boot2.bin ${BTXDIR}
+      boot2.bin: boot2.out
+      boot2.out: ${BTXDIR} boot2.o sio.o ashldi3.o
+      boot2.h: boot1.out</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/Makefile</span> <a id=boot-boot1-make-boot2-more></a></div><p>Note that initially there is no header file <span class=filename>boot2.h</span>, but its creation depends on <span class=filename>boot1.out</span>, which we already have.
+The rule for its creation is a bit terse, but the important thing is that the output, <span class=filename>boot2.h</span>, is something like this:</p></div><div class="literalblock programlisting"><div class=content><pre>#define XREADORG 0x725</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/boot2/boot2.h</span> <a id=boot-boot1-make-boot2h></a></div><p>Recall that <span class=filename>boot1</span> was relocated (i.e., copied from <code>0x7c00</code> to <code>0x700</code>).
+This relocation will now make sense, because as we will see, the BTX server reclaims some memory, including the space where <span class=filename>boot1</span> was originally loaded.
+However, the BTX server needs access to <span class=filename>boot1</span>'s <code>xread</code> function; this function, according to the output of <span class=filename>boot2.h</span>, is at location <code>0x725</code>.
+Indeed, the BTX server uses the <code>xread</code> function from <span class=filename>boot1</span>'s relocated code.
+This function is now accessible from within the <span class=filename>boot2</span> client.</p></div><div class=paragraph><p>The next rule directs the linker to link various files (<span class=filename>ashldi3.o</span>, <span class=filename>boot2.o</span> and <span class=filename>sio.o</span>).
+Note that the output file, <span class=filename>boot2.out</span>, is linked to execute at address <code>0x2000</code> (${ORG2}).
+Recall that <span class=filename>boot2</span> will be executed in user mode, within a special user segment set up by the BTX server.
+This segment starts at <code>0xa000</code>.
+Also, remember that the <span class=filename>boot2</span> portion of <span class=filename>boot</span> was copied to address <code>0xc000</code>, that is, offset <code>0x2000</code> from the start of the user segment, so <span class=filename>boot2</span> will work properly when we transfer control to it.
+Next, <span class=filename>boot2.bin</span> is created from <span class=filename>boot2.out</span> by stripping its symbols and format information; boot2.bin is a <em>raw</em> binary.
+Now, note that a file <span class=filename>boot2.ldr</span> is created as a 512-byte file full of zeros.
+This space is reserved for the bsdlabel.</p></div><div class=paragraph><p>Now that we have files <span class=filename>boot1</span>, <span class=filename>boot2.bin</span> and <span class=filename>boot2.ldr</span>, only the BTX server is missing before creating the all-in-one <span class=filename>boot</span> file.
+The BTX server is located in <span class=filename>stand/i386/btx/btx</span>; it has its own <span class=filename>Makefile</span> with its own set of rules for building.
+The important thing to notice is that it is also compiled as a <em>raw</em> binary, and that it is linked to execute at address <code>0x9000</code>.
+The details can be found in <span class=filename>stand/i386/btx/btx/Makefile</span>.</p></div><div class=paragraph><p>Having the files that comprise the <span class=filename>boot</span> program, the final step is to <em>merge</em> them.
+This is done by a special program called <span class=filename>btxld</span> (source located in <span class=filename>/usr/src/usr.sbin/btxld</span>).
+Some arguments to this program include the name of the output file (<span class=filename>boot</span>), its entry point (<code>0x2000</code>) and its file format (raw binary).
+The various files are finally merged by this utility into the file <span class=filename>boot</span>, which consists of <span class=filename>boot1</span>, <span class=filename>boot2</span>, the <code>bsdlabel</code> and the BTX server.
+This file, which takes exactly 16 sectors, or 8192 bytes, is what is actually written to the beginning of the FreeBSD slice during installation.
+Let us now proceed to study the BTX server program.</p></div><div class=paragraph><p>The BTX server prepares a simple environment and switches from 16-bit real mode to 32-bit protected mode, right before passing control to the client.
+This includes initializing and updating the following data structures:</p></div><div class=ulist><ul><li><p>Modifies the <code>Interrupt Vector Table (IVT)</code>.
+The IVT provides exception and interrupt handlers for Real-Mode code.</p></li><li><p>The <code>Interrupt Descriptor Table (IDT)</code> is created.
+Entries are provided for processor exceptions, hardware interrupts, two system calls and V86 interface.
+The IDT provides exception and interrupt handlers for Protected-Mode code.</p></li><li><p>A <code>Task-State Segment (TSS)</code> is created.
+This is necessary because the processor works in the <em>least</em> privileged level when executing the client (<span class=filename>boot2</span>), but in the <em>most</em> privileged level when executing the BTX server.</p></li><li><p>The GDT (Global Descriptor Table) is set up.
+Entries (descriptors) are provided for supervisor code and data, user code and data, and real-mode code and data.
+<sup class=footnote>[<a id=_footnoteref_9 class=footnote href=#_footnotedef_9 title="View footnote.">9</a>]</sup></p></li></ul></div><div class=paragraph><p>Let us now start studying the actual implementation.
+Recall that <span class=filename>boot1</span> made a jump to address <code>0x9010</code>, the BTX server’s entry point.
+Before studying program execution there, note that the BTX server has a special header at address range <code>0x9000-0x900f</code>, right before its entry point.
+This header is defined as follows:</p></div><div class="literalblock programlisting"><div class=content><pre>start:						# Start of code
+/*
+ * BTX header.
+ */
+btx_hdr:	.byte 0xeb			# Machine ID
+		.byte 0xe			# Header size
+		.ascii &#34;BTX&#34;			# Magic
+		.byte 0x1			# Major version
+		.byte 0x2			# Minor version
+		.byte BTX_FLAGS			# Flags
+		.word PAG_CNT-MEM_ORG&gt;&gt;0xc	# Paging control
+		.word break-start		# Text size
+		.long 0x0			# Entry address</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-header></a></div><p>Note the first two bytes are <code>0xeb</code> and <code>0xe</code>.
+In the IA-32 architecture, these two bytes are interpreted as a relative jump past the header into the entry point, so in theory, <span class=filename>boot1</span> could jump here (address <code>0x9000</code>) instead of address <code>0x9010</code>.
+Note that the last field in the BTX header is a pointer to the client’s (<span class=filename>boot2</span>) entry pointb2.
+This field is patched at link time.</p></div><div class=paragraph><p>Immediately following the header is the BTX server’s entry point:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Initialization routine.
+ */
+init:		cli				# Disable interrupts
+		xor %ax,%ax			# Zero/segment
+		mov %ax,%ss			# Set up
+		mov $MEM_ESP0,%sp		#  stack
+		mov %ax,%es			# Address
+		mov %ax,%ds			#  data
+		pushl $0x2			# Clear
+		popfl				#  flags</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-init></a></div><p>This code disables interrupts, sets up a working stack (starting at address <code>0x1800</code>) and clears the flags in the EFLAGS register.
+Note that the <code>popfl</code> instruction pops out a doubleword (4 bytes) from the stack and places it in the EFLAGS register.
+As the value actually popped is <code>2</code>, the EFLAGS register is effectively cleared (IA-32 requires that bit 2 of the EFLAGS register always be 1).</p></div><div class=paragraph><p>Our next code block clears (sets to <code>0</code>) the memory range <code>0x5e00-0x8fff</code>.
+This range is where the various data structures will be created:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Initialize memory.
+ */
+		mov $MEM_IDT,%di		# Memory to initialize
+		mov $(MEM_ORG-MEM_IDT)/2,%cx	# Words to zero
+		rep				# Zero-fill
+		stosw				#  memory</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-clear-mem></a></div><p>Recall that <span class=filename>boot1</span> was originally loaded to address <code>0x7c00</code>, so, with this memory initialization, that copy effectively disappeared.
+However, also recall that <span class=filename>boot1</span> was relocated to <code>0x700</code>, so <em>that</em> copy is still in memory, and the BTX server will make use of it.</p></div><div class=paragraph><p>Next, the real-mode IVT (Interrupt Vector Table is updated.
+The IVT is an array of segment/offset pairs for exception and interrupt handlers.
+The BIOS normally maps hardware interrupts to interrupt vectors <code>0x8</code> to <code>0xf</code> and <code>0x70</code> to <code>0x77</code> but, as will be seen, the 8259A Programmable Interrupt Controller, the chip controlling the actual mapping of hardware interrupts to interrupt vectors, is programmed to remap these interrupt vectors from <code>0x8-0xf</code> to <code>0x20-0x27</code> and from <code>0x70-0x77</code> to <code>0x28-0x2f</code>.
+Thus, interrupt handlers are provided for interrupt vectors <code>0x20-0x2f</code>.
+The reason the BIOS-provided handlers are not used directly is because they work in 16-bit real mode, but not 32-bit protected mode.
+Processor mode will be switched to 32-bit protected mode shortly.
+However, the BTX server sets up a mechanism to effectively use the handlers provided by the BIOS:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Update real mode IDT for reflecting hardware interrupts.
+ */
+		mov $intr20,%bx			# Address first handler
+		mov $0x10,%cx			# Number of handlers
+		mov $0x20*4,%di			# First real mode IDT entry
+init.0:		mov %bx,(%di)			# Store IP
+		inc %di				# Address next
+		inc %di				#  entry
+		stosw				# Store CS
+		add $4,%bx			# Next handler
+		loop init.0			# Next IRQ</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-ivt></a></div><p>The next block creates the IDT (Interrupt Descriptor Table).
+The IDT is analogous, in protected mode, to the IVT in real mode.
+That is, the IDT describes the various exception and interrupt handlers used when the processor is executing in protected mode.
+In essence, it also consists of an array of segment/offset pairs, although the structure is somewhat more complex, because segments in protected mode are different than in real mode, and various protection mechanisms apply:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Create IDT.
+ */
+		mov $MEM_IDT,%di		# IDT&#39;s address
+		mov $idtctl,%si			# Control string
+init.1:		lodsb				# Get entry
+		cbw				#  count
+		xchg %ax,%cx			#  as word
+		jcxz init.4			# If done
+		lodsb				# Get segment
+		xchg %ax,%dx			#  P:DPL:type
+		lodsw				# Get control
+		xchg %ax,%bx			#  set
+		lodsw				# Get handler offset
+		mov $SEL_SCODE,%dh		# Segment selector
+init.2:		shr %bx				# Handle this int?
+		jnc init.3			# No
+		mov %ax,(%di)			# Set handler offset
+		mov %dh,0x2(%di)		#  and selector
+		mov %dl,0x5(%di)		# Set P:DPL:type
+		add $0x4,%ax			# Next handler
+init.3:		lea 0x8(%di),%di		# Next entry
+		loop init.2			# Till set done
+		jmp init.1			# Continue</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-idt></a></div><p>Each entry in the <code>IDT</code> is 8 bytes long.
+Besides the segment/offset information, they also describe the segment type, privilege level, and whether the segment is present in memory or not.
+The construction is such that interrupt vectors from <code>0</code> to <code>0xf</code> (exceptions) are handled by function <code>intx00</code>; vector <code>0x10</code> (also an exception) is handled by <code>intx10</code>; hardware interrupts, which are later configured to start at interrupt vector <code>0x20</code> all the way to interrupt vector <code>0x2f</code>, are handled by function <code>intx20</code>.
+Lastly, interrupt vector <code>0x30</code>, which is used for system calls, is handled by <code>intx30</code>, and vectors <code>0x31</code> and <code>0x32</code> are handled by <code>intx31</code>.
+It must be noted that only descriptors for interrupt vectors <code>0x30</code>, <code>0x31</code> and <code>0x32</code> are given privilege level 3, the same privilege level as the <span class=filename>boot2</span> client, which means the client can execute a software-generated interrupt to this vectors through the <code>int</code> instruction without failing (this is the way <span class=filename>boot2</span> use the services provided by the BTX server).
+Also, note that <em>only</em> software-generated interrupts are protected from code executing in lesser privilege levels.
+Hardware-generated interrupts and processor-generated exceptions are <em>always</em> handled adequately, regardless of the actual privileges involved.</p></div><div class=paragraph><p>The next step is to initialize the TSS (Task-State Segment).
+The TSS is a hardware feature that helps the operating system or executive software implement multitasking functionality through process abstraction.
+The IA-32 architecture demands the creation and use of <em>at least</em> one TSS if multitasking facilities are used or different privilege levels are defined.
+Since the <span class=filename>boot2</span> client is executed in privilege level 3, but the BTX server runs in privilege level 0, a TSS must be defined:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Initialize TSS.
+ */
+init.4:		movb $_ESP0H,TSS_ESP0+1(%di)	# Set ESP0
+		movb $SEL_SDATA,TSS_SS0(%di)	# Set SS0
+		movb $_TSSIO,TSS_MAP(%di)	# Set I/O bit map base</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-tss></a></div><p>Note that a value is given for the Privilege Level 0 stack pointer and stack segment in the TSS.
+This is needed because, if an interrupt or exception is received while executing <span class=filename>boot2</span> in Privilege Level 3, a change to Privilege Level 0 is automatically performed by the processor, so a new working stack is needed.
+Finally, the I/O Map Base Address field of the TSS is given a value, which is a 16-bit offset from the beginning of the TSS to the I/O Permission Bitmap and the Interrupt Redirection Bitmap.</p></div><div class=paragraph><p>After the IDT and TSS are created, the processor is ready to switch to protected mode.
+This is done in the next block:</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Bring up the system.
+ */
+		mov $0x2820,%bx			# Set protected mode
+		callw setpic			#  IRQ offsets
+		lidt idtdesc			# Set IDT
+		lgdt gdtdesc			# Set GDT
+		mov %cr0,%eax			# Switch to protected
+		inc %ax				#  mode
+		mov %eax,%cr0			#
+		ljmp $SEL_SCODE,$init.8		# To 32-bit code
+		.code32
+init.8:		xorl %ecx,%ecx			# Zero
+		movb $SEL_SDATA,%cl		# To 32-bit
+		movw %cx,%ss			#  stack</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-prot></a></div><p>First, a call is made to <code>setpic</code> to program the 8259A PIC (Programmable Interrupt Controller).
+This chip is connected to multiple hardware interrupt sources.
+Upon receiving an interrupt from a device, it signals the processor with the appropriate interrupt vector.
+This can be customized so that specific interrupts are associated with specific interrupt vectors, as explained before.
+Next, the IDTR (Interrupt Descriptor Table Register) and GDTR (Global Descriptor Table Register) are loaded with the instructions <code>lidt</code> and <code>lgdt</code>, respectively.
+These registers are loaded with the base address and limit address for the IDT and GDT.
+The following three instructions set the Protection Enable (PE) bit of the <code>%cr0</code> register.
+This effectively switches the processor to 32-bit protected mode.
+Next, a long jump is made to <code>init.8</code> using segment selector SEL_SCODE, which selects the Supervisor Code Segment.
+The processor is effectively executing in CPL 0, the most privileged level, after this jump.
+Finally, the Supervisor Data Segment is selected for the stack by assigning the segment selector SEL_SDATA to the <code>%ss</code> register.
+This data segment also has a privilege level of <code>0</code>.</p></div><div class=paragraph><p>Our last code block is responsible for loading the TR (Task Register) with the segment selector for the TSS we created earlier, and setting the User Mode environment before passing execution control to the <span class=filename>boot2</span> client.</p></div><div class="literalblock programlisting"><div class=content><pre>/*
+ * Launch user task.
+ */
+		movb $SEL_TSS,%cl		# Set task
+		ltr %cx				#  register
+		movl $MEM_USR,%edx		# User base address
+		movzwl %ss:BDA_MEM,%eax		# Get free memory
+		shll $0xa,%eax			# To bytes
+		subl $ARGSPACE,%eax		# Less arg space
+		subl %edx,%eax			# Less base
+		movb $SEL_UDATA,%cl		# User data selector
+		pushl %ecx			# Set SS
+		pushl %eax			# Set ESP
+		push $0x202			# Set flags (IF set)
+		push $SEL_UCODE			# Set CS
+		pushl btx_hdr+0xc		# Set EIP
+		pushl %ecx			# Set GS
+		pushl %ecx			# Set FS
+		pushl %ecx			# Set DS
+		pushl %ecx			# Set ES
+		pushl %edx			# Set EAX
+		movb $0x7,%cl			# Set remaining
+init.9:		push $0x0			#  general
+		loop init.9			#  registers
+#ifdef BTX_SERIAL
+		call sio_init			# setup the serial console
+#endif
+		popa				#  and initialize
+		popl %es			# Initialize
+		popl %ds			#  user
+		popl %fs			#  segment
+		popl %gs			#  registers
+		iret				# To user mode</pre></div></div><div class=paragraph><div class=title><span class=filename>stand/i386/btx/btx/btx.S</span> <a id=btx-end></a></div><p>Note that the client’s environment include a stack segment selector and stack pointer (registers <code>%ss</code> and <code>%esp</code>).
+Indeed, once the TR is loaded with the appropriate stack segment selector (instruction <code>ltr</code>), the stack pointer is calculated and pushed onto the stack along with the stack’s segment selector.
+Next, the value <code>0x202</code> is pushed onto the stack; it is the value that the EFLAGS will get when control is passed to the client.
+Also, the User Mode code segment selector and the client’s entry point are pushed.
+Recall that this entry point is patched in the BTX header at link time.
+Finally, segment selectors (stored in register <code>%ecx</code>) for the segment registers <code>%gs, %fs, %ds and %es</code> are pushed onto the stack, along with the value at <code>%edx</code> (<code>0xa000</code>).
+Keep in mind the various values that have been pushed onto the stack (they will be popped out shortly).
+Next, values for the remaining general purpose registers are also pushed onto the stack (note the <code>loop</code> that pushes the value <code>0</code> seven times).
+Now, values will be started to be popped out of the stack.
+First, the <code>popa</code> instruction pops out of the stack the latest seven values pushed.
+They are stored in the general purpose registers in order <code>%edi, %esi, %ebp, %ebx, %edx, %ecx, %eax</code>.
+Then, the various segment selectors pushed are popped into the various segment registers.
+Five values still remain on the stack.
+They are popped when the <code>iret</code> instruction is executed.
+This instruction first pops the value that was pushed from the BTX header.
+This value is a pointer to <span class=filename>boot2</span>'s entry point.
+It is placed in the register <code>%eip</code>, the instruction pointer register.
+Next, the segment selector for the User Code Segment is popped and copied to register <code>%cs</code>.
+Remember that this segment’s privilege level is 3, the least privileged level.
+This means that we must provide values for the stack of this privilege level.
+This is why the processor, besides further popping the value for the EFLAGS register, does two more pops out of the stack.
+These values go to the stack pointer (<code>%esp</code>) and the stack segment (<code>%ss</code>).
+Now, execution continues at <code>boot0</code>'s entry point.</p></div><div class=paragraph><p>It is important to note how the User Code Segment is defined.
+This segment’s <em>base address</em> is set to <code>0xa000</code>.
+This means that code memory addresses are <em>relative</em> to address 0xa000; if code being executed is fetched from address <code>0x2000</code>, the <em>actual</em> memory addressed is <code>0xa000+0x2000=0xc000</code>.</p></div></div></div><div class=sect1><h2 id=boot2>1.7. boot2 Stage<a class=anchor href=#boot2></a></h2><div class=sectionbody><div class=paragraph><p><code>boot2</code> defines an important structure, <code>struct bootinfo</code>.
+This structure is initialized by <code>boot2</code> and passed to the loader, and then further to the kernel.
+Some nodes of this structures are set by <code>boot2</code>, the rest by the loader.
+This structure, among other information, contains the kernel filename, BIOS harddisk geometry, BIOS drive number for boot device, physical memory available, <code>envp</code> pointer etc.
+The definition for it is:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/machine/bootinfo.h:
+struct bootinfo {
+	u_int32_t	bi_version;
+	u_int32_t	bi_kernelname;		/* represents a char * */
+	u_int32_t	bi_nfs_diskless;	/* struct nfs_diskless * */
+				/* End of fields that are always present. */
+#define	bi_endcommon	bi_n_bios_used
+	u_int32_t	bi_n_bios_used;
+	u_int32_t	bi_bios_geom[N_BIOS_GEOM];
+	u_int32_t	bi_size;
+	u_int8_t	bi_memsizes_valid;
+	u_int8_t	bi_bios_dev;		/* bootdev BIOS unit number */
+	u_int8_t	bi_pad[2];
+	u_int32_t	bi_basemem;
+	u_int32_t	bi_extmem;
+	u_int32_t	bi_symtab;		/* struct symtab * */
+	u_int32_t	bi_esymtab;		/* struct symtab * */
+				/* Items below only from advanced bootloader */
+	u_int32_t	bi_kernend;		/* end of kernel space */
+	u_int32_t	bi_envp;		/* environment */
+	u_int32_t	bi_modulep;		/* preloaded modules */
+};</pre></div></div><div class=paragraph><p><code>boot2</code> enters into an infinite loop waiting for user input, then calls <code>load()</code>.
+If the user does not press anything, the loop breaks by a timeout, so <code>load()</code> will load the default file (<span class=filename>/boot/loader</span>).
+Functions <code>ino_t lookup(char *filename)</code> and <code>int xfsread(ino_t inode, void *buf, size_t nbyte)</code> are used to read the content of a file into memory.
+<span class=filename>/boot/loader</span> is an ELF binary, but where the ELF header is prepended with <span class=filename>a.out</span>'s <code>struct exec</code> structure.
+<code>load()</code> scans the loader’s ELF header, loading the content of <span class=filename>/boot/loader</span> into memory, and passing the execution to the loader’s entry:</p></div><div class="literalblock programlisting"><div class=content><pre>stand/i386/boot2/boot2.c:
+    __exec((caddr_t)addr, RB_BOOTINFO | (opts &amp; RBX_MASK),
+	   MAKEBOOTDEV(dev_maj[dsk.type], dsk.slice, dsk.unit, dsk.part),
+	   0, 0, 0, VTOP(&amp;bootinfo));</pre></div></div></div></div><div class=sect1><h2 id=boot-loader>1.8. loader Stage<a class=anchor href=#boot-loader></a></h2><div class=sectionbody><div class=paragraph><p>loader is a BTX client as well.
+I will not describe it here in detail, there is a comprehensive man page written by Mike Smith, <a href="https://man.freebsd.org/cgi/man.cgi?query=loader&amp;sektion=8&amp;format=html">loader(8)</a>.
+The underlying mechanisms and BTX were discussed above.</p></div><div class=paragraph><p>The main task for the loader is to boot the kernel.
+When the kernel is loaded into memory, it is being called by the loader:</p></div><div class="literalblock programlisting"><div class=content><pre>stand/common/boot.c:
+    /* Call the exec handler from the loader matching the kernel */
+    file_formats[fp-&gt;f_loader]-&gt;l_exec(fp);</pre></div></div></div></div><div class=sect1><h2 id=boot-kernel>1.9. Kernel Initialization<a class=anchor href=#boot-kernel></a></h2><div class=sectionbody><div class=paragraph><p>Let us take a look at the command that links the kernel.
+This will help identify the exact location where the loader passes execution to the kernel.
+This location is the kernel’s actual entry point.
+This command is now excluded from <span class=filename>sys/conf/Makefile.i386</span>.
+The content that interests us can be found in <span class=filename>/usr/obj/usr/src/i386.i386/sys/GENERIC/</span>.</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/obj/usr/src/i386.i386/sys/GENERIC/kernel.meta:
+ld -m elf_i386_fbsd -Bdynamic -T /usr/src/sys/conf/ldscript.i386 --build-id=sha1 --no-warn-mismatch \
+--warn-common --export-dynamic  --dynamic-linker /red/herring -X -o kernel locore.o
+&lt;lots of kernel .o files&gt;</pre></div></div><div class=paragraph><p>A few interesting things can be seen here.
+First, the kernel is an ELF dynamically linked binary, but the dynamic linker for kernel is <span class=filename>/red/herring</span>, which is definitely a bogus file.
+Second, taking a look at the file <span class=filename>sys/conf/ldscript.i386</span> gives an idea about what ld options are used when compiling a kernel.
+Reading through the first few lines, the string</p></div><div class="literalblock programlisting"><div class=content><pre>sys/conf/ldscript.i386:
+ENTRY(btext)</pre></div></div><div class=paragraph><p>says that a kernel’s entry point is the symbol <code>btext</code>.
+This symbol is defined in <span class=filename>locore.s</span>:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/locore.s:
+	.text
+/**********************************************************************
+ *
+ * This is where the bootblocks start us, set the ball rolling...
+ *
+ */
+NON_GPROF_ENTRY(btext)</pre></div></div><div class=paragraph><p>First, the register EFLAGS is set to a predefined value of 0x00000002.
+Then all the segment registers are initialized:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/locore.s:
+/* Don&#39;t trust what the BIOS gives for eflags. */
+	pushl	$PSL_KERNEL
+	popfl
+
+/*
+ * Don&#39;t trust what the BIOS gives for %fs and %gs.  Trust the bootstrap
+ * to set %cs, %ds, %es and %ss.
+ */
+	mov	%ds, %ax
+	mov	%ax, %fs
+	mov	%ax, %gs</pre></div></div><div class=paragraph><p>btext calls the routines <code>recover_bootinfo()</code>, <code>identify_cpu()</code>, which are also defined in <span class=filename>locore.s</span>.
+Here is a description of what they do:</p></div><table class="tableblock frame-none grid-all stretch informaltable"><col style=width:50%><col style=width:50%><tbody><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>recover_bootinfo</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock>This routine parses the parameters to the kernel passed from the bootstrap.
+The kernel may have been booted in 3 ways: by the loader, described above, by the old disk boot blocks, or by the old diskless boot procedure.
+This function determines the booting method, and stores the <code>struct bootinfo</code> structure into the kernel memory.</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class=tableblock><code>identify_cpu</code></p></td><td class="tableblock halign-left valign-top"><p class=tableblock>This function tries to find out what CPU it is running on, storing the value found in a variable <code>_cpu</code>.</p></td></tr></tbody></table><div class=paragraph><p>The next steps are enabling VME, if the CPU supports it:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/mpboot.s:
+	testl	$CPUID_VME,%edx
+	jz	3f
+	orl	$CR4_VME,%eax
+3:	movl	%eax,%cr4</pre></div></div><div class=paragraph><p>Then, enabling paging:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/mpboot.s:
+/* Now enable paging */
+	movl	IdlePTD_nopae, %eax
+	movl	%eax,%cr3			/* load ptd addr into mmu */
+	movl	%cr0,%eax			/* get control word */
+	orl	$CR0_PE|CR0_PG,%eax		/* enable paging */
+	movl	%eax,%cr0			/* and let&#39;s page NOW! */</pre></div></div><div class=paragraph><p>The next three lines of code are because the paging was set, so the jump is needed to continue the execution in virtualized address space:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/mpboot.s:
+	pushl	$mp_begin				/* jump to high mem */
+	ret
+
+/* now running relocated at KERNBASE where the system is linked to run */
+mp_begin:	/* now running relocated at KERNBASE */</pre></div></div><div class=paragraph><p>The function <code>init386()</code> is called with a pointer to the first free physical page, after that <code>mi_startup()</code>.
+<code>init386</code> is an architecture dependent initialization function, and <code>mi_startup()</code> is an architecture independent one (the 'mi_' prefix stands for Machine Independent).
+The kernel never returns from <code>mi_startup()</code>, and by calling it, the kernel finishes booting:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/locore.s:
+	pushl	physfree			/* value of first for init386(first) */
+	call	init386				/* wire 386 chip for unix operation */
+	addl	$4,%esp
+	movl	%eax,%esp			/* Switch to true top of stack. */
+	call	mi_startup			/* autoconfiguration, mountroot etc */
+	/* NOTREACHED */</pre></div></div><div class=sect2><h3 id=_init386>1.9.1. <code>init386()</code><a class=anchor href=#_init386></a></h3><div class=paragraph><p><code>init386()</code> is defined in <span class=filename>sys/i386/i386/machdep.c</span> and performs low-level initialization specific to the i386 chip. The switch to protected mode was performed by the loader.
+The loader has created the very first task, in which the kernel continues to operate.
+Before looking at the code, consider the tasks the processor must complete to initialize protected mode execution:</p></div><div class=ulist><ul><li><p>Initialize the kernel tunable parameters, passed from the bootstrapping program.</p></li><li><p>Prepare the GDT.</p></li><li><p>Prepare the IDT.</p></li><li><p>Initialize the system console.</p></li><li><p>Initialize the DDB, if it is compiled into kernel.</p></li><li><p>Initialize the TSS.</p></li><li><p>Prepare the LDT.</p></li><li><p>Set up thread0’s pcb.</p></li></ul></div><div class=paragraph><p><code>init386()</code> initializes the tunable parameters passed from bootstrap by setting the environment pointer (envp) and calling <code>init_param1()</code>.
+The envp pointer has been passed from loader in the <code>bootinfo</code> structure:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+	/* Init basic tunables, hz etc */
+	init_param1();</pre></div></div><div class=paragraph><p><code>init_param1()</code> is defined in <span class=filename>sys/kern/subr_param.c</span>.
+That file has a number of sysctls, and two functions, <code>init_param1()</code> and <code>init_param2()</code>, that are called from <code>init386()</code>:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/subr_param.c:
+	hz = -1;
+	TUNABLE_INT_FETCH(&#34;kern.hz&#34;, &amp;hz);
+	if (hz == -1)
+		hz = vm_guest &gt; VM_GUEST_NO ? HZ_VM : HZ;</pre></div></div><div class=paragraph><p>TUNABLE_&lt;typename>_FETCH is used to fetch the value from the environment:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/sys/kernel.h:
+#define	TUNABLE_INT_FETCH(path, var)	getenv_int((path), (var))</pre></div></div><div class=paragraph><p>Sysctl <code>kern.hz</code> is the system clock tick.
+Additionally, these sysctls are set by <code>init_param1()</code>: <code>kern.maxswzone, kern.maxbcache, kern.maxtsiz, kern.dfldsiz, kern.maxdsiz, kern.dflssiz, kern.maxssiz, kern.sgrowsiz</code>.</p></div><div class=paragraph><p>Then <code>init386()</code> prepares the Global Descriptors Table (GDT).
+Every task on an x86 is running in its own virtual address space, and this space is addressed by a segment:offset pair.
+Say, for instance, the current instruction to be executed by the processor lies at CS:EIP, then the linear virtual address for that instruction would be "the virtual address of code segment CS" + EIP.
+For convenience, segments begin at virtual address 0 and end at a 4GB boundary.
+Therefore, the instruction’s linear virtual address for this example would just be the value of EIP.
+Segment registers such as CS, DS etc are the selectors, i.e., indexes, into GDT (to be more precise, an index is not a selector itself, but the INDEX field of a selector).
+FreeBSD’s GDT holds descriptors for 15 selectors per CPU:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+union descriptor gdt0[NGDT];	/* initial global descriptor table */
+union descriptor *gdt = gdt0;	/* global descriptor table */
+
+sys/x86/include/segments.h:
+/*
+ * Entries in the Global Descriptor Table (GDT)
+ */
+#define	GNULL_SEL	0	/* Null Descriptor */
+#define	GPRIV_SEL	1	/* SMP Per-Processor Private Data */
+#define	GUFS_SEL	2	/* User %fs Descriptor (order critical: 1) */
+#define	GUGS_SEL	3	/* User %gs Descriptor (order critical: 2) */
+#define	GCODE_SEL	4	/* Kernel Code Descriptor (order critical: 1) */
+#define	GDATA_SEL	5	/* Kernel Data Descriptor (order critical: 2) */
+#define	GUCODE_SEL	6	/* User Code Descriptor (order critical: 3) */
+#define	GUDATA_SEL	7	/* User Data Descriptor (order critical: 4) */
+#define	GBIOSLOWMEM_SEL	8	/* BIOS low memory access (must be entry 8) */
+#define	GPROC0_SEL	9	/* Task state process slot zero and up */
+#define	GLDT_SEL	10	/* Default User LDT */
+#define	GUSERLDT_SEL	11	/* User LDT */
+#define	GPANIC_SEL	12	/* Task state to consider panic from */
+#define	GBIOSCODE32_SEL	13	/* BIOS interface (32bit Code) */
+#define	GBIOSCODE16_SEL	14	/* BIOS interface (16bit Code) */
+#define	GBIOSDATA_SEL	15	/* BIOS interface (Data) */
+#define	GBIOSUTIL_SEL	16	/* BIOS interface (Utility) */
+#define	GBIOSARGS_SEL	17	/* BIOS interface (Arguments) */
+#define	GNDIS_SEL	18	/* For the NDIS layer */
+#define	NGDT		19</pre></div></div><div class=paragraph><p>Note that those #defines are not selectors themselves, but just a field INDEX of a selector, so they are exactly the indices of the GDT.
+for example, an actual selector for the kernel code (GCODE_SEL) has the value 0x20.</p></div><div class=paragraph><p>The next step is to initialize the Interrupt Descriptor Table (IDT).
+This table is referenced by the processor when a software or hardware interrupt occurs.
+For example, to make a system call, user application issues the <code>INT 0x80</code> instruction.
+This is a software interrupt, so the processor’s hardware looks up a record with index 0x80 in the IDT.
+This record points to the routine that handles this interrupt, in this particular case, this will be the kernel’s syscall gate.
+The IDT may have a maximum of 256 (0x100) records.
+The kernel allocates NIDT records for the IDT, where NIDT is the maximum (256):</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+static struct gate_descriptor idt0[NIDT];
+struct gate_descriptor *idt = &amp;idt0[0];	/* interrupt descriptor table */</pre></div></div><div class=paragraph><p>For each interrupt, an appropriate handler is set.
+The syscall gate for <code>INT 0x80</code> is set as well:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+	setidt(IDT_SYSCALL, &amp;IDTVEC(int0x80_syscall),
+			SDT_SYS386IGT, SEL_UPL, GSEL(GCODE_SEL, SEL_KPL));</pre></div></div><div class=paragraph><p>So when a userland application issues the <code>INT 0x80</code> instruction, control will transfer to the function <code>_Xint0x80_syscall</code>, which is in the kernel code segment and will be executed with supervisor privileges.</p></div><div class=paragraph><p>Console and DDB are then initialized:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+	cninit();
+/* skipped */
+  kdb_init();
+#ifdef KDB
+	if (boothowto &amp; RB_KDB)
+		kdb_enter(KDB_WHY_BOOTFLAGS, &#34;Boot flags requested debugger&#34;);
+#endif</pre></div></div><div class=paragraph><p>The Task State Segment is another x86 protected mode structure, the TSS is used by the hardware to store task information when a task switch occurs.</p></div><div class=paragraph><p>The Local Descriptors Table is used to reference userland code and data.
+Several selectors are defined to point to the LDT, they are the system call gates and the user code and data selectors:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/x86/include/segments.h:
+#define	LSYS5CALLS_SEL	0	/* forced by intel BCS */
+#define	LSYS5SIGR_SEL	1
+#define	LUCODE_SEL	3
+#define	LUDATA_SEL	5
+#define	NLDT		(LUDATA_SEL + 1)</pre></div></div><div class=paragraph><p>Next, proc0’s Process Control Block (<code>struct pcb</code>) structure is initialized.
+proc0 is a <code>struct proc</code> structure that describes a kernel process.
+It is always present while the kernel is running, therefore it is linked with thread0:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/i386/i386/machdep.c:
+register_t
+init386(int first)
+{
+    /* ... skipped ... */
+
+    proc_linkup0(&amp;proc0, &amp;thread0);
+    /* ... skipped ... */
+}</pre></div></div><div class=paragraph><p>The structure <code>struct pcb</code> is a part of a proc structure.
+It is defined in <span class=filename>/usr/include/machine/pcb.h</span> and has a process’s information specific to the i386 architecture, such as registers values.</p></div></div><div class=sect2><h3 id=_mi_startup>1.9.2. <code>mi_startup()</code><a class=anchor href=#_mi_startup></a></h3><div class=paragraph><p>This function performs a bubble sort of all the system initialization objects and then calls the entry of each object one by one:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/init_main.c:
+	for (sipp = sysinit; sipp &lt; sysinit_end; sipp++) {
+
+		/* ... skipped ... */
+
+		/* Call function */
+		(*((*sipp)-&gt;func))((*sipp)-&gt;udata);
+		/* ... skipped ... */
+	}</pre></div></div><div class=paragraph><p>Although the sysinit framework is described in the <a href=/books/developers-handbook>Developers' Handbook</a>, I will discuss the internals of it.</p></div><div class=paragraph><p>Every system initialization object (sysinit object) is created by calling a SYSINIT() macro.
+Let us take as example an <code>announce</code> sysinit object.
+This object prints the copyright message:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/init_main.c:
+static void
+print_caddr_t(void *data __unused)
+{
+	printf(&#34;%s&#34;, (char *)data);
+}
+/* ... skipped ... */
+SYSINIT(announce, SI_SUB_COPYRIGHT, SI_ORDER_FIRST, print_caddr_t, copyright);</pre></div></div><div class=paragraph><p>The subsystem ID for this object is SI_SUB_COPYRIGHT (0x0800001).
+So, the copyright message will be printed out first, just after the console initialization.</p></div><div class=paragraph><p>Let us take a look at what exactly the macro <code>SYSINIT()</code> does.
+It expands to a <code>C_SYSINIT()</code> macro.
+The <code>C_SYSINIT()</code> macro then expands to a static <code>struct sysinit</code> structure declaration with another <code>DATA_SET</code> macro call:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/sys/kernel.h:
+      #define C_SYSINIT(uniquifier, subsystem, order, func, ident) \
+      static struct sysinit uniquifier ## _sys_init = { \ subsystem, \
+      order, \ func, \ (ident) \ }; \ DATA_WSET(sysinit_set,uniquifier ##
+      _sys_init);
+
+#define	SYSINIT(uniquifier, subsystem, order, func, ident)	\
+	C_SYSINIT(uniquifier, subsystem, order,			\
+	(sysinit_cfunc_t)(sysinit_nfunc_t)func, (void *)(ident))</pre></div></div><div class=paragraph><p>The <code>DATA_SET()</code> macro expands to a <code>_MAKE_SET()</code>, and that macro is the point where all the sysinit magic is hidden:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/linker_set.h:
+#define TEXT_SET(set, sym) _MAKE_SET(set, sym)
+#define DATA_SET(set, sym) _MAKE_SET(set, sym)</pre></div></div><div class=paragraph><p>After executing these macros, various sections were made in the kernel, including`set.sysinit_set`.
+Running objdump on a kernel binary, you may notice the presence of such small sections:</p></div><div class=listingblock><div class=content><pre class="rouge highlight"><code data-lang=bash>% llvm-objdump <span class=nt>-h</span> /kernel
+Sections:
+Idx Name                               Size     VMA      Type
+ 10 set_sysctl_set                     000021d4 01827078 DATA
+ 16 set_kbddriver_set                  00000010 0182a4d0 DATA
+ 20 set_scterm_set                     0000000c 0182c75c DATA
+ 21 set_cons_set                       00000014 0182c768 DATA
+ 33 set_scrndr_set                     00000024 0182c828 DATA
+ 41 set_sysinit_set                    000014d8 018fabb0 DATA</code></pre></div></div><div class=paragraph><p>This screen dump shows that the size of set.sysinit_set section is 0x14d8 bytes, so <code>0x14d8/sizeof(void *)</code> sysinit objects are compiled into the kernel.
+The other sections such as <code>set.sysctl_set</code> represent other linker sets.</p></div><div class=paragraph><p>By defining a variable of type <code>struct sysinit</code> the content of <code>set.sysinit_set</code> section will be "collected" into that variable:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/init_main.c:
+  SET_DECLARE(sysinit_set, struct sysinit);</pre></div></div><div class=paragraph><p>The <code>struct sysinit</code> is defined as follows:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/sys/kernel.h:
+  struct sysinit {
+	enum sysinit_sub_id	subsystem;	/* subsystem identifier*/
+	enum sysinit_elem_order	order;		/* init order within subsystem*/
+	sysinit_cfunc_t func;			/* function		*/
+	const void	*udata;			/* multiplexer/argument */
+};</pre></div></div><div class=paragraph><p>Returning to the <code>mi_startup()</code> discussion, it is must be clear now, how the sysinit objects are being organized.
+The <code>mi_startup()</code> function sorts them and calls each.
+The very last object is the system scheduler:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/sys/kernel.h:
+enum sysinit_sub_id {
+	SI_SUB_DUMMY		= 0x0000000,	/* not executed; for linker*/
+	SI_SUB_DONE		= 0x0000001,	/* processed*/
+	SI_SUB_TUNABLES		= 0x0700000,	/* establish tunable values */
+	SI_SUB_COPYRIGHT	= 0x0800001,	/* first use of console*/
+...
+	SI_SUB_LAST		= 0xfffffff	/* final initialization */
+};</pre></div></div><div class=paragraph><p>The system scheduler sysinit object is defined in the file <span class=filename>sys/vm/vm_glue.c</span>, and the entry point for that object is <code>scheduler()</code>.
+That function is actually an infinite loop, and it represents a process with PID 0, the swapper process.
+The thread0 structure, mentioned before, is used to describe it.</p></div><div class=paragraph><p>The first user process, called <em>init</em>, is created by the sysinit object <code>init</code>:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/init_main.c:
+static void
+create_init(const void *udata __unused)
+{
+	struct fork_req fr;
+	struct ucred *newcred, *oldcred;
+	struct thread *td;
+	int error;
+
+	bzero(&amp;fr, sizeof(fr));
+	fr.fr_flags = RFFDG | RFPROC | RFSTOPPED;
+	fr.fr_procp = &amp;initproc;
+	error = fork1(&amp;thread0, &amp;fr);
+	if (error)
+		panic(&#34;cannot fork init: %d\n&#34;, error);
+	KASSERT(initproc-&gt;p_pid == 1, (&#34;create_init: initproc-&gt;p_pid != 1&#34;));
+	/* divorce init&#39;s credentials from the kernel&#39;s */
+	newcred = crget();
+	sx_xlock(&amp;proctree_lock);
+	PROC_LOCK(initproc);
+	initproc-&gt;p_flag |= P_SYSTEM | P_INMEM;
+	initproc-&gt;p_treeflag |= P_TREE_REAPER;
+	oldcred = initproc-&gt;p_ucred;
+	crcopy(newcred, oldcred);
+#ifdef MAC
+	mac_cred_create_init(newcred);
+#endif
+#ifdef AUDIT
+	audit_cred_proc1(newcred);
+#endif
+	proc_set_cred(initproc, newcred);
+	td = FIRST_THREAD_IN_PROC(initproc);
+	crcowfree(td);
+	td-&gt;td_realucred = crcowget(initproc-&gt;p_ucred);
+	td-&gt;td_ucred = td-&gt;td_realucred;
+	PROC_UNLOCK(initproc);
+	sx_xunlock(&amp;proctree_lock);
+	crfree(oldcred);
+	cpu_fork_kthread_handler(FIRST_THREAD_IN_PROC(initproc), start_init, NULL);
+}
+SYSINIT(init, SI_SUB_CREATE_INIT, SI_ORDER_FIRST, create_init, NULL);</pre></div></div><div class=paragraph><p>The function <code>create_init()</code> allocates a new process by calling <code>fork1()</code>, but does not mark it runnable.
+When this new process is scheduled for execution by the scheduler, the <code>start_init()</code> will be called.
+That function is defined in <span class=filename>init_main.c</span>.
+It tries to load and exec the <span class=filename>init</span> binary, probing <span class=filename>/sbin/init</span> first, then <span class=filename>/sbin/oinit</span>, <span class=filename>/sbin/init.bak</span>, and finally <span class=filename>/rescue/init</span>:</p></div><div class="literalblock programlisting"><div class=content><pre>sys/kern/init_main.c:
+static char init_path[MAXPATHLEN] =
+#ifdef	INIT_PATH
+    __XSTRING(INIT_PATH);
+#else
+    &#34;/sbin/init:/sbin/oinit:/sbin/init.bak:/rescue/init&#34;;
+#endif</pre></div></div></div></div></div><div id=footnotes><hr><div class=footnote id=_footnotedef_1><a href=#_footnoteref_1>1</a>. This prompt will appear if the user presses a key just after selecting an OS to boot at the boot0 stage.</div><div class=footnote id=_footnotedef_2><a href=#_footnoteref_2>2</a>. When in doubt, we refer the reader to the official Intel manuals, which describe the exact semantics for each instruction: .</div><div class=footnote id=_footnotedef_3><a href=#_footnoteref_3>3</a>. There is a file /boot/boot1, but it is not the written to the beginning of the FreeBSD slice. Instead, it is concatenated with boot2 to form boot, which is written to the beginning of the FreeBSD slice and read at boot time.</div><div class=footnote id=_footnotedef_4><a href=#_footnoteref_4>4</a>. Actually we did pass a pointer to the slice entry in register %si. However, boot1 does not assume that it was loaded by boot0 (perhaps some other MBR loaded it, and did not pass this information), so it assumes nothing.</div><div class=footnote id=_footnotedef_5><a href=#_footnoteref_5>5</a>. In the context of 16-bit real mode, a word is 2 bytes.</div><div class=footnote id=_footnotedef_6><a href=#_footnoteref_6>6</a>. 512*16=8192 bytes, exactly the size of boot</div><div class=footnote id=_footnotedef_7><a href=#_footnoteref_7>7</a>. Historically known as disklabel. If you ever wondered where FreeBSD stored this information, it is in this region - see <a href="https://man.freebsd.org/cgi/man.cgi?query=bsdlabel&amp;sektion=8&amp;format=html">bsdlabel(8)</a></div><div class=footnote id=_footnotedef_8><a href=#_footnoteref_8>8</a>. This is necessary for legacy reasons. Interested readers should see .</div><div class=footnote id=_footnotedef_9><a href=#_footnoteref_9>9</a>. Real-mode code and data are necessary when switching back to real mode from protected mode, as suggested by the Intel manuals.</div></div></div><hr><div class=last-modified><p><strong>Last modified on</strong>: March 9, 2024 by <a href="https://cgit.freebsd.org/doc/commit/?id=6199af92e7" target=_blank>Danilo G. Baio</a></p></div><div class=buttons><div class=prev><i class="fa fa-angle-left" aria-hidden=true title=Prev></i><div class=container><a href=http://172.16.201.134:1313/en/books/arch-handbook/parti class=direction>Prev</a></div></div><div class=home><i class="fa fa-home" aria-hidden=true title=Home></i><div class=container><a href=../ class=direction>Home</a></div></div><div class=next><div class=container><a href=http://172.16.201.134:1313/en/books/arch-handbook/locking class=direction>Next</a></div><i class="fa fa-angle-right" aria-hidden=true title=Next></i></div></div><label class="hidden book-menu-overlay" for=menu-control></label></div><aside class=toc><div class=toc-content><h3>Table of Contents</h3><nav id=TableOfContents><ul><li><a href=#boot-synopsis>1.1. Synopsis</a></li><li><a href=#boot-overview>1.2. Overview</a></li><li><a href=#boot-bios>1.3. The BIOS</a></li><li><a href=#boot-boot0>1.4. The Master Boot Record (<code>boot0</code>)</a></li><li><a href=#boot-boot1>1.5. <code>boot1</code> Stage</a></li><li><a href=#btx-server>1.6. The BTX Server</a></li><li><a href=#boot2>1.7. boot2 Stage</a></li><li><a href=#boot-loader>1.8. loader Stage</a></li><li><a href=#boot-kernel>1.9. Kernel Initialization</a></li></ul></nav><hr><div class=resources><h3>Resources</h3><ul class=contents><li><i class="fa fa-file-pdf-o" aria-hidden=true title="Download PDF"></i><a href=https://download.freebsd.org/doc/en/books/arch-handbook/arch-handbook_en.pdf>Download PDF</a></li><li><i class="fa fa-pencil-square-o" aria-hidden=true title="Edit this page"></i><a href=https://github.com/freebsd/freebsd-doc/blob/main/documentation/content/en/_index target=_blank>Edit this page</a></li></ul></div></div></aside><a class=to-top href=#top><i class="fa fa-arrow-circle-up" aria-hidden=true></i></a></main><footer><div class=footer-container><section class=logo-column><img src=http://172.16.201.134:1313/images/FreeBSD-colors.svg width=160 height=50 alt="FreeBSD logo"><div class=options-container><div class=language-container><a id=languages href=http://172.16.201.134:1313/en/languages><img src=http://172.16.201.134:1313/images/language.png class=language-image alt="Choose language">
+<span>English</span></a></div><div class=theme-container><select id=theme-chooser><option value=theme-system>System</option><option value=theme-light>Light</option><option value=theme-dark>Dark</option><option value=theme-high-contrast>High contrast</option></select></div></div></section><section class=about-column><h3 class=column-title>About</h3><ul class=column-elements-container><li><a href=https://www.freebsd.org/about/ target=_blank class=column-element>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/ target=_blank class=column-element>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/where/ target=_blank class=column-element>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct target=_blank class=column-element>Code of Conduct</a></li><li><a href=https://www.freebsd.org/security/ target=_blank class=column-element>Security Advisories</a></li></ul></section><section class=documentation-column><h3 class=column-title>Documentation</h3><ul class=column-elements-container><li><a href=/en class=column-element>Documentation portal</a></li><li><a href=https://man.FreeBSD.org target=_blank class=column-element>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank class=column-element>Presentations and papers</a></li><li><a href=https://docs-archive.freebsd.org/doc/ target=_blank class=column-element>Previous versions</a></li><li><a href=https://docs-archive.freebsd.org/44doc/ target=_blank class=column-element>4.4BSD Documents</a></li><li><a href=https://wiki.freebsd.org/ target=_blank class=column-element>Wiki</a></li></ul></section><section class=community-column><h3 class=column-title>Community</h3><ul class=column-elements-container><li><a href=http://172.16.201.134:1313/en/articles/contributing class=column-element>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank class=column-element>Community forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank class=column-element>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank class=column-element>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank class=column-element>Bug Tracker</a></li></ul></section><section class=legal-column><h3 class=column-title>Legal</h3><ul class=column-elements-container><li><a href=https://freebsdfoundation.org/donate/ target=_blank class=column-element>Donations</a></li><li><a href=https://www.freebsd.org/copyright/freebsd-license/ target=_blank class=column-element>Licensing</a></li><li><a href=https://www.freebsd.org/privacy/ target=_blank class=column-element>Privacy Policy</a></li><li><a href=https://www.freebsd.org/copyright/ target=_blank class=column-element>Legal notices</a></li></ul></section><section class=copyright-column><p>&copy; 1994-2024 The FreeBSD Project. All rights reserved</p><span>Made with <span class=heart>♥</span> by the FreeBSD Community</span></section></div></footer></body></html>

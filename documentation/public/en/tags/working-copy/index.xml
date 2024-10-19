@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Working Copy on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/working-copy/</link><description>Recent content in Working Copy on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/working-copy/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. The Working Copy</title><link>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>The &lt;em>working copy&lt;/em> is a copy of the FreeBSD repository documentation tree downloaded onto the local computer.
+Changes are made to the local working copy, tested, and then submitted as patches to be committed to the main repository.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A full copy of the documentation tree can occupy 550 megabytes of disk space.
+Allow for a full gigabyte of space to have room for temporary files and test versions of various output formats.&lt;/p>
+&lt;/div></description></item></channel></rss>

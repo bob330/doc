@@ -1,0 +1,313 @@
+<!doctype html><html class=theme-light lang=zh-cn><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=copyright content="1995-2024 The FreeBSD Foundation"><link rel=canonical href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/jail/><title>第 4 章 Jail子系统 | FreeBSD Documentation Portal</title>
+<meta name=theme-color content="#790000"><meta name=color-scheme content="system light dark high-contrast"><link rel="shortcut icon" href=http://172.16.201.134:1313/favicon.ico><link rel=stylesheet href=http://172.16.201.134:1313/styles/main.min.css><link rel=stylesheet href=http://172.16.201.134:1313/css/font-awesome-min.css><script defer src=/js/theme-chooser.min.js></script><script defer src=/js/copy-clipboard.min.js></script><script defer src=/js/search.min.js></script><meta name=twitter:card content="summary"><meta name=twitter:domain content="docs.FreeBSD.org"><meta name=twitter:site content="@freebsd"><meta name=twitter:url content="https://twitter.com/freebsd"><meta property="og:title" content="第 4 章 Jail子系统"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:image" content="http://172.16.201.134:1313/favicon.ico"><meta property="og:image:alt" content="FreeBSD Logo"><meta property="og:locale" content="zh-cn"><meta property="og:url" content="http://172.16.201.134:1313/zh-cn/books/arch-handbook/jail/"><meta property="og:site_name" content="FreeBSD Documentation Portal"><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","url":"http:\/\/172.16.201.134:1313\/zh-cn\/books\/arch-handbook\/jail\/","name":"FreeBSD Documentation Portal","headline":"FreeBSD Documentation Portal","description":"FreeBSD Documentation Portal"}</script></head><body><header><div class=header-container><div class=logo-menu-bars-container><a href=https://www.FreeBSD.org class=logo><img src=http://172.16.201.134:1313/images/FreeBSD-monochromatic.svg width=160 height=50 alt="FreeBSD logo">
+</a><label class=menu-bars for=menu-bars><i class="fa fa-bars" aria-hidden=true></i></label></div><input id=menu-bars type=checkbox><nav><ul class=menu><li class=menu-item><input id=about type=checkbox>
+<a href=# aria-label="Navigate to About section"><label class=menu-item-description for=about>About
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/about/ target=_blank>About</a></li><li><a href=https://www.freebsd.org/about/ target=_blank>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/about-us/about-the-foundation/ target=_blank>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct/ target=_blank>Code of Conduct</a></li></ul></li><li class=menu-item><input id=download type=checkbox>
+<a href=# aria-label="Navigate to get FreeBSD section"><label class=menu-item-description for=download>Get FreeBSD
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/where/ target=_blank>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/releases/ target=_blank>Release Information</a></li><li><a href=https://www.freebsd.org/releng/ target=_blank>Release Engineering</a></li><li><a href=https://www.freebsd.org/security/ target=_blank>Security Advisories</a></li></ul></li><li class=menu-item><input id=documentation type=checkbox>
+<a href=# aria-label="Navigate to get Documentation section"><label class=menu-item-description for=documentation>Documentation
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=/zh-cn>Documentation portal</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/handbook>FreeBSD Handbook</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/porters-handbook>Porter's Handbook</a></li><li><a href=https://docs.FreeBSD.org/en/books/fdp-primer>Documentation Project Handbook</a></li><li><a href=https://man.FreeBSD.org target=_blank>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank>Presentations and papers</a></li><li><a href=https://wiki.FreeBSD.org target=_blank>Wiki</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books>Books</a></li><li><a href=http://172.16.201.134:1313/zh-cn/articles>Articles</a></li></ul></li><li class=menu-item><input id=community type=checkbox>
+<a href=# aria-label="Navigate to get Community section"><label class=menu-item-description for=community>Community
+<i class="fa fa-angle-down fa-lg" aria-hidden=true></i></label></a><ul class=sub-menu><li class=title><a href=https://www.freebsd.org/community/>Community</a></li><li><a href=http://172.16.201.134:1313/zh-cn/articles/contributing>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank>Forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank>Bug Tracker</a></li><li><a href=https://www.freebsd.org/support/ target=_blank>Support</a></li></ul></li></ul></nav><div class=search-donate-container><form class=search method=get id=search-header-form action=https://docs.freebsd.org/search name=search-header-form><input type=hidden name=DB value=zh-cn>
+<input id=words name=P type=text size=20 maxlength=255>
+<button>
+<i class="fa fa-search" aria-hidden=true></i></button></form><div class=donate><a href=https://freebsdfoundation.org/donate/ target=_blank><span class=heart>♥</span>
+Donate</a></div></div></div></header><input type=checkbox class="hidden toggle" id=menu-control><main class=main-wrapper-book><a id=top></a><aside class=book-menu><div class=book-menu-content><input id=search-book type=text placeholder=Search aria-label=Search maxlength=128><nav id=MenuContents><ul><li><input type=checkbox id=chapter-6dcd22d99f78db2a9aacae23be13866e class=toggle>
+<label for=chapter-6dcd22d99f78db2a9aacae23be13866e><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/parti/>Part I. 内核</a></li><li><input type=checkbox id=chapter-9cc61bc35df69063dc03a5911e1ad9c9 class=toggle>
+<label class="icon cursor" for=chapter-9cc61bc35df69063dc03a5911e1ad9c9><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/>第 1 章 引导过程与内核初始化</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-synopsis>1.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-overview>1.2. 总览</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-bios>1.3. BIOS POST</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-boot0>1.4. <code>boot0</code>阶段</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-boot2>1.5. <code>boot2</code>阶段</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-loader>1.6. loader阶段</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/boot/#boot-kernel>1.7. 内核初始化</a></li></ul></li><li><input type=checkbox id=chapter-3a651b0a4b9f6238336624d3c0fa5187 class=toggle>
+<label class="icon cursor" for=chapter-3a651b0a4b9f6238336624d3c0fa5187><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/locking/>第 2 章 内核中的锁</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/locking/#locking-mutexes>2.1. Mutex</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/locking/#locking-sx>2.2. 共享互斥锁</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/locking/#locking-atomic>2.3. 原子保护变量</a></li></ul></li><li><input type=checkbox id=chapter-bf0b823c107a80f3035dfd6fae09d023 class=toggle>
+<label class="icon cursor" for=chapter-bf0b823c107a80f3035dfd6fae09d023><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/kobj/>第 3 章 内核对象</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/kobj/#kernel-objects-term>3.1. 术语</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/kobj/#kernel-objects-operation>3.2. Kobj的工作流程</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/kobj/#kernel-objects-using>3.3. 使用Kobj</a></li></ul></li><li><input type=checkbox id=chapter-41dab1afed6cf3ffa54628db4227e196 class=toggle checked>
+<label class="icon cursor" for=chapter-41dab1afed6cf3ffa54628db4227e196><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/jail/>第 4 章 Jail子系统</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/jail/#jail-arch>4.1. Jail的系统结构</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/jail/#jail-restrictions>4.2. 系统对被囚禁程序的限制</a></li></ul></li><li><input type=checkbox id=chapter-e7d9ebcb448b0045179ebe22f8e2e9d8 class=toggle>
+<label class="icon cursor" for=chapter-e7d9ebcb448b0045179ebe22f8e2e9d8><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sysinit/>第 5 章 SYSINIT框架</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sysinit/#sysinit-term>5.1. 术语</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sysinit/#sysinit-operation>5.2. SYSINIT操作</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sysinit/#sysinit-using>5.3. 使用SYSINIT</a></li></ul></li><li><input type=checkbox id=chapter-8b57b16ba53538421a8fb2152b25976f class=toggle>
+<label class="icon cursor" for=chapter-8b57b16ba53538421a8fb2152b25976f><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/>第 6 章 TrustedBSD MAC 框架</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-copyright>6.1. MAC 文档版权声明</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-synopsis>6.2. 术语解析</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-introduction>6.3. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-background>6.4. 安全策略背景知识</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-framework-kernel-arch>6.5. MAC 框架的内核体系结构</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-policy-architecture>6.6. MAC策略模块体系结构</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-entry-point-reference>6.7. MAC策略入口函数参考</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-userland-arch>6.8. 应用层体系结构</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/mac/#mac-conclusion>6.9. 小结</a></li></ul></li><li><input type=checkbox id=chapter-28609916419208e3a19d240cf7593906 class=toggle>
+<label class="icon cursor" for=chapter-28609916419208e3a19d240cf7593906><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/>第 7 章 虚拟内存系统</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-physmem>7.1. 物理内存的管理-<code>vm_page_t</code></a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-cache>7.2. 统一的缓存信息结构体-<code>vm_object_t</code></a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-fileio>7.3. 文件系统输入/输出-<code>buf</code>结构体</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-pagetables>7.4. 映射页表-<code>vm_map_t, vm_entry_t</code></a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-kvm>7.5. KVM存储映射</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/vm/#vm-tuning>7.6. 调整FreeBSD的虚拟内存系统</a></li></ul></li><li><input type=checkbox id=chapter-716edd44e8ad22ea57cdf273d2578872 class=toggle>
+<label class="icon cursor" for=chapter-716edd44e8ad22ea57cdf273d2578872><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/>第 8 章 SMPng 设计文档</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-intro>8.1. 绪论</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-lock-fundamentals>8.2. 基本工具与上锁的基础知识</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-design>8.3. 架构与设计概览</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-lock-strategies>8.4. 特定数据的锁策略</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-implementation-notes>8.5. 实现说明</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-misc>8.6. 其它话题</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/smp/#smp-glossary>术语表</a></li></ul></li><li><input type=checkbox id=chapter-448f803e40f97b1ff8336db9ba637745 class=toggle>
+<label for=chapter-448f803e40f97b1ff8336db9ba637745><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/partii/>Part II. 设备驱动程序</a></li><li><input type=checkbox id=chapter-6971d35b0bbe2a0bdb005a02546cd580 class=toggle>
+<label class="icon cursor" for=chapter-6971d35b0bbe2a0bdb005a02546cd580><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/>第 9 章 编写 FreeBSD 设备驱动程序</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-intro>9.1. 简介</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-kld>9.2. 动态内核链接工具-KLD</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-access>9.3. 访问设备驱动程序</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-char>9.4. 字符设备</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-block>9.5. 块设备(消亡中)</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/driverbasics/#driverbasics-net>9.6. 网络设备驱动程序</a></li></ul></li><li><input type=checkbox id=chapter-9cc7968be065b256e57086439d93e9a4 class=toggle>
+<label class="icon cursor" for=chapter-9cc7968be065b256e57086439d93e9a4><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/>第 10 章 ISA设备驱动程序</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-synopsis>10.1. 概述</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-basics>10.2. 基本信息</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-device-t>10.3. Device_t指针</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-config>10.4. 配置文件与自动配置期间识别和探测的顺序</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-resources>10.5. 资源</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-busmem>10.6. 总线内存映射</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-dma>10.7. DMA</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-probe>10.8. xxx_isa_probe</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-attach>10.9. xxx_isa_attach</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-detach>10.10. xxx_isa_detach</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-shutdown>10.11. xxx_isa_shutdown</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/isa/#isa-driver-intr>10.12. xxx_intr</a></li></ul></li><li><input type=checkbox id=chapter-0b427d421e89aa3107f62d5b70f6a0f2 class=toggle>
+<label class="icon cursor" for=chapter-0b427d421e89aa3107f62d5b70f6a0f2><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/pci/>第 11 章 PCI设备</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/pci/#pci-probe>11.1. 探测与连接</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/pci/#pci-bus>11.2. 总线资源</a></li></ul></li><li><input type=checkbox id=chapter-0b7eb8d45a0ea6bc9c2882e903b93959 class=toggle>
+<label class="icon cursor" for=chapter-0b7eb8d45a0ea6bc9c2882e903b93959><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/>第 12 章 通用访问方法SCSI控制器</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-synopsis>12.1. 提纲</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-general>12.2. 通用基础结构</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-polling>12.3. 轮询</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-async>12.4. 异步事件</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-interrupts>12.5. 中断</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-errors>12.6. 错误总览</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/scsi/#scsi-timeout>12.7. 超时处理</a></li></ul></li><li><input type=checkbox id=chapter-bdaa4909dfbdcec8d7be976fd87cb00e class=toggle>
+<label class="icon cursor" for=chapter-bdaa4909dfbdcec8d7be976fd87cb00e><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/>第 13 章 USB设备</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/#usb-intro>13.1. 简介</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/#usb-hc>13.2. 主控器</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/#usb-dev>13.3. USB设备信息</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/#usb-devprobe>13.4. 设备的探测和连接</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/usb/#usb-protocol>13.5. USB驱动程序的协议信息</a></li></ul></li><li><input type=checkbox id=chapter-5fc5c179f5014d968a5c8feec7e10e59 class=toggle>
+<label class="icon cursor" for=chapter-5fc5c179f5014d968a5c8feec7e10e59><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/newbus/>第 14 章 Newbus</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/newbus/#newbus-devdrivers>14.1. 设备驱动程序</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/newbus/#newbus-overview>14.2. Newbus概览</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/newbus/#newbus-api>14.3. Newbus API</a></li></ul></li><li><input type=checkbox id=chapter-7d3796cced00105c77e7f87e84edd73b class=toggle>
+<label class="icon cursor" for=chapter-7d3796cced00105c77e7f87e84edd73b><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sound/>第 15 章 声音子系统</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sound/#oss-intro>15.1. 简介</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sound/#oss-files>15.2. 文件</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sound/#pcm-probe-and-attach>15.3. 探测，连接等</a></li><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sound/#oss-interfaces>15.4. 接口</a></li></ul></li><li><input type=checkbox id=chapter-41c74c3e72fcf5116f6d999c36ef185b class=toggle>
+<label class="icon cursor" for=chapter-41c74c3e72fcf5116f6d999c36ef185b><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/pccard/>第 16 章 PC Card</a><ul><li><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/pccard/#pccard-adddev>16.1. 添加设备</a></li></ul></li><li><input type=checkbox id=chapter-2a7cf37011599a8e3d62d1e3008c3c5d class=toggle>
+<label for=chapter-2a7cf37011599a8e3d62d1e3008c3c5d><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/partiii/>Part III. 附录</a></li><li><input type=checkbox id=chapter-d4c82056f0235da9fde0d29203d44f9a class=toggle>
+<label for=chapter-d4c82056f0235da9fde0d29203d44f9a><a role=button></a></label><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/bibliography/>参考书目</a></li><li></li></ul></nav></div></aside><div class=book><div class=book-menu-mobile><label for=menu-control><span class=menu-control-button><i class="fa fa-list" aria-hidden=true title="Book menu"></i>
+Book menu</span></label></div><h1 class=title>第 4 章 Jail子系统</h1><div class="admonitionblock note"><p><i class="fa fa-exclamation-circle" aria-hidden=true></i>
+This translation may be out of date. To help with the translations please access the <a href=https://translate-dev.freebsd.org/ target=_blank>FreeBSD translations instance</a>.</p></div><div class=toc-mobile><h3>Table of Contents</h3><nav id=TableOfContents><ul><li><a href=#jail-arch>4.1. Jail的系统结构</a></li><li><a href=#jail-restrictions>4.2. 系统对被囚禁程序的限制</a></li></ul></nav></div><div class=book-content><div id=preamble><div class=sectionbody><div class=paragraph><p>在大多数UNIX®系统中，用户<code>root</code>是万能的。这也就增加了许多危险。 如果一个攻击者获得了一个系统中的<code>root</code>，就可以在他的指尖掌握系统中所有的功能。 在FreeBSD里，有一些sysctl项削弱了<code>root</code>的权限， 这样就可以将攻击者造成的损害减小到最低限度。这些安全功能中，有一种叫安全级别。 另一种在FreeBSD 4.0及以后版本中提供的安全功能，就是<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>。 Jail将一个运行环境的文件树根切换到某一特定位置， 并且对这样环境中叉分生成的进程做出限制。例如， 一个被监禁的进程不能影响这个jail之外的进程、不能使用一些特定的系统调用， 也就不能对主计算机造成破坏。</p></div><div class="admonitionblock tip"><table><tbody><tr><td class=icon><i class="fa icon-tip" title=Tip></i></td><td class=content><div class=title>译者注</div><div class=paragraph><p>英文单词"<code>jail</code>"的中文意思是"<code>囚禁、监禁</code>"。</p></div></td></tr></tbody></table></div><div class=paragraph><p>Jail已经成为一种新型的安全模型。 人们可以在jail中运行各种可能很脆弱的服务器程序，如Apache、 BIND和sendmail。 这样一来，即使有攻击者取得了jail中的<code>root</code>， 这最多让人们皱皱眉头，而不会使人们惊慌失措。 本文主要关注jail的内部原理(源代码)。 如果你正在寻找设置Jail的指南性文档， 我建议你阅读我的另一篇文章，发表在Sys Admin Magazine, May 2001, 《Securing FreeBSD using Jail》。</p></div></div></div><div class=sect1><h2 id=jail-arch>4.1. Jail的系统结构<a class=anchor href=#jail-arch></a></h2><div class=sectionbody><div class=paragraph><p>Jail由两部分组成：用户级程序， 也就是<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>；还有在内核中Jail的实现代码：<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a> 系统调用和相关的约束。我将讨论用户级程序和jail在内核中的实现原理。</p></div><div class=sect2><h3 id=_用户级代码>4.1.1. 用户级代码<a class=anchor href=#_用户级代码></a></h3><div class=paragraph><p>Jail的用户级源代码在<span class=filename>/usr/src/usr.sbin/jail</span>， 由一个文件<span class=filename>jail.c</span>组成。这个程序有这些参数：jail的路径， 主机名，IP地址，还有需要执行的命令。</p></div><div class=sect3><h4 id=_数据结构>4.1.1.1. 数据结构<a class=anchor href=#_数据结构></a></h4><div class=paragraph><p>在<span class=filename>jail.c</span>中，我将最先注解的是一个重要结构体 <code>struct jail j;</code>的声明，这个结构类型的声明包含在 <span class=filename>/usr/include/sys/jail.h</span>之中。</p></div><div class=paragraph><p><code>jail</code>结构的定义是：</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/sys/jail.h:
+
+struct jail {
+        u_int32_t       version;
+        char            *path;
+        char            *hostname;
+        u_int32_t       ip_number;
+};</pre></div></div><div class=paragraph><p>正如你所见，传送给命令<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>的每个参数都在这里有对应的一项。 事实上，当命令<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>被执行时，这些参数才由命令行真正传入：</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/usr.sbin/jail.c
+char path[PATH_MAX];
+...
+if(realpath(argv[0], path) == NULL)
+    err(1, &#34;realpath: %s&#34;, argv[0]);
+if (chdir(path) != 0)
+    err(1, &#34;chdir: %s&#34;, path);
+memset(j, 0, sizeof(j));
+j.version = 0;
+j.path = path;
+j.hostname = argv[1];</pre></div></div></div><div class=sect3><h4 id=_网络>4.1.1.2. 网络<a class=anchor href=#_网络></a></h4><div class=paragraph><p>传给<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>的参数中有一个是IP地址。这是在网络上访问jail时的地址。 <a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>将IP地址翻译成网络字节顺序，并存入<code>j</code>(<code>jail</code>类型的结构体)。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/usr.sbin/jail/jail.c:
+struct in_addr in;
+...
+if (inet_aton(argv[2], in) == 0)
+    errx(1, &#34;Could not make sense of ip-number: %s&#34;, argv[2]);
+j.ip_number = ntohl(in.s_addr);</pre></div></div><div class=paragraph><p>函数<a href="https://man.freebsd.org/cgi/man.cgi?query=inet_aton&amp;sektion=3&amp;format=html">inet_aton(3)</a>"将指定的字符串解释为一个Internet地址，并将其转存到指定的结构体中"。<a href="https://man.freebsd.org/cgi/man.cgi?query=inet_aton&amp;sektion=3&amp;format=html">inet_aton(3)</a>设定了结构体in， 之后in中的内容再用<a href="https://man.freebsd.org/cgi/man.cgi?query=ntohl&amp;sektion=3&amp;format=html">ntohl(3)</a>转换成主机字节顺序， 并置入<code>jail</code>结构体的<code>ip_number</code>成员。</p></div></div><div class=sect3><h4 id=_囚禁进程>4.1.1.3. 囚禁进程<a class=anchor href=#_囚禁进程></a></h4><div class=paragraph><p>最后，用户级程序囚禁进程。现在Jail自身变成了一个被囚禁的进程， 并使用<a href="https://man.freebsd.org/cgi/man.cgi?query=execv&amp;sektion=3&amp;format=html">execv(3)</a>执行用户指定的命令。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/usr.sbin/jail/jail.c
+i = jail(j);
+...
+if (execv(argv[3], argv + 3) != 0)
+    err(1, &#34;execv: %s&#34;, argv[3]);</pre></div></div><div class=paragraph><p>正如你所见，函数<code>jail()</code>被调用，参数是结构体<code>jail</code>中被填入数据项， 而如前所述，这些数据项又来自<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=8&amp;format=html">jail(8)</a>的命令行参数。 最后，执行了用户指定的命令。下面我将开始讨论<code>jail</code>在内核中的实现。</p></div></div></div><div class=sect2><h3 id=_相关的内核源代码>4.1.2. 相关的内核源代码<a class=anchor href=#_相关的内核源代码></a></h3><div class=paragraph><p>现在我们来看文件<span class=filename>/usr/src/sys/kern/kern_jail.c</span>。 在这里定义了<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>的系统调用、相关的sysctl项，还有网络函数。</p></div><div class=sect3><h4 id=_sysctl项>4.1.2.1. sysctl项<a class=anchor href=#_sysctl项></a></h4><div class=paragraph><p>在<span class=filename>kern_jail.c</span>里定义了如下sysctl项:</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c:
+
+int     jail_set_hostname_allowed = 1;
+SYSCTL_INT(_security_jail, OID_AUTO, set_hostname_allowed, CTLFLAG_RW,
+    jail_set_hostname_allowed, 0,
+    &#34;Processes in jail can set their hostnames&#34;);
+    /* Jail中的进程可设定自身的主机名 */
+
+int     jail_socket_unixiproute_only = 1;
+SYSCTL_INT(_security_jail, OID_AUTO, socket_unixiproute_only, CTLFLAG_RW,
+    jail_socket_unixiproute_only, 0,
+    &#34;Processes in jail are limited to creating UNIX/IPv4/route sockets only&#34;);
+    /* Jail中的进程被限制只能建立UNIX套接字、IPv4套接字、路由套接字 */
+
+int     jail_sysvipc_allowed = 0;
+SYSCTL_INT(_security_jail, OID_AUTO, sysvipc_allowed, CTLFLAG_RW,
+    jail_sysvipc_allowed, 0,
+    &#34;Processes in jail can use System V IPC primitives&#34;);
+    /* Jail中的进程可以使用System V进程间通讯原语 */
+
+static int jail_enforce_statfs = 2;
+SYSCTL_INT(_security_jail, OID_AUTO, enforce_statfs, CTLFLAG_RW,
+    jail_enforce_statfs, 0,
+    &#34;Processes in jail cannot see all mounted file systems&#34;);
+    /* jail 中的进程查看系统中挂接的文件系统时受到何种限制 */
+
+int    jail_allow_raw_sockets = 0;
+SYSCTL_INT(_security_jail, OID_AUTO, allow_raw_sockets, CTLFLAG_RW,
+    jail_allow_raw_sockets, 0,
+    &#34;Prison root can create raw sockets&#34;);
+    /* jail 中的 root 用户是否可以创建 raw socket */
+
+int    jail_chflags_allowed = 0;
+SYSCTL_INT(_security_jail, OID_AUTO, chflags_allowed, CTLFLAG_RW,
+    jail_chflags_allowed, 0,
+    &#34;Processes in jail can alter system file flags&#34;);
+    /* jail 中的进程是否可以修改系统级文件标记 */
+
+int     jail_mount_allowed = 0;
+SYSCTL_INT(_security_jail, OID_AUTO, mount_allowed, CTLFLAG_RW,
+    jail_mount_allowed, 0,
+    &#34;Processes in jail can mount/unmount jail-friendly file systems&#34;);
+    /* jail 中的进程是否可以挂载或卸载对jail友好的文件系统 */</pre></div></div><div class=paragraph><p>这些sysctl项中的每一个都可以用命令<a href="https://man.freebsd.org/cgi/man.cgi?query=sysctl&amp;sektion=8&amp;format=html">sysctl(8)</a>访问。在整个内核中， 这些sysctl项按名称标识。例如，上述第一个sysctl项的名字是 <code>security.jail.set_hostname_allowed</code>。</p></div></div><div class=sect3><h4 id=_jail2系统调用>4.1.2.2. <a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>系统调用<a class=anchor href=#_jail2系统调用></a></h4><div class=paragraph><p>像所有的系统调用一样，系统调用<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>带有两个参数， <code>struct thread *td</code>和<code>struct jail_args *uap</code>。 <code>td</code>是一个指向<code>thread</code>结构体的指针，该指针用于描述调用<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>的线程。 在这个上下文中，<code>uap</code>指向一个结构体，这个结构体中包含了一个指向从用户级 <span class=filename>jail.c</span>传送过来的<code>jail</code>结构体的指针。 在前面我讲述用户级程序时，你已经看到过一个<code>jail</code>结构体被作为参数传送给系统调用 <a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c:
+/*
+ * struct jail_args {
+ *      struct jail *jail;
+ * };
+ */
+int
+jail(struct thread *td, struct jail_args *uap)</pre></div></div><div class=paragraph><p>于是<code>uap-jail</code>可以用于访问被传递给<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>的<code>jail</code>结构体。 然后，<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>使用<a href="https://man.freebsd.org/cgi/man.cgi?query=copyin&amp;sektion=9&amp;format=html">copyin(9)</a>将<code>jail</code>结构体复制到内核内存空间中。 <a href="https://man.freebsd.org/cgi/man.cgi?query=copyin&amp;sektion=9&amp;format=html">copyin(9)</a>需要三个参数：要复制进内核内存空间的数据的地址 <code>uap-jail</code>，在内核内存空间存放数据的<code>j</code>， 以及数据的大小。<code>uap-jail</code>指向的Jail结构体被复制进内核内存空间， 并被存放在另一个<code>jail</code>结构体<code>j</code>里。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c:
+error = copyin(uap-jail, j, sizeof(j));</pre></div></div><div class=paragraph><p>在jail.h中定义了另一个重要的结构体型prison。 结构体<code>prison</code>只被用在内核空间中。 下面是<code>prison</code>结构体的定义。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/sys/jail.h:
+struct prison {
+        LIST_ENTRY(prison) pr_list;                     /* (a) all prisons */
+        int              pr_id;                         /* (c) prison id */
+        int              pr_ref;                        /* (p) refcount */
+        char             pr_path[MAXPATHLEN];           /* (c) chroot path */
+        struct vnode    *pr_root;                       /* (c) vnode to rdir */
+        char             pr_host[MAXHOSTNAMELEN];       /* (p) jail hostname */
+        u_int32_t        pr_ip;                         /* (c) ip addr host */
+        void            *pr_linux;                      /* (p) linux abi */
+        int              pr_securelevel;                /* (p) securelevel */
+        struct task      pr_task;                       /* (d) destroy task */
+        struct mtx       pr_mtx;
+        void            **pr_slots;                     /* (p) additional data */
+};</pre></div></div><div class=paragraph><p>然后，系统调用<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>为一个<code>prison</code>结构体分配一块内存， 并在<code>jail</code>和<code>prison</code>结构体之间复制数据。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c:
+MALLOC(pr, struct prison *, sizeof(*pr), M_PRISON, M_WAITOK | M_ZERO);
+...
+error = copyinstr(j.path, pr-pr_path, sizeof(pr-pr_path), 0);
+if (error)
+    goto e_killmtx;
+...
+error = copyinstr(j.hostname, pr-pr_host, sizeof(pr-pr_host), 0);
+if (error)
+        goto e_dropvnref;
+pr-pr_ip = j.ip_number;</pre></div></div><div class=paragraph><p>下面，我们将讨论另外一个重要的系统调用<a href="https://man.freebsd.org/cgi/man.cgi?query=jail_attach&amp;sektion=2&amp;format=html">jail_attach(2)</a>，它实现了将进程监禁的功能。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c
+/*
+ * struct jail_attach_args {
+ *      int jid;
+ * };
+ */
+int
+jail_attach(struct thread *td, struct jail_attach_args *uap)</pre></div></div><div class=paragraph><p>这个系统调用做出一些可以用于区分被监禁和未被监禁的进程的改变。 要理解<a href="https://man.freebsd.org/cgi/man.cgi?query=jail_attach&amp;sektion=2&amp;format=html">jail_attach(2)</a>为我们做了什么，我们首先要理解一些背景信息。</p></div><div class=paragraph><p>在FreeBSD中，每个对内核可见的线程是通过其<code>thread</code>结构体来识别的， 同时，进程都由它们自己的<code>proc</code>结构体描述。 你可以在<span class=filename>/usr/include/sys/proc.h</span>中找到<code>thread</code>和<code>proc</code>结构体的定义。 例如，在任何系统调用中，参数<code>td</code>实际上是个指向调用线程的<code>thread</code>结构体的指针， 正如前面所说的那样。<code>td</code>所指向的<code>thread</code>结构体中的<code>td_proc</code>成员是一个指针， 这个指针指向<code>td</code>所表示的线程所属进程的<code>proc</code>结构体。 结构体<code>proc</code>包含的成员可以描述所有者的身份 (<code>p_ucred</code>)，进程资源限制(<code>p_limit</code>)， 等等。在由<code>proc</code>结构体的<code>p_ucred</code>成员所指向的ucred结构体的定义中， 还有一个指向<code>prison</code>结构体的指针(<code>cr_prison</code>)。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/include/sys/proc.h:
+struct thread {
+    ...
+    struct proc *td_proc;
+    ...
+};
+struct proc {
+    ...
+    struct ucred *p_ucred;
+    ...
+};
+/usr/include/sys/ucred.h
+struct ucred {
+    ...
+    struct prison *cr_prison;
+    ...
+};</pre></div></div><div class=paragraph><p>在<span class=filename>kern_jail.c</span>中，函数<code>jail()</code>以给定的<code>jid</code> 调用函数<code>jail_attach()</code>。随后<code>jail_attach()</code>调用函数<code>change_root()</code>以改变 调用进程的根目录。接下来，<code>jail_attach()</code>创建一个新的<code>ucred</code>结构体，并在 成功地将<code>prison</code>结构体连接到这个<code>ucred</code>结构体后，将这个<code>ucred</code>结构体连接 到调用进程上。从此时起，这个调用进程就会被识别为被监禁的。 当我们以新创建的这个<code>ucred</code>结构体为参数调用内核路径<code>jailed()</code>时， 它将返回1来说明这个用户身份是和一个jail相连的。 在jail中叉分出来的所有进程的的公共祖先进程就是这个执行了<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>的进程， 因为正是它调用了<a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;sektion=2&amp;format=html">jail(2)</a>系统调用。当一个程序通过<a href="https://man.freebsd.org/cgi/man.cgi?query=execve&amp;sektion=2&amp;format=html">execve(2)</a>而被执行时， 它将从其父进程的<code>ucred</code>结构体继承被监禁的属性， 因而它也会拥有一个被监禁的<code>ucred</code>结构体。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c
+int
+jail(struct thread *td, struct jail_args *uap)
+{
+...
+    struct jail_attach_args jaa;
+...
+    error = jail_attach(td, jaa);
+    if (error)
+        goto e_dropprref;
+...
+}
+
+int
+jail_attach(struct thread *td, struct jail_attach_args *uap)
+{
+    struct proc *p;
+    struct ucred *newcred, *oldcred;
+    struct prison *pr;
+...
+    p = td-td_proc;
+...
+    pr = prison_find(uap-jid);
+...
+    change_root(pr-pr_root, td);
+...
+    newcred-cr_prison = pr;
+    p-p_ucred = newcred;
+...
+}</pre></div></div><div class=paragraph><p>当一个进程被从其父进程叉分来的时候， 系统调用<a href="https://man.freebsd.org/cgi/man.cgi?query=fork&amp;sektion=2&amp;format=html">fork(2)</a>将用<code>crhold()</code>来维护其身份凭证。 这样，很自然的就保持了子进程的身份凭证于其父进程一致，所以子进程也是被监禁的。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_fork.c:
+p2-p_ucred = crhold(td-td_ucred);
+...
+td2-td_ucred = crhold(p2-p_ucred);</pre></div></div></div></div></div></div><div class=sect1><h2 id=jail-restrictions>4.2. 系统对被囚禁程序的限制<a class=anchor href=#jail-restrictions></a></h2><div class=sectionbody><div class=paragraph><p>在整个内核中，有一系列对被囚禁程序的约束措施。 通常，这些约束只对被囚禁的程序有效。如果这些程序试图突破这些约束， 相关的函数将出错返回。例如:</p></div><div class="literalblock programlisting"><div class=content><pre>if (jailed(td-td_ucred))
+    return EPERM;</pre></div></div><div class=sect2><h3 id=_sysv进程间通信ipc>4.2.1. SysV进程间通信(IPC)<a class=anchor href=#_sysv进程间通信ipc></a></h3><div class=paragraph><p>System V 进程间通信 (IPC) 是通过消息实现的。 每个进程都可以向其它进程发送消息， 告诉对方该做什么。 处理消息的函数是： <a href="https://man.freebsd.org/cgi/man.cgi?query=msgctl&amp;sektion=3&amp;format=html">msgctl(3)</a>、<a href="https://man.freebsd.org/cgi/man.cgi?query=msgget&amp;sektion=3&amp;format=html">msgget(3)</a>、<a href="https://man.freebsd.org/cgi/man.cgi?query=msgsnd&amp;sektion=3&amp;format=html">msgsnd(3)</a> 和 <a href="https://man.freebsd.org/cgi/man.cgi?query=msgrcv&amp;sektion=3&amp;format=html">msgrcv(3)</a>。前面已经提到，一些 sysctl 开关可以影响 jail 的行为， 其中有一个是 <code>security.jail.sysvipc_allowed</code>。 在大多数系统上， 这个 sysctl 项会设成0。 如果将它设为1， 则会完全失去 jail 的意义： 因为那样在 jail 中特权进程就可以影响被监禁的环境外的进程了。 消息与信号的区别是：消息仅由一个信号编号组成。</p></div><div class=paragraph><p><span class=filename>/usr/src/sys/kern/sysv_msg.c</span>:</p></div><div class=ulist><ul><li><p><code>msgget(key, msgflg)</code>: <code>msgget</code>返回(也可能创建)一个消息描述符， 以指派一个在其它函数中使用的消息队列。</p></li><li><p><code>msgctl(msgid, cmd, buf)</code>: 通过这个函数， 一个进程可以查询一个消息描述符的状态。</p></li><li><p><code>msgsnd(msgid, msgp, msgsz, msgflg)</code>: <code>msgsnd</code>向一个进程发送一条消息。</p></li><li><p><code>msgrcv(msgid, msgp, msgsz, msgtyp, msgflg)</code>: 进程用这个函数接收消息。</p></li></ul></div><div class=paragraph><p>在这些函数对应的系统调用的代码中，都有这样一个条件判断：</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/sysv_msg.c:
+if (!jail_sysvipc_allowed  jailed(td-td_ucred))
+    return (ENOSYS);</pre></div></div><div class=paragraph><p>信号量系统调用使得进程可以通过一系列原子操作实现同步。 信号量为进程锁定资源提供了又一种途径。 然而，进程将为正在被使用的信号量进入等待状态，一直休眠到资源被释放。 在jail中如下的信号量系统调用将会失效: <a href="https://man.freebsd.org/cgi/man.cgi?query=semget&amp;sektion=2&amp;format=html">semget(2)</a>, <a href="https://man.freebsd.org/cgi/man.cgi?query=semctl&amp;sektion=2&amp;format=html">semctl(2)</a> 和<a href="https://man.freebsd.org/cgi/man.cgi?query=semop&amp;sektion=2&amp;format=html">semop(2)</a>。</p></div><div class=paragraph><p><span class=filename>/usr/src/sys/kern/sysv_sem.c</span>:</p></div><div class=ulist><ul><li><p><code>semctl(semid, num, cmd, …​)</code>: <code>semctl</code>对在信号量队列中用<code>semid</code>标识的信号量执行<code>cmd</code>指定的命令。</p></li><li><p><code>semget(key, nsems, flag)</code>: <code>semget</code>建立一个对应于<code>key</code>的信号量数组。</p><div class=paragraph><p><code>参数key和flag与他们在msgget()的意义相同。</code></p></div></li><li><p><code>setop(semid, array, nops)</code>: <code>semop</code>对semid标识的信号量完成一组由array所指定的操作。</p></li></ul></div><div class=paragraph><p>System V IPC使进程间可以共享内存。进程之间可以通过它们虚拟地址空间 的共享部分以及相关数据读写操作直接通讯。这些系统调用在被监禁的环境中将会失效: <a href="https://man.freebsd.org/cgi/man.cgi?query=shmdt&amp;sektion=2&amp;format=html">shmdt(2)</a>、<a href="https://man.freebsd.org/cgi/man.cgi?query=shmat&amp;sektion=2&amp;format=html">shmat(2)</a>、<a href="https://man.freebsd.org/cgi/man.cgi?query=shmctl&amp;sektion=2&amp;format=html">shmctl(2)</a>和<a href="https://man.freebsd.org/cgi/man.cgi?query=shmget&amp;sektion=2&amp;format=html">shmget(2)</a></p></div><div class=paragraph><p><span class=filename>/usr/src/sys/kern/sysv_shm.c</span>:</p></div><div class=ulist><ul><li><p><code>shmctl(shmid, cmd, buf)</code>: <code>shmctl</code>对<code>id</code>标识的共享内存区域做各种各样的控制。</p></li><li><p><code>shmget(key, size, flag)</code>: <code>shmget</code>建立/打开<code>size</code>字节的共享内存区域。</p></li><li><p><code>shmat(shmid, addr, flag)</code>: <code>shmat</code>将<code>shmid</code>标识的共享内存区域指派到进程的地址空间里。</p></li><li><p><code>shmdt(addr)</code>: <code>shmdt</code>取消共享内存区域的地址指派。</p></li></ul></div></div><div class=sect2><h3 id=_套接字>4.2.2. 套接字<a class=anchor href=#_套接字></a></h3><div class=paragraph><p>Jail以一种特殊的方式处理<a href="https://man.freebsd.org/cgi/man.cgi?query=socket&amp;sektion=2&amp;format=html">socket(2)</a>系统调用和相关的低级套接字函数。 为了决定一个套接字是否允许被创建，它先检查sysctl项 <code>security.jail.socket_unixiproute_only</code>是否被设置为1。 如果被设为1，套接字建立时将只能指定这些协议族： <code>PF_LOCAL</code>, <code>PF_INET</code>, <code>PF_ROUTE</code>。否则，<a href="https://man.freebsd.org/cgi/man.cgi?query=socket&amp;sektion=2&amp;format=html">socket(2)</a>将会返回出错。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/uipc_socket.c:
+int
+socreate(int dom, struct socket **aso, int type, int proto,
+    struct ucred *cred, struct thread *td)
+{
+    struct protosw *prp;
+...
+    if (jailed(cred)  jail_socket_unixiproute_only
+        prp-pr_domain-dom_family != PF_LOCAL
+        prp-pr_domain-dom_family != PF_INET
+        prp-pr_domain-dom_family != PF_ROUTE) {
+        return (EPROTONOSUPPORT);
+    }
+...
+}</pre></div></div></div><div class=sect2><h3 id=_berkeley包过滤器>4.2.3. Berkeley包过滤器<a class=anchor href=#_berkeley包过滤器></a></h3><div class=paragraph><p>Berkeley包过滤器提供了一个与协议无关的，直接通向数据链路层的低级接口。 现在BPF是否可以在监禁的环境中被使用是通过<a href="https://man.freebsd.org/cgi/man.cgi?query=devfs&amp;sektion=8&amp;format=html">devfs(8)</a>来控制的。</p></div></div><div class=sect2><h3 id=_网络协议>4.2.4. 网络协议<a class=anchor href=#_网络协议></a></h3><div class=paragraph><p>网络协议TCP, UDP, IP和ICMP很常见。IP和ICMP处于同一协议层次：第二层， 网络层。当参数<code>nam</code>被设置时， 有一些限制措施会防止被囚禁的程序绑定到一些网络接口上。 <code>nam</code>是一个指向<code>sockaddr</code>结构体的指针， 描述可以绑定服务的地址。一个更确切的定义：<code>sockaddr</code>"是一个模板，包含了地址的标识符和地址的长度"。 在函数<code>in_pcbbind_setup()</code>中<code>sin</code>是一个指向<code>sockaddr_in</code>结构体的指针， 这个结构体包含了套接字可以绑定的端口、地址、长度、协议族。 这就禁止了在jail中的进程指定不属于这个进程所存在于的jail的IP地址。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/netinet/in_pcb.c:
+int
+in_pcbbind_setup(struct inpcb *inp, struct sockaddr *nam, in_addr_t *laddrp,
+    u_short *lportp, struct ucred *cred)
+{
+    ...
+    struct sockaddr_in *sin;
+    ...
+    if (nam) {
+        sin = (struct sockaddr_in *)nam;
+        ...
+        if (sin-sin_addr.s_addr != INADDR_ANY)
+            if (prison_ip(cred, 0, sin-sin_addr.s_addr))
+                return(EINVAL);
+        ...
+        if (lport) {
+            ...
+            if (prison  prison_ip(cred, 0, sin-sin_addr.s_addr))
+                return (EADDRNOTAVAIL);
+            ...
+        }
+    }
+    if (lport == 0) {
+        ...
+        if (laddr.s_addr != INADDR_ANY)
+            if (prison_ip(cred, 0, laddr.s_addr))
+                return (EINVAL);
+        ...
+    }
+...
+    if (prison_ip(cred, 0, laddr.s_addr))
+        return (EINVAL);
+...
+}</pre></div></div><div class=paragraph><p>你也许想知道函数<code>prison_ip()</code>做什么。 <code>prison_ip()</code>有三个参数，一个指向身份凭证的指针(用<code>cred</code>表示)， 一些标志和一个IP地址。当这个IP地址不属于这个jail时，返回1； 否则返回0。正如你从代码中看见的，如果，那个IP地址确实不属于这个jail， 就不再允许向这个网络地址绑定协议。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/kern/kern_jail.c:
+int
+prison_ip(struct ucred *cred, int flag, u_int32_t *ip)
+{
+    u_int32_t tmp;
+
+    if (!jailed(cred))
+        return (0);
+    if (flag)
+        tmp = *ip;
+    else
+        tmp = ntohl(*ip);
+    if (tmp == INADDR_ANY) {
+        if (flag)
+            *ip = cred-cr_prison-pr_ip;
+        else
+            *ip = htonl(cred-cr_prison-pr_ip);
+        return (0);
+    }
+    if (tmp == INADDR_LOOPBACK) {
+        if (flag)
+            *ip = cred-cr_prison-pr_ip;
+        else
+            *ip = htonl(cred-cr_prison-pr_ip);
+        return (0);
+    }
+    if (cred-cr_prison-pr_ip != tmp)
+        return (1);
+    return (0);
+}</pre></div></div></div><div class=sect2><h3 id=_文件系统>4.2.5. 文件系统<a class=anchor href=#_文件系统></a></h3><div class=paragraph><p>如果完全级别大于0，即便是jail里面的<code>root</code>， 也不允许在Jail中取消或更改文件标志，如"<code>不可修改</code>"、"只可添加"、"<code>不可删除</code>"标志。</p></div><div class="literalblock programlisting"><div class=content><pre>/usr/src/sys/ufs/ufs/ufs_vnops.c:
+static int
+ufs_setattr(ap)
+    ...
+{
+    ...
+        if (!priv_check_cred(cred, PRIV_VFS_SYSFLAGS, 0)) {
+            if (ip-i_flags
+                 (SF_NOUNLINK | SF_IMMUTABLE | SF_APPEND)) {
+                    error = securelevel_gt(cred, 0);
+                    if (error)
+                        return (error);
+            }
+            ...
+        }
+}
+/usr/src/sys/kern/kern_priv.c
+int
+priv_check_cred(struct ucred *cred, int priv, int flags)
+{
+    ...
+    error = prison_priv_check(cred, priv);
+    if (error)
+        return (error);
+    ...
+}
+/usr/src/sys/kern/kern_jail.c
+int
+prison_priv_check(struct ucred *cred, int priv)
+{
+    ...
+    switch (priv) {
+    ...
+    case PRIV_VFS_SYSFLAGS:
+        if (jail_chflags_allowed)
+            return (0);
+        else
+            return (EPERM);
+    ...
+    }
+    ...
+}</pre></div></div></div></div></div></div><hr><div class=last-modified><p><strong>Last modified on</strong>: March 9, 2024 by <a href="https://cgit.freebsd.org/doc/commit/?id=6199af92e7" target=_blank>Danilo G. Baio</a></p></div><div class=buttons><div class=prev><i class="fa fa-angle-left" aria-hidden=true title=Prev></i><div class=container><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/kobj class=direction>Prev</a></div></div><div class=home><i class="fa fa-home" aria-hidden=true title=Home></i><div class=container><a href=../ class=direction>Home</a></div></div><div class=next><div class=container><a href=http://172.16.201.134:1313/zh-cn/books/arch-handbook/sysinit class=direction>Next</a></div><i class="fa fa-angle-right" aria-hidden=true title=Next></i></div></div><label class="hidden book-menu-overlay" for=menu-control></label></div><aside class=toc><div class=toc-content><h3>Table of Contents</h3><nav id=TableOfContents><ul><li><a href=#jail-arch>4.1. Jail的系统结构</a></li><li><a href=#jail-restrictions>4.2. 系统对被囚禁程序的限制</a></li></ul></nav><hr><div class=resources><h3>Resources</h3><ul class=contents><li><i class="fa fa-file-pdf-o" aria-hidden=true title="Download PDF"></i><a href=https://download.freebsd.org/doc/zh-cn/books/arch-handbook/arch-handbook_zh-cn.pdf>Download PDF</a></li><li><i class="fa fa-pencil-square-o" aria-hidden=true title="Edit this page"></i><a href=https://github.com/freebsd/freebsd-doc/blob/main/documentation/content/zh-cn/_index target=_blank>Edit this page</a></li></ul></div></div></aside><a class=to-top href=#top><i class="fa fa-arrow-circle-up" aria-hidden=true></i></a></main><footer><div class=footer-container><section class=logo-column><img src=http://172.16.201.134:1313/images/FreeBSD-colors.svg width=160 height=50 alt="FreeBSD logo"><div class=options-container><div class=language-container><a id=languages href=http://172.16.201.134:1313/zh-cn/languages><img src=http://172.16.201.134:1313/images/language.png class=language-image alt="Choose language">
+<span>简体中文</span></a></div><div class=theme-container><select id=theme-chooser><option value=theme-system>System</option><option value=theme-light>Light</option><option value=theme-dark>Dark</option><option value=theme-high-contrast>High contrast</option></select></div></div></section><section class=about-column><h3 class=column-title>About</h3><ul class=column-elements-container><li><a href=https://www.freebsd.org/about/ target=_blank class=column-element>FreeBSD</a></li><li><a href=https://freebsdfoundation.org/ target=_blank class=column-element>FreeBSD Foundation</a></li><li><a href=https://www.freebsd.org/where/ target=_blank class=column-element>Get FreeBSD</a></li><li><a href=https://www.freebsd.org/internal/code-of-conduct target=_blank class=column-element>Code of Conduct</a></li><li><a href=https://www.freebsd.org/security/ target=_blank class=column-element>Security Advisories</a></li></ul></section><section class=documentation-column><h3 class=column-title>Documentation</h3><ul class=column-elements-container><li><a href=/zh-cn class=column-element>Documentation portal</a></li><li><a href=https://man.FreeBSD.org target=_blank class=column-element>Manual pages</a></li><li><a href=https://papers.FreeBSD.org target=_blank class=column-element>Presentations and papers</a></li><li><a href=https://docs-archive.freebsd.org/doc/ target=_blank class=column-element>Previous versions</a></li><li><a href=https://docs-archive.freebsd.org/44doc/ target=_blank class=column-element>4.4BSD Documents</a></li><li><a href=https://wiki.freebsd.org/ target=_blank class=column-element>Wiki</a></li></ul></section><section class=community-column><h3 class=column-title>Community</h3><ul class=column-elements-container><li><a href=http://172.16.201.134:1313/zh-cn/articles/contributing class=column-element>Get involved</a></li><li><a href=https://forums.freebsd.org/ target=_blank class=column-element>Community forum</a></li><li><a href=https://lists.freebsd.org/ target=_blank class=column-element>Mailing lists</a></li><li><a href=https://wiki.freebsd.org/IRC/Channels target=_blank class=column-element>IRC Channels</a></li><li><a href=https://bugs.freebsd.org/bugzilla/ target=_blank class=column-element>Bug Tracker</a></li></ul></section><section class=legal-column><h3 class=column-title>Legal</h3><ul class=column-elements-container><li><a href=https://freebsdfoundation.org/donate/ target=_blank class=column-element>Donations</a></li><li><a href=https://www.freebsd.org/copyright/freebsd-license/ target=_blank class=column-element>Licensing</a></li><li><a href=https://www.freebsd.org/privacy/ target=_blank class=column-element>Privacy Policy</a></li><li><a href=https://www.freebsd.org/copyright/ target=_blank class=column-element>Legal notices</a></li></ul></section><section class=copyright-column><p>&copy; 1994-2024 The FreeBSD Project. All rights reserved</p><span>Made with <span class=heart>♥</span> by the FreeBSD Community</span></section></div></footer></body></html>

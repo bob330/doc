@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Management on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/management/</link><description>Recent content in Management on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. FreeBSD Basics</title><link>http://172.16.201.134:1313/en/books/handbook/basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/basics/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="basics-synopsis">3.1. Synopsis&lt;a class="anchor" href="#basics-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This chapter covers the basic commands and functionality of the FreeBSD operating system.
+Much of this material is relevant for any UNIX®-like operating system.
+New FreeBSD users are encouraged to read through this chapter carefully.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>How to use and configure virtual consoles.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to create and manage users and groups on FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How UNIX® file permissions and FreeBSD file flags work.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The default FreeBSD file system layout.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The FreeBSD disk organization.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to mount and unmount file systems.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What processes, daemons, and signals are.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What a shell is, and how to change the default login environment.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to use basic text editors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What devices and device nodes are.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to read manual pages for more information.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Chapter 4. Installing Applications: Packages and Ports</title><link>http://172.16.201.134:1313/en/books/handbook/ports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/ports/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="ports-synopsis">4.1. Synopsis&lt;a class="anchor" href="#ports-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD is bundled with a rich collection of system tools as part of the base system.
+In addition, FreeBSD provides two complementary technologies for installing third-party software: the FreeBSD Ports Collection,
+for installing from source, and packages, for installing from pre-built binaries.
+Either method may be used to install software from local media or from the network.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After reading this chapter, you will know:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The difference between binary packages and ports.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to find third-party software that has been ported to FreeBSD.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to manage binary packages using pkg.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to build third-party software from source using the Ports Collection.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>How to find the files installed with the application for post-installation configuration.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>What to do if a software installation fails.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

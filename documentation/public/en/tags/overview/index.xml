@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Overview on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/overview/</link><description>Recent content in Overview on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/overview/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Overview</title><link>http://172.16.201.134:1313/en/books/fdp-primer/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/overview/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>Welcome to the FreeBSD Documentation Project (FDP).
+Quality documentation is crucial to the success of FreeBSD, and we value your contributions very highly.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document describes how the FDP is organized, how to write and submit documentation, and how to effectively use the available tools.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Everyone is welcome to contribute to the FDP.
+Willingness to contribute is the only membership requirement.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This primer shows how to:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Understand the role of documentation and its place in the ecosystem.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Identify which parts of FreeBSD are maintained by the FDP.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install the required documentation tools and files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make changes to the documentation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Submit changes back for review and inclusion in the FreeBSD documentation.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Chapter 14. Newbus</title><link>http://172.16.201.134:1313/en/books/arch-handbook/newbus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/newbus/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>&lt;em>Special thanks to Matthew N. Dodd, Warner Losh, Bill Paul, Doug Rabson, Mike Smith, Peter Wemm and Scott Long&lt;/em>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This chapter explains the Newbus device framework in detail.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="newbus-devdrivers">14.1. Device Drivers&lt;a class="anchor" href="#newbus-devdrivers">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_purpose_of_a_device_driver">14.1.1. Purpose of a Device Driver&lt;a class="anchor" href="#_purpose_of_a_device_driver">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>A device driver is a software component which provides the interface between the kernel’s generic view of a peripheral (e.g., disk, network adapter) and the actual implementation of the peripheral. The &lt;em>device driver interface (DDI)&lt;/em> is the defined interface between the kernel and the device driver component.&lt;/p>
+&lt;/div></description></item><item><title>Chapter 16. PC Card</title><link>http://172.16.201.134:1313/en/books/arch-handbook/pccard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/pccard/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This chapter will talk about the FreeBSD mechanisms for writing a device driver for a PC Card or CardBus device. However, at present it just documents how to add a new device to an existing pccard driver.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pccard-adddev">16.1. Adding a Device&lt;a class="anchor" href="#pccard-adddev">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Device drivers know what devices they support. There is a table of supported devices in the kernel that drivers use to attach to a device.&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="pccard-overview">16.1.1. Overview&lt;a class="anchor" href="#pccard-overview">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>PC Cards are identified in one of two ways, both based on the &lt;em>Card Information Structure&lt;/em> (CIS) stored on the card. The first method is to use numeric manufacturer and product numbers. The second method is to use the human readable strings that are also contained in the CIS. The PC Card bus uses a centralized database and some macros to facilitate a design pattern to help the driver writer match devices to his driver.&lt;/p>
+&lt;/div></description></item></channel></rss>

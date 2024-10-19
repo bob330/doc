@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Obtaining on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Obtaining/</link><description>Recent content in Obtaining on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Obtaining/index.xml" rel="self" type="application/rss+xml"/><item><title>Appendix A. Obtaining FreeBSD</title><link>http://172.16.201.134:1313/en/books/handbook/mirrors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/mirrors/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="mirrors">A.1. Mirrors&lt;a class="anchor" href="#mirrors">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The official mirrors of the FreeBSD project are made up of many machines operated by the project cluster administrators and behind GeoDNS to direct users to the closest available mirror.
+Current locations are Australia, Brazil, Germany, Japan (two sites), Malaysia, South Africa, Sweden, Taiwan, United Kingdom, United States of America (California, New Jersey, and Washington).&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Official mirrors service:&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Service Name&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Protocols&lt;/th>
+&lt;th class="tableblock halign-left valign-top">More information&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>docs.FreeBSD.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://docs.FreeBSD.org/">https&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">FreeBSD Documentation Portal.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>download.FreeBSD.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://download.FreeBSD.org/">https&lt;/a> &lt;a href="ftp://download.FreeBSD.org/pub/FreeBSD/">ftp&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Same content as &lt;code>ftp.FreeBSD.org&lt;/code>, &lt;code>ftp&lt;/code> is a legacy name; &lt;code>download.FreeBSD.org&lt;/code> is recommended.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>git.FreeBSD.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">git over &lt;code>https&lt;/code> and &lt;code>ssh&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">More details on &lt;a href="https://docs.freebsd.org/en/books/handbook/mirrors/#git">using git&lt;/a> section.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>pkg.FreeBSD.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://man.freebsd.org/cgi/man.cgi?query=pkg&amp;amp;sektion=8&amp;amp;format=html">pkg(8)&lt;/a> over &lt;code>http&lt;/code> and &lt;code>https&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Official FreeBSD package repositories used by the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=pkg&amp;amp;sektion=8&amp;amp;format=html">pkg(8)&lt;/a> program.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>vuxml.FreeBSD.org&lt;/strong> / &lt;strong>www.VuXML.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://www.vuxml.org/">https&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">FreeBSD Project VuXML web page. &lt;code>pkg audit&lt;/code> fetches the list of vulnerabilities from this service.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;strong>www.FreeBSD.org&lt;/strong>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;a href="https://www.FreeBSD.org/">https&lt;/a>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">FreeBSD Website.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="paragraph">
+&lt;p>All official mirrors support IPv4 and IPv6.&lt;/p>
+&lt;/div></description></item></channel></rss>

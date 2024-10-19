@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MythTV on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/ja/tags/MythTV/</link><description>Recent content in MythTV on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>ja</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/ja/tags/MythTV/index.xml" rel="self" type="application/rss+xml"/><item><title>第7章 マルチメディア</title><link>http://172.16.201.134:1313/ja/books/handbook/multimedia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/ja/books/handbook/multimedia/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="multimedia-synopsis">7.1. この章では&lt;a class="anchor" href="#multimedia-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>FreeBSD は数多くの種類のサウンドカードに対応しており、 FreeBSD システムで原音に忠実な出力を楽しむことができます。 これには録音機能と、MPEG Audio Layer 3 (MP3) や Waveform Audio File (WAV), Ogg Vorbis などをはじめとした多くの形式の音楽の再生機能が含まれます。 加えて FreeBSD の Ports Collection には、 録音した音楽を編集したり、音響効果を加えたり、接続された MIDI 機器を制御するためのアプリケーションが用意されています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD ではビデオファイルおよび DVD の再生もできます。 FreeBSD の Ports Collection には、さまざまなビデオメディアをエンコード、 変換、再生するアプリケーションが用意されています。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章では FreeBSD 上でサウンドカード、ビデオの再生、TV チューナカード、 スキャナを設定する方法について説明します。 また、これらのデバイスを使うためのアプリケーションについても説明します。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章を読むと、以下のことがわかります。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>FreeBSD でのサウンドカードの設定方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>サウンドの設定に関するトラブルシューティング&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>MP3 およびその他の形式の音声を再生、エンコードする方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>FreeBSD システムでのビデオ再生の準備&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>DVD, &lt;span class="filename">.mpg&lt;/span> および &lt;span class="filename">.avi&lt;/span> ファイルを再生する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CD および DVD の情報をファイルに抽出する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>TV カードの設定方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>MythTV を FreeBSD にインストールして設定する方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>画像スキャナの設定方法&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Bluetooth ヘッドホンの設定方法&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>この章を読む前に、以下のことを理解しておく必要があります。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>アプリケーションのインストール方法 (&lt;a href="../ports/#ports">アプリケーションのインストール - packages と ports&lt;/a>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

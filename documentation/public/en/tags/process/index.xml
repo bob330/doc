@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Process on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/process/</link><description>Recent content in Process on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/process/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 5. The FreeBSD Documentation Build Process</title><link>http://172.16.201.134:1313/en/books/fdp-primer/doc-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/doc-build/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This chapter covers organization of the documentation build process and how &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=make&amp;amp;sektion=1&amp;amp;format=html">make(1)&lt;/a> is used to control it.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="doc-build-rendering">5.1. Rendering AsciiDoc into Output&lt;a class="anchor" href="#doc-build-rendering">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Different types of output can be produced from a single AsciiDoc source file.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-none grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Formats&lt;/th>
+&lt;th class="tableblock halign-left valign-top">File Type&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>html&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">HTML&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">An &lt;code>article&lt;/code> or &lt;code>book&lt;/code> chapter.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>pdf&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">PDF&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Portable Document Format.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&lt;code>epub&lt;/code>&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">EPUB&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Electronic Publication.
+ePub file format.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect2">
+&lt;h3 id="doc-build-rendering-html">5.1.1. Rendering to html&lt;a class="anchor" href="#doc-build-rendering-html">&lt;/a>&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>To render the documentation and the website to &lt;code>html&lt;/code> use one of the following examples.&lt;/p>
+&lt;/div></description></item><item><title>FreeBSD Release Engineering</title><link>http://172.16.201.134:1313/en/articles/freebsd-releng/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/freebsd-releng/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article describes the release engineering process of the FreeBSD Project.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction">1. Introduction to the FreeBSD Release Engineering Process&lt;a class="anchor" href="#introduction">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Development of FreeBSD has a very specific workflow.
+In general, all changes to the FreeBSD base system are committed to the main branch, which reflects the top of the source tree.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After a reasonable testing period, changes can then be merged to the stable/ branches.
+The default minimum timeframe before merging to stable/ branches is three (3) days.&lt;/p>
+&lt;/div></description></item></channel></rss>

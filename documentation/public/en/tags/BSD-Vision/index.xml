@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BSD Vision on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/BSD-Vision/</link><description>Recent content in BSD Vision on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/BSD-Vision/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="introduction-devel">1.1. Developing on FreeBSD&lt;a class="anchor" href="#introduction-devel">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>So here we are.
+System all installed and you are ready to start programming.
+But where to start? What does FreeBSD provide? What can it do for me, as a programmer?&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>These are some questions which this chapter tries to answer.
+Of course, programming has different levels of proficiency like any other trade.
+For some it is a hobby, for others it is their profession.
+The information in this chapter might be aimed toward the beginning programmer;
+indeed, it could serve useful for the programmer unfamiliar with the FreeBSD platform.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PR on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/PR/</link><description>Recent content in PR on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/PR/index.xml" rel="self" type="application/rss+xml"/><item><title>Diretrizes de Tratamento de Relatórios de Problemas</title><link>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Essas diretrizes descrevem práticas recomendadas de tratamento para Relatórios de Problemas (PRs) do FreeBSD. Embora desenvolvidas para a equipe de manutenção do Banco de Dados de PRs do FreeBSD (&lt;a href="mailto:freebsd-bugbusters@FreeBSD.org">freebsd-bugbusters@FreeBSD.org&lt;/a>), essas diretrizes devem ser seguidas por qualquer pessoa que trabalhe com PRs do FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>O Bugzilla é um sistema de gerenciamento de problemas usado pelo Projeto FreeBSD. Como o rastreamento preciso de defeitos de software pendentes é importante para a qualidade do FreeBSD, o uso correto do software é essencial para o progresso contínuo do Projeto.&lt;/p>
+&lt;/div></description></item><item><title>Escrevendo Relatórios de Problemas para o FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/problem-reports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/problem-reports/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Este artigo descreve como redigir e submeter um bom relatório de problemas ao Projeto FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="pr-intro">1. Introdução&lt;a class="anchor" href="#pr-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Uma das experiências mais frustrantes que alguém pode ter como usuário de um software é submeter um relatório de problema apenas para vê-lo ser encerrado sumariamente com uma explicação curta e inútil tal como &amp;#34;não é um bug&amp;#34; ou &amp;#34;PR Falso&amp;#34;. Da mesma forma, uma das experiências mais frustrantes como desenvolvedor de software é ser inundado com relatórios de problemas que não são realmente relatórios de problemas mas sim pedidos de suporte, ou então por relatórios que contêm pouca ou nenhuma informação sobre o que é o problema e sobre como reproduzi-lo.&lt;/p>
+&lt;/div></description></item></channel></rss>

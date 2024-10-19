@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scripting on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/scripting/</link><description>Recent content in Scripting on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/scripting/index.xml" rel="self" type="application/rss+xml"/><item><title>Scripting rc.d na prática no BSD</title><link>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Os iniciantes podem achar difícil relacionar os fatos da documentação formal sobre o framework &lt;span class="filename">rc.d&lt;/span> do BSD com as tarefas práticas de escrever scripts &lt;span class="filename">rc.d&lt;/span>. Neste artigo, consideramos alguns casos típicos de crescente complexidade, mostramos recursos do &lt;span class="filename">rc.d&lt;/span> adequados para cada caso e discutimos como eles funcionam. Essa análise deve fornecer pontos de referência para estudos posteriores do design e aplicação eficiente do &lt;span class="filename">rc.d&lt;/span>.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="rcng-intro">1. Introdução&lt;a class="anchor" href="#rcng-intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>No histórico BSD, havia um script de inicialização monolítico, &lt;span class="filename">/etc/rc&lt;/span>. Ele era invocado pelo &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a> no momento da inicialização do sistema e realizava todas as tarefas de usuário necessárias para a operação multiusuário: verificação e montagem de sistemas de arquivos, configuração da rede, inicialização de daemons e assim por diante. A lista precisa de tarefas não era a mesma em todos os sistemas; os administradores precisavam personalizá-la. Com poucas exceções, o &lt;span class="filename">/etc/rc&lt;/span> tinha que ser modificado, e os verdadeiros hackers gostavam disso.&lt;/p>
+&lt;/div></description></item></channel></rss>

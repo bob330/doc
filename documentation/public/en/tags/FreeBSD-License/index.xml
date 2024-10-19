@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD License on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/FreeBSD-License/</link><description>Recent content in FreeBSD License on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/FreeBSD-License/index.xml" rel="self" type="application/rss+xml"/><item><title>Why you should use a BSD style license for your Open Source Project</title><link>http://172.16.201.134:1313/en/articles/bsdl-gpl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/bsdl-gpl/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introduction&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>This document makes a case for using a BSD style license for software and data;
+specifically it recommends using a BSD style license in place of the GPL.
+It can also be read as a BSD versus GPL Open Source License introduction and summary.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="history">2. Very Brief Open Source History&lt;a class="anchor" href="#history">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Long before the term &amp;#34;Open Source&amp;#34; was used, software was developed by loose associations of programmers and freely exchanged.
+Starting in the early 1950’s, organizations such as &lt;a href="http://www.share.org">SHARE&lt;/a> and &lt;a href="http://www.decus.org">DECUS&lt;/a> developed much of the software that computer hardware companies bundled with their hardware offerings.
+At that time computer companies were in the hardware business;
+anything that reduced software cost and made more programs available made the hardware companies more competitive.&lt;/p>
+&lt;/div></description></item></channel></rss>

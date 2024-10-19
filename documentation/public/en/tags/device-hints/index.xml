@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Device Hints on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/device-hints/</link><description>Recent content in Device Hints on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/device-hints/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 15. The FreeBSD Booting Process</title><link>http://172.16.201.134:1313/en/books/handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/boot/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="boot-synopsis">15.1. Synopsis&lt;a class="anchor" href="#boot-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The process of starting a computer and loading the operating system is referred to as &amp;#34;the bootstrap process&amp;#34;, or &amp;#34;booting&amp;#34;.
+FreeBSD’s boot process provides a great deal of flexibility in customizing what happens when the system starts, including the ability to select from different operating systems installed on the same computer, different versions of the same operating system, or a different installed kernel.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This chapter details the configuration options that can be set.
+It demonstrates how to customize the FreeBSD boot process, including everything that happens until the FreeBSD kernel has started, probed for devices, and started &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a>.
+This occurs when the text color of the boot messages changes from bright white to grey.&lt;/p>
+&lt;/div></description></item></channel></rss>

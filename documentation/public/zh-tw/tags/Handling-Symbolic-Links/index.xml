@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Handling Symbolic Links on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/Handling-Symbolic-Links/</link><description>Recent content in Handling Symbolic Links on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/Handling-Symbolic-Links/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 6. Special Considerations</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/special/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/special/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>This section explains the most common things to consider when creating a port.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="staging">6.1. Staging&lt;a class="anchor" href="#staging">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;span class="filename">bsd.port.mk&lt;/span> expects ports to work with a &amp;#34;stage directory&amp;#34;.
+This means that a port must not install files directly to the regular destination directories (that is, under &lt;code>PREFIX&lt;/code>, for example) but instead into a separate directory from which the package is then built.
+In many cases, this does not require root privileges, making it possible to build packages as an unprivileged user.
+With staging, the port is built and installed into the stage directory, &lt;code>STAGEDIR&lt;/code>.
+A package is created from the stage directory and then installed on the system. Automake tools refer to this concept as &lt;code>DESTDIR&lt;/code>, but in FreeBSD, &lt;code>DESTDIR&lt;/code> has a different meaning (see &lt;a href="../testing/#porting-prefix">&lt;code>PREFIX&lt;/code> and &lt;code>DESTDIR&lt;/code>&lt;/a>).&lt;/p>
+&lt;/div></description></item></channel></rss>

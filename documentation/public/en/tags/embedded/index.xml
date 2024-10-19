@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Embedded on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/embedded/</link><description>Recent content in Embedded on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/embedded/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD and Solid State Devices</title><link>http://172.16.201.134:1313/en/articles/solid-state/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/solid-state/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This article covers the use of solid state disk devices in FreeBSD to create embedded systems.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Embedded systems have the advantage of increased stability due to the lack of integral moving parts (hard drives).
+Account must be taken, however, for the generally low disk space available in the system and the durability of the storage medium.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Specific topics to be covered include the types and attributes of solid state media suitable for disk use in FreeBSD, kernel options that are of interest in such an environment, the &lt;span class="filename">rc.initdiskless&lt;/span> mechanisms that automate the initialization of such systems and the need for read-only filesystems, and building filesystems from scratch.
+The article will conclude with some general strategies for small and read-only FreeBSD environments.&lt;/p>
+&lt;/div></description></item><item><title>Introduction to NanoBSD</title><link>http://172.16.201.134:1313/en/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Abstract&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document provides information about the NanoBSD tools, which can be used to create FreeBSD system images for embedded applications, suitable for use on a USB key, memory card or other mass storage media.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introduction to NanoBSD&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>NanoBSD is a tool developed by Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; and now maintained by Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;.
+It creates a FreeBSD system image for embedded applications, suitable for use on a USB key, memory card or other mass storage media.&lt;/p>
+&lt;/div></description></item></channel></rss>

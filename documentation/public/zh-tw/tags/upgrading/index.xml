@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Upgrading on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/upgrading/</link><description>Recent content in Upgrading on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/upgrading/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. Upgrading a Port</title><link>http://172.16.201.134:1313/zh-tw/books/porters-handbook/upgrading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/porters-handbook/upgrading/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;div class="paragraph">
+&lt;p>When a port is not the most recent version available from the authors, update the local working copy of &lt;span class="filename">/usr/ports&lt;/span>.
+The port might have already been updated to the new version.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>When working with more than a few ports, it will probably be easier to use Git to keep the whole ports collection up-to-date,
+as described in the &lt;a href="https://docs.freebsd.org/en/books/handbook/#ports-using">Handbook&lt;/a>.
+This will have the added benefit of tracking all the port’s dependencies.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The next step is to see if there is an update already pending.
+To do this, there are two options.
+There is a searchable interface to the &lt;a href="https://bugs.freebsd.org/search/">FreeBSD Problem Report (PR) or bug database&lt;/a>.
+Select &lt;code>Ports &amp;amp; Packages&lt;/code> in the &lt;code>Product&lt;/code> multiple select menu, and enter the name of the port in the &lt;code>Summary&lt;/code> field.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Language Server on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/Language-Server/</link><description>Recent content in Language Server on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/Language-Server/index.xml" rel="self" type="application/rss+xml"/><item><title>Utilize Servidores de Linguagem para o Desenvolvimento na Árvore Src do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/freebsd-src-lsp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/freebsd-src-lsp/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Este guia é sobre como configurar uma árvore src do FreeBSD com servidores de linguagem realizando a indexação de código fonte. O guia descreve os passos para o Vim/NeoVim e o VSCode. Se você usar um editor de texto diferente, pode usar este guia como referência e procurar os comandos equivalentes para o seu editor preferido.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="requirements">2. Requisitos&lt;a class="anchor" href="#requirements">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Para seguir este guia, precisamos instalar certos requisitos. Precisamos de um servidor de linguagem, &lt;code>ccls&lt;/code> ou &lt;code>clangd&lt;/code>, e opcionalmente um banco de dados de compilação.&lt;/p>
+&lt;/div></description></item></channel></rss>

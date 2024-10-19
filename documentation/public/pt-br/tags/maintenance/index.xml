@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Maintenance on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/maintenance/</link><description>Recent content in Maintenance on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/maintenance/index.xml" rel="self" type="application/rss+xml"/><item><title>Diretrizes de Tratamento de Relatórios de Problemas</title><link>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+&lt;div class="paragraph abstract-title">
+&lt;p>Resumo&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Essas diretrizes descrevem práticas recomendadas de tratamento para Relatórios de Problemas (PRs) do FreeBSD. Embora desenvolvidas para a equipe de manutenção do Banco de Dados de PRs do FreeBSD (&lt;a href="mailto:freebsd-bugbusters@FreeBSD.org">freebsd-bugbusters@FreeBSD.org&lt;/a>), essas diretrizes devem ser seguidas por qualquer pessoa que trabalhe com PRs do FreeBSD.&lt;/p>
+&lt;/div>
+&lt;hr/>
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="intro">1. Introdução&lt;a class="anchor" href="#intro">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>O Bugzilla é um sistema de gerenciamento de problemas usado pelo Projeto FreeBSD. Como o rastreamento preciso de defeitos de software pendentes é importante para a qualidade do FreeBSD, o uso correto do software é essencial para o progresso contínuo do Projeto.&lt;/p>
+&lt;/div></description></item></channel></rss>

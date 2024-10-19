@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/zh-tw/tags/features/</link><description>Recent content in Features on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>zh-tw</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/zh-tw/tags/features/index.xml" rel="self" type="application/rss+xml"/><item><title>章 24. DTrace</title><link>http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/zh-tw/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
+&lt;div class="sectionbody">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="dtrace-synopsis">24.1. 概述&lt;a class="anchor" href="#dtrace-synopsis">&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>DTrace，又被稱作 Dynamic Tracing ，由 Sun™ 開發，用在生產 (production) 跟預生產 (pre-production) 系統中找出效能瓶頸的工具。
+除了診斷性能問題外，DTrace 還可以用於查詢以及除錯 FreeBSD 核心和使用者層級程式的未預期行為。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DTrace 是一個卓越的分析工具，具有一系列令人驚豔、用於診斷系統問題的功能。
+它還可以執行預先寫好的腳本，以使用其功能。
+使用者可以用 DTrace D 語言編寫自己的工具，從而允許他們根據特定的需求客製化。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>FreeBSD 實做提供對核心層級的 DTrace 全面的支援，以及對使用者層級的 DTrace 實驗性的支援。
+使用者層級的 DTrace 允許使用者使用 &lt;code>pid&lt;/code> 執行函式邊界追蹤 (function boundary tracing)，並將 static probes 插入到使用者程式以供之後追蹤。
+一些 ports，像是 &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/databases/postgresql12-server/">databases/postgresql12-server&lt;/a> 和 &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/lang/php74/">lang/php74&lt;/a> 提供 DTrace 選項，以提供 static probes 功能。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DTrace 的官方指南由 Illumos 維護，在 &lt;a href="http://dtrace.org/guide">DTrace Guide&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>讀完這章，您將了解：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>什麼是 DTrace 以及其提供的功能。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Solaris™ 實做的 DTrace 跟 FreeBSD 提供的 DTrace 之間的不同之處。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如何在 FreeBSD 上啟用和使用 DTrace。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>
