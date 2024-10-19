@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guidelines on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/guidelines/</link><description>Recent content in Guidelines on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/guidelines/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Making a New Port</title><link>http://172.16.201.134:1313/en/books/porters-handbook/new-port/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/new-port/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guidelines on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/guidelines/</link><description>Recent content in Guidelines on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/guidelines/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Making a New Port</title><link>https://docs.freebsd.org/en/books/porters-handbook/new-port/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/new-port/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;!-- toc disabled -->
 &lt;div class="paragraph">
@@ -12,7 +12,7 @@ To upgrade an existing port, read this, then read &lt;a href="../upgrading/#port
 &lt;p>When this document is not sufficiently detailed, refer to &lt;span class="filename">/usr/ports/Mk/bsd.port.mk&lt;/span>, which is included by all port &lt;span class="filename">Makefiles&lt;/span>.
 Even those not hacking &lt;span class="filename">Makefile&lt;/span>s daily can gain much knowledge from it.
 Additionally, specific questions can be sent to the &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-ports">FreeBSD ports mailing list&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Port Mentor Guidelines</title><link>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Port Mentor Guidelines</title><link>https://docs.freebsd.org/en/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

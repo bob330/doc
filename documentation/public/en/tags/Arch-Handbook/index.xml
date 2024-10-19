@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Handbook on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Arch-Handbook/</link><description>Recent content in Arch Handbook on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Arch-Handbook/index.xml" rel="self" type="application/rss+xml"/><item><title>Bibliography</title><link>http://172.16.201.134:1313/en/books/arch-handbook/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/bibliography/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Handbook on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Arch-Handbook/</link><description>Recent content in Arch Handbook on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Arch-Handbook/index.xml" rel="self" type="application/rss+xml"/><item><title>Bibliography</title><link>https://docs.freebsd.org/en/books/arch-handbook/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/bibliography/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;!-- toc disabled -->
 &lt;div class="paragraph">
 &lt;p>[1] &lt;em>Marshall Kirk McKusick, Keith Bostic, Michael J Karels, and John S Quarterman.&lt;/em> Copyright © 1996 Addison-Wesley Publishing Company, Inc.. 0-201-54979-4. Addison-Wesley Publishing Company, Inc.. The Design and Implementation of the 4.4 BSD Operating System. 1-2.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>FreeBSD Architecture Handbook</title><link>http://172.16.201.134:1313/en/books/arch-handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>FreeBSD Architecture Handbook</title><link>https://docs.freebsd.org/en/books/arch-handbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -15,7 +15,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>The latest version of this document is always available from the &lt;a href="https://www.FreeBSD.org/">FreeBSD World Wide Web server&lt;/a>. It may also be downloaded in a variety of formats and compression options from the &lt;a href="https://download.freebsd.org/doc/">FreeBSD download server&lt;/a> or one of the numerous &lt;a href="https://docs.freebsd.org/en/books/handbook/#mirrors">mirror sites&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>FreeBSD Architecture Handbook</title><link>http://172.16.201.134:1313/en/books/arch-handbook/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/book/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>FreeBSD Architecture Handbook</title><link>https://docs.freebsd.org/en/books/arch-handbook/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/book/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

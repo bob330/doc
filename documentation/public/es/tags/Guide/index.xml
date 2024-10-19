@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Guide/</link><description>Recent content in Guide on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía para los Committers</title><link>http://172.16.201.134:1313/es/articles/committers-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/committers-guide/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on Portal de documentación de FreeBSD</title><link>https://docs.freebsd.org/es/tags/Guide/</link><description>Recent content in Guide on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/es/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía para los Committers</title><link>https://docs.freebsd.org/es/articles/committers-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/committers-guide/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -8,7 +8,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Casi todos los desarrolladores de FreeBSD tienen derecho de acceso a uno o más repositorios. Sin embargo, algunos desarrolladores no lo tienen, y cierta información aquí expuesta también les afecta. (Por ejemplo, algunas personas sólo tienen derecho a trabajar con la base de datos de reporte de problemas.) Por favor lea &lt;a href="#non-committers">Problemas Específicos para Desarrolladores que No Son Committers&lt;/a> para más información.&lt;/p>
-&lt;/div></description></item><item><title>Autenticación LDAP</title><link>http://172.16.201.134:1313/es/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Autenticación LDAP</title><link>https://docs.freebsd.org/es/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -25,7 +25,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento está destinado a proporcionar al lector una comprensión suficiente de LDAP para configurar un servidor LDAP. Este documento intentará proporcionar una explicación de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> y &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para usarlos con los servicios de la máquina del cliente para su uso con el servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>CUPS en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS en FreeBSD</title><link>https://docs.freebsd.org/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -45,7 +45,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>CUPS utiliza el Internet Printing Protocol (IPP) como base para gestionar trabajos de impresión y colas. Los protocolos Line Printer Daemon (LPD), Server Message Block (SMB) y AppSocket (también conocido como JetDirect) también están soportados con funcionalidad reducida. CUPS añade navegación de impresoras de red y opciones de impresión basadas en PostScript Printer Description (PPD) para soportar impresión en el mundo real bajo UNIX®. Como resultado, CUPS encaja perfectamente para compartir y acceder a impresoras en entornos mixtos de FreeBSD, Linux®, Mac OS® o Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Guía Rápida de FreeBSD para Usuarios de Linux(R)</title><link>http://172.16.201.134:1313/es/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Guía Rápida de FreeBSD para Usuarios de Linux(R)</title><link>https://docs.freebsd.org/es/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/linux-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -65,7 +65,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Este documento asume que FreeBSD ya está instalado. Consulta el capítulo &lt;a href="https://docs.freebsd.org/es/books/handbook/#bsdinstall">Instalar FreeBSD&lt;/a> del FreeBSD Handbook para obtener ayuda con el proceso de instalación.&lt;/p>
-&lt;/div></description></item><item><title>Introducción a NanoBSD</title><link>http://172.16.201.134:1313/es/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Introducción a NanoBSD</title><link>https://docs.freebsd.org/es/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/nanobsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -82,7 +82,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>NanoBSD es una herramienta desarrollada por Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; y mantenida ahora por Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;. La herramienta crea una imagen para aplicaciones embebidas, adecuada para su uso en una memoria USB, tarjeta de memoria, u otro medio de almacenamiento.&lt;/p>
-&lt;/div></description></item><item><title>Scripting práctico rc.d en BSD</title><link>http://172.16.201.134:1313/es/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Scripting práctico rc.d en BSD</title><link>https://docs.freebsd.org/es/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -99,7 +99,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>El BSD histórico tenía un script de arranque monolítico, &lt;span class="filename">/etc/rc&lt;/span>. Era invocado por &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a> durante el arranque del sistema y realizaba todas las tareas en modo usuario que se requerían para operar en modo multi-usuario: comprobar y montar los sistemas de ficheros, configurar la red, arrancar demonios y demás. La lista precisa de tareas no era la misma en cada sistema; los administradores necesitaban personalizarla. Salvo en unas pocas excepciones, se tenía que modificar &lt;span class="filename">/etc/rc&lt;/span>, y a los verdaderos hackers les gustaba.&lt;/p>
-&lt;/div></description></item><item><title>Tipos de letra y FreeBSD</title><link>http://172.16.201.134:1313/es/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Tipos de letra y FreeBSD</title><link>https://docs.freebsd.org/es/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>

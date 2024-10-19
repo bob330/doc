@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Emulation on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Emulation/</link><description>Recent content in Emulation on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Emulation/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 12. Linux Binary Compatibility</title><link>http://172.16.201.134:1313/en/books/handbook/linuxemu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/linuxemu/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Emulation on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Emulation/</link><description>Recent content in Emulation on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Emulation/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 12. Linux Binary Compatibility</title><link>https://docs.freebsd.org/en/books/handbook/linuxemu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/linuxemu/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -13,7 +13,7 @@ Some Linux-specific operating system features are not yet supported; this mostly
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Before reading this chapter, you should:&lt;/p>
-&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>http://172.16.201.134:1313/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>https://docs.freebsd.org/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -29,7 +29,7 @@ It allows installing and running software written for Windows® on FreeBSD (and 
 &lt;p>It operates by intercepting system calls, or requests from the software to the operating system, and translating them from Windows® calls to calls that FreeBSD understands.
 It will also translate any responses as needed into what the Windows® software is expecting.
 So in some ways, it &lt;em>emulates&lt;/em> a Windows® environment, in that it provides many of the resources Windows® applications are expecting.&lt;/p>
-&lt;/div></description></item><item><title>Linux® emulation in FreeBSD</title><link>http://172.16.201.134:1313/en/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/linux-emulation/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Linux® emulation in FreeBSD</title><link>https://docs.freebsd.org/en/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/linux-emulation/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

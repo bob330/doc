@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manual Pages on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/manual-pages/</link><description>Recent content in Manual Pages on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/manual-pages/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. The Working Copy</title><link>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manual Pages on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/manual-pages/</link><description>Recent content in Manual Pages on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/manual-pages/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. The Working Copy</title><link>https://docs.freebsd.org/en/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -8,7 +8,7 @@ Changes are made to the local working copy, tested, and then submitted as patche
 &lt;div class="paragraph">
 &lt;p>A full copy of the documentation tree can occupy 550 megabytes of disk space.
 Allow for a full gigabyte of space to have room for temporary files and test versions of various output formats.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 3. FreeBSD Basics</title><link>http://172.16.201.134:1313/en/books/handbook/basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/basics/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 3. FreeBSD Basics</title><link>https://docs.freebsd.org/en/books/handbook/basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/basics/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -60,7 +60,7 @@ New FreeBSD users are encouraged to read through this chapter carefully.&lt;/p>
 &lt;p>How to read manual pages for more information.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>

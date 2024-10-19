@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/Guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/Guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -11,7 +11,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Nos primórdios da era computacional, o texto eletrônico era simples. Havia poucos conjuntos de caracteres como ASCII ou EBCDIC, e apenas isso. Texto era texto, e o que você lia era realmente o texto que você tinha. Sem frescuras, sem formatação, sem inteligência.&lt;/p>
-&lt;/div></description></item><item><title>Capítulo 11. Páginas de Manual</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Capítulo 11. Páginas de Manual</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -24,7 +24,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Embora tenham sido planejados como material de referência em vez de tutoriais, as seções EXEMPLOS das páginas de manual geralmente fornecem casos de uso detalhados.&lt;/p>
-&lt;/div></description></item><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Autenticação LDAP</title><link>https://docs.freebsd.org/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -41,7 +41,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -61,7 +61,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>O CUPS utiliza o Protocolo de Impressão pela Internet (IPP) como base para gerenciar trabalhos e filas de impressão. Os protocolos Line Printer Daemon (LPD), Server Message Block (SMB) e AppSocket (também conhecido como JetDirect) também são suportados, porém com funcionalidade reduzida. O CUPS adiciona opções de visualização de impressoras em rede e impressão baseada em PostScript Printer Description (PPD) para suportar as necessidades de impressão do mundo real no ambiente UNIX®. Como resultado, o CUPS é ideal para compartilhar e acessar impressoras em ambientes mistos de FreeBSD, Linux®, Mac OS® X ou Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -78,7 +78,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Existem muitas fontes disponíveis e alguém pode perguntar como usá-las com o FreeBSD. A resposta pode ser encontrada pesquisando cuidadosamente a documentação do componente que deseja utilizar. Isso pode ser muito demorado, portanto, este tutorial é uma tentativa de fornecer um atalho para outras pessoas interessadas.&lt;/p>
-&lt;/div></description></item><item><title>Guia de Início Rápido do FreeBSD para Usuários do Linux®</title><link>http://172.16.201.134:1313/pt-br/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Guia de Início Rápido do FreeBSD para Usuários do Linux®</title><link>https://docs.freebsd.org/pt-br/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/linux-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -98,7 +98,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Este documento pressupõe que o FreeBSD já está instalado. Consulte o capítulo &lt;a href="https://docs.freebsd.org/pt-br/books/handbook/book/#bsdinstall">Instalando o FreeBSD&lt;/a> no Handbook para obter ajuda com o processo de instalação.&lt;/p>
-&lt;/div></description></item><item><title>Introdução ao NanoBSD</title><link>http://172.16.201.134:1313/pt-br/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Introdução ao NanoBSD</title><link>https://docs.freebsd.org/pt-br/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/nanobsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -115,7 +115,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>O NanoBSD é uma ferramenta desenvolvida por Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; e agora mantida por Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;. Ela cria uma imagem do sistema FreeBSD para aplicações embarcadas, adequada para uso em uma chave USB, cartão de memória ou outro meio de armazenamento em massa.&lt;/p>
-&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>https://docs.freebsd.org/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

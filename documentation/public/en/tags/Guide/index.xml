@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. Quick Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guide on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Guide/</link><description>Recent content in Guide on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. Quick Porting</title><link>https://docs.freebsd.org/en/books/porters-handbook/quick-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/quick-porting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -19,7 +19,7 @@ For applications where this quick method is not adequate, the full &amp;#34;Slow
 &lt;p>These steps assume that the software compiled out-of-the-box.
 In other words, absolutely no changes were required for the application to work on a FreeBSD system.
 If anything had to be changed, refer to &lt;a href="../slow-porting/#slow-porting">Slow Porting&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 2. Installing FreeBSD</title><link>http://172.16.201.134:1313/en/books/handbook/bsdinstall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/bsdinstall/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 2. Installing FreeBSD</title><link>https://docs.freebsd.org/en/books/handbook/bsdinstall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/bsdinstall/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -46,7 +46,7 @@ Depending on the architecture and platform, different images can be &lt;a href="
 &lt;p>Installation images to boot from an ISO or USB device to install FreeBSD on a drive for the usual desktop, laptop, or server system.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 3. Kernel Objects</title><link>http://172.16.201.134:1313/en/books/arch-handbook/kobj/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/kobj/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 3. Kernel Objects</title><link>https://docs.freebsd.org/en/books/arch-handbook/kobj/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/kobj/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -78,7 +78,7 @@ This allows operations to be added and removed from an interface at run time and
 &lt;p>A standard set of one or more methods.&lt;/p>
 &lt;/dd>
 &lt;/dl>
-&lt;/div></description></item><item><title>Chapter 4. Slow Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 4. Slow Porting</title><link>https://docs.freebsd.org/en/books/porters-handbook/slow-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/slow-porting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -93,7 +93,7 @@ In this section, we will explain, step by step, how to modify it to get it to wo
 &lt;div class="paragraph">
 &lt;p>First, this is the sequence of events which occurs when the user first types &lt;code>make&lt;/code> in the port’s directory.
 Having &lt;span class="filename">bsd.port.mk&lt;/span> in another window while reading this really helps to understand it.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 6. Asciidoctor Primer</title><link>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 6. Asciidoctor Primer</title><link>https://docs.freebsd.org/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -112,7 +112,7 @@ Some of the examples used in this chapter have been taken from the &lt;a href="h
 There were a few character sets like ASCII or EBCDIC, but that was about it.
 Text was text, and what you saw really was what you got.
 No frills, no formatting, no intelligence.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>https://docs.freebsd.org/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -129,7 +129,7 @@ The port is built multiple times, with variations.&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -148,7 +148,7 @@ They have become an extremely valuable quick-reference from the command line for
 &lt;p>Manual pages are generally shown interactively by the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=man&amp;amp;sektion=1&amp;amp;format=html">man(1)&lt;/a> command.
 When the user types &lt;code>man ls&lt;/code>, a search is performed for a manual page matching &lt;code>ls&lt;/code>.
 The first matching result is displayed.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. PCI Devices</title><link>http://172.16.201.134:1313/en/books/arch-handbook/pci/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/pci/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. PCI Devices</title><link>https://docs.freebsd.org/en/books/arch-handbook/pci/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/pci/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -371,7 +371,7 @@ static devclass_t mypci_devclass;
 
 DEFINE_CLASS_0(mypci, mypci_driver, mypci_methods, sizeof(struct mypci_softc));
 DRIVER_MODULE(mypci, pci, mypci_driver, mypci_devclass, 0, 0);&lt;/pre>
-&lt;/div></description></item><item><title>Chapter 13. Dos and Don'ts</title><link>http://172.16.201.134:1313/en/books/porters-handbook/porting-dads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/porting-dads/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. Dos and Don'ts</title><link>https://docs.freebsd.org/en/books/porters-handbook/porting-dads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/porting-dads/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -384,7 +384,7 @@ DRIVER_MODULE(mypci, pci, mypci_driver, mypci_devclass, 0, 0);&lt;/pre>
 Check the port against this list, but also check ports in the &lt;a href="https://bugs.FreeBSD.org/search/">PR database&lt;/a> that others have submitted.
 Submit any comments on ports as described in &lt;a href="https://docs.freebsd.org/en/articles/contributing/#CONTRIB-GENERAL">Bug Reports and General Commentary&lt;/a>.
 Checking ports in the PR database will both make it faster for us to commit them, and prove that you know what you are doing.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. x86 Assembly Language Programming</title><link>http://172.16.201.134:1313/en/books/developers-handbook/x86/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/x86/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. x86 Assembly Language Programming</title><link>https://docs.freebsd.org/en/books/developers-handbook/x86/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/developers-handbook/x86/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -403,7 +403,7 @@ It is generally assumed that no one would ever want to use it because various UN
 &lt;p>In reality, C portability is quite a myth.
 Even C programs need to be modified when ported from one UNIX® to another, regardless of what processor each runs on.
 Typically, such a program is full of conditional statements depending on the system it is compiled for.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>http://172.16.201.134:1313/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>https://docs.freebsd.org/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -419,7 +419,7 @@ It allows installing and running software written for Windows® on FreeBSD (and 
 &lt;p>It operates by intercepting system calls, or requests from the software to the operating system, and translating them from Windows® calls to calls that FreeBSD understands.
 It will also translate any responses as needed into what the Windows® software is expecting.
 So in some ways, it &lt;em>emulates&lt;/em> a Windows® environment, in that it provides many of the resources Windows® applications are expecting.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>http://172.16.201.134:1313/en/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>https://docs.freebsd.org/en/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -435,7 +435,7 @@ They can add dependencies, change building behavior, add metadata to packages, a
 &lt;p>Each section in this chapter describes a possible value for &lt;code>USES&lt;/code>, along with its possible arguments.
 Arguments are appended to the value after a colon (&lt;code>:&lt;/code>).
 Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
-&lt;/div></description></item><item><title>Chapter 19. Security Event Auditing</title><link>http://172.16.201.134:1313/en/books/handbook/audit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/audit/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 19. Security Event Auditing</title><link>https://docs.freebsd.org/en/books/handbook/audit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/audit/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -448,7 +448,7 @@ Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
 Event auditing supports reliable, fine-grained, and configurable logging of a variety of security-relevant system events, including logins, configuration changes, and file and network access.
 These log records can be invaluable for live system monitoring, intrusion detection, and postmortem analysis.
 FreeBSD implements Sun™&amp;#39;s published Basic Security Module (BSM) Application Programming Interface (API) and file format, and is interoperable with the Solaris™ and Mac OS® X audit implementations.&lt;/p>
-&lt;/div></description></item><item><title>Committer's Guide</title><link>http://172.16.201.134:1313/en/articles/committers-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/committers-guide/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Committer's Guide</title><link>https://docs.freebsd.org/en/articles/committers-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/committers-guide/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -462,7 +462,7 @@ All new committers should read this document before they start, and existing com
 However, a few developers do not, and some of the information here applies to them as well.
 (For instance, some people only have rights to work with the Problem Report database.)
 Please see &lt;a href="../committers-guide/#non-committers">Issues Specific to Developers Who Are Not Committers&lt;/a> for more information.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 27. DTrace</title><link>http://172.16.201.134:1313/en/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 27. DTrace</title><link>https://docs.freebsd.org/en/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -478,7 +478,7 @@ In addition to diagnosing performance problems, DTrace can be used to help inves
 &lt;p>DTrace is a remarkable profiling tool, with an impressive array of features for diagnosing system issues.
 It may also be used to run pre-written scripts to take advantage of its capabilities.
 Users can author their own utilities using the DTrace D Language, allowing them to customize their profiling based on specific needs.&lt;/p>
-&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>http://172.16.201.134:1313/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>https://docs.freebsd.org/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -502,7 +502,7 @@ It has been developed by Easy Software Products to promote a standard printing s
 The Line Printer Daemon (LPD), Server Message Block (SMB), and AppSocket (aka JetDirect) protocols are also supported with reduced functionality.
 CUPS adds network printer browsing and PostScript Printer Description (PPD) based printing options to support real-world printing under UNIX®.
 As a result, CUPS is ideally-suited for sharing and accessing printers in mixed environments of FreeBSD, Linux®, Mac OS® X, or Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Fonts and FreeBSD</title><link>http://172.16.201.134:1313/en/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Fonts and FreeBSD</title><link>https://docs.freebsd.org/en/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -522,7 +522,7 @@ Cookbook examples are provided for switching the syscons display to 80x60 mode, 
 &lt;p>There are many sources of fonts available, and one might ask how they might be used with FreeBSD.
 The answer can be found by carefully searching the documentation for the component that one would like to use.
 This is very time consuming, so this tutorial is an attempt to provide a shortcut for others who might be interested.&lt;/p>
-&lt;/div></description></item><item><title>FreeBSD Quickstart Guide for Linux® Users</title><link>http://172.16.201.134:1313/en/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>FreeBSD Quickstart Guide for Linux® Users</title><link>https://docs.freebsd.org/en/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/linux-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -543,7 +543,7 @@ This is very time consuming, so this tutorial is an attempt to provide a shortcu
 &lt;div class="paragraph">
 &lt;p>This document assumes that FreeBSD is already installed.
 Refer to the &lt;a href="https://docs.freebsd.org/en/books/handbook/#bsdinstall">Installing FreeBSD&lt;/a> chapter of the FreeBSD Handbook for help with the installation process.&lt;/p>
-&lt;/div></description></item><item><title>Introduction to NanoBSD</title><link>http://172.16.201.134:1313/en/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Introduction to NanoBSD</title><link>https://docs.freebsd.org/en/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/nanobsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -561,7 +561,7 @@ Refer to the &lt;a href="https://docs.freebsd.org/en/books/handbook/#bsdinstall"
 &lt;div class="paragraph">
 &lt;p>NanoBSD is a tool developed by Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; and now maintained by Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;.
 It creates a FreeBSD system image for embedded applications, suitable for use on a USB key, memory card or other mass storage media.&lt;/p>
-&lt;/div></description></item><item><title>LDAP Authentication</title><link>http://172.16.201.134:1313/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>LDAP Authentication</title><link>https://docs.freebsd.org/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -580,7 +580,7 @@ This is useful for situations where many servers need the same user accounts, fo
 &lt;div class="paragraph">
 &lt;p>This document is intended to give the reader enough of an understanding of LDAP to configure an LDAP server.
 This document will attempt to provide an explanation of &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> and &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> for use with client machines services for use with the LDAP server.&lt;/p>
-&lt;/div></description></item><item><title>Practical rc.d scripting in BSD</title><link>http://172.16.201.134:1313/en/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Practical rc.d scripting in BSD</title><link>https://docs.freebsd.org/en/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

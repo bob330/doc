@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/FreeBSD/</link><description>Recent content in FreeBSD on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/FreeBSD/index.xml" rel="self" type="application/rss+xml"/><item><title>Primer do Projeto de Documentação do FreeBSD para Novos Colaboradores</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeBSD on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/FreeBSD/</link><description>Recent content in FreeBSD on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/FreeBSD/index.xml" rel="self" type="application/rss+xml"/><item><title>Primer do Projeto de Documentação do FreeBSD para Novos Colaboradores</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -14,7 +14,7 @@
 &lt;/div>
 &lt;hr/>
 &lt;/div>
-&lt;/div></description></item><item><title>Capítulo 13. Configuração do Editor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Capítulo 13. Configuração do Editor</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -32,7 +32,7 @@
 &lt;h3 id="editor-config-vim-use">13.1.1. Uso&lt;a class="anchor" href="#editor-config-vim-use">&lt;/a>&lt;/h3>
 &lt;div class="paragraph">
 &lt;p>Os escritores de páginas de manuais podem usar os seguintes atalhos de teclado para reformatar:&lt;/p>
-&lt;/div></description></item><item><title>Contribuindo com o FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/contributing/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Contribuindo com o FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/contributing/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -47,7 +47,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Um grande e crescente número de colaboradores internacionais, de idades e áreas de experiência técnica muito diversas, desenvolvem o FreeBSD. Sempre há mais trabalho a ser feito do que pessoas disponíveis para fazê-lo, e mais ajuda sempre é apreciada.&lt;/p>
-&lt;/div></description></item><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Autenticação LDAP</title><link>https://docs.freebsd.org/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -64,7 +64,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>Chaves OpenPGP</title><link>http://172.16.201.134:1313/pt-br/articles/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/pgpkeys/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chaves OpenPGP</title><link>https://docs.freebsd.org/pt-br/articles/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/pgpkeys/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 
@@ -85,7 +85,7 @@
 uid FreeBSD Security Officer &amp;lt;security-officer@freebsd.org&amp;gt;
 sub rsa4096/6E58DE901F001AEF 2022-12-11 [S] [expires: 2025-01-15]
 sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
-&lt;/div></description></item><item><title>Como obter os melhores resultados da lista de discussão FreeBSD-questions</title><link>http://172.16.201.134:1313/pt-br/articles/freebsd-questions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/freebsd-questions/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Como obter os melhores resultados da lista de discussão FreeBSD-questions</title><link>https://docs.freebsd.org/pt-br/articles/freebsd-questions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/freebsd-questions/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -105,21 +105,21 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>A &lt;code>FreeBSD-questions&lt;/code> é uma lista de discussão mantida pelo projeto FreeBSD para ajudar pessoas que têm dúvidas sobre o uso normal do FreeBSD. Outro grupo, &lt;code>FreeBSD-hackers&lt;/code>, discute questões mais avançadas, como trabalho futuro de desenvolvimento.&lt;/p>
-&lt;/div></description></item><item><title>Construa seu próprio servidor de atualização do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/freebsd-update-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/freebsd-update-server/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Construa seu próprio servidor de atualização do FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/freebsd-update-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/freebsd-update-server/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Este artigo descreve a construção de um Servidor Interno de Atualização do FreeBSD. O &lt;a href="https://github.com/freebsd/freebsd-update-build/">freebsd-update-server&lt;/a> é escrito por &lt;code>Colin Percival &amp;lt;&lt;a href="mailto:cperciva@FreeBSD.org">cperciva@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>, Oficial de Segurança Emérito do FreeBSD. Para usuários que acham conveniente atualizar seus sistemas em relação a um servidor de atualização oficial, a construção de seu próprio Servidor de Atualização do FreeBSD pode ajudar a estender sua funcionalidade ao suportar versões do FreeBSD ajustadas manualmente ou fornecer um espelho local que permitirá atualizações mais rápidas para vários computadores.&lt;/p>
-&lt;/div></description></item><item><title>Construindo Produtos com o FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/building-products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/building-products/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Construindo Produtos com o FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/building-products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/building-products/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>O projeto FreeBSD é um projeto voluntário e colaborativo de âmbito mundial, o qual desenvolve um sistema operacional de alta qualidade, capaz de ser utilizado em diferentes arquiteturas computacionais. O projeto FreeBSD distribui o código fonte do seu produto sob uma licença liberal, com a intenção de incentivar o uso de seu código. Colaborar com o projeto FreeBSD pode ajudar sua empresa a reduzir o tempo necessário para colocar um produto no mercado, a reduzir seus custos de engenharia e a melhorar qualidade de seus produtos.&lt;/p>
-&lt;/div></description></item><item><title>Contribuidores do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/contributors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/contributors/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Contribuidores do FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/contributors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/contributors/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -136,7 +136,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Esta lista, que inclui todos os membros do Core Team, nomeia todos que têm privilégios de commit para uma ou mais das três árvores de código (doc, ports e src). Para ver os membros atuais do Core Team, você pode dar uma olhada na &lt;a href="https://www.freebsd.org/administration/#t-core">página de administração&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -156,7 +156,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>O CUPS utiliza o Protocolo de Impressão pela Internet (IPP) como base para gerenciar trabalhos e filas de impressão. Os protocolos Line Printer Daemon (LPD), Server Message Block (SMB) e AppSocket (também conhecido como JetDirect) também são suportados, porém com funcionalidade reduzida. O CUPS adiciona opções de visualização de impressoras em rede e impressão baseada em PostScript Printer Description (PPD) para suportar as necessidades de impressão do mundo real no ambiente UNIX®. Como resultado, o CUPS é ideal para compartilhar e acessar impressoras em ambientes mistos de FreeBSD, Linux®, Mac OS® X ou Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Diretrizes de Tratamento de Relatórios de Problemas</title><link>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/pr-guidelines/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Diretrizes de Tratamento de Relatórios de Problemas</title><link>https://docs.freebsd.org/pt-br/articles/pr-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/pr-guidelines/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -173,14 +173,14 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>O Bugzilla é um sistema de gerenciamento de problemas usado pelo Projeto FreeBSD. Como o rastreamento preciso de defeitos de software pendentes é importante para a qualidade do FreeBSD, o uso correto do software é essencial para o progresso contínuo do Projeto.&lt;/p>
-&lt;/div></description></item><item><title>Emulação do Linux® no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/linux-emulation/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Emulação do Linux® no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/linux-emulation/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Esta tese de mestrado trata da atualização da camada de emulação do Linux® (chamada de &lt;em>Linuxulator&lt;/em>). A tarefa consistiu em atualizar a camada para corresponder à funcionalidade do Linux® 2.6. Como implementação de referência, foi escolhido o kernel Linux® 2.6.16. O conceito é vagamente baseado na implementação do NetBSD. A maior parte do trabalho foi realizada no verão de 2006 como parte do programa de estudantes do Google Summer of Code. O foco foi trazer o suporte do &lt;em>NPTL&lt;/em> (nova biblioteca de threads POSIX®) para a camada de emulação, incluindo &lt;em>TLS&lt;/em> (armazenamento local de threads), &lt;em>futexes&lt;/em> (mutexes de espaço do usuário rápidos), &lt;em>PID mangling&lt;/em> e algumas outras pequenas coisas. Muitos problemas pequenos foram identificados e corrigidos durante o processo. Meu trabalho foi integrado ao repositório principal do FreeBSD e será incluído na próxima versão 7.0R. Nós, a equipe de desenvolvimento de emulação, estamos trabalhando para tornar a emulação do Linux® 2.6 a camada de emulação padrão no FreeBSD.&lt;/p>
-&lt;/div></description></item><item><title>Escrevendo Relatórios de Problemas para o FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/problem-reports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/problem-reports/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Escrevendo Relatórios de Problemas para o FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/problem-reports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/problem-reports/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -197,7 +197,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Uma das experiências mais frustrantes que alguém pode ter como usuário de um software é submeter um relatório de problema apenas para vê-lo ser encerrado sumariamente com uma explicação curta e inútil tal como &amp;#34;não é um bug&amp;#34; ou &amp;#34;PR Falso&amp;#34;. Da mesma forma, uma das experiências mais frustrantes como desenvolvedor de software é ser inundado com relatórios de problemas que não são realmente relatórios de problemas mas sim pedidos de suporte, ou então por relatórios que contêm pouca ou nenhuma informação sobre o que é o problema e sobre como reproduzi-lo.&lt;/p>
-&lt;/div></description></item><item><title>Escrevendo uma classe GEOM</title><link>http://172.16.201.134:1313/pt-br/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/geom-class/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Escrevendo uma classe GEOM</title><link>https://docs.freebsd.org/pt-br/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/geom-class/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -216,7 +216,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;h3 id="intro-docs">1.1. Documentação&lt;a class="anchor" href="#intro-docs">&lt;/a>&lt;/h3>
 &lt;div class="paragraph">
 &lt;p>A documentação sobre programação de kernel é escassa - é uma das poucas áreas em que quase não há tutoriais amigáveis, e a frase &amp;#34;use o código fonte!&amp;#34; realmente é verdadeira. No entanto, existem alguns fragmentos (alguns deles seriamente desatualizados) circulando que devem ser estudados antes de começar a codificar:&lt;/p>
-&lt;/div></description></item><item><title>Espelhando o FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/hubs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/hubs/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Espelhando o FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/hubs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/hubs/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -257,7 +257,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;h3 id="mirror-diskspace">2.1. Espaço em disco&lt;a class="anchor" href="#mirror-diskspace">&lt;/a>&lt;/h3>
 &lt;div class="paragraph">
 &lt;p>O espaço em disco é um dos requisitos mais importantes. Dependendo do conjunto de versões, arquiteturas e grau de completude que você deseja espelhar, uma enorme quantidade de espaço em disco pode ser consumida. Além disso, espelhos &lt;em>oficiais&lt;/em> provavelmente precisam ser completos. As páginas da web devem sempre ser espelhadas completamente. Observe também que os números aqui declarados refletem o estado atual (em 12.0-RELEASE/11.3-RELEASE). O desenvolvimento e os lançamentos futuros só aumentarão a quantidade necessária. Certifique-se também de manter cerca de 10-20% de espaço extra apenas para garantir. Aqui estão alguns números aproximados:&lt;/p>
-&lt;/div></description></item><item><title>Explicando o BSD</title><link>http://172.16.201.134:1313/pt-br/articles/explaining-bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/explaining-bsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Explicando o BSD</title><link>https://docs.freebsd.org/pt-br/articles/explaining-bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/explaining-bsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -280,7 +280,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>BSD é a sigla para &amp;#34;Berkeley Software Distribution&amp;#34;. É o nome do código fonte distribuído pela Universidade da Califórnia, Berkeley, que era originalmente uma extensão do UNIX® desenvolvido pela área de pesquisa da AT&amp;amp;T. Diversos projetos de sistemas operacionais de código aberto foram baseados em uma versão deste código, conhecido como 4.4BSD-Lite. Além disso, eles incluem vários pacotes de outros projetos de código aberto, com destaque para os do projeto GNU. O sistema operacional geralmente abrange:&lt;/p>
-&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -297,7 +297,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Existem muitas fontes disponíveis e alguém pode perguntar como usá-las com o FreeBSD. A resposta pode ser encontrada pesquisando cuidadosamente a documentação do componente que deseja utilizar. Isso pode ser muito demorado, portanto, este tutorial é uma tentativa de fornecer um atalho para outras pessoas interessadas.&lt;/p>
-&lt;/div></description></item><item><title>FreeBSD e Dispositivos de Estado Sólido</title><link>http://172.16.201.134:1313/pt-br/articles/solid-state/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/solid-state/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>FreeBSD e Dispositivos de Estado Sólido</title><link>https://docs.freebsd.org/pt-br/articles/solid-state/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/solid-state/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -310,7 +310,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Tópicos específicos a serem abordados incluem os tipos e atributos das mídia de estado sólido adequadas para uso como disco no FreeBSD, opções de kernel que são de interesse em tal ambiente, os mecanismos &lt;span class="filename">rc.initdiskless&lt;/span> que automatizam a inicialização de tais sistemas e a necessidade de sistemas de arquivos read-only e a construção de sistemas de arquivos a partir do zero. O artigo será concluído com algumas estratégias gerais para ambientes FreeBSD pequenos e read-only .&lt;/p>
-&lt;/div></description></item><item><title>Guia de Início Rápido do FreeBSD para Usuários do Linux®</title><link>http://172.16.201.134:1313/pt-br/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/linux-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Guia de Início Rápido do FreeBSD para Usuários do Linux®</title><link>https://docs.freebsd.org/pt-br/articles/linux-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/linux-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -330,14 +330,14 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Este documento pressupõe que o FreeBSD já está instalado. Consulte o capítulo &lt;a href="https://docs.freebsd.org/pt-br/books/handbook/book/#bsdinstall">Instalando o FreeBSD&lt;/a> no Handbook para obter ajuda com o processo de instalação.&lt;/p>
-&lt;/div></description></item><item><title>Implementando o UFS Journaling em um Desktop PC</title><link>http://172.16.201.134:1313/pt-br/articles/gjournal-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/gjournal-desktop/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Implementando o UFS Journaling em um Desktop PC</title><link>https://docs.freebsd.org/pt-br/articles/gjournal-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/gjournal-desktop/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Um sistema de arquivos com journaling utiliza um log para registrar todas as transações que ocorrem no sistema de arquivos e preserva sua integridade em caso de falha do sistema ou queda de energia. Embora ainda seja possível perder alterações não salvas em arquivos, o journaling quase elimina completamente a possibilidade de corrupção do sistema de arquivos causada por uma desligamento incorreto. Ele também reduz ao mínimo o tempo necessário para a verificação do sistema de arquivos após uma falha. Embora o sistema de arquivos UFS utilizado pelo FreeBSD não implemente o journaling por si só, a nova classe de journaling do framework GEOM no FreeBSD 7.&lt;em>X&lt;/em> pode ser usada para fornecer o journaling independente do sistema de arquivos. Este artigo explica como implementar o journaling do UFS em um cenário típico de um PC desktop.&lt;/p>
-&lt;/div></description></item><item><title>Instalação Remota do Sistema Operacional FreeBSD sem um Console Remoto</title><link>http://172.16.201.134:1313/pt-br/articles/remote-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/remote-install/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Instalação Remota do Sistema Operacional FreeBSD sem um Console Remoto</title><link>https://docs.freebsd.org/pt-br/articles/remote-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/remote-install/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -354,7 +354,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Existem muitos provedores de hospedagem de servidores no mundo, mas muito poucos deles oferecem suporte oficial para o FreeBSD. Geralmente, eles fornecem suporte para uma distribuição Linux® a ser instalada nos servidores que oferecem.&lt;/p>
-&lt;/div></description></item><item><title>Introdução ao NanoBSD</title><link>http://172.16.201.134:1313/pt-br/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/nanobsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Introdução ao NanoBSD</title><link>https://docs.freebsd.org/pt-br/articles/nanobsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/nanobsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -371,7 +371,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>O NanoBSD é uma ferramenta desenvolvida por Poul-Henning Kamp &amp;lt;&lt;a href="mailto:phk@FreeBSD.org">phk@FreeBSD.org&lt;/a>&amp;gt; e agora mantida por Warner Losh &amp;lt;&lt;a href="mailto:imp@FreeBSD.org">imp@FreeBSD.org&lt;/a>&amp;gt;. Ela cria uma imagem do sistema FreeBSD para aplicações embarcadas, adequada para uso em uma chave USB, cartão de memória ou outro meio de armazenamento em massa.&lt;/p>
-&lt;/div></description></item><item><title>Para iniciantes tanto no FreeBSD quanto no UNIX®</title><link>http://172.16.201.134:1313/pt-br/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Para iniciantes tanto no FreeBSD quanto no UNIX®</title><link>https://docs.freebsd.org/pt-br/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/new-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -388,14 +388,14 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Faça login (quando você ver &lt;code>login:&lt;/code>) com o usuário que você criou durante a instalação ou como &lt;code>root&lt;/code>. (Sua instalação do FreeBSD já terá uma conta para o usuário &lt;code>root&lt;/code>, o qual pode ir a qualquer lugar e fazer qualquer coisa, incluindo excluir arquivos essenciais, então tenha cuidado!) Os símbolos % e # abaixo representam o prompt (o seu pode ser diferente), sendo que o % indica um usuário comum e o # indica o usuário &lt;code>root&lt;/code>.&lt;/p>
-&lt;/div></description></item><item><title>Perguntas Frequentes Sobre as Listas de Discussão do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/mailing-list-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/mailing-list-faq/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Perguntas Frequentes Sobre as Listas de Discussão do FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/mailing-list-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/mailing-list-faq/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Esta é a FAQ para as listas de discussão do FreeBSD. Se você está interessado em ajudar este projeto, envie um email para a &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">lista de discussão do projeto de documentação do FreeBSD&lt;/a>. A última versão deste documento está sempre disponível no &lt;a href=".">Servidor Web do Projeto FreeBSD&lt;/a>. Ele também poderá ser obtido como um grande e único arquivo &lt;a href=".">HTML&lt;/a> por meio de HTTP ou como texto puro, PostScript, PDF, etc. a partir do &lt;a href="https://download.freebsd.org/doc/">Servidor FTP do FreeBSD&lt;/a>. Você também poderá querer &lt;a href="https://www.FreeBSD.org/search/">Pesquisar na FAQ&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Pontes de Filtragem (Filtering Bridges)</title><link>http://172.16.201.134:1313/pt-br/articles/filtering-bridges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/filtering-bridges/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Pontes de Filtragem (Filtering Bridges)</title><link>https://docs.freebsd.org/pt-br/articles/filtering-bridges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/filtering-bridges/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -405,7 +405,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Uma bridge funciona analisando os endereços de nível MAC (endereços Ethernet) dos dispositivos conectados a cada uma de suas interfaces de rede e, em seguida, encaminhando o tráfego entre as duas redes apenas se a origem e o destino estiverem em segmentos diferentes. Em muitos aspectos, um bridge é semelhante a um switch Ethernet com apenas duas portas.&lt;/p>
-&lt;/div></description></item><item><title>Primer do Projeto de Documentação do FreeBSD para Novos Colaboradores</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/book/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Primer do Projeto de Documentação do FreeBSD para Novos Colaboradores</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/book/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -430,7 +430,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;h3 id="preface-prompts">Prompts do Shell&lt;a class="anchor" href="#preface-prompts">&lt;/a>&lt;/h3>
 &lt;div class="paragraph">
 &lt;p>Esta tabela mostra o prompt padrão do sistema e o prompt do super usuário. Os exemplos usam estes prompts para indicar com qual usuário o exemplo foi executado.&lt;/p>
-&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>https://docs.freebsd.org/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -447,7 +447,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>No histórico BSD, havia um script de inicialização monolítico, &lt;span class="filename">/etc/rc&lt;/span>. Ele era invocado pelo &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a> no momento da inicialização do sistema e realizava todas as tarefas de usuário necessárias para a operação multiusuário: verificação e montagem de sistemas de arquivos, configuração da rede, inicialização de daemons e assim por diante. A lista precisa de tarefas não era a mesma em todos os sistemas; os administradores precisavam personalizá-la. Com poucas exceções, o &lt;span class="filename">/etc/rc&lt;/span> tinha que ser modificado, e os verdadeiros hackers gostavam disso.&lt;/p>
-&lt;/div></description></item><item><title>Suporte do FreeBSD a Leap Seconds</title><link>http://172.16.201.134:1313/pt-br/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/leap-seconds/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Suporte do FreeBSD a Leap Seconds</title><link>https://docs.freebsd.org/pt-br/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/leap-seconds/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 
@@ -461,7 +461,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>No momento em que este artigo está sendo escrito, a próxima ocorrência do leap second irá acontecer em 30 de junho de 2015 as 23:59:60 UTC. Esse leap second ira ocorrer durante um dia útil para as Américas do Norte e do Sul e a região da Ásia/Pacifico.&lt;/p>
-&lt;/div></description></item><item><title>Utilize Servidores de Linguagem para o Desenvolvimento na Árvore Src do FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/freebsd-src-lsp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/freebsd-src-lsp/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Utilize Servidores de Linguagem para o Desenvolvimento na Árvore Src do FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/freebsd-src-lsp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/freebsd-src-lsp/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -479,7 +479,7 @@ sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Para seguir este guia, precisamos instalar certos requisitos. Precisamos de um servidor de linguagem, &lt;code>ccls&lt;/code> ou &lt;code>clangd&lt;/code>, e opcionalmente um banco de dados de compilação.&lt;/p>
-&lt;/div></description></item><item><title>Verificação Independente da Funcionalidade IPsec no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ipsec-must/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Verificação Independente da Funcionalidade IPsec no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ipsec-must/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

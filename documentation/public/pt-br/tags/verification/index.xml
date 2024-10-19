@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Verification on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/verification/</link><description>Recent content in Verification on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/verification/index.xml" rel="self" type="application/rss+xml"/><item><title>Suporte do FreeBSD a Leap Seconds</title><link>http://172.16.201.134:1313/pt-br/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/leap-seconds/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Verification on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/verification/</link><description>Recent content in Verification on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/verification/index.xml" rel="self" type="application/rss+xml"/><item><title>Suporte do FreeBSD a Leap Seconds</title><link>https://docs.freebsd.org/pt-br/articles/leap-seconds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/leap-seconds/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 
@@ -12,7 +12,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>No momento em que este artigo está sendo escrito, a próxima ocorrência do leap second irá acontecer em 30 de junho de 2015 as 23:59:60 UTC. Esse leap second ira ocorrer durante um dia útil para as Américas do Norte e do Sul e a região da Ásia/Pacifico.&lt;/p>
-&lt;/div></description></item><item><title>Verificação Independente da Funcionalidade IPsec no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ipsec-must/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Verificação Independente da Funcionalidade IPsec no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/ipsec-must/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ipsec-must/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

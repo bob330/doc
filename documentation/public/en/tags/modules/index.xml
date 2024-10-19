@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modules on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/modules/</link><description>Recent content in Modules on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/modules/index.xml" rel="self" type="application/rss+xml"/><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modules on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/modules/</link><description>Recent content in Modules on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/modules/index.xml" rel="self" type="application/rss+xml"/><item><title>Pluggable Authentication Modules</title><link>https://docs.freebsd.org/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/pam/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -15,7 +15,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>The Pluggable Authentication Modules (PAM) library is a generalized API for authentication-related services which allows a system administrator to add new authentication methods simply by installing new PAM modules, and to modify authentication policies by editing configuration files.&lt;/p>
-&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>http://172.16.201.134:1313/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/geom-class/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>https://docs.freebsd.org/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/geom-class/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Make on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/make/</link><description>Recent content in Make on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/make/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Programming Tools</title><link>http://172.16.201.134:1313/en/books/developers-handbook/tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/tools/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Make on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/make/</link><description>Recent content in Make on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/make/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Programming Tools</title><link>https://docs.freebsd.org/en/books/developers-handbook/tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/developers-handbook/tools/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -24,7 +24,7 @@ Compilers for C and C++ and an assembler come with the basic system, not to ment
 If that is not enough, there are many more compilers and interpreters in the Ports collection.
 The following section, &lt;a href="../tools/#tools-programming">Introduction to Programming&lt;/a>, lists some of the available options.
 FreeBSD is very compatible with standards such as POSIX® and ANSI C, as well with its own BSD heritage, so it is possible to write applications that will compile and run with little or no modification on a wide range of platforms.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 5. The FreeBSD Documentation Build Process</title><link>http://172.16.201.134:1313/en/books/fdp-primer/doc-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/doc-build/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 5. The FreeBSD Documentation Build Process</title><link>https://docs.freebsd.org/en/books/fdp-primer/doc-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/doc-build/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">

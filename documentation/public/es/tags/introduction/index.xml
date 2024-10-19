@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/introduction/</link><description>Recent content in Introduction on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>CUPS en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/cups/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Portal de documentación de FreeBSD</title><link>https://docs.freebsd.org/es/tags/introduction/</link><description>Recent content in Introduction on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/es/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>CUPS en FreeBSD</title><link>https://docs.freebsd.org/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -18,7 +18,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>CUPS utiliza el Internet Printing Protocol (IPP) como base para gestionar trabajos de impresión y colas. Los protocolos Line Printer Daemon (LPD), Server Message Block (SMB) y AppSocket (también conocido como JetDirect) también están soportados con funcionalidad reducida. CUPS añade navegación de impresoras de red y opciones de impresión basadas en PostScript Printer Description (PPD) para soportar impresión en el mundo real bajo UNIX®. Como resultado, CUPS encaja perfectamente para compartir y acceder a impresoras en entornos mixtos de FreeBSD, Linux®, Mac OS® o Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Módulos de Autenticación Cargables</title><link>http://172.16.201.134:1313/es/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Módulos de Autenticación Cargables</title><link>https://docs.freebsd.org/es/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/pam/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -35,7 +35,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>La librería Pluggable Authentication Modules (PAM) es una API para servicios relacionados con la autenticación que permite al administrador del sistema añadir nuevos métodos de autenticación simplemente instalando nuevos módulos PAM y modificando las políticas de autenticación editando el archivo de configuración.&lt;/p>
-&lt;/div></description></item><item><title>Para Gente Nueva en FreeBSD y UNIX(R)</title><link>http://172.16.201.134:1313/es/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Para Gente Nueva en FreeBSD y UNIX(R)</title><link>https://docs.freebsd.org/es/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/new-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>

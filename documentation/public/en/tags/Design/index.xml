@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Design on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Design/</link><description>Recent content in Design on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Design/index.xml" rel="self" type="application/rss+xml"/><item><title>Design elements of the FreeBSD VM system</title><link>http://172.16.201.134:1313/en/articles/vm-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/vm-design/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Design on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Design/</link><description>Recent content in Design on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Design/index.xml" rel="self" type="application/rss+xml"/><item><title>Design elements of the FreeBSD VM system</title><link>https://docs.freebsd.org/en/articles/vm-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/vm-design/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -13,7 +13,7 @@ I rewrote only small portions of the code. In the VM arena the only major rewrit
 Most of my work was cleanup and maintenance, with only moderate code rewriting and no major algorithmic adjustments within the VM subsystem.
 The bulk of the VM subsystem’s theoretical base remains unchanged and a lot of the credit for the modernization effort in the last few years belongs to John Dyson and David Greenman.
 Not being a historian like Kirk I will not attempt to tag all the various features with peoples names, since I will invariably get it wrong.&lt;/p>
-&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>http://172.16.201.134:1313/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>https://docs.freebsd.org/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

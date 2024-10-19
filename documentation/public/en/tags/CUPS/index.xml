@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CUPS on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/CUPS/</link><description>Recent content in CUPS on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/CUPS/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. Printing</title><link>http://172.16.201.134:1313/en/books/handbook/printing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/printing/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CUPS on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/CUPS/</link><description>Recent content in CUPS on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/CUPS/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. Printing</title><link>https://docs.freebsd.org/en/books/handbook/printing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/printing/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -27,7 +27,7 @@ For printing to other types of files, see &lt;a href="../printing/#printing-lpd-
 &lt;pre class="rouge highlight">&lt;code data-lang="shell">&lt;span class="c"># mkdir -p /var/spool/lpd/lp&lt;/span>
 &lt;span class="c"># chown daemon:daemon /var/spool/lpd/lp&lt;/span>
 &lt;span class="c"># chmod 770 /var/spool/lpd/lp&lt;/span>&lt;/code>&lt;/pre>
-&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>http://172.16.201.134:1313/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>https://docs.freebsd.org/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/introduction/</link><description>Recent content in Introduction on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/introduction/</link><description>Recent content in Introduction on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6. Primer Asciidoctor</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -11,7 +11,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Nos primórdios da era computacional, o texto eletrônico era simples. Havia poucos conjuntos de caracteres como ASCII ou EBCDIC, e apenas isso. Texto era texto, e o que você lia era realmente o texto que você tinha. Sem frescuras, sem formatação, sem inteligência.&lt;/p>
-&lt;/div></description></item><item><title>Capítulo 11. Páginas de Manual</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Capítulo 11. Páginas de Manual</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -24,7 +24,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Embora tenham sido planejados como material de referência em vez de tutoriais, as seções EXEMPLOS das páginas de manual geralmente fornecem casos de uso detalhados.&lt;/p>
-&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -44,7 +44,7 @@
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>O CUPS utiliza o Protocolo de Impressão pela Internet (IPP) como base para gerenciar trabalhos e filas de impressão. Os protocolos Line Printer Daemon (LPD), Server Message Block (SMB) e AppSocket (também conhecido como JetDirect) também são suportados, porém com funcionalidade reduzida. O CUPS adiciona opções de visualização de impressoras em rede e impressão baseada em PostScript Printer Description (PPD) para suportar as necessidades de impressão do mundo real no ambiente UNIX®. Como resultado, o CUPS é ideal para compartilhar e acessar impressoras em ambientes mistos de FreeBSD, Linux®, Mac OS® X ou Windows®.&lt;/p>
-&lt;/div></description></item><item><title>Para iniciantes tanto no FreeBSD quanto no UNIX®</title><link>http://172.16.201.134:1313/pt-br/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Para iniciantes tanto no FreeBSD quanto no UNIX®</title><link>https://docs.freebsd.org/pt-br/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/new-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

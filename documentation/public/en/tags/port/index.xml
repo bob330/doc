@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Port on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/port/</link><description>Recent content in Port on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/port/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. Quick Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/quick-porting/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Port on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/port/</link><description>Recent content in Port on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/port/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. Quick Porting</title><link>https://docs.freebsd.org/en/books/porters-handbook/quick-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/quick-porting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -19,7 +19,7 @@ For applications where this quick method is not adequate, the full &amp;#34;Slow
 &lt;p>These steps assume that the software compiled out-of-the-box.
 In other words, absolutely no changes were required for the application to work on a FreeBSD system.
 If anything had to be changed, refer to &lt;a href="../slow-porting/#slow-porting">Slow Porting&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 10. Testing the Port</title><link>http://172.16.201.134:1313/en/books/porters-handbook/testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/testing/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 10. Testing the Port</title><link>https://docs.freebsd.org/en/books/porters-handbook/testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/testing/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -42,7 +42,7 @@ Thus, if &lt;code>make describe&lt;/code> fails in any port, no one can generate
 &lt;div class="paragraph">
 &lt;p>It is important to be able to generate this file no matter what options are present in &lt;span class="filename">make.conf&lt;/span>, so please avoid doing things such as using &lt;code>.error&lt;/code> statements when (for instance) a dependency is not satisfied.
 (See &lt;a href="../porting-dads/#dads-dot-error">Avoid Use of the &lt;code>.error&lt;/code> Construct&lt;/a>.)&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. Upgrading a Port</title><link>http://172.16.201.134:1313/en/books/porters-handbook/upgrading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/upgrading/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. Upgrading a Port</title><link>https://docs.freebsd.org/en/books/porters-handbook/upgrading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/upgrading/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -53,7 +53,7 @@ The port might have already been updated to the new version.&lt;/p>
 &lt;p>When working with more than a few ports, it will probably be easier to use Git to keep the whole ports collection up-to-date,
 as described in &lt;a href="https://docs.freebsd.org/en/books/handbook/ports#ports-using">Using the Ports Collection&lt;/a>.
 This will have the added benefit of tracking all the port’s dependencies.&lt;/p>
-&lt;/div></description></item><item><title>Port Mentor Guidelines</title><link>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Port Mentor Guidelines</title><link>https://docs.freebsd.org/en/articles/port-mentor-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/port-mentor-guidelines/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

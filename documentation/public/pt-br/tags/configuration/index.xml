@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/configuration/</link><description>Recent content in Configuration on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 13. Configuração do Editor</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/configuration/</link><description>Recent content in Configuration on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 13. Configuração do Editor</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -16,7 +16,7 @@
 &lt;h3 id="editor-config-vim-use">13.1.1. Uso&lt;a class="anchor" href="#editor-config-vim-use">&lt;/a>&lt;/h3>
 &lt;div class="paragraph">
 &lt;p>Os escritores de páginas de manuais podem usar os seguintes atalhos de teclado para reformatar:&lt;/p>
-&lt;/div></description></item><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Autenticação LDAP</title><link>https://docs.freebsd.org/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -33,7 +33,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS no FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

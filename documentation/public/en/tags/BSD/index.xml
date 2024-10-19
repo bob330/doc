@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BSD on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/BSD/</link><description>Recent content in BSD on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/BSD/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining BSD</title><link>http://172.16.201.134:1313/en/articles/explaining-bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/explaining-bsd/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BSD on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/BSD/</link><description>Recent content in BSD on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/BSD/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining BSD</title><link>https://docs.freebsd.org/en/articles/explaining-bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/explaining-bsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -25,7 +25,7 @@ It is the name of distributions of source code from the University of California
 Several open source operating system projects are based on a release of this source code known as 4.4BSD-Lite.
 In addition, they comprise a number of packages from other Open Source projects, including notably the GNU project.
 The overall operating system comprises:&lt;/p>
-&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>http://172.16.201.134:1313/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>https://docs.freebsd.org/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

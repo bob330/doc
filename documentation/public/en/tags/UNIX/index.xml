@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UNIX on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/UNIX/</link><description>Recent content in UNIX on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/UNIX/index.xml" rel="self" type="application/rss+xml"/><item><title>For People New to Both FreeBSD and UNIX®</title><link>http://172.16.201.134:1313/en/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/new-users/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UNIX on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/UNIX/</link><description>Recent content in UNIX on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/UNIX/index.xml" rel="self" type="application/rss+xml"/><item><title>For People New to Both FreeBSD and UNIX®</title><link>https://docs.freebsd.org/en/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/new-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -18,7 +18,7 @@
 (Your FreeBSD installation will already have an account for &lt;code>root&lt;/code>;
 who can go anywhere and do anything, including deleting essential files, so be careful!)
 The symbols % and # in the following stand for the prompt (yours may be different), with % indicating an ordinary user and # indicating &lt;code>root&lt;/code>.&lt;/p>
-&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>http://172.16.201.134:1313/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>The Design and Implementation of the 4.4BSD Operating System</title><link>https://docs.freebsd.org/en/books/design-44bsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/design-44bsd/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

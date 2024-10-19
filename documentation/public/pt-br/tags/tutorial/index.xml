@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/pt-br/tags/tutorial/</link><description>Recent content in Tutorial on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/pt-br/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 9. Traduções PO</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/po-translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/po-translations/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/pt-br/tags/tutorial/</link><description>Recent content in Tutorial on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>pt-br</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/pt-br/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 9. Traduções PO</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/po-translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/po-translations/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -16,7 +16,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Supõe-se que o procedimento mostrado no &lt;a href="../overview/#overview-quick-start">Quick Start&lt;/a> já tenha sido executado. A opção &lt;code>TRANSLATOR&lt;/code> é necessária e já está ativada por padrão no port &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/textproc/docproj/">textproc/docproj&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Capítulo 10. Traduções Weblate</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/weblate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/weblate/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Capítulo 10. Traduções Weblate</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/weblate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/weblate/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -40,7 +40,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>A seguir seguem os passos para começar a traduzir artigos e livros do Projeto de Documentação do FreeBSD.&lt;/p>
-&lt;/div></description></item><item><title>Apêndice A. Exemplos</title><link>http://172.16.201.134:1313/pt-br/books/fdp-primer/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/books/fdp-primer/examples/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Apêndice A. Exemplos</title><link>https://docs.freebsd.org/pt-br/books/fdp-primer/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/books/fdp-primer/examples/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -106,7 +106,7 @@ include::{chapters-path}preface/_index.adoc[leveloffset=+1]
 include::{chapters-path}parti.adoc[lines=7..18]
 
 include::{chapters-path}chapter-name/_index.adoc[leveloffset=+1]&lt;/pre>
-&lt;/div></description></item><item><title>Autenticação LDAP</title><link>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Autenticação LDAP</title><link>https://docs.freebsd.org/pt-br/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -123,7 +123,7 @@ include::{chapters-path}chapter-name/_index.adoc[leveloffset=+1]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento destina-se a fornecer ao leitor uma compreensão suficiente do LDAP para configurar um servidor LDAP. Este documento tentará fornecer uma explicação de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> e &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para uso com serviços de máquinas cliente para uso com o servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>http://172.16.201.134:1313/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Fontes e FreeBSD</title><link>https://docs.freebsd.org/pt-br/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>
@@ -140,7 +140,7 @@ include::{chapters-path}chapter-name/_index.adoc[leveloffset=+1]&lt;/pre>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Existem muitas fontes disponíveis e alguém pode perguntar como usá-las com o FreeBSD. A resposta pode ser encontrada pesquisando cuidadosamente a documentação do componente que deseja utilizar. Isso pode ser muito demorado, portanto, este tutorial é uma tentativa de fornecer um atalho para outras pessoas interessadas.&lt;/p>
-&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Scripting rc.d na prática no BSD</title><link>https://docs.freebsd.org/pt-br/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/pt-br/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumo&lt;/p>

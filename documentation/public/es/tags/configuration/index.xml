@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/configuration/</link><description>Recent content in Configuration on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Autenticación LDAP</title><link>http://172.16.201.134:1313/es/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on Portal de documentación de FreeBSD</title><link>https://docs.freebsd.org/es/tags/configuration/</link><description>Recent content in Configuration on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/es/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Autenticación LDAP</title><link>https://docs.freebsd.org/es/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>
@@ -15,7 +15,7 @@
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Este documento está destinado a proporcionar al lector una comprensión suficiente de LDAP para configurar un servidor LDAP. Este documento intentará proporcionar una explicación de &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> y &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> para usarlos con los servicios de la máquina del cliente para su uso con el servidor LDAP.&lt;/p>
-&lt;/div></description></item><item><title>CUPS en FreeBSD</title><link>http://172.16.201.134:1313/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS en FreeBSD</title><link>https://docs.freebsd.org/es/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/es/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Resumen&lt;/p>

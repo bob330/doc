@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/git/</link><description>Recent content in Git on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. The Working Copy</title><link>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/git/</link><description>Recent content in Git on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 3. The Working Copy</title><link>https://docs.freebsd.org/en/books/fdp-primer/working-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/working-copy/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -8,7 +8,7 @@ Changes are made to the local working copy, tested, and then submitted as patche
 &lt;div class="paragraph">
 &lt;p>A full copy of the documentation tree can occupy 550 megabytes of disk space.
 Allow for a full gigabyte of space to have room for temporary files and test versions of various output formats.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. Upgrading a Port</title><link>http://172.16.201.134:1313/en/books/porters-handbook/upgrading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/upgrading/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. Upgrading a Port</title><link>https://docs.freebsd.org/en/books/porters-handbook/upgrading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/upgrading/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -19,7 +19,7 @@ The port might have already been updated to the new version.&lt;/p>
 &lt;p>When working with more than a few ports, it will probably be easier to use Git to keep the whole ports collection up-to-date,
 as described in &lt;a href="https://docs.freebsd.org/en/books/handbook/ports#ports-using">Using the Ports Collection&lt;/a>.
 This will have the added benefit of tracking all the port’s dependencies.&lt;/p>
-&lt;/div></description></item><item><title>Appendix A. Obtaining FreeBSD</title><link>http://172.16.201.134:1313/en/books/handbook/mirrors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/mirrors/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Appendix A. Obtaining FreeBSD</title><link>https://docs.freebsd.org/en/books/handbook/mirrors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/mirrors/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>

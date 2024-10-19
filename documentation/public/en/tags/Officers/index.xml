@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Officers on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Officers/</link><description>Recent content in Officers on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Officers/index.xml" rel="self" type="application/rss+xml"/><item><title>Appendix D. OpenPGP Keys</title><link>http://172.16.201.134:1313/en/books/handbook/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/pgpkeys/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Officers on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Officers/</link><description>Recent content in Officers on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Officers/index.xml" rel="self" type="application/rss+xml"/><item><title>Appendix D. OpenPGP Keys</title><link>https://docs.freebsd.org/en/books/handbook/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/pgpkeys/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -21,7 +21,7 @@ The complete keyring can be downloaded at &lt;a href="https://docs.FreeBSD.org/p
 uid FreeBSD Security Officer &amp;lt;security-officer@freebsd.org&amp;gt;
 sub rsa4096/6E58DE901F001AEF 2022-12-11 [S] [expires: 2025-01-15]
 sub rsa4096/46DB26D62F6039B7 2022-12-11 [E] [expires: 2025-01-15]&lt;/pre>
-&lt;/div></description></item><item><title>OpenPGP Keys</title><link>http://172.16.201.134:1313/en/articles/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pgpkeys/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>OpenPGP Keys</title><link>https://docs.freebsd.org/en/articles/pgpkeys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/pgpkeys/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;hr/>
 

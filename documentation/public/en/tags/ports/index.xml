@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ports on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/ports/</link><description>Recent content in Ports on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/ports/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/porters-handbook/porting-why/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/porting-why/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ports on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/ports/</link><description>Recent content in Ports on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/ports/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>https://docs.freebsd.org/en/books/porters-handbook/porting-why/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/porting-why/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;!-- toc disabled -->
 &lt;div class="paragraph">
@@ -11,7 +11,7 @@ It is important to keep this in mind when reading this document.&lt;/p>
 No special commit privilege is needed.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>Chapter 2. Making a New Port</title><link>http://172.16.201.134:1313/en/books/porters-handbook/new-port/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/new-port/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 2. Making a New Port</title><link>https://docs.freebsd.org/en/books/porters-handbook/new-port/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/new-port/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;!-- toc disabled -->
 &lt;div class="paragraph">
@@ -25,7 +25,7 @@ To upgrade an existing port, read this, then read &lt;a href="../upgrading/#port
 &lt;p>When this document is not sufficiently detailed, refer to &lt;span class="filename">/usr/ports/Mk/bsd.port.mk&lt;/span>, which is included by all port &lt;span class="filename">Makefiles&lt;/span>.
 Even those not hacking &lt;span class="filename">Makefile&lt;/span>s daily can gain much knowledge from it.
 Additionally, specific questions can be sent to the &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-ports">FreeBSD ports mailing list&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 4. Slow Porting</title><link>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/slow-porting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 4. Slow Porting</title><link>https://docs.freebsd.org/en/books/porters-handbook/slow-porting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/slow-porting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -40,7 +40,7 @@ In this section, we will explain, step by step, how to modify it to get it to wo
 &lt;div class="paragraph">
 &lt;p>First, this is the sequence of events which occurs when the user first types &lt;code>make&lt;/code> in the port’s directory.
 Having &lt;span class="filename">bsd.port.mk&lt;/span> in another window while reading this really helps to understand it.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 4. Installing Applications: Packages and Ports</title><link>http://172.16.201.134:1313/en/books/handbook/ports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/ports/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 4. Installing Applications: Packages and Ports</title><link>https://docs.freebsd.org/en/books/handbook/ports/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/ports/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -78,7 +78,7 @@ Either method may be used to install software from local media or from the netwo
 &lt;p>What to do if a software installation fails.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>https://docs.freebsd.org/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -95,7 +95,7 @@ The port is built multiple times, with variations.&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 12. Security</title><link>http://172.16.201.134:1313/en/books/porters-handbook/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/security/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 12. Security</title><link>https://docs.freebsd.org/en/books/porters-handbook/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/security/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -115,7 +115,7 @@ The developer will eventually release a patch followed by a new version of the s
 free of the bug, but the majority of users will not take the trouble of upgrading immediately because the bug has never vexed them.
 A critical bug that may cause data loss represents a graver issue.
 Nevertheless, prudent users know that a lot of possible accidents, besides software bugs, are likely to lead to data loss, and so they make backups of important data; in addition, a critical bug will be discovered really soon.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 13. Dos and Don'ts</title><link>http://172.16.201.134:1313/en/books/porters-handbook/porting-dads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/porting-dads/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. Dos and Don'ts</title><link>https://docs.freebsd.org/en/books/porters-handbook/porting-dads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/porting-dads/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -128,7 +128,7 @@ Nevertheless, prudent users know that a lot of possible accidents, besides softw
 Check the port against this list, but also check ports in the &lt;a href="https://bugs.FreeBSD.org/search/">PR database&lt;/a> that others have submitted.
 Submit any comments on ports as described in &lt;a href="https://docs.freebsd.org/en/articles/contributing/#CONTRIB-GENERAL">Bug Reports and General Commentary&lt;/a>.
 Checking ports in the PR database will both make it faster for us to commit them, and prove that you know what you are doing.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 16. Keeping Up</title><link>http://172.16.201.134:1313/en/books/porters-handbook/keeping-up/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/keeping-up/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 16. Keeping Up</title><link>https://docs.freebsd.org/en/books/porters-handbook/keeping-up/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/keeping-up/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">

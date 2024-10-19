@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boot on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/boot/</link><description>Recent content in Boot on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/boot/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Bootstrapping and Kernel Initialization</title><link>http://172.16.201.134:1313/en/books/arch-handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/boot/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boot on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/boot/</link><description>Recent content in Boot on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/boot/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Bootstrapping and Kernel Initialization</title><link>https://docs.freebsd.org/en/books/arch-handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/boot/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -10,7 +10,7 @@
 &lt;p>This chapter is an overview of the boot and system initialization processes, starting from the BIOS (firmware) POST, to the first user process creation.
 Since the initial steps of system startup are very architecture dependent, the IA-32 architecture is used as an example.
 But the AMD64 and ARM64 architectures are much more important and compelling examples and should be explained in the near future according to the topic of this document.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 15. The FreeBSD Booting Process</title><link>http://172.16.201.134:1313/en/books/handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/boot/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 15. The FreeBSD Booting Process</title><link>https://docs.freebsd.org/en/books/handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/boot/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>

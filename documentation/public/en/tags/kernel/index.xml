@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kernel on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/kernel/</link><description>Recent content in Kernel on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/kernel/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Bootstrapping and Kernel Initialization</title><link>http://172.16.201.134:1313/en/books/arch-handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/boot/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kernel on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/kernel/</link><description>Recent content in Kernel on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/kernel/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Bootstrapping and Kernel Initialization</title><link>https://docs.freebsd.org/en/books/arch-handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/boot/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -10,12 +10,12 @@
 &lt;p>This chapter is an overview of the boot and system initialization processes, starting from the BIOS (firmware) POST, to the first user process creation.
 Since the initial steps of system startup are very architecture dependent, the IA-32 architecture is used as an example.
 But the AMD64 and ARM64 architectures are much more important and compelling examples and should be explained in the near future according to the topic of this document.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 4. The Jail Subsystem</title><link>http://172.16.201.134:1313/en/books/arch-handbook/jail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/jail/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 4. The Jail Subsystem</title><link>https://docs.freebsd.org/en/books/arch-handbook/jail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/jail/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
 &lt;p>On most UNIX® systems, &lt;code>root&lt;/code> has omnipotent power. This promotes insecurity. If an attacker gained &lt;code>root&lt;/code> on a system, he would have every function at his fingertips. In FreeBSD there are sysctls which dilute the power of &lt;code>root&lt;/code>, in order to minimize the damage caused by an attacker. Specifically, one of these functions is called &lt;code>secure levels&lt;/code>. Similarly, another function which is present from FreeBSD 4.0 and onward, is a utility called &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=jail&amp;amp;sektion=8&amp;amp;format=html">jail(8)&lt;/a>. Jail chroots an environment and sets certain restrictions on processes which are forked within the jail. For example, a jailed process cannot affect processes outside the jail, utilize certain system calls, or inflict any damage on the host environment.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 9. Building and Installing a FreeBSD Kernel</title><link>http://172.16.201.134:1313/en/books/developers-handbook/kernelbuild/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/kernelbuild/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 9. Building and Installing a FreeBSD Kernel</title><link>https://docs.freebsd.org/en/books/developers-handbook/kernelbuild/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/developers-handbook/kernelbuild/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -36,7 +36,7 @@ There are two known ways to do so:&lt;/p>
 &lt;div class="paragraph">
 &lt;p>It is supposed that the reader of this chapter is familiar with the information described in the &lt;a href="https://docs.freebsd.org/en/books/handbook/kernelconfig/#kernelconfig-building">Building and Installing a Custom Kernel&lt;/a> chapter of the FreeBSD Handbook.
 If this is not the case, please read through the above mentioned chapter to understand how the build process works.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 10. Configuring the FreeBSD Kernel</title><link>http://172.16.201.134:1313/en/books/handbook/kernelconfig/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/kernelconfig/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 10. Configuring the FreeBSD Kernel</title><link>https://docs.freebsd.org/en/books/handbook/kernelconfig/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/kernelconfig/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -73,7 +73,7 @@ While much of FreeBSD is dynamically configurable, some users may wish to config
 &lt;p>How to troubleshoot if things go wrong.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Linux® emulation in FreeBSD</title><link>http://172.16.201.134:1313/en/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/linux-emulation/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Linux® emulation in FreeBSD</title><link>https://docs.freebsd.org/en/articles/linux-emulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/linux-emulation/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -88,7 +88,7 @@ The focus was on bringing the &lt;em>NPTL&lt;/em> (new POSIX® thread library) s
 Many small problems were identified and fixed in the process.
 My work was integrated into the main FreeBSD source repository and will be shipped in the upcoming 7.0R release.
 We, the emulation development team, are working on making the Linux® 2.6 emulation the default emulation layer in FreeBSD.&lt;/p>
-&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>http://172.16.201.134:1313/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/geom-class/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>https://docs.freebsd.org/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/geom-class/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authentication on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/Authentication/</link><description>Recent content in Authentication on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/Authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>LDAP Authentication</title><link>http://172.16.201.134:1313/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authentication on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/Authentication/</link><description>Recent content in Authentication on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/Authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>LDAP Authentication</title><link>https://docs.freebsd.org/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -17,7 +17,7 @@ This is useful for situations where many servers need the same user accounts, fo
 &lt;div class="paragraph">
 &lt;p>This document is intended to give the reader enough of an understanding of LDAP to configure an LDAP server.
 This document will attempt to provide an explanation of &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> and &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> for use with client machines services for use with the LDAP server.&lt;/p>
-&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>https://docs.freebsd.org/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/pam/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

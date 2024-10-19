@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GEOM on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/GEOM/</link><description>Recent content in GEOM on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/GEOM/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 21. GEOM: Modular Disk Transformation Framework</title><link>http://172.16.201.134:1313/en/books/handbook/geom/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/geom/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GEOM on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/GEOM/</link><description>Recent content in GEOM on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/GEOM/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 21. GEOM: Modular Disk Transformation Framework</title><link>https://docs.freebsd.org/en/books/handbook/geom/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/geom/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -14,7 +14,7 @@ By supporting various software RAID configurations, GEOM transparently provides 
 &lt;p>This chapter covers the use of disks under the GEOM framework in FreeBSD.
 This includes the major RAID control utilities which use the framework for configuration.
 This chapter is not a definitive guide to RAID configurations and only GEOM-supported RAID classifications are discussed.&lt;/p>
-&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>http://172.16.201.134:1313/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/geom-class/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Writing a GEOM Class</title><link>https://docs.freebsd.org/en/articles/geom-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/geom-class/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

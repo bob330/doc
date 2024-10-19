@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/tutorial/</link><description>Recent content in Tutorial on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Installing FreeBSD</title><link>http://172.16.201.134:1313/en/books/handbook/bsdinstall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/bsdinstall/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/tutorial/</link><description>Recent content in Tutorial on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 2. Installing FreeBSD</title><link>https://docs.freebsd.org/en/books/handbook/bsdinstall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/bsdinstall/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -25,7 +25,7 @@ Depending on the architecture and platform, different images can be &lt;a href="
 &lt;p>Installation images to boot from an ISO or USB device to install FreeBSD on a drive for the usual desktop, laptop, or server system.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 9. PO Translations</title><link>http://172.16.201.134:1313/en/books/fdp-primer/po-translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/po-translations/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 9. PO Translations</title><link>https://docs.freebsd.org/en/books/fdp-primer/po-translations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/po-translations/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -47,7 +47,7 @@ The strings can be used directly or built into a complete translated version of 
 &lt;div class="paragraph">
 &lt;p>The procedure shown in &lt;a href="../overview/#overview-quick-start">Quick Start&lt;/a> is assumed to have already been performed.
 The &lt;code>TRANSLATOR&lt;/code> option is required and already enabled by default in the &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/textproc/docproj/">textproc/docproj&lt;/a> port.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 10. Weblate Translations</title><link>http://172.16.201.134:1313/en/books/fdp-primer/weblate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/weblate/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 10. Weblate Translations</title><link>https://docs.freebsd.org/en/books/fdp-primer/weblate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/weblate/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -72,7 +72,7 @@ It’s focused on the translation part.&lt;/p>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>Following are simple steps to start translating articles and books of the FreeBSD Documentation Project.&lt;/p>
-&lt;/div></description></item><item><title>Appendix A. Examples</title><link>http://172.16.201.134:1313/en/books/fdp-primer/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/examples/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Appendix A. Examples</title><link>https://docs.freebsd.org/en/books/fdp-primer/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/examples/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -139,7 +139,7 @@ include::{chapters-path}preface/_index.adoc[leveloffset=+1]
 include::{chapters-path}parti.adoc[lines=7..18]
 
 include::{chapters-path}chapter-name/_index.adoc[leveloffset=+1]&lt;/pre>
-&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>http://172.16.201.134:1313/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. WINE</title><link>https://docs.freebsd.org/en/books/handbook/wine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/wine/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -155,7 +155,7 @@ It allows installing and running software written for Windows® on FreeBSD (and 
 &lt;p>It operates by intercepting system calls, or requests from the software to the operating system, and translating them from Windows® calls to calls that FreeBSD understands.
 It will also translate any responses as needed into what the Windows® software is expecting.
 So in some ways, it &lt;em>emulates&lt;/em> a Windows® environment, in that it provides many of the resources Windows® applications are expecting.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 27. DTrace</title><link>http://172.16.201.134:1313/en/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 27. DTrace</title><link>https://docs.freebsd.org/en/books/handbook/dtrace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/dtrace/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -171,7 +171,7 @@ In addition to diagnosing performance problems, DTrace can be used to help inves
 &lt;p>DTrace is a remarkable profiling tool, with an impressive array of features for diagnosing system issues.
 It may also be used to run pre-written scripts to take advantage of its capabilities.
 Users can author their own utilities using the DTrace D Language, allowing them to customize their profiling based on specific needs.&lt;/p>
-&lt;/div></description></item><item><title>Fonts and FreeBSD</title><link>http://172.16.201.134:1313/en/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/fonts/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Fonts and FreeBSD</title><link>https://docs.freebsd.org/en/articles/fonts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/fonts/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -191,7 +191,7 @@ Cookbook examples are provided for switching the syscons display to 80x60 mode, 
 &lt;p>There are many sources of fonts available, and one might ask how they might be used with FreeBSD.
 The answer can be found by carefully searching the documentation for the component that one would like to use.
 This is very time consuming, so this tutorial is an attempt to provide a shortcut for others who might be interested.&lt;/p>
-&lt;/div></description></item><item><title>LDAP Authentication</title><link>http://172.16.201.134:1313/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>LDAP Authentication</title><link>https://docs.freebsd.org/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -210,7 +210,7 @@ This is useful for situations where many servers need the same user accounts, fo
 &lt;div class="paragraph">
 &lt;p>This document is intended to give the reader enough of an understanding of LDAP to configure an LDAP server.
 This document will attempt to provide an explanation of &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/net/nss_ldap/">net/nss_ldap&lt;/a> and &lt;a class="package" href="https://cgit.freebsd.org/ports/tree/security/pam_ldap/">security/pam_ldap&lt;/a> for use with client machines services for use with the LDAP server.&lt;/p>
-&lt;/div></description></item><item><title>Practical rc.d scripting in BSD</title><link>http://172.16.201.134:1313/en/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/rc-scripting/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Practical rc.d scripting in BSD</title><link>https://docs.freebsd.org/en/articles/rc-scripting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/rc-scripting/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -232,7 +232,7 @@ Such an examination should provide reference points for further study of the des
 It was invoked by &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=init&amp;amp;sektion=8&amp;amp;format=html">init(8)&lt;/a> at system boot time and performed all userland tasks required for multi-user operation: checking and mounting file systems, setting up the network, starting daemons, and so on.
 The precise list of tasks was not the same in every system; admins needed to customize it.
 With few exceptions, &lt;span class="filename">/etc/rc&lt;/span> had to be modified, and true hackers liked it.&lt;/p>
-&lt;/div></description></item><item><title>Serial and UART Tutorial</title><link>http://172.16.201.134:1313/en/articles/serial-uart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/serial-uart/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Serial and UART Tutorial</title><link>https://docs.freebsd.org/en/articles/serial-uart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/serial-uart/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

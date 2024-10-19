@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/introduction/</link><description>Recent content in Introduction on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/introduction/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/introduction/</link><description>Recent content in Introduction on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 1. Introduction</title><link>https://docs.freebsd.org/en/books/developers-handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/developers-handbook/introduction/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -17,7 +17,7 @@ Of course, programming has different levels of proficiency like any other trade.
 For some it is a hobby, for others it is their profession.
 The information in this chapter might be aimed toward the beginning programmer;
 indeed, it could serve useful for the programmer unfamiliar with the FreeBSD platform.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 1. Introduction</title><link>http://172.16.201.134:1313/en/books/handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/introduction/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 1. Introduction</title><link>https://docs.freebsd.org/en/books/handbook/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/introduction/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -49,7 +49,7 @@ indeed, it could serve useful for the programmer unfamiliar with the FreeBSD pla
 &lt;p>And of course: where the name &amp;#34;FreeBSD&amp;#34; comes from.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 6. Asciidoctor Primer</title><link>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 6. Asciidoctor Primer</title><link>https://docs.freebsd.org/en/books/fdp-primer/asciidoctor-primer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/asciidoctor-primer/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -68,7 +68,7 @@ Some of the examples used in this chapter have been taken from the &lt;a href="h
 There were a few character sets like ASCII or EBCDIC, but that was about it.
 Text was text, and what you saw really was what you got.
 No frills, no formatting, no intelligence.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 7. Flavors</title><link>https://docs.freebsd.org/en/books/porters-handbook/flavors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/flavors/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -85,7 +85,7 @@ The port is built multiple times, with variations.&lt;/p>
 &lt;/div>
 &lt;div class="paragraph">
 &lt;p>Another example could be, a port can have a GTK flavor and a QT flavor, depending on which toolkit it uses.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 8. SMPng Design Document</title><link>http://172.16.201.134:1313/en/books/arch-handbook/smp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/arch-handbook/smp/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 8. SMPng Design Document</title><link>https://docs.freebsd.org/en/books/arch-handbook/smp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/arch-handbook/smp/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -95,7 +95,7 @@ The port is built multiple times, with variations.&lt;/p>
 &lt;div class="sectionbody">
 &lt;div class="paragraph">
 &lt;p>This document presents the current design and implementation of the SMPng Architecture. First, the basic primitives and tools are introduced. Next, a general architecture for the FreeBSD kernel’s synchronization and execution model is laid out. Then, locking strategies for specific subsystems are discussed, documenting the approaches taken to introduce fine-grained synchronization and parallelism for each subsystem. Finally, detailed implementation notes are provided to motivate design choices, and make the reader aware of important implications involving the use of specific primitives.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 11. Manual Pages</title><link>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/manual-pages/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -114,7 +114,7 @@ They have become an extremely valuable quick-reference from the command line for
 &lt;p>Manual pages are generally shown interactively by the &lt;a href="https://man.freebsd.org/cgi/man.cgi?query=man&amp;amp;sektion=1&amp;amp;format=html">man(1)&lt;/a> command.
 When the user types &lt;code>man ls&lt;/code>, a search is performed for a manual page matching &lt;code>ls&lt;/code>.
 The first matching result is displayed.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>http://172.16.201.134:1313/en/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 17. Using USES Macros</title><link>https://docs.freebsd.org/en/books/porters-handbook/uses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/uses/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -130,7 +130,7 @@ They can add dependencies, change building behavior, add metadata to packages, a
 &lt;p>Each section in this chapter describes a possible value for &lt;code>USES&lt;/code>, along with its possible arguments.
 Arguments are appended to the value after a colon (&lt;code>:&lt;/code>).
 Multiple arguments are separated by commas (&lt;code>,&lt;/code>).&lt;/p>
-&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>http://172.16.201.134:1313/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>https://docs.freebsd.org/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -154,7 +154,7 @@ It has been developed by Easy Software Products to promote a standard printing s
 The Line Printer Daemon (LPD), Server Message Block (SMB), and AppSocket (aka JetDirect) protocols are also supported with reduced functionality.
 CUPS adds network printer browsing and PostScript Printer Description (PPD) based printing options to support real-world printing under UNIX®.
 As a result, CUPS is ideally-suited for sharing and accessing printers in mixed environments of FreeBSD, Linux®, Mac OS® X, or Windows®.&lt;/p>
-&lt;/div></description></item><item><title>For People New to Both FreeBSD and UNIX®</title><link>http://172.16.201.134:1313/en/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/new-users/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>For People New to Both FreeBSD and UNIX®</title><link>https://docs.freebsd.org/en/articles/new-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/new-users/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -174,7 +174,7 @@ As a result, CUPS is ideally-suited for sharing and accessing printers in mixed 
 (Your FreeBSD installation will already have an account for &lt;code>root&lt;/code>;
 who can go anywhere and do anything, including deleting essential files, so be careful!)
 The symbols % and # in the following stand for the prompt (yours may be different), with % indicating an ordinary user and # indicating &lt;code>root&lt;/code>.&lt;/p>
-&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>http://172.16.201.134:1313/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/pam/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Pluggable Authentication Modules</title><link>https://docs.freebsd.org/en/articles/pam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/pam/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/configuration/</link><description>Recent content in Configuration on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 8. Advanced pkg-plist Practices</title><link>http://172.16.201.134:1313/en/books/porters-handbook/plist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/porters-handbook/plist/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/configuration/</link><description>Recent content in Configuration on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 8. Advanced pkg-plist Practices</title><link>https://docs.freebsd.org/en/books/porters-handbook/plist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/porters-handbook/plist/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -12,7 +12,7 @@ To make this easy, any instances in &lt;span class="filename">pkg-plist&lt;/span
 The value of &lt;code>%%OSREL%%&lt;/code> is the numeric revision of the operating system (for example, &lt;code>4.9&lt;/code>).
 &lt;code>%%PERL_VERSION%%&lt;/code> and &lt;code>%%PERL_VER%%&lt;/code> is the full version number of &lt;code>perl&lt;/code> (for example, &lt;code>5.8.9&lt;/code>).
 Several other &lt;code>%%&lt;em>VARS&lt;/em>%%&lt;/code> related to port’s documentation files are described in &lt;a href="../makefiles/#install-documentation">the relevant section&lt;/a>.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 13. Editor Configuration</title><link>http://172.16.201.134:1313/en/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 13. Editor Configuration</title><link>https://docs.freebsd.org/en/books/fdp-primer/editor-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/fdp-primer/editor-config/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -41,7 +41,7 @@ More advanced users can use a proper linter like &lt;a href="https://github.com/
 &lt;p>Press &lt;kbd>T&lt;/kbd> to replace groups of eight spaces with a tab.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 14. Configuration, Services, Logging and Power Management</title><link>http://172.16.201.134:1313/en/books/handbook/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/config/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 14. Configuration, Services, Logging and Power Management</title><link>https://docs.freebsd.org/en/books/handbook/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/config/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -81,7 +81,7 @@ This chapter explains much of the FreeBSD configuration process, including some 
 &lt;p>How to configure the power management in FreeBSD.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item><item><title>Chapter 18. Mandatory Access Control</title><link>http://172.16.201.134:1313/en/books/handbook/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/mac/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 18. Mandatory Access Control</title><link>https://docs.freebsd.org/en/books/handbook/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/mac/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -97,7 +97,7 @@ Some modules provide protections for a narrow subset of the system, hardening a 
 Others provide comprehensive labeled security across all subjects and objects.
 The mandatory part of the definition indicates that enforcement of controls is performed by administrators and the operating system.
 This is in contrast to the default security mechanism of Discretionary Access Control (DAC) where enforcement is left to the discretion of users.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 19. Security Event Auditing</title><link>http://172.16.201.134:1313/en/books/handbook/audit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/audit/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 19. Security Event Auditing</title><link>https://docs.freebsd.org/en/books/handbook/audit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/audit/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
@@ -110,7 +110,7 @@ This is in contrast to the default security mechanism of Discretionary Access Co
 Event auditing supports reliable, fine-grained, and configurable logging of a variety of security-relevant system events, including logins, configuration changes, and file and network access.
 These log records can be invaluable for live system monitoring, intrusion detection, and postmortem analysis.
 FreeBSD implements Sun™&amp;#39;s published Basic Security Module (BSM) Application Programming Interface (API) and file format, and is interoperable with the Solaris™ and Mac OS® X audit implementations.&lt;/p>
-&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>http://172.16.201.134:1313/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/cups/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>CUPS on FreeBSD</title><link>https://docs.freebsd.org/en/articles/cups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/cups/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>
@@ -134,7 +134,7 @@ It has been developed by Easy Software Products to promote a standard printing s
 The Line Printer Daemon (LPD), Server Message Block (SMB), and AppSocket (aka JetDirect) protocols are also supported with reduced functionality.
 CUPS adds network printer browsing and PostScript Printer Description (PPD) based printing options to support real-world printing under UNIX®.
 As a result, CUPS is ideally-suited for sharing and accessing printers in mixed environments of FreeBSD, Linux®, Mac OS® X, or Windows®.&lt;/p>
-&lt;/div></description></item><item><title>LDAP Authentication</title><link>http://172.16.201.134:1313/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>LDAP Authentication</title><link>https://docs.freebsd.org/en/articles/ldap-auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/articles/ldap-auth/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 &lt;div class="paragraph abstract-title">
 &lt;p>Abstract&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>X86 on FreeBSD Documentation Portal</title><link>http://172.16.201.134:1313/en/tags/x86/</link><description>Recent content in X86 on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/en/tags/x86/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. x86 Assembly Language Programming</title><link>http://172.16.201.134:1313/en/books/developers-handbook/x86/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/developers-handbook/x86/</guid><description>&lt;div id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>X86 on FreeBSD Documentation Portal</title><link>https://docs.freebsd.org/en/tags/x86/</link><description>Recent content in X86 on FreeBSD Documentation Portal</description><generator>Hugo</generator><language>en</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="https://docs.freebsd.org/en/tags/x86/index.xml" rel="self" type="application/rss+xml"/><item><title>Chapter 11. x86 Assembly Language Programming</title><link>https://docs.freebsd.org/en/books/developers-handbook/x86/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/developers-handbook/x86/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;div class="paragraph">
@@ -17,7 +17,7 @@ It is generally assumed that no one would ever want to use it because various UN
 &lt;p>In reality, C portability is quite a myth.
 Even C programs need to be modified when ported from one UNIX® to another, regardless of what processor each runs on.
 Typically, such a program is full of conditional statements depending on the system it is compiled for.&lt;/p>
-&lt;/div></description></item><item><title>Chapter 15. The FreeBSD Booting Process</title><link>http://172.16.201.134:1313/en/books/handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/en/books/handbook/boot/</guid><description>&lt;div id="preamble">
+&lt;/div></description></item><item><title>Chapter 15. The FreeBSD Booting Process</title><link>https://docs.freebsd.org/en/books/handbook/boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.freebsd.org/en/books/handbook/boot/</guid><description>&lt;div id="preamble">
 &lt;div class="sectionbody">
 
 &lt;/div>
