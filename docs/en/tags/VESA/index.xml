@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VESA on FreeBSD Documentation Portal</title>
+    <link>https://docs.freebsd.org/en/tags/VESA/</link>
+    <description>Recent content in VESA on FreeBSD Documentation Portal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>BSD 2-clause &#39;Simplified&#39; License</copyright>
+    <atom:link href="https://docs.freebsd.org/en/tags/VESA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter 5. The X Window System</title>
+      <link>https://docs.freebsd.org/en/books/handbook/x11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/en/books/handbook/x11/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

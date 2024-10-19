@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mailing Lists on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Mailing-Lists/</link><description>Recent content in Mailing Lists on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Mailing-Lists/index.xml" rel="self" type="application/rss+xml"/><item><title>Preguntas más frecuentes sobre las listas de correo de FreeBSD</title><link>http://172.16.201.134:1313/es/articles/mailing-list-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/mailing-list-faq/</guid><description>&lt;div id="preamble">
-&lt;div class="sectionbody">
-&lt;div class="paragraph abstract-title">
-&lt;p>Resumen&lt;/p>
-&lt;/div>
-&lt;div class="paragraph">
-&lt;p>Este es el FAQ de las listas de correo de FreeBSD. Si estás interesado en ayudar con este proyecto, manda un email a &lt;a href="https://lists.FreeBSD.org/subscription/freebsd-doc">Lista de correo del proyecto de documentación de FreeBSD&lt;/a>. La última versión de este documento siempre está disponible en el &lt;a href=".">servidor World Wide Web de FreeBSD&lt;/a>. También se puede descargar como un gran fichero &lt;a href=".">HTML&lt;/a> por HTTP o como texto plano, PostScript, PDF, etc. desde &lt;a href="https://download.freebsd.org/doc/">servidor FTP de FreeBSD&lt;/a>.&lt;/p>
-&lt;/div></description></item></channel></rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MP3 on FreeBSD Documentation Portal</title>
+    <link>https://docs.freebsd.org/ja/tags/MP3/</link>
+    <description>Recent content in MP3 on FreeBSD Documentation Portal</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <copyright>BSD 2-clause &#39;Simplified&#39; License</copyright>
+    <atom:link href="https://docs.freebsd.org/ja/tags/MP3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第7章 マルチメディア</title>
+      <link>https://docs.freebsd.org/ja/books/handbook/multimedia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/ja/books/handbook/multimedia/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

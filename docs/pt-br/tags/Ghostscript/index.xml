@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ghostscript on FreeBSD Documentation Portal</title>
+    <link>https://docs.freebsd.org/pt-br/tags/Ghostscript/</link>
+    <description>Recent content in Ghostscript on FreeBSD Documentation Portal</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <copyright>BSD 2-clause &#39;Simplified&#39; License</copyright>
+    <atom:link href="https://docs.freebsd.org/pt-br/tags/Ghostscript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fontes e FreeBSD</title>
+      <link>https://docs.freebsd.org/pt-br/articles/fonts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/pt-br/articles/fonts/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

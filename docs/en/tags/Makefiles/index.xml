@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Makefiles on FreeBSD Documentation Portal</title>
+    <link>https://docs.freebsd.org/en/tags/Makefiles/</link>
+    <description>Recent content in Makefiles on FreeBSD Documentation Portal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>BSD 2-clause &#39;Simplified&#39; License</copyright>
+    <atom:link href="https://docs.freebsd.org/en/tags/Makefiles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter 5. Configuring the Makefile</title>
+      <link>https://docs.freebsd.org/en/books/porters-handbook/makefiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/en/books/porters-handbook/makefiles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chapter 5. Source Tree Guidelines and Policies</title>
+      <link>https://docs.freebsd.org/en/books/developers-handbook/policies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/en/books/developers-handbook/policies/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

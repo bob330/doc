@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PR on Portal de documentación de FreeBSD</title>
+    <link>https://docs.freebsd.org/es/tags/PR/</link>
+    <description>Recent content in PR on Portal de documentación de FreeBSD</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <copyright>BSD 2-clause &#39;Simplified&#39; License</copyright>
+    <atom:link href="https://docs.freebsd.org/es/tags/PR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Escribiendo Informes de Problemas de FreeBSD</title>
+      <link>https://docs.freebsd.org/es/articles/problem-reports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/es/articles/problem-reports/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guía para el Manejo de Informes de Problemas</title>
+      <link>https://docs.freebsd.org/es/articles/pr-guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://docs.freebsd.org/es/articles/pr-guidelines/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

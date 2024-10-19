@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on Portal de documentación de FreeBSD</title><link>http://172.16.201.134:1313/es/tags/Server/</link><description>Recent content in Server on Portal de documentación de FreeBSD</description><generator>Hugo</generator><language>es</language><copyright>BSD 2-clause 'Simplified' License</copyright><atom:link href="http://172.16.201.134:1313/es/tags/Server/index.xml" rel="self" type="application/rss+xml"/><item><title>Construye tu propio servidor de actualizaciones de FreeBSD</title><link>http://172.16.201.134:1313/es/articles/freebsd-update-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://172.16.201.134:1313/es/articles/freebsd-update-server/</guid><description>&lt;div id="preamble">
-&lt;div class="sectionbody">
-&lt;div class="paragraph abstract-title">
-&lt;p>Resumen&lt;/p>
-&lt;/div>
-&lt;div class="paragraph">
-&lt;p>Este artículo describe cómo construir un Servidor de FreeBSD Update interno. El &lt;a href="https://github.com/freebsd/freebsd-update-build/">freebsd-update-server&lt;/a> está escrito por &lt;code>Colin Percival &amp;lt;&lt;a href="mailto:cperciva@FreeBSD.org">cperciva@FreeBSD.org&lt;/a>&amp;gt;&lt;/code>, Security Officer Emérito de FreeBSD. Para los usuarios que consideran adecuado actualizar sus sistemas contra un servidor de actualizaciones oficial, construir su propio Servidor de FreeBSD Update podría ayudar a extender su funcionalidad mediante el soporte de versiones de FreeBSD ajustadas a mano o proporcionando un mirror local que permitirá actualizaciones más rápidas para un determinado número de máquinas.&lt;/p>
-&lt;/div></description></item></channel></rss>
