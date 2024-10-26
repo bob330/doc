@@ -55,7 +55,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          ls -la
+          cd documentation
           DOC_LANG="en zh-tw" RUBYLIB=../shared/lib hugo \
             --minify --environment offline \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
