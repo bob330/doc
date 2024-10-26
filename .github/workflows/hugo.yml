@@ -37,6 +37,7 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Asciidoctor and friends
           sudo apt install  ruby-asciidoctor ruby-asciidoctor-pdf ruby-rouge bmake
       - name: Install Dart Sass
         run: sudo snap install dart-sass
@@ -55,7 +56,7 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           DOC_LANG="en zh-tw" RUBYLIB=../shared/lib hugo \
-            --minify --environment offline \
+            --minify --environment offline -v \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
