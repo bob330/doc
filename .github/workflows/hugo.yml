@@ -56,13 +56,13 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           cd documentation
-          DOC_LANG="en zh-tw" RUBYLIB=../shared/lib hugo \
+          DOC_LANG="en" RUBYLIB=../shared/lib hugo \
             --minify --environment offline \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./public/en
 
   # Deployment job
   deploy:
