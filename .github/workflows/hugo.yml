@@ -59,6 +59,8 @@ jobs:
           DOC_LANG="en" RUBYLIB=../shared/lib hugo \
             --minify --environment offline \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+            pwd
+            ls -la
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
