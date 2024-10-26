@@ -55,8 +55,9 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
+          ls -la
           DOC_LANG="en zh-tw" RUBYLIB=../shared/lib hugo \
-            --minify --environment offline -logLevel info \
+            --minify --environment offline \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
